@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>YENYONG. — International Building Materials</title>
+<meta name="description" content="Factory-direct CE-certified SPC flooring, WPC wall panels and decorative panels from Foshan, China. Singapore registered. 40+ countries."/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:Arial,Helvetica,sans-serif;color:#0A0E1A;background:#fff;line-height:1.5}
+a{color:inherit;text-decoration:none}
+:root{--blue:#1F3AA0;--blue2:#2347C5;--ink:#0A0E1A;--gray:#6B6B6B;--lt:#F5F7FF;--border:#E8EAF0}
+nav{position:fixed;top:36px;left:0;right:0;z-index:200;background:#fff;border-bottom:2px solid var(--blue);height:60px;display:flex;align-items:center;transition:.3s all}
+nav.scrolled{background:var(--blue);border-bottom-color:var(--blue2);top:0}
+.nav-in{width:100%;max-width:1280px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between}
+/* Logo mark color */
+.logo-mark .lm-fill{fill:#1F3AA0;transition:fill .3s}
+.logo-mark .lm-void{fill:#fff;transition:fill .3s}
+nav.scrolled .logo-mark .lm-fill{fill:#fff}
+nav.scrolled .logo-mark .lm-void{fill:var(--blue)}
+/* Nav logo layout */
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-text{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:20px;color:var(--blue);letter-spacing:1px;transition:.3s}
+nav.scrolled .nav-logo-text{color:#fff}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);transition:.15s}
+.nav-links a:hover{color:var(--blue)}
+nav.scrolled .nav-links a{color:rgba(255,255,255,.65)}
+nav.scrolled .nav-links a:hover{color:#fff}
+.nav-r{display:flex;align-items:center;gap:10px}
+.lang{display:flex;align-items:center;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.3s}
+nav.scrolled .lang{border-color:rgba(255,255,255,.25)}
+.lang button{background:none;border:none;border-right:1px solid var(--border);cursor:pointer;font-size:9px;letter-spacing:1px;color:var(--gray);padding:5px 9px;transition:.15s;font-family:Arial,sans-serif}
+.lang button:last-child{border-right:none}
+nav.scrolled .lang button{color:rgba(255,255,255,.55);border-right-color:rgba(255,255,255,.15)}
+.lang button.on{background:var(--blue);color:#fff;font-weight:700}
+nav.scrolled .lang button.on{background:rgba(255,255,255,.2)}
+.lang button:hover:not(.on){color:var(--blue);background:var(--lt)}
+nav.scrolled .lang button:hover:not(.on){color:#fff;background:rgba(255,255,255,.1)}
+.nav-div{width:1px;height:20px;background:var(--border);transition:.3s}
+nav.scrolled .nav-div{background:rgba(255,255,255,.2)}
+.nav-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;background:var(--blue);color:#fff;padding:9px 18px;border:2px solid var(--blue);border-radius:3px;transition:.15s;display:inline-block}
+nav.scrolled .nav-cta{background:#fff;color:var(--blue);border-color:#fff}
+.nav-cta:hover{background:var(--blue2);border-color:var(--blue2)}
+nav.scrolled .nav-cta:hover{background:rgba(255,255,255,.9);color:var(--blue)}
+#topBar{position:fixed;top:0;left:0;right:0;z-index:201;background:#fff;border-bottom:1px solid var(--border);height:36px;display:flex;align-items:center;justify-content:flex-end;padding:0 48px;transition:.3s transform;font-size:10px}
+#topBar a{color:var(--gray);margin-left:20px;letter-spacing:.5px;transition:.15s}
+#topBar a:hover{color:var(--blue)}
+#topBar .sep{color:var(--border);margin-left:20px}
+.hero{min-height:100vh;background:#0A0E1A;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 80px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85;z-index:0;pointer-events:none}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,14,26,0.15) 0%,rgba(10,14,26,0.30) 50%,rgba(10,14,26,0.65) 100%);z-index:1;pointer-events:none}
+.hero-in{position:relative;z-index:2}
+.hero::before{display:none}
+.hero-in{max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:1}
+.eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--blue);font-weight:700;display:block;margin-bottom:14px}
+.hero h1{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(40px,6.5vw,88px);color:#fff;letter-spacing:-2px;line-height:.92;margin-bottom:32px}
+.hero h1 em{color:#7B9FFF;font-style:normal}
+.hero-sub{font-size:clamp(15px,1.6vw,19px);color:#fff;max-width:560px;line-height:1.75;margin-bottom:40px;text-shadow:0 1px 10px rgba(0,0,0,0.9)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:72px}
+.btn-blue{background:#fff;color:var(--blue);padding:14px 32px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:2px solid #fff;transition:.15s;display:inline-block}
+.btn-blue:hover{background:rgba(255,255,255,.88);border-color:#fff}
+.btn-out{background:transparent;color:#fff;padding:14px 32px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border:2px solid rgba(255,255,255,.45);transition:.15s;display:inline-block}
+.btn-out:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.hero-stats{display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.3);padding-top:28px}
+.stn{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(24px,3vw,38px);color:#fff;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,0.8)}
+.stl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#7B9FFF;margin-top:3px;font-weight:700}
+.strip{background:var(--blue);padding:12px 0;overflow:hidden;white-space:nowrap}
+.strip-in{display:inline-flex;gap:44px;animation:scroll 32s linear infinite}
+.strip-in span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600}
+.strip-in .d{color:rgba(255,255,255,.2)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.stmt{padding:96px 48px;background:#fff;border-bottom:1px solid var(--border)}
+.stmt-in{max-width:1280px;margin:0 auto}
+.stmt h2{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(28px,4.5vw,60px);line-height:1.0;letter-spacing:-1.5px;color:var(--ink);max-width:900px;margin-bottom:52px}
+.stmt h2 em{color:var(--blue);font-style:normal}
+.stmt-cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.stmt-cols p{font-size:15px;color:var(--gray);line-height:1.8}
+.proof{padding:96px 48px;background:var(--lt);border-bottom:1px solid var(--border)}
+.proof-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.proof h2{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(26px,3.5vw,44px);letter-spacing:-1px;color:var(--ink);margin-bottom:16px;line-height:1.05}
+.proof h2 em{color:var(--blue);font-style:normal}
+.proof-story{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:24px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
+.sb{background:#fff;padding:28px 22px}
+.sb-n{font-family:'Arial Black',Arial,sans-serif;font-size:36px;font-weight:900;color:var(--blue);line-height:1;margin-bottom:5px}
+.sb-t{font-size:10px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.sb-d{font-size:11px;color:var(--gray);line-height:1.6}
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:2px}
+.dc{background:#fff;padding:32px 24px;border-top:3px solid var(--blue)}
+.dc-ic{font-size:24px;margin-bottom:12px}
+.dc-t{font-size:12px;font-weight:900;color:var(--ink);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.dc-d{font-size:12px;color:var(--gray);line-height:1.75}
+.sec{padding:96px 48px}
+.sec-in{max-width:1280px;margin:0 auto}
+.sec h2{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(26px,3.5vw,48px);letter-spacing:-1px;color:var(--ink);margin-bottom:52px;line-height:1.05}
+.sec h2 em{color:var(--blue);font-style:normal}
+.prods{background:#fff}
+.ph{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border)}
+.pc{background:#fff;overflow:hidden}
+.pc:hover{background:var(--lt)}
+.pi{aspect-ratio:4/3;background:var(--lt);display:flex;align-items:center;justify-content:center;border-bottom:3px solid var(--blue);position:relative}
+.pt{position:absolute;top:0;left:0;background:var(--blue);color:#fff;font-size:7px;letter-spacing:2px;padding:4px 10px;text-transform:uppercase;font-weight:700}
+.pp{font-size:9px;letter-spacing:2px;color:#BBC5E0;text-transform:uppercase}
+.pb{padding:22px}
+.pb h3{font-size:15px;font-weight:900;color:var(--ink);margin-bottom:10px}
+.pr{font-family:'Arial Black',Arial,sans-serif;font-size:19px;font-weight:900;color:var(--blue);margin-bottom:1px}
+.pf{font-size:9px;color:var(--gray);letter-spacing:1px;margin-bottom:10px}
+.ps{list-style:none}
+.ps li{font-size:11px;color:#555;padding:4px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.ps li:last-child{border-bottom:none}
+.sv{color:var(--blue);font-weight:700}
+.certs-bg{background:var(--lt)}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:var(--border)}
+.ce{background:#fff;padding:24px 14px;text-align:center;border-top:3px solid var(--blue)}
+.ce:hover{background:var(--lt)}
+.ce-n{font-family:'Arial Black',Arial,sans-serif;font-size:15px;font-weight:900;color:var(--blue);margin-bottom:4px}
+.ce-d{font-size:8px;color:var(--gray);letter-spacing:1px;text-transform:uppercase}
+.mkts{background:#fff}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.mk{background:var(--lt);border-left:3px solid var(--blue);padding:16px 18px}
+.mk-f{font-size:18px;margin-bottom:5px}
+.mk-n{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.mk-c{font-size:10px;color:var(--gray)}
+.how-bg{background:var(--lt);border-top:1px solid var(--border)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
+.step{background:#fff;padding:32px 22px;position:relative}
+.step-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue)}
+.step-n{font-family:'Arial Black',Arial,sans-serif;font-size:44px;font-weight:900;color:var(--blue);opacity:.12;line-height:1;margin-bottom:12px}
+.step h3{font-size:12px;font-weight:900;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px}
+.step p{font-size:12px;color:var(--gray);line-height:1.75}
+.projects-bg{background:#fff}
+.pj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.pj-c{background:#fff;overflow:hidden}
+.pj-img{aspect-ratio:4/3;display:flex;align-items:flex-end;padding:20px;position:relative}
+.pj-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);padding:4px 10px;font-size:7px;letter-spacing:2px;color:#fff;text-transform:uppercase;font-weight:700}
+.pj-title{font-family:'Arial Black',Arial,sans-serif;font-size:16px;font-weight:900;color:#fff;line-height:1.1}
+.pj-body{padding:20px}
+.pj-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.pj-tag{font-size:8px;letter-spacing:1px;color:var(--blue);border:1px solid var(--blue);padding:2px 7px;text-transform:uppercase}
+.pj-desc{font-size:11px;color:var(--gray);line-height:1.7}
+.pj-meta{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+.pj-loc{font-size:8px;color:var(--gray);letter-spacing:1px}
+.pj-sz{font-size:9px;font-weight:700;color:var(--blue)}
+.pj-cta{background:var(--blue);display:flex;flex-direction:column;justify-content:center;padding:36px}
+.pj-cta-lbl{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px}
+.pj-cta h3{font-family:'Arial Black',Arial,sans-serif;font-size:20px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px}
+.pj-cta p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:24px}
+.culture-bg{background:#fff;border-top:1px solid var(--border)}
+.ct-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:40px}
+.ct-tab{padding:9px 22px;border-radius:24px;border:2px solid var(--border);background:#fff;color:var(--gray);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:.15s;font-family:Arial,sans-serif}
+.ct-tab.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ct-tab:hover:not(.on){border-color:var(--blue);color:var(--blue)}
+.ct-panel{display:none}
+.ct-panel.on{display:block}
+.ct-2{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
+.ct-l{background:var(--lt);padding:52px 44px}
+.ct-r{background:#fff;padding:52px 44px}
+.ct-lbl{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:16px;display:block}
+.ct-big{font-family:'Arial Black',Arial,sans-serif;font-size:clamp(20px,2.5vw,32px);font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:16px}
+.ct-it{font-size:14px;color:var(--gray);line-height:1.8;font-style:italic}
+.ct-body{font-size:14px;color:var(--gray);line-height:1.85}
+.vg{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
+.val{background:#fff;padding:32px 22px;border-top:3px solid var(--blue)}
+.val-n{font-family:'Arial Black',Arial,sans-serif;font-size:28px;font-weight:900;color:var(--blue);opacity:.12;line-height:1;margin-bottom:10px}
+.val-t{font-size:10px;font-weight:900;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.val-d{font-size:11px;color:var(--gray);line-height:1.75}
+.promise{background:var(--blue);padding:64px 44px;text-align:center}
+.pr-lbl{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;display:block}
+.pr-big{font-family:'Arial Black',Arial,sans-serif;font-size:clamp(18px,3vw,40px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:14px}
+.pr-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:44px}
+.pr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.1);max-width:860px;margin:0 auto}
+.pr-card{background:rgba(255,255,255,.07);padding:28px 22px}
+.pr-ic{font-size:24px;margin-bottom:10px}
+.pr-ct{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px}
+.pr-cd{font-size:11px;color:rgba(255,255,255,.5);line-height:1.7}
+.founders-bg{background:var(--lt);border-top:1px solid var(--border)}
+.fdr-hd{max-width:660px;margin-bottom:52px}
+.fdr-hd p{font-size:15px;color:var(--gray);line-height:1.75}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
+.fc{background:#fff;padding:44px;border-top:3px solid var(--blue)}
+.fy{width:44px;height:44px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Arial Black',Arial,sans-serif;font-size:14px;font-weight:900;color:#fff;margin-bottom:16px}
+.fn{font-family:'Arial Black',Arial,sans-serif;font-size:18px;font-weight:900;color:var(--ink);margin-bottom:3px}
+.ft-{font-size:9px;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.fd{font-size:13px;color:var(--gray);line-height:1.75}
+.contact-bg{background:#fff;border-top:1px solid var(--border);padding:96px 48px}
+.contact-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
+.contact-in h2{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(28px,3.5vw,56px);color:var(--ink);letter-spacing:-2px;line-height:.95;margin-bottom:16px}
+.contact-in h2 em{color:var(--blue);font-style:normal}
+.ct-sub{font-size:14px;color:var(--gray);max-width:380px;line-height:1.75;margin-bottom:36px}
+.ci-list{display:flex;flex-direction:column;gap:16px}
+.ci{display:flex;gap:12px;align-items:flex-start}
+.ci-ic{width:30px;height:30px;background:var(--lt);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;border:1px solid var(--border)}
+.ci strong{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:1px}
+.ci span{font-size:13px;color:var(--ink)}
+.form{display:flex;flex-direction:column;gap:9px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fgg{display:flex;flex-direction:column;gap:3px}
+.fgg label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
+.fgg input,.fgg textarea,.fgg select{background:#fff;border:1px solid var(--border);color:var(--ink);padding:10px 13px;font-size:12px;font-family:Arial,sans-serif;outline:none;width:100%;transition:.15s border-color}
+.fgg input:focus,.fgg textarea:focus,.fgg select:focus{border-color:var(--blue)}
+.fgg textarea{resize:vertical;min-height:84px}
+.submit{background:var(--blue);color:#fff;border:none;cursor:pointer;padding:14px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:900;font-family:'Arial Black',Arial,sans-serif;width:100%;transition:.15s}
+.submit:hover{background:var(--blue2)}
+footer{background:#fff;border-top:1px solid var(--border);padding:52px 48px 24px}
+.ft{max-width:1280px;margin:0 auto}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap;margin-bottom:36px}
+.ft-logo{font-family:'Arial Black',Arial,sans-serif;font-size:21px;font-weight:900;color:var(--blue);letter-spacing:1px;margin-bottom:5px}
+.ft-tgl{font-size:9px;color:var(--gray);letter-spacing:2px;text-transform:uppercase}
+.ft-co{font-size:9px;color:#BBBBBB;margin-top:8px;line-height:1.7}
+.ft-cols{display:flex;gap:48px;flex-wrap:wrap}
+.fcc h4{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:12px;font-weight:700}
+.fcc a{display:block;font-size:11px;color:#888;margin-bottom:6px;transition:.15s}
+.fcc a:hover{color:var(--blue)}
+.ft-btm{border-top:1px solid var(--border);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ft-copy{font-size:9px;color:#BBBBBB}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ft-b{font-size:8px;letter-spacing:1px;color:#BBBBBB;padding:2px 7px;border:1px solid var(--border)}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .nav-in,.stmt-in,.proof-in,.sec-in,.contact-in,.ft{padding-left:24px;padding-right:24px}
+  .hero,.stmt,.proof,.sec,.contact-bg,footer{padding-left:24px;padding-right:24px}
+  .stmt-cols,.proof-in,.ct-2,.fg,.contact-in{grid-template-columns:1fr}
+  .steps,.vg{grid-template-columns:1fr 1fr}
+  .cg{grid-template-columns:repeat(4,1fr)}
+  .pj-g{grid-template-columns:1fr}
+  .fr{grid-template-columns:1fr}
+  #topBar{display:none}
+  nav{top:0}
+}
+
+/* ── PRODUCT CAROUSEL ── */
+.prod{background:#fff;overflow:hidden;position:relative}
+.prod:hover{background:#fff}
+.carousel{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--lt);border-bottom:3px solid var(--blue)}
+.carousel-track{display:flex;transition:transform .4s ease;height:100%}
+.carousel-slide{min-width:100%;height:100%;object-fit:cover;display:flex;align-items:center;justify-content:center;background:var(--lt);flex-shrink:0}
+.carousel-slide img{width:100%;height:100%;object-fit:cover}
+.carousel-slide.placeholder{flex-direction:column;gap:8px}
+.ph-icon{font-size:28px;opacity:.3}
+.ph-text{font-size:9px;letter-spacing:2px;color:#BBC5E0;text-transform:uppercase}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(31,58,160,.75);color:#fff;border:none;cursor:pointer;width:28px;height:28px;border-radius:50%;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:10;transition:.15s;opacity:0}
+.carousel:hover .car-btn{opacity:1}
+.car-btn:hover{background:var(--blue)}
+.car-prev{left:8px}
+.car-next{right:8px}
+.car-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10}
+.car-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}
+.car-dot.on{background:#fff;width:16px;border-radius:3px}
+.prod-tag{position:absolute;top:10px;left:10px;background:var(--blue);color:#fff;font-size:7px;letter-spacing:2px;padding:4px 10px;text-transform:uppercase;font-weight:700;z-index:5}
+
+/* ── HOW WE WORK — SERHANT. STYLE ── */
+.hww{background:var(--blue);padding:100px 48px;overflow:hidden;position:relative}
+.hww::before{content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:48px 48px;pointer-events:none}
+.hww-in{max-width:1280px;margin:0 auto;display:grid;
+  grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hww-left{}
+.hww-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);font-weight:700;display:block;margin-bottom:16px}
+.hww-title{font-family:'Arial Black',Arial,sans-serif;font-weight:900;
+  font-size:clamp(36px,5vw,68px);color:#fff;letter-spacing:-2px;
+  line-height:.95;margin-bottom:24px}
+.hww-title em{color:rgba(255,255,255,.35);font-style:normal}
+.hww-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.8;
+  max-width:440px;margin-bottom:40px}
+.hww-stats{display:flex;gap:36px;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.15);padding-top:28px}
+.hww-stat-n{font-family:'Arial Black',Arial,sans-serif;font-weight:900;
+  font-size:32px;color:#fff;line-height:1}
+.hww-stat-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-top:4px}
+
+/* Floating cards stack */
+.hww-right{position:relative;height:480px}
+.hww-card{position:absolute;background:#fff;border-radius:6px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+
+/* Card 1 — CE Certificate */
+.hww-c1{width:280px;left:0;top:0;transform:rotate(-4deg);z-index:1}
+.hww-c1:hover{transform:rotate(-1deg) scale(1.03);z-index:10;transition:.3s}
+.c1-header{background:var(--blue);padding:12px 16px;display:flex;align-items:center;gap:10px}
+.c1-logo{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:11px;color:#fff}
+.c1-badge{background:rgba(255,255,255,.2);color:#fff;font-size:8px;
+  letter-spacing:1px;padding:2px 8px;border-radius:10px}
+.c1-body{padding:16px}
+.c1-cert-row{display:flex;align-items:center;gap:10px;padding:8px 0;
+  border-bottom:1px solid #F0F3FF}
+.c1-cert-row:last-child{border-bottom:none}
+.c1-cert-icon{width:28px;height:28px;background:var(--blue);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;flex-shrink:0}
+.c1-cert-name{font-size:11px;font-weight:700;color:#0A0E1A}
+.c1-cert-desc{font-size:9px;color:#888;margin-top:1px}
+.c1-status{margin-left:auto;font-size:8px;color:#1A6B3A;font-weight:700;
+  background:#E8F5E9;padding:2px 6px;border-radius:8px}
+
+/* Card 2 — Sample Request */
+.hww-c2{width:260px;right:20px;top:60px;transform:rotate(3deg);z-index:2}
+.hww-c2:hover{transform:rotate(1deg) scale(1.03);z-index:10;transition:.3s}
+.c2-header{background:#0A0E1A;padding:10px 14px;display:flex;
+  justify-content:space-between;align-items:center}
+.c2-header-title{font-size:10px;font-weight:700;color:#fff;letter-spacing:1px}
+.c2-dot{width:8px;height:8px;border-radius:50%}
+.c2-body{padding:14px}
+.c2-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:#888;margin-bottom:4px}
+.c2-field{background:#F5F7FF;border-radius:4px;padding:8px 10px;
+  font-size:10px;color:#0A0E1A;margin-bottom:8px;border:1px solid #E8EAF0}
+.c2-select{background:#F5F7FF;border-radius:4px;padding:8px 10px;
+  font-size:10px;color:var(--blue);margin-bottom:12px;
+  border:1px solid #E8EAF0;font-weight:700}
+.c2-btn{background:var(--blue);color:#fff;border-radius:4px;
+  padding:10px;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  font-weight:700;text-align:center;cursor:pointer}
+.c2-note{font-size:8px;color:#888;text-align:center;margin-top:6px}
+
+/* Card 3 — Project Case */
+.hww-c3{width:240px;left:60px;bottom:0;transform:rotate(2deg);z-index:3}
+.hww-c3:hover{transform:rotate(0deg) scale(1.03);z-index:10;transition:.3s}
+.c3-img{height:120px;background:linear-gradient(135deg,#1F3AA0,#2347C5);
+  display:flex;align-items:flex-end;padding:12px;position:relative;overflow:hidden}
+.c3-img::before{content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.c3-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(4px);
+  color:#fff;font-size:7px;letter-spacing:2px;padding:3px 8px;
+  border-radius:10px;margin-bottom:6px;display:inline-block;font-weight:700}
+.c3-proj-title{font-family:'Arial Black',Arial,sans-serif;font-size:13px;
+  font-weight:900;color:#fff;line-height:1.2}
+.c3-body{padding:12px}
+.c3-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.c3-tag{font-size:8px;color:var(--blue);border:1px solid var(--blue);
+  padding:2px 7px;border-radius:8px;font-weight:600}
+.c3-meta{display:flex;justify-content:space-between;align-items:center}
+.c3-loc{font-size:8px;color:#888;letter-spacing:1px}
+.c3-size{font-size:10px;font-weight:700;color:var(--blue)}
+
+/* Floating notification */
+.hww-notif{position:absolute;right:0;bottom:80px;z-index:20;
+  background:#fff;border-radius:6px;padding:10px 14px;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);
+  display:flex;align-items:center;gap:10px;width:220px;
+  animation:floatUp 3s ease-in-out infinite}
+@keyframes floatUp{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+.notif-dot{width:10px;height:10px;border-radius:50%;
+  background:#1A6B3A;flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.notif-text{font-size:10px;color:#0A0E1A;font-weight:600;line-height:1.4}
+.notif-sub{font-size:9px;color:#888;font-weight:400}
+
+@media(max-width:960px){
+  .hww-in{grid-template-columns:1fr}
+  .hww-right{display:none}
+}
+
+/* ── CONTACT REDESIGN — SERHANT. STYLE ── */
+.contact-bg{background:var(--blue);border-top:none;padding:0}
+.contact-in{max-width:none;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+
+/* Left panel — dark blue, founders */
+.ct-left{background:#0A0E1A;padding:80px 60px;display:flex;flex-direction:column;justify-content:space-between}
+.ct-left-top{}
+.ct-left-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:700;display:block;margin-bottom:16px}
+.ct-left-title{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(32px,4vw,56px);color:#fff;letter-spacing:-2px;line-height:.95;margin-bottom:12px}
+.ct-left-title em{color:var(--blue2);font-style:normal}
+.ct-left-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.75;max-width:380px;margin-bottom:44px}
+
+/* Founder cards */
+.ct-founders{display:flex;flex-direction:column;gap:16px;margin-bottom:44px}
+.ct-founder{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:20px;display:flex;gap:18px;align-items:center;transition:.2s}
+.ct-founder:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.15)}
+.ct-founder-img{width:72px;height:88px;border-radius:4px;object-fit:cover;object-position:top;flex-shrink:0;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ct-founder-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.ct-founder-placeholder{width:72px;height:88px;border-radius:4px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ct-founder-info{}
+.ct-founder-name{font-family:'Arial Black',Arial,sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:2px}
+.ct-founder-title{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.ct-founder-contacts{display:flex;flex-direction:column;gap:5px}
+.ct-founder-contact{display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.6);text-decoration:none;transition:.15s}
+.ct-founder-contact:hover{color:#fff}
+.ct-founder-contact span{font-size:13px}
+
+/* Address section */
+.ct-addresses{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
+.ct-addr{background:rgba(255,255,255,.04);border-radius:4px;padding:14px}
+.ct-addr-flag{font-size:16px;margin-bottom:6px}
+.ct-addr-country{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px;font-weight:700}
+.ct-addr-text{font-size:11px;color:rgba(255,255,255,.6);line-height:1.6}
+.ct-addr-map{font-size:10px;color:var(--blue2);margin-top:6px;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.ct-addr-map:hover{color:#fff}
+
+/* Right panel — white, form */
+.ct-right{background:#fff;padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.ct-right-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:32px;display:block}
+.ct-form{display:flex;flex-direction:column;gap:0}
+.ct-form-row{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.ct-fg{display:flex;flex-direction:column;border:1px solid var(--border);margin:-1px 0 0 -1px}
+.ct-fg label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);padding:14px 16px 0}
+.ct-fg input,.ct-fg textarea,.ct-fg select{background:transparent;border:none;color:var(--ink);padding:4px 16px 14px;font-size:13px;font-family:Arial,sans-serif;outline:none;width:100%}
+.ct-fg textarea{resize:none;min-height:100px}
+.ct-fg input::placeholder,.ct-fg textarea::placeholder{color:#CCC}
+.ct-fg:focus-within{background:var(--lt);z-index:1;position:relative}
+.ct-submit{background:var(--blue);color:#fff;border:none;cursor:pointer;padding:18px 32px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:900;font-family:'Arial Black',Arial,sans-serif;width:100%;transition:.15s;margin-top:-1px;border:1px solid var(--blue)}
+.ct-submit:hover{background:var(--blue2)}
+.ct-promise{font-size:11px;color:var(--gray);text-align:center;margin-top:16px;line-height:1.6}
+
+/* Map section */
+.map-section{background:#0A0E1A;padding:0}
+.map-in{display:grid;grid-template-columns:1fr 1fr}
+.map-frame{height:320px;position:relative}
+.map-frame iframe{width:100%;height:100%;border:none;filter:grayscale(20%)}
+.map-placeholder{height:320px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px dashed rgba(255,255,255,.1)}
+.map-placeholder-icon{font-size:32px;opacity:.3}
+.map-placeholder-text{font-size:11px;color:rgba(255,255,255,.25);letter-spacing:2px;text-transform:uppercase}
+.map-label{position:absolute;top:16px;left:16px;background:var(--blue);color:#fff;font-size:9px;letter-spacing:2px;padding:5px 12px;text-transform:uppercase;font-weight:700}
+
+/* WhatsApp floating button */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;
+  background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  text-decoration:none;transition:.2s;font-size:26px}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,.6)}
+.wa-float::before{content:'Chat with us';position:absolute;right:64px;
+  background:#25D366;color:#fff;padding:6px 12px;border-radius:4px;
+  font-size:11px;font-weight:700;letter-spacing:1px;white-space:nowrap;
+  opacity:0;transition:.2s;pointer-events:none}
+.wa-float:hover::before{opacity:1}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:960px){
+  .contact-in{grid-template-columns:1fr}
+  .ct-left,.ct-right{padding:48px 24px}
+  .ct-form-row{grid-template-columns:1fr}
+  .map-in{grid-template-columns:1fr}
+  .ct-addresses{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="topBar">
+  <a href="#contact" id="tb1">📧 Request Samples</a>
+  <span class="sep">|</span>
+  <a href="#certifications" id="tb2">🏅 Certifications</a>
+  <span class="sep">|</span>
+  <a href="#founders" id="tb3">🌐 Singapore · Foshan</a>
+</div>
+
+<nav id="mainNav">
+<div class="nav-in">
+  <a href="#home" class="nav-logo"><svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 252" width="22" height="32" aria-hidden="true">
+  <polygon points="92,2  16,82  40,82  88,18"   class="lm-fill"/>
+  <polygon points="92,2  168,82  144,82  96,18"  class="lm-fill"/>
+  <polygon points="92,28  54,82  76,82  92,50"   class="lm-fill"/>
+  <polygon points="92,28  130,82  108,82  92,50" class="lm-fill"/>
+  <polygon points="92,8  40,82  54,82  92,34"    class="lm-void"/>
+  <polygon points="92,8  144,82  130,82  92,34"  class="lm-void"/>
+  <polygon points="76,82  108,82  111,220  73,220" class="lm-fill"/>
+  <rect x="57"  y="220" width="70" height="10" class="lm-fill" rx="1"/>
+  <rect x="40"  y="230" width="104" height="7" class="lm-fill" rx="1" opacity="0.65"/>
+  <rect x="22"  y="237" width="140" height="5" class="lm-fill" rx="1" opacity="0.38"/>
+</svg><span class="nav-logo-text">YENYONG.</span></a>
+  <ul class="nav-links">
+    <li><a href="#products" id="n1">Products</a></li>
+    <li><a href="#certifications" id="n2">Certifications</a></li>
+    <li><a href="#markets" id="n3">Markets</a></li>
+    <li><a href="#projects" id="n4">Projects</a></li>
+    <li><a href="#culture" id="n5">Culture</a></li>
+    <li><a href="#founders" id="n6">About</a></li>
+    <li><a href="#contact" id="n7">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang">
+      <button class="on" onclick="setLang('en')">EN</button>
+      <button onclick="setLang('de')">DE</button>
+      <button onclick="setLang('fr')">FR</button>
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('cn')" style="font-weight:700;letter-spacing:0">中文</button>
+    </div>
+    <div class="nav-div"></div>
+    <a href="#contact" class="nav-cta" id="nav-cta">Free Samples</a>
+  </div>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<video class="hero-video" autoplay muted loop playsinline preload="auto">
+  <source src="hero.mp4" type="video/mp4">
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-in">
+  <span class="eyebrow" id="h-ey" style="color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.8)">Foshan · Singapore · Global</span>
+  <h1 id="h-ti">Quality from China.<br><em>Trust from Singapore.</em></h1>
+  <p class="hero-sub" id="h-su">For too long, buying building materials from China meant uncertainty — wrong specs, late shipments, no one to call. YENYONG. was built to change that.</p>
+  <div class="hero-btns">
+    <a href="#products" class="btn-blue" id="h-b1">View Products</a>
+    <a href="#contact" class="btn-out" id="h-b2">Request Free Samples</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stn">40+</div><div class="stl" id="hs1">Countries</div></div>
+    <div><div class="stn">CE</div><div class="stl" id="hs2">Certified</div></div>
+    <div><div class="stn">500m²</div><div class="stl" id="hs3">Min. Order</div></div>
+    <div><div class="stn">5</div><div class="stl" id="hs4">Days — Free Samples</div></div>
+    <div><div class="stn">SGP</div><div class="stl" id="hs5">Registered</div></div>
+  </div>
+</div>
+</section>
+
+<div class="strip">
+<div class="strip-in">
+  <span>LOYALTY</span><span class="d">·</span><span>SPC RIGID CORE FLOORING</span><span class="d">·</span>
+  <span>TRANSPARENCY</span><span class="d">·</span><span>WPC WALL PANEL</span><span class="d">·</span>
+  <span>INTEGRITY</span><span class="d">·</span><span>BAMBOO CRYSTAL PANEL</span><span class="d">·</span>
+  <span>PRECISION</span><span class="d">·</span><span>CARBON CRYSTAL PANEL</span><span class="d">·</span>
+  <span>GLOBAL REACH</span><span class="d">·</span><span>CERAMIC &amp; PORCELAIN TILES</span><span class="d">·</span>
+  <span>CE · SGS · ISO 9001</span><span class="d">·</span><span>FREE SAMPLES IN 5 DAYS</span><span class="d">·</span>
+  <span>LOYALTY</span><span class="d">·</span><span>SPC RIGID CORE FLOORING</span><span class="d">·</span>
+  <span>TRANSPARENCY</span><span class="d">·</span><span>WPC WALL PANEL</span><span class="d">·</span>
+  <span>INTEGRITY</span><span class="d">·</span><span>BAMBOO CRYSTAL PANEL</span><span class="d">·</span>
+  <span>PRECISION</span><span class="d">·</span><span>CARBON CRYSTAL PANEL</span><span class="d">·</span>
+  <span>GLOBAL REACH</span><span class="d">·</span><span>CERAMIC &amp; PORCELAIN TILES</span><span class="d">·</span>
+  <span>CE · SGS · ISO 9001</span><span class="d">·</span><span>FREE SAMPLES IN 5 DAYS</span><span class="d">·</span>
+</div>
+</div>
+
+<section class="stmt">
+<div class="stmt-in">
+  <h2 id="st-ti">The world doesn't need another building materials supplier.<br>It needs <em>YENYONG.</em></h2>
+  <div class="stmt-cols">
+    <p id="st-p1">Two founders. One in Foshan managing factory relationships, quality control, and production. One in Singapore driving contracts, international payments, and global sales. Every order flows through a Singapore-registered entity. Every product ships with CE certification, SGS reports, and full export documentation.</p>
+    <p id="st-p2">YENYONG. is not a trading middleman. We are the direct bridge between China's finest building materials factories and the world's builders, architects, and distributors — with the transparency and professionalism that global buyers deserve.</p>
+  </div>
+</div>
+</section>
+
+<section class="proof">
+<div class="proof-in">
+  <div>
+    <span class="eyebrow" id="pr-ey">The YENYONG. Difference</span>
+    <h2 id="pr-ti">Not just a supplier.<br><em>Your partner.</em></h2>
+    <p class="proof-story" id="pr-st">The old way: a factory in China you've never met, a middleman who disappears after payment, documents that don't pass customs. YENYONG. built a different model — Singapore contracts, CE certification, and two founders who answer your messages personally.</p>
+    <a href="#contact" class="btn-blue" id="pr-bt">Talk to us directly →</a>
+  </div>
+  <div>
+    <div class="sg">
+      <div class="sb"><div class="sb-n">40+</div><div class="sb-t" id="s1t">Countries</div><div class="sb-d" id="s1d">Buyers across Europe, Asia, Middle East and Africa trust YENYONG.</div></div>
+      <div class="sb"><div class="sb-n">5</div><div class="sb-t" id="s2t">Days</div><div class="sb-d" id="s2d">Free samples to your door worldwide. No cost, no obligation.</div></div>
+      <div class="sb"><div class="sb-n">7</div><div class="sb-t" id="s3t">Certifications</div><div class="sb-d">CE · SGS · ISO 9001 · FloorScore · B1 Fire · REACH · E0</div></div>
+      <div class="sb"><div class="sb-n">24h</div><div class="sb-t" id="s4t">Response</div><div class="sb-d" id="s4d">Every inquiry answered within 24 hours. Monday to Saturday.</div></div>
+    </div>
+    <div class="dg">
+      <div class="dc"><div class="dc-ic">🏛️</div><div class="dc-t" id="d1t">Singapore Entity</div><div class="dc-d" id="d1d">Every contract via KYT Trading & Construction Pte Ltd — Singapore-registered. Your money is protected. Your contract is enforceable.</div></div>
+      <div class="dc"><div class="dc-ic">🏭</div><div class="dc-t" id="d2t">Factory Direct</div><div class="dc-d" id="d2d">No middlemen. Foshan base connects directly to certified Pearl River Delta factories. Real factory FOB price.</div></div>
+      <div class="dc"><div class="dc-ic">📋</div><div class="dc-t" id="d3t">Full Documentation</div><div class="dc-d" id="d3d">CE Declaration, SGS reports, commercial invoice, packing list, bill of lading, certificate of origin. Customs-ready.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- HOW WE WORK — SERHANT. STYLE -->
+<section class="hww" id="how-we-work">
+<div class="hww-in">
+  <div class="hww-left">
+    <span class="hww-eyebrow" id="hww-ey">How We Work</span>
+    <h2 class="hww-title" id="hww-ti">This is how<br>we <em>deliver.</em></h2>
+    <p class="hww-sub" id="hww-su">From your first inquiry to the moment our products arrive at your site — every step is documented, certified, and backed by Singapore's legal framework. No surprises. No excuses.</p>
+    <div class="hww-stats">
+      <div><div class="hww-stat-n">24h</div><div class="hww-stat-l" id="hww-s1">First Response</div></div>
+      <div><div class="hww-stat-n">5</div><div class="hww-stat-l" id="hww-s2">Days — Free Samples</div></div>
+      <div><div class="hww-stat-n">7</div><div class="hww-stat-l" id="hww-s3">Certifications</div></div>
+      <div><div class="hww-stat-n">100%</div><div class="hww-stat-l" id="hww-s4">Documented</div></div>
+    </div>
+  </div>
+  <div class="hww-right">
+    <!-- Card 1: Certifications -->
+    <div class="hww-card hww-c1">
+      <div class="c1-header">
+        <div class="c1-logo">YENYONG.</div>
+        <div class="c1-badge">✓ Verified</div>
+      </div>
+      <div class="c1-body">
+        <div class="c1-cert-row"><div class="c1-cert-icon">🏅</div><div><div class="c1-cert-name">CE Conformity</div><div class="c1-cert-desc">EU Declaration of Conformity</div></div><div class="c1-status">ACTIVE</div></div>
+        <div class="c1-cert-row"><div class="c1-cert-icon">🔬</div><div><div class="c1-cert-name">SGS Tested</div><div class="c1-cert-desc">Third-party lab verified</div></div><div class="c1-status">ACTIVE</div></div>
+        <div class="c1-cert-row"><div class="c1-cert-icon">🌿</div><div><div class="c1-cert-name">FloorScore</div><div class="c1-cert-desc">Indoor air quality certified</div></div><div class="c1-status">ACTIVE</div></div>
+        <div class="c1-cert-row"><div class="c1-cert-icon">🔥</div><div><div class="c1-cert-name">B1 Fire Rating</div><div class="c1-cert-desc">Fire safety certified</div></div><div class="c1-status">ACTIVE</div></div>
+      </div>
+    </div>
+    <!-- Card 2: Sample Request -->
+    <div class="hww-card hww-c2">
+      <div class="c2-header">
+        <div class="c2-header-title">REQUEST SAMPLES</div>
+        <div style="display:flex;gap:5px">
+          <div class="c2-dot" style="background:#FF5F57"></div>
+          <div class="c2-dot" style="background:#FEBC2E"></div>
+          <div class="c2-dot" style="background:#28C840"></div>
+        </div>
+      </div>
+      <div class="c2-body">
+        <div class="c2-label">Company</div>
+        <div class="c2-field">ABC Building Materials GmbH</div>
+        <div class="c2-label">Product Interest</div>
+        <div class="c2-select">✓ SPC Rigid Core Flooring</div>
+        <div class="c2-label">Destination</div>
+        <div class="c2-field">Hamburg, Germany 🇩🇪</div>
+        <div class="c2-btn">Send Free Samples →</div>
+        <div class="c2-note">Delivered in 5 working days · No cost</div>
+      </div>
+    </div>
+    <!-- Card 3: Project Case -->
+    <div class="hww-card hww-c3">
+      <div class="c3-img">
+        <div>
+          <div class="c3-badge">Hotel Project · Morocco</div>
+          <div class="c3-proj-title">Four Points<br>Casablanca</div>
+        </div>
+      </div>
+      <div class="c3-body">
+        <div class="c3-tags"><div class="c3-tag">SPC Flooring</div><div class="c3-tag">WPC Panel</div></div>
+        <div class="c3-meta"><div class="c3-loc">MOROCCO · 2025</div><div class="c3-size">~5,000 m²</div></div>
+      </div>
+    </div>
+    <!-- Floating notification -->
+    <div class="hww-notif">
+      <div class="notif-dot"></div>
+      <div><div class="notif-text">New inquiry received</div><div class="notif-sub">Warsaw, Poland · WPC Wall Panel</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec prods" id="products">
+<div class="sec-in">
+  <div class="ph">
+    <div><span class="eyebrow" id="pd-ey">Product Range</span><h2 style="margin-bottom:0" id="pd-ti">Factory-direct.<br><em>CE certified.</em></h2></div>
+    <a href="#contact" class="btn-blue" id="pd-bt">Request Samples</a>
+  </div>
+  <div class="pg">
+    <div class="pc"><div class="carousel" id="p1-carousel">
+  <span class="prod-tag">01</span>
+  <div class="carousel-track" id="p1-track"><div class="carousel-slide placeholder" id="p1-slide-0">
+          <img src="images/spc/1.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="SPC · FLOORING product photo 1" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p1-slide-1">
+          <img src="images/spc/2.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="SPC · FLOORING product photo 2" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p1-slide-2">
+          <img src="images/spc/3.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="SPC · FLOORING product photo 3" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p1-slide-3">
+          <img src="images/spc/4.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="SPC · FLOORING product photo 4" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div></div>
+  <button class="car-btn car-prev" onclick="changeSlide('p1',-1)">‹</button>
+  <button class="car-btn car-next" onclick="changeSlide('p1',1)">›</button>
+  <div class="car-dots" id="p1-dots"><div class="car-dot on" onclick="goSlide('p1',0)"></div><div class="car-dot " onclick="goSlide('p1',1)"></div><div class="car-dot " onclick="goSlide('p1',2)"></div><div class="car-dot " onclick="goSlide('p1',3)"></div></div>
+</div><div class="pb"><h3 id="p1n">SPC Rigid Core Flooring</h3><div class="pr">USD 3–9<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div><p class="pf">FOB FOSHAN</p><ul class="ps"><li id="p1s1">Thickness <span class="sv">4–8mm</span></li><li>Wear Layer <span class="sv">0.3–0.7mm</span></li><li>Cert <span class="sv">CE / FloorScore</span></li><li id="p1s4">MOQ <span class="sv">500 m²</span></li></ul></div></div>
+    <div class="pc"><div class="carousel" id="p2-carousel">
+  <span class="prod-tag">02</span>
+  <div class="carousel-track" id="p2-track"><div class="carousel-slide placeholder" id="p2-slide-0">
+          <img src="images/wpc/1.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="WPC · WALL PANEL product photo 1" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p2-slide-1">
+          <img src="images/wpc/2.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="WPC · WALL PANEL product photo 2" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p2-slide-2">
+          <img src="images/wpc/3.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="WPC · WALL PANEL product photo 3" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p2-slide-3">
+          <img src="images/wpc/4.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="WPC · WALL PANEL product photo 4" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div></div>
+  <button class="car-btn car-prev" onclick="changeSlide('p2',-1)">‹</button>
+  <button class="car-btn car-next" onclick="changeSlide('p2',1)">›</button>
+  <div class="car-dots" id="p2-dots"><div class="car-dot on" onclick="goSlide('p2',0)"></div><div class="car-dot " onclick="goSlide('p2',1)"></div><div class="car-dot " onclick="goSlide('p2',2)"></div><div class="car-dot " onclick="goSlide('p2',3)"></div></div>
+</div><div class="pb"><h3 id="p2n">WPC Wood Plastic Wall Panel</h3><div class="pr">USD 5–11<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div><p class="pf">FOB FOSHAN</p><ul class="ps"><li id="p2s1">Thickness <span class="sv">8–12mm</span></li><li id="p2s2">Styles <span class="sv">Flat / Fluted / 3D</span></li><li>Cert <span class="sv">CE / SGS / B1 Fire</span></li><li id="p2s4">MOQ <span class="sv">500 m²</span></li></ul></div></div>
+    <div class="pc"><div class="carousel" id="p3-carousel">
+  <span class="prod-tag">03</span>
+  <div class="carousel-track" id="p3-track"><div class="carousel-slide placeholder" id="p3-slide-0">
+          <img src="images/pvc/1.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="PVC · WALL PANEL product photo 1" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p3-slide-1">
+          <img src="images/pvc/2.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="PVC · WALL PANEL product photo 2" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p3-slide-2">
+          <img src="images/pvc/3.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="PVC · WALL PANEL product photo 3" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div></div>
+  <button class="car-btn car-prev" onclick="changeSlide('p3',-1)">‹</button>
+  <button class="car-btn car-next" onclick="changeSlide('p3',1)">›</button>
+  <div class="car-dots" id="p3-dots"><div class="car-dot on" onclick="goSlide('p3',0)"></div><div class="car-dot " onclick="goSlide('p3',1)"></div><div class="car-dot " onclick="goSlide('p3',2)"></div></div>
+</div><div class="pb"><h3 id="p3n">PVC Decorative Wall Panel</h3><div class="pr">USD 3–7<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div><p class="pf">FOB FOSHAN</p><ul class="ps"><li id="p3s1">Thickness <span class="sv">5–9mm</span></li><li id="p3s2">Finishes <span class="sv">Marble / Wood / Gloss</span></li><li>Cert <span class="sv">SGS / CE</span></li><li id="p3s4">MOQ <span class="sv">500 m²</span></li></ul></div></div>
+    <div class="pc"><div class="carousel" id="p4-carousel">
+  <span class="prod-tag">04</span>
+  <div class="carousel-track" id="p4-track"><div class="carousel-slide placeholder" id="p4-slide-0">
+          <img src="images/bamboo/1.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="BAMBOO CRYSTAL product photo 1" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p4-slide-1">
+          <img src="images/bamboo/2.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="BAMBOO CRYSTAL product photo 2" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p4-slide-2">
+          <img src="images/bamboo/3.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="BAMBOO CRYSTAL product photo 3" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div></div>
+  <button class="car-btn car-prev" onclick="changeSlide('p4',-1)">‹</button>
+  <button class="car-btn car-next" onclick="changeSlide('p4',1)">›</button>
+  <div class="car-dots" id="p4-dots"><div class="car-dot on" onclick="goSlide('p4',0)"></div><div class="car-dot " onclick="goSlide('p4',1)"></div><div class="car-dot " onclick="goSlide('p4',2)"></div></div>
+</div><div class="pb"><h3 id="p4n">Bamboo Crystal Wall Panel</h3><div class="pr">USD 6–12<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div><p class="pf">FOB FOSHAN</p><ul class="ps"><li id="p4s1">Core <span class="sv">Bamboo + Mineral</span></li><li id="p4s2">Colors <span class="sv">200+</span></li><li>Cert <span class="sv">E0 / Eco</span></li><li id="p4s4">MOQ <span class="sv">500 m²</span></li></ul></div></div>
+    <div class="pc"><div class="carousel" id="p5-carousel">
+  <span class="prod-tag">05</span>
+  <div class="carousel-track" id="p5-track"><div class="carousel-slide placeholder" id="p5-slide-0">
+          <img src="images/carbon/1.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="CARBON CRYSTAL product photo 1" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p5-slide-1">
+          <img src="images/carbon/2.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="CARBON CRYSTAL product photo 2" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p5-slide-2">
+          <img src="images/carbon/3.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="CARBON CRYSTAL product photo 3" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div></div>
+  <button class="car-btn car-prev" onclick="changeSlide('p5',-1)">‹</button>
+  <button class="car-btn car-next" onclick="changeSlide('p5',1)">›</button>
+  <div class="car-dots" id="p5-dots"><div class="car-dot on" onclick="goSlide('p5',0)"></div><div class="car-dot " onclick="goSlide('p5',1)"></div><div class="car-dot " onclick="goSlide('p5',2)"></div></div>
+</div><div class="pb"><h3 id="p5n">Carbon Crystal Composite Panel</h3><div class="pr">USD 7–14<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div><p class="pf">FOB FOSHAN</p><ul class="ps"><li id="p5s1">Surface <span class="sv">Mirror / Matte UV</span></li><li id="p5s2">Use <span class="sv">Luxury / Hotels</span></li><li>Cert <span class="sv">SGS / CE</span></li><li id="p5s4">MOQ <span class="sv">500 m²</span></li></ul></div></div>
+    <div class="pc"><div class="carousel" id="p6-carousel">
+  <span class="prod-tag">06</span>
+  <div class="carousel-track" id="p6-track"><div class="carousel-slide placeholder" id="p6-slide-0">
+          <img src="images/tiles/1.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="CERAMIC TILES product photo 1" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p6-slide-1">
+          <img src="images/tiles/2.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="CERAMIC TILES product photo 2" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div><div class="carousel-slide placeholder" id="p6-slide-2">
+          <img src="images/tiles/3.jpg" 
+               onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'"
+               alt="CERAMIC TILES product photo 3" loading="lazy"/>
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Photo Coming Soon</span>
+        </div></div>
+  <button class="car-btn car-prev" onclick="changeSlide('p6',-1)">‹</button>
+  <button class="car-btn car-next" onclick="changeSlide('p6',1)">›</button>
+  <div class="car-dots" id="p6-dots"><div class="car-dot on" onclick="goSlide('p6',0)"></div><div class="car-dot " onclick="goSlide('p6',1)"></div><div class="car-dot " onclick="goSlide('p6',2)"></div></div>
+</div><div class="pb"><h3 id="p6n">Ceramic &amp; Porcelain Tiles</h3><div class="pr">USD 4–18<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div><p class="pf">FOB FOSHAN</p><ul class="ps"><li id="p6s1">Sizes <span class="sv">300×600–1200×2400mm</span></li><li id="p6s2">Finish <span class="sv">Matte / Gloss / Anti-slip</span></li><li>Cert <span class="sv">CE / SGS / ISO 13006</span></li><li id="p6s4">MOQ <span class="sv">500 m²</span></li></ul></div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec certs-bg" id="certifications">
+<div class="sec-in">
+  <span class="eyebrow" id="ce-ey">International Standards</span>
+  <h2 id="ce-ti">Every product.<br><em>Every certificate.</em></h2>
+  <div class="cg">
+    <div class="ce"><div class="ce-n">CE</div><div class="ce-d" id="c1">EU Conformity</div></div>
+    <div class="ce"><div class="ce-n">SGS</div><div class="ce-d" id="c2">Third-Party</div></div>
+    <div class="ce"><div class="ce-n">ISO 9001</div><div class="ce-d" id="c3">Quality Mgmt</div></div>
+    <div class="ce"><div class="ce-n">FloorScore</div><div class="ce-d" id="c4">Indoor Air</div></div>
+    <div class="ce"><div class="ce-n">B1 Fire</div><div class="ce-d" id="c5">Fire Safety</div></div>
+    <div class="ce"><div class="ce-n">REACH</div><div class="ce-d" id="c6">Chemicals</div></div>
+    <div class="ce"><div class="ce-n">E0</div><div class="ce-d" id="c7">Formaldehyde</div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec mkts" id="markets">
+<div class="sec-in">
+  <span class="eyebrow" id="mk-ey">Global Markets</span>
+  <h2 id="mk-ti">40+ countries.<br><em>One contact.</em></h2>
+  <div class="mg">
+    <div class="mk"><div class="mk-f">🇪🇺</div><div class="mk-n" id="m1">Europe</div><div class="mk-c">DE · PL · NL · FR · GB · BE · ES · IT</div></div>
+    <div class="mk"><div class="mk-f">🌏</div><div class="mk-n" id="m2">Central Asia</div><div class="mk-c">KZ · UZ · TM · TJ · KG · MN</div></div>
+    <div class="mk"><div class="mk-f">🇷🇺</div><div class="mk-n" id="m3">Russia &amp; CIS</div><div class="mk-c">RU · BY · UA · AM</div></div>
+    <div class="mk"><div class="mk-f">🌏</div><div class="mk-n" id="m4">Southeast Asia</div><div class="mk-c">MY · TH · VN · ID · PH · SG</div></div>
+    <div class="mk"><div class="mk-f">🌏</div><div class="mk-n" id="m5">East Asia</div><div class="mk-c">JP · KR</div></div>
+    <div class="mk"><div class="mk-f">🇲🇦</div><div class="mk-n" id="m6">North Africa</div><div class="mk-c">MA · TN · EG · DZ</div></div>
+    <div class="mk"><div class="mk-f">🇦🇪</div><div class="mk-n" id="m7">Middle East</div><div class="mk-c">AE · SA · QA · KW</div></div>
+    <div class="mk"><div class="mk-f">🌍</div><div class="mk-n" id="m8">Sub-Saharan Africa</div><div class="mk-c">ZA · NG · TZ · KE</div></div>
+    <div class="mk"><div class="mk-f">🇺🇸</div><div class="mk-n" id="m9">North America</div><div class="mk-c">US · CA</div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec how-bg" id="how">
+<div class="sec-in">
+  <span class="eyebrow" id="hw-ey">How to Order</span>
+  <h2 id="hw-ti">Four steps.<br><em>Door to door.</em></h2>
+  <div class="steps">
+    <div class="step"><div class="step-bar"></div><div class="step-n">01</div><h3 id="s1ti">Contact Us</h3><p id="s1de">Email or WhatsApp with your requirements and destination. Response within 24 hours.</p></div>
+    <div class="step"><div class="step-bar"></div><div class="step-n">02</div><h3 id="s2ti">Free Samples</h3><p id="s2de">Physical samples to your door in 5 working days. Worldwide. No cost. No obligation.</p></div>
+    <div class="step"><div class="step-bar"></div><div class="step-n">03</div><h3 id="s3ti">Sign &amp; Pay</h3><p id="s3de">Contract via Singapore entity. 30% deposit. T/T. Production starts immediately.</p></div>
+    <div class="step"><div class="step-bar"></div><div class="step-n">04</div><h3 id="s4ti">FOB Delivery</h3><p id="s4de">Full documentation: CE Declaration, SGS reports, B/L, CO, Invoice. On time, every time.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec projects-bg" id="projects">
+<div class="sec-in">
+  <span class="eyebrow" id="pj-ey">Projects &amp; Cases</span>
+  <h2 id="pj-ti">Where YENYONG.<br><em>has been.</em></h2>
+  <p style="font-size:14px;color:var(--gray);max-width:580px;line-height:1.75;margin-bottom:44px;margin-top:-24px" id="pj-in">From European residential developments to luxury hotels in Morocco — our materials are being installed across the globe.</p>
+  <div class="pj-g">
+    <div class="pj-c"><div class="pj-img" style="background:linear-gradient(135deg,#1F3AA0,#2347C5)"><span class="pj-badge" id="pb1">Hotel · Morocco</span><div class="pj-title" id="pjt1">Four Points by Sheraton<br>Casablanca</div></div><div class="pj-body"><div class="pj-tags"><span class="pj-tag">SPC Flooring</span><span class="pj-tag">WPC Wall Panel</span></div><p class="pj-desc" id="pjd1">International hotel in Casablanca. SPC rigid core flooring and WPC decorative wall panels for guest rooms and corridors.</p><div class="pj-meta"><div class="pj-loc">MOROCCO · 2025</div><div class="pj-sz">~5,000 m²</div></div></div></div>
+    <div class="pj-c"><div class="pj-img" style="background:linear-gradient(135deg,#162C80,#1F3AA0)"><span class="pj-badge" id="pb2">Residential · Germany</span><div class="pj-title" id="pjt2">Munich Residential<br>Development</div></div><div class="pj-body"><div class="pj-tags"><span class="pj-tag">SPC Flooring</span><span class="pj-tag">CE Certified</span></div><p class="pj-desc" id="pjd2">CE-certified SPC flooring for a German residential developer. FloorScore and E0 certified — Germany's strictest standards.</p><div class="pj-meta"><div class="pj-loc">GERMANY · 2025</div><div class="pj-sz">~3,200 m²</div></div></div></div>
+    <div class="pj-c"><div class="pj-img" style="background:linear-gradient(135deg,#2347C5,#1F3AA0)"><span class="pj-badge" id="pb3">Commercial · Kazakhstan</span><div class="pj-title" id="pjt3">Almaty Business<br>Centre</div></div><div class="pj-body"><div class="pj-tags"><span class="pj-tag">WPC Wall Panel</span><span class="pj-tag">Bamboo Crystal</span></div><p class="pj-desc" id="pjd3">WPC wall panels and bamboo crystal feature walls for a modern business centre in Almaty.</p><div class="pj-meta"><div class="pj-loc">KAZAKHSTAN · 2025</div><div class="pj-sz">~2,800 m²</div></div></div></div>
+    <div class="pj-c"><div class="pj-img" style="background:linear-gradient(135deg,#1A3490,#2347C5)"><span class="pj-badge" id="pb4">Luxury Villa · UAE</span><div class="pj-title" id="pjt4">Dubai Private<br>Villa Project</div></div><div class="pj-body"><div class="pj-tags"><span class="pj-tag">Carbon Crystal</span><span class="pj-tag">Bamboo Crystal</span></div><p class="pj-desc" id="pjd4">Carbon crystal and bamboo crystal panels for a luxury private villa in Dubai. Mirror-finish surfaces.</p><div class="pj-meta"><div class="pj-loc">UAE · 2025</div><div class="pj-sz">~1,500 m²</div></div></div></div>
+    <div class="pj-c"><div class="pj-img" style="background:linear-gradient(135deg,#1F3AA0,#162C80)"><span class="pj-badge" id="pb5">Retail Chain · Poland</span><div class="pj-title" id="pjt5">Warsaw Retail<br>Rollout</div></div><div class="pj-body"><div class="pj-tags"><span class="pj-tag">SPC Flooring</span><span class="pj-tag">PVC Wall Panel</span></div><p class="pj-desc" id="pjd5">Multi-location retail rollout — 12 locations in Warsaw, tight schedule. CE certified throughout.</p><div class="pj-meta"><div class="pj-loc">POLAND · 2025</div><div class="pj-sz">~8,000 m²</div></div></div></div>
+    <div class="pj-cta"><div class="pj-cta-lbl" id="pc-lb">Your project next?</div><h3 id="pc-ti">Want to see YENYONG. in your project?</h3><p id="pc-de">Request free samples and let us show you what our materials look like in real spaces.</p><a href="#contact" style="background:#fff;color:var(--blue);padding:12px 24px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:inline-block;transition:.15s" id="pc-bt">Request Samples →</a></div>
+  </div>
+  <p style="font-size:10px;color:#BBBBBB;margin-top:12px;text-align:center" id="pj-nt">* Project references are illustrative of the markets and project types YENYONG. serves.</p>
+</div>
+</section>
+
+<section class="sec culture-bg" id="culture">
+<div class="sec-in">
+  <span class="eyebrow" id="cu-ey">Our Culture</span>
+  <h2 id="cu-ti">Who we are.<br><em>What we stand for.</em></h2>
+  <div class="ct-tabs">
+    <button class="ct-tab on" onclick="showTab('mission')" id="tab-mission">Mission</button>
+    <button class="ct-tab" onclick="showTab('vision')" id="tab-vision">Vision</button>
+    <button class="ct-tab" onclick="showTab('values')" id="tab-values">Values</button>
+    <button class="ct-tab" onclick="showTab('promise')" id="tab-promise">Brand Promise</button>
+  </div>
+  <div class="ct-panel on" id="panel-mission">
+    <div class="ct-2">
+      <div class="ct-l"><span class="ct-lbl" id="ml-lb">MISSION</span><div class="ct-big" id="ml-bi">Connecting China's Manufacturing With The World.</div><div class="ct-it" id="ml-it">Built on trust, delivered with integrity.</div></div>
+      <div class="ct-r"><div class="ct-body" id="ml-bo">Our mission is to make the world's finest Foshan building materials accessible to builders and developers everywhere — backed by Singapore's international trading infrastructure and our unwavering commitment to quality and transparency.</div></div>
+    </div>
+  </div>
+  <div class="ct-panel" id="panel-vision">
+    <div class="ct-2">
+      <div class="ct-l"><span class="ct-lbl" id="vl-lb">VISION</span><div class="ct-big" id="vl-bi">Asia's Most Trusted Building Materials Export Brand.</div><div class="ct-it" id="vl-it">The partner of first choice in every market we serve.</div></div>
+      <div class="ct-r"><div class="ct-body" id="vl-bo">In every market we serve, we want YENYONG. to be the first name buyers think of — not because we're the cheapest, but because we're the most reliable. We envision a future where trust, transparency, and professionalism define what it means to buy building materials from Asia.</div></div>
+    </div>
+  </div>
+  <div class="ct-panel" id="panel-values">
+    <div class="vg">
+      <div class="val"><div class="val-n">01</div><div class="val-t" id="v1t">Loyalty</div><div class="val-d" id="v1d">Royal blue — long-term commitment to every partner. Never sacrificing relationships for short-term gain.</div></div>
+      <div class="val"><div class="val-n">02</div><div class="val-t" id="v2t">Transparency</div><div class="val-d" id="v2d">White — clear quotes, explicit terms. No hidden fees, no vague promises. Ever.</div></div>
+      <div class="val"><div class="val-n">03</div><div class="val-t" id="v3t">Integrity</div><div class="val-d" id="v3d">Delivery dates are delivery dates. Specs are specs. Any issue — we tell you first, always.</div></div>
+      <div class="val"><div class="val-n">04</div><div class="val-t" id="v4t">Precision</div><div class="val-d" id="v4d">1mm of variance can make a shipment unusable. Near-zero tolerance on every specification.</div></div>
+      <div class="val"><div class="val-n">05</div><div class="val-t" id="v5t">Global Reach</div><div class="val-d" id="v5d">YenYong — extending across oceans. We know your market, speak your language, work at your pace.</div></div>
+    </div>
+  </div>
+  <div class="ct-panel" id="panel-promise">
+    <div class="promise">
+      <span class="pr-lbl" id="pp-lb">BRAND PROMISE</span>
+      <div class="pr-big" id="pp-bi">YENYONG. — Where Trust Meets Quality.</div>
+      <div class="pr-sub" id="pp-su">延洋 · Trust as the bridge, quality as the proof. · 以信任为桥，以品质为证。</div>
+      <div class="pr-cards">
+        <div class="pr-card"><div class="pr-ic">🤝</div><div class="pr-ct" id="pc1t">Trust First</div><div class="pr-cd" id="pc1d">Every relationship starts with trust. Every shipment backs it up. No exceptions.</div></div>
+        <div class="pr-card"><div class="pr-ic">🏆</div><div class="pr-ct" id="pc2t">Quality Always</div><div class="pr-cd" id="pc2d">CE certified. SGS tested. ISO 9001. Seven certifications. The proof is in the documentation.</div></div>
+        <div class="pr-card"><div class="pr-ic">🌏</div><div class="pr-ct" id="pc3t">Global Standard</div><div class="pr-cd" id="pc3d">Singapore registered. International contracts. Professional service at every stage.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec founders-bg" id="founders">
+<div class="sec-in">
+  <div class="fdr-hd">
+    <h2 id="fd-ti">Two names.<br><em>One promise.</em></h2>
+    <p id="fd-in">YENYONG. is founded by two partners who understand that the building materials industry needs something more — not just products, but trust, transparency, and a genuine global reach.</p>
+  </div>
+  <div class="fg">
+    <div class="fc"><div class="fy">Y.</div><div class="fn">Colin Lin Yan · 林延</div><div class="ft-" id="f1ti">Co-Founder &amp; Managing Director · Foshan</div><div class="fd" id="f1de">Based in Foshan, Guangdong. Manages all factory relationships, quality control, production scheduling, and logistics. The man who ensures every product that ships under YENYONG. is exactly what was promised.</div></div>
+    <div class="fc"><div class="fy">Y.</div><div class="fn">Chen Yangbo · 陈洋博</div><div class="ft-" id="f2ti">Co-Founder &amp; CEO · Singapore</div><div class="fd" id="f2de">Based in Singapore. Heads KYT Trading &amp; Construction Pte Ltd and OVERARCHING PTE. LTD. Drives global sales across Europe, Middle East, Southeast Asia, and Africa. The man who brings YENYONG. to the world.</div></div>
+  </div>
+</div>
+</section>
+
+<section id="contact" style="padding:0">
+<div class="contact-in">
+
+  <!-- LEFT: Founders + Addresses -->
+  <div class="ct-left">
+    <div class="ct-left-top">
+      <span class="ct-left-eyebrow" id="ct-ey">Get In Touch</span>
+      <h2 class="ct-left-title" id="ct-ti">Start with<br><em>samples.</em></h2>
+      <p class="ct-left-sub" id="ct-su">Free samples worldwide in 5 working days. We respond within 24 hours, Monday to Saturday — personally.</p>
+
+      <!-- Founder Cards -->
+      <div class="ct-founders">
+
+        <!-- Colin -->
+        <div class="ct-founder">
+          <div class="ct-founder-img">
+            <img src="founder_colin.jpg" alt="Colin Lin Yan — Co-Founder YENYONG." onerror="this.parentElement.innerHTML='<div style='font-size:28px;opacity:.3'>👤</div>'"/>
+          </div>
+          <div class="ct-founder-info">
+            <div class="ct-founder-name">Colin Lin Yan · 林延</div>
+            <div class="ct-founder-title" id="f1-title">Co-Founder &amp; Managing Director · Foshan</div>
+            <div class="ct-founder-contacts">
+              <a href="https://wa.me/8618929980066" class="ct-founder-contact" target="_blank">
+                <span>💬</span> WhatsApp +86 189 2998 0066
+              </a>
+              <a href="mailto:mellamocolin1991@gmail.com" class="ct-founder-contact">
+                <span>✉</span> mellamocolin1991@gmail.com
+              </a>
+              <a href="https://www.yenyong.com" class="ct-founder-contact" target="_blank">
+                <span>🌐</span> www.yenyong.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yangbo — placeholder -->
+        <div class="ct-founder">
+          <div class="ct-founder-placeholder">
+            <div style="font-size:22px;opacity:.25">👤</div>
+          </div>
+          <div class="ct-founder-info">
+            <div class="ct-founder-name">Chen Yangbo · 陈洋博</div>
+            <div class="ct-founder-title" id="f2-title">Co-Founder &amp; CEO · Singapore</div>
+            <div class="ct-founder-contacts">
+              <div class="ct-founder-contact" style="color:rgba(255,255,255,.25)">
+                <span>💬</span> <span id="ct-wa2">WhatsApp — Coming Soon</span>
+              </div>
+              <a href="mailto:mellamocolin1991@gmail.com" class="ct-founder-contact">
+                <span>✉</span> mellamocolin1991@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /founders -->
+    </div>
+
+    <!-- Addresses -->
+    <div class="ct-addresses">
+      <div class="ct-addr">
+        <div class="ct-addr-flag">🇸🇬</div>
+        <div class="ct-addr-country" id="ct-sg-label">Singapore HQ</div>
+        <div class="ct-addr-text">KYT Trading &amp; Construction Pte Ltd<br>7 Gambas Crescent, #08-31<br>ARK@GAMBAS<br>Singapore 757087</div>
+        <a href="https://maps.google.com/?q=7+Gambas+Crescent+Singapore+757087" target="_blank" class="ct-addr-map">📍 View on Map →</a>
+      </div>
+      <div class="ct-addr">
+        <div class="ct-addr-flag">🇨🇳</div>
+        <div class="ct-addr-country" id="ct-fs-label">Foshan Office</div>
+        <div class="ct-addr-text" style="color:rgba(255,255,255,.25);font-style:italic">Foshan YenYong International<br>Building Materials Trading Co., Ltd.<br><br>Address coming soon</div>
+      </div>
+    </div>
+
+  </div><!-- /ct-left -->
+
+  <!-- RIGHT: Form -->
+  <div class="ct-right">
+    <span class="ct-right-label" id="ct-form-label">Send Us A Message</span>
+    <div class="ct-form">
+      <div class="ct-form-row">
+        <div class="ct-fg"><label id="fl1">Name</label><input type="text" placeholder="John Smith"/></div>
+        <div class="ct-fg"><label id="fl2">Company</label><input type="text" placeholder="ABC Trading Ltd"/></div>
+      </div>
+      <div class="ct-form-row">
+        <div class="ct-fg"><label id="fl3">Email</label><input type="email" placeholder="john@company.com"/></div>
+        <div class="ct-fg"><label id="fl4">Country</label>
+          <select>
+            <option id="fl4o" value="">Select country...</option>
+            <option>Germany</option><option>Poland</option><option>France</option>
+            <option>Netherlands</option><option>United Kingdom</option><option>Belgium</option>
+            <option>Spain</option><option>Italy</option><option>UAE</option>
+            <option>Saudi Arabia</option><option>Morocco</option><option>Egypt</option>
+            <option>South Africa</option><option>Nigeria</option><option>Tanzania</option>
+            <option>Japan</option><option>South Korea</option><option>Malaysia</option>
+            <option>Thailand</option><option>Vietnam</option><option>Indonesia</option>
+            <option>Kazakhstan</option><option>Uzbekistan</option><option>Azerbaijan</option>
+            <option>Georgia</option><option>Russia</option><option>China</option>
+            <option>USA</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="ct-fg"><label id="fl5">Product Interest</label>
+        <select>
+          <option id="fl5o" value="">Select product...</option>
+          <option id="fp1">SPC Rigid Core Flooring</option>
+          <option id="fp2">WPC Wood Plastic Wall Panel</option>
+          <option id="fp3">PVC Decorative Wall Panel</option>
+          <option id="fp4">Bamboo Crystal Panel</option>
+          <option id="fp5">Carbon Crystal Panel</option>
+          <option id="fp6">Ceramic &amp; Porcelain Tiles</option>
+          <option id="fp7">Multiple Products</option>
+        </select>
+      </div>
+      <div class="ct-fg"><label id="fl6">Message</label>
+        <textarea placeholder="Tell us your requirements — thickness, colors, quantity, destination port..."></textarea>
+      </div>
+      <button class="ct-submit" id="fl-sub">Request Free Samples →</button>
+    </div>
+    <p class="ct-promise" id="ct-promise">📦 Free samples · 5 working days worldwide · No cost · No obligation<br>✉ Every inquiry answered within 24 hours</p>
+  </div>
+
+</div>
+</section>
+
+<!-- MAP SECTION -->
+<div class="map-section">
+<div class="map-in">
+  <!-- Singapore Map -->
+  <div class="map-frame">
+    <div class="map-label">🇸🇬 Singapore HQ</div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.613!2d103.8198!3d1.4390!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da13b8b9a2e7a5%3A0x1234567890abcdef!2s7%20Gambas%20Crescent%2C%20Singapore%20757087!5e0!3m2!1sen!2ssg!4v1234567890"
+      width="100%" height="320" style="border:0" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <!-- Foshan Placeholder -->
+  <div class="map-placeholder">
+    <div class="map-placeholder-icon">📍</div>
+    <div class="map-placeholder-text">Foshan Office — Coming Soon</div>
+    <div style="font-size:10px;color:rgba(255,255,255,.15)">佛山办公室地址待定</div>
+  </div>
+</div>
+</div>
+
+
+<footer>
+<div class="ft">
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 252" width="18" height="26" style="vertical-align:middle;margin-right:8px" aria-hidden="true">
+  <polygon points="92,2  16,82  40,82  88,18"   fill="#1F3AA0"/>
+  <polygon points="92,2  168,82  144,82  96,18"  fill="#1F3AA0"/>
+  <polygon points="92,28  54,82  76,82  92,50"   fill="#1F3AA0"/>
+  <polygon points="92,28  130,82  108,82  92,50" fill="#1F3AA0"/>
+  <polygon points="92,8  40,82  54,82  92,34"    fill="#fff"/>
+  <polygon points="92,8  144,82  130,82  92,34"  fill="#fff"/>
+  <polygon points="76,82  108,82  111,220  73,220" fill="#1F3AA0"/>
+  <rect x="57"  y="220" width="70" height="10" fill="#1F3AA0" rx="1"/>
+  <rect x="40"  y="230" width="104" height="7" fill="#1F3AA0" rx="1" opacity="0.65"/>
+</svg>YENYONG.</div>
+      <div class="ft-tgl" id="ft-tg">Foshan · Singapore · Global</div>
+      <div class="ft-co">Foshan YenYong International Building Materials Trading Co., Ltd.<br>Affiliate of KYT Trading &amp; Construction Pte Ltd · Singapore</div>
+    </div>
+    <div class="ft-cols">
+      <div class="fcc"><h4 id="fc1h">Products</h4><a href="#products">SPC Flooring</a><a href="#products">WPC Wall Panel</a><a href="#products">PVC Wall Panel</a><a href="#products">Bamboo Crystal</a><a href="#products">Carbon Crystal</a><a href="#products">Ceramic Tiles</a></div>
+      <div class="fcc"><h4 id="fc2h">Company</h4><a href="#founders" id="fc21">Our Story</a><a href="#culture" id="fc22">Our Values</a><a href="#certifications" id="fc23">Certifications</a><a href="#markets" id="fc24">Markets</a></div>
+      <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:mellamocolin1991@gmail.com">mellamocolin1991@gmail.com</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Request Samples</a></div>
+    </div>
+  </div>
+  <div class="ft-btm">
+    <p class="ft-copy" id="ft-cp">© 2026 Foshan YenYong International Building Materials Trading Co., Ltd. · KYT Trading &amp; Construction Pte Ltd · Singapore · All rights reserved.</p>
+    <div class="ft-badges"><span class="ft-b">CE</span><span class="ft-b">SGS</span><span class="ft-b">ISO 9001</span><span class="ft-b">FloorScore</span><span class="ft-b">B1 FIRE</span><span class="ft-b">REACH</span><span class="ft-b">ISO 13006</span></div>
+  </div>
+</div>
+</footer>
+
+<script>
+var T={};
+T.en={'h-ey':'Foshan · Singapore · Global','hww-ey':'How We Work','hww-ti':'This is how<br>we <em>deliver.</em>','hww-su':"From your first inquiry to the moment our products arrive — every step is documented, certified, and backed by Singapore's legal framework. No surprises.", 'hww-s1':'First Response','hww-s2':'Days — Free Samples','hww-s3':'Certifications','hww-s4':'Documented','h-ti':'Quality from China.<br><em>Trust from Singapore.</em>','h-su':'For too long, buying building materials from China meant uncertainty — wrong specs, late shipments, no one to call. YENYONG. was built to change that.','h-b1':'View Products','h-b2':'Request Free Samples','hs1':'Countries','hs2':'Certified','hs3':'Min. Order','hs4':'Days — Free Samples','hs5':'Registered','tb1':'📧 Request Samples','tb2':'🏅 Certifications','tb3':'🌐 Singapore · Foshan','n1':'Products','n2':'Certifications','n3':'Markets','n4':'Projects','n5':'Culture','n6':'About','n7':'Contact','nav-cta':'Free Samples','st-ti':'The world doesn\'t need another building materials supplier.<br>It needs <em>YENYONG.</em>','st-p1':'Two founders. One in Foshan managing factory relationships, quality control, and production. One in Singapore driving contracts, international payments, and global sales. Every order flows through a Singapore-registered entity. Every product ships with CE certification, SGS reports, and full export documentation.','st-p2':'YENYONG. is not a trading middleman. We are the direct bridge between China\'s finest building materials factories and the world\'s builders, architects, and distributors — with the transparency and professionalism that global buyers deserve.','pr-ey':'The YENYONG. Difference','pr-ti':'Not just a supplier.<br><em>Your partner.</em>','pr-st':'The old way: a factory in China you\'ve never met, a middleman who disappears after payment, documents that don\'t pass customs. YENYONG. built a different model — Singapore contracts, CE certification, and two founders who answer your messages personally.','pr-bt':'Talk to us directly →','s1t':'Countries','s1d':'Buyers across Europe, Asia, Middle East and Africa trust YENYONG.','s2t':'Days','s2d':'Free samples to your door worldwide. No cost, no obligation.','s3t':'Certifications','s4t':'Response','s4d':'Every inquiry answered within 24 hours. Monday to Saturday.','d1t':'Singapore Entity','d1d':'Every contract via KYT Trading & Construction Pte Ltd — Singapore-registered. Your money is protected. Your contract is enforceable.','d2t':'Factory Direct','d2d':'No middlemen. Foshan base connects directly to certified Pearl River Delta factories. Real factory FOB price.','d3t':'Full Documentation','d3d':'CE Declaration, SGS reports, commercial invoice, packing list, bill of lading, certificate of origin. Customs-ready.','pd-ey':'Product Range','pd-ti':'Factory-direct.<br><em>CE certified.</em>','pd-bt':'Request Samples','p1n':'SPC Rigid Core Flooring','p2n':'WPC Wood Plastic Wall Panel','p3n':'PVC Decorative Wall Panel','p4n':'Bamboo Crystal Wall Panel','p5n':'Carbon Crystal Composite Panel','p6n':'Ceramic & Porcelain Tiles','p1s1':'Thickness','p1s4':'MOQ','p2s1':'Thickness','p2s2':'Styles','p2s4':'MOQ','p3s1':'Thickness','p3s2':'Finishes','p3s4':'MOQ','p4s1':'Core','p4s2':'Colors','p4s4':'MOQ','p5s1':'Surface','p5s2':'Use','p5s4':'MOQ','p6s1':'Sizes','p6s2':'Finish','p6s4':'MOQ','ce-ey':'International Standards','ce-ti':'Every product.<br><em>Every certificate.</em>','c1':'EU Conformity','c2':'Third-Party','c3':'Quality Mgmt','c4':'Indoor Air','c5':'Fire Safety','c6':'Chemicals','c7':'Formaldehyde','mk-ey':'Global Markets','mk-ti':'40+ countries.<br><em>One contact.</em>','m1':'Europe','m2':'Central Asia','m3':'Russia & CIS','m4':'Southeast Asia','m5':'East Asia','m6':'North Africa','m7':'Middle East','m8':'Sub-Saharan Africa','m9':'North America','hw-ey':'How to Order','hw-ti':'Four steps.<br><em>Door to door.</em>','s1ti':'Contact Us','s1de':'Email or WhatsApp with your requirements and destination. Response within 24 hours.','s2ti':'Free Samples','s2de':'Physical samples to your door in 5 working days. Worldwide. No cost. No obligation.','s3ti':'Sign & Pay','s3de':'Contract via Singapore entity. 30% deposit. T/T. Production starts immediately.','s4ti':'FOB Delivery','s4de':'Full documentation: CE Declaration, SGS reports, B/L, CO, Invoice. On time, every time.','pj-ey':'Projects & Cases','pj-ti':'Where YENYONG.<br><em>has been.</em>','pj-in':'From European residential developments to luxury hotels in Morocco — our materials are being installed across the globe.','pb1':'Hotel · Morocco','pjt1':'Four Points by Sheraton<br>Casablanca','pjd1':'International hotel in Casablanca. SPC rigid core flooring and WPC decorative wall panels for guest rooms and corridors.','pb2':'Residential · Germany','pjt2':'Munich Residential<br>Development','pjd2':'CE-certified SPC flooring for a German residential developer. FloorScore and E0 certified.','pb3':'Commercial · Kazakhstan','pjt3':'Almaty Business<br>Centre','pjd3':'WPC wall panels and bamboo crystal feature walls for a modern business centre in Almaty.','pb4':'Luxury Villa · UAE','pjt4':'Dubai Private<br>Villa Project','pjd4':'Carbon crystal and bamboo crystal panels for a luxury private villa in Dubai. Mirror-finish surfaces.','pb5':'Retail Chain · Poland','pjt5':'Warsaw Retail<br>Rollout','pjd5':'Multi-location retail rollout — 12 locations in Warsaw, tight schedule. CE certified throughout.','pc-lb':'Your project next?','pc-ti':'Want to see YENYONG. in your project?','pc-de':'Request free samples and let us show you what our materials look like in real spaces.','pc-bt':'Request Samples →','pj-nt':'* Project references are illustrative of the markets and project types YENYONG. serves.','cu-ey':'Our Culture','cu-ti':'Who we are.<br><em>What we stand for.</em>','tab-mission':'Mission','tab-vision':'Vision','tab-values':'Values','tab-promise':'Brand Promise','ml-lb':'MISSION','ml-bi':'Connecting China\'s Manufacturing With The World.','ml-it':'Built on trust, delivered with integrity.','ml-bo':'Our mission is to make the world\'s finest Foshan building materials accessible to builders and developers everywhere — backed by Singapore\'s international trading infrastructure and our unwavering commitment to quality.','vl-lb':'VISION','vl-bi':'Asia\'s Most Trusted Building Materials Export Brand.','vl-it':'The partner of first choice in every market we serve.','vl-bo':'In every market we serve, we want YENYONG. to be the first name buyers think of — not because we\'re the cheapest, but because we\'re the most reliable.','v1t':'Loyalty','v1d':'Royal blue — long-term commitment to every partner. Never sacrificing relationships for short-term gain.','v2t':'Transparency','v2d':'White — clear quotes, explicit terms. No hidden fees, no vague promises. Ever.','v3t':'Integrity','v3d':'Delivery dates are delivery dates. Specs are specs. Any issue — we tell you first, always.','v4t':'Precision','v4d':'1mm of variance can make a shipment unusable. Near-zero tolerance on every specification.','v5t':'Global Reach','v5d':'YenYong — extending across oceans. We know your market, speak your language, work at your pace.','pp-lb':'BRAND PROMISE','pp-bi':'YENYONG. — Where Trust Meets Quality.','pp-su':'延洋 · Trust as the bridge, quality as the proof. · 以信任为桥，以品质为证。','pc1t':'Trust First','pc1d':'Every relationship starts with trust. Every shipment backs it up. No exceptions.','pc2t':'Quality Always','pc2d':'CE certified. SGS tested. ISO 9001. Seven certifications. The proof is in the documentation.','pc3t':'Global Standard','pc3d':'Singapore registered. International contracts. Professional service at every stage.','fd-ti':'Two names.<br><em>One promise.</em>','fd-in':'YENYONG. is founded by two partners who understand that the building materials industry needs something more — not just products, but trust, transparency, and a genuine global reach.','f1ti':'Co-Founder & Managing Director · Foshan','f1de':'Based in Foshan, Guangdong. Manages all factory relationships, quality control, production scheduling, and logistics. The man who ensures every product that ships under YENYONG. is exactly what was promised.','f2ti':'Co-Founder & CEO · Singapore','f2de':'Based in Singapore. Heads KYT Trading & Construction Pte Ltd and OVERARCHING PTE. LTD. Drives global sales across Europe, Middle East, Southeast Asia, and Africa. The man who brings YENYONG. to the world.','ct-ey':'Get In Touch','ct-ti':'Start with<br><em>samples.</em>','ct-su':'Free samples worldwide in 5 working days. We respond within 24 hours, Monday to Saturday.','ct-em':'Email','ct-wa':'WhatsApp / WeChat','ct-sg':'Singapore','ct-fs':'Foshan','fl1':'Name','fl2':'Company','fl3':'Email','fl4':'Country','fl4o':'Select country...','fl5':'Product Interest','fl5o':'Select product...','fp1':'SPC Rigid Core Flooring','fp2':'WPC Wood Plastic Wall Panel','fp3':'PVC Decorative Wall Panel','fp4':'Bamboo Crystal Panel','fp5':'Carbon Crystal Panel','fp6':'Ceramic & Porcelain Tiles','fp7':'Multiple Products','fl6':'Message','fl-sub':'Request Free Samples →','ft-tg':'Foshan · Singapore · Global','fc1h':'Products','fc2h':'Company','fc3h':'Contact','fc21':'Our Story','fc22':'Our Values','fc23':'Certifications','fc24':'Markets','fc32':'WhatsApp','fc33':'Request Samples','ft-cp':'© 2026 Foshan YenYong International Building Materials Trading Co., Ltd. · KYT Trading & Construction Pte Ltd · Singapore · All rights reserved.'};
+
+T.de=Object.assign({},T.en,{'hww-ey':'So arbeiten wir','hww-ti':'So liefern<br>wir <em>Ergebnisse.</em>','hww-su':'Von Ihrer ersten Anfrage bis zur Lieferung — jeder Schritt ist dokumentiert, zertifiziert und durch Singapurs Rechtsrahmen abgesichert. Keine Überraschungen.','hww-s1':'Erstantwort','hww-s2':'Tage — Kostenlose Muster','hww-s3':'Zertifizierungen','hww-s4':'Dokumentiert','h-ey':'Foshan · Singapur · Global','h-ti':'Qualität aus China.<br><em>Vertrauen aus Singapur.</em>','h-su':'Zu lange bedeutete der Kauf von Baumaterialien aus China Unsicherheit — falsche Spezifikationen, verspätete Lieferungen, niemanden zu erreichen. YENYONG. wurde gegründet, um das zu ändern.','h-b1':'Produkte ansehen','h-b2':'Kostenlose Muster anfragen','hs1':'Länder','hs3':'Mindestbestellung','hs4':'Tage — Kostenlose Muster','hs5':'Registriert','tb1':'📧 Muster anfragen','tb2':'🏅 Zertifizierungen','tb3':'🌐 Singapur · Foshan','n1':'Produkte','n2':'Zertifizierungen','n3':'Märkte','n4':'Projekte','n5':'Kultur','n6':'Über uns','n7':'Kontakt','nav-cta':'Muster anfragen','st-ti':'Die Welt braucht keinen weiteren Baustofflieferanten.<br>Sie braucht <em>YENYONG.</em>','st-p1':'Zwei Gründer. Einer in Foshan verwaltet Fabrikbeziehungen, Qualitätskontrolle und Produktion. Einer in Singapur treibt Verträge, internationale Zahlungen und globalen Vertrieb voran. Jede Bestellung läuft über eine in Singapur registrierte Gesellschaft. Jedes Produkt wird mit CE-Zertifizierung und vollständiger Exportdokumentation geliefert.','st-p2':'YENYONG. ist kein Handelsmittler. Wir sind die direkte Brücke zwischen Chinas besten Baustoffabriken und den Bauherren, Architekten und Händlern der Welt — mit der Transparenz und Professionalität, die globale Käufer verdienen.','pr-ey':'Der YENYONG. Unterschied','pr-ti':'Nicht nur ein Lieferant.<br><em>Ihr Partner.</em>','pr-st':'Der alte Weg: eine Fabrik in China, die Sie nie getroffen haben, ein Mittelsmann, der nach der Zahlung verschwindet, Dokumente, die den Zoll nicht passieren. YENYONG. hat ein anderes Modell aufgebaut — Singapur-Verträge, CE-Zertifizierung und zwei Gründer, die persönlich antworten.','pr-bt':'Direkt mit uns sprechen →','s1t':'Länder','s1d':'Käufer in Europa, Asien, Nahost und Afrika vertrauen YENYONG.','s2t':'Tage','s2d':'Kostenlose Muster weltweit an Ihre Tür. Kein Preis, keine Verpflichtung.','s3t':'Zertifizierungen','s4t':'Antwortzeit','s4d':'Jede Anfrage innerhalb von 24 Stunden beantwortet. Montag bis Samstag.','d1t':'Singapur-Gesellschaft','d1d':'Jeder Vertrag über KYT Trading & Construction Pte Ltd — in Singapur registriert. Ihr Geld ist geschützt.','d2t':'Direkt vom Werk','d2d':'Keine Mittelsleute. Foshan-Basis verbindet sich direkt mit zertifizierten Fabriken. Echter FOB-Fabrikpreis.','d3t':'Vollständige Dokumentation','d3d':'CE-Erklärung, SGS-Berichte, Handelsrechnung, Packliste, Konnossement, Ursprungszeugnis. Zollfertig.','pd-ey':'Produktpalette','pd-ti':'Direkt vom Werk.<br><em>CE-zertifiziert.</em>','pd-bt':'Muster anfragen','p1n':'SPC Starrkern-Vinylboden','p2n':'WPC Holz-Kunststoff Wandpaneel','p3n':'PVC Dekorwandpaneel','p4n':'Bambus-Kristall Wandpaneel','p5n':'Carbon-Kristall Verbundpaneel','p6n':'Keramik- und Porzellankacheln','p1s1':'Stärke','p1s4':'Mindestmenge','p2s1':'Stärke','p2s2':'Stile','p2s4':'Mindestmenge','p3s1':'Stärke','p3s2':'Oberflächen','p3s4':'Mindestmenge','p4s1':'Kern','p4s2':'Farben','p4s4':'Mindestmenge','p5s1':'Oberfläche','p5s2':'Verwendung','p5s4':'Mindestmenge','p6s1':'Formate','p6s2':'Finish','p6s4':'Mindestmenge','ce-ey':'Internationale Normen','ce-ti':'Jedes Produkt.<br><em>Jedes Zertifikat.</em>','c1':'EU-Konformität','c2':'Drittpartei','c3':'Qualitätsmanagement','c4':'Raumluft','c5':'Brandschutz','c6':'Chemikalien','c7':'Formaldehyd','mk-ey':'Globale Märkte','mk-ti':'40+ Länder.<br><em>Ein Ansprechpartner.</em>','m1':'Europa','m2':'Zentralasien','m3':'Russland & GUS','m4':'Südostasien','m5':'Ostasien','m6':'Nordafrika','m7':'Naher Osten','m8':'Subsahara-Afrika','m9':'Nordamerika','hw-ey':'So bestellen Sie','hw-ti':'Vier Schritte.<br><em>Von Tür zu Tür.</em>','s1ti':'Kontakt aufnehmen','s1de':'E-Mail oder WhatsApp mit Ihren Anforderungen. Antwort innerhalb von 24 Stunden.','s2ti':'Kostenlose Muster','s2de':'Physische Muster in 5 Werktagen weltweit. Kostenlos. Ohne Verpflichtung.','s3ti':'Unterzeichnen & Zahlen','s3de':'Vertrag über Singapur-Gesellschaft. 30% Anzahlung. T/T. Produktion beginnt sofort.','s4ti':'FOB-Lieferung','s4de':'Vollständige Dokumentation: CE-Erklärung, SGS-Berichte, Konnossement, Ursprungszeugnis, Rechnung.','pj-ey':'Projekte & Referenzen','pj-ti':'Wo YENYONG.<br><em>war.</em>','pj-in':'Von europäischen Wohnprojekten bis hin zu Luxushotels in Marokko — unsere Materialien werden weltweit verbaut.','pb1':'Hotel · Marokko','pjd1':'Internationales Hotel in Casablanca. SPC-Boden und WPC-Wandpaneele für Gästezimmer und Flure.','pb2':'Wohnbau · Deutschland','pjd2':'CE-zertifizierter SPC-Boden für einen deutschen Bauträger. FloorScore und E0 zertifiziert.','pb3':'Gewerbe · Kasachstan','pjd3':'WPC-Wandpaneele und Bambus-Kristall-Akzentwände für ein modernes Bürozentrum in Almaty.','pb4':'Luxusvilla · VAE','pjd4':'Carbon-Kristall und Bambus-Kristall-Paneele für eine Luxusvilla in Dubai.','pb5':'Handelskette · Polen','pjd5':'Rollout in 12 Standorten in Warschau. Enges Timing. CE-zertifiziert.','pc-lb':'Ihr Projekt als nächstes?','pc-ti':'Wollen Sie YENYONG. in Ihrem Projekt?','pc-de':'Fordern Sie kostenlose Muster an.','pc-bt':'Muster anfragen →','pj-nt':'* Projektreferenzen sind illustrativ für die Märkte und Projekttypen, die YENYONG. bedient.','cu-ey':'Unsere Kultur','cu-ti':'Wer wir sind.<br><em>Wofür wir stehen.</em>','tab-mission':'Mission','tab-vision':'Vision','tab-values':'Werte','tab-promise':'Markenversprechen','ml-lb':'MISSION','ml-bi':'Chinas Fertigung mit der Welt verbinden.','ml-it':'Auf Vertrauen aufgebaut, mit Integrität geliefert.','ml-bo':'Unsere Mission ist es, die besten Baumaterialien aus Foshan für Bauherren und Entwickler weltweit zugänglich zu machen — gestützt durch Singapurs internationale Handelsinfrastruktur.','vl-lb':'VISION','vl-bi':'Asiens vertrauenswürdigste Baustoffexportmarke.','vl-it':'Der erste Ansprechpartner in jedem Markt.','vl-bo':'Wir wollen, dass YENYONG. der erste Name ist, an den Käufer denken — nicht weil wir die günstigsten sind, sondern weil wir die zuverlässigsten sind.','v1t':'Loyalität','v1d':'Königsblau — langfristiges Engagement für jeden Partner. Niemals Beziehungen für kurzfristigen Gewinn opfern.','v2t':'Transparenz','v2d':'Weiß — klare Angebote, eindeutige Bedingungen. Keine versteckten Gebühren. Niemals.','v3t':'Integrität','v3d':'Liefertermine sind Liefertermine. Bei jedem Problem informieren wir Sie zuerst, immer.','v4t':'Präzision','v4d':'1 mm Abweichung kann eine Lieferung unbrauchbar machen. Nahezu null Toleranz.','v5t':'Globale Reichweite','v5d':'YenYong — über Ozeane hinaus. Wir kennen Ihren Markt, sprechen Ihre Sprache.','pp-lb':'MARKENVERSPRECHEN','pp-bi':'YENYONG. — Wo Vertrauen auf Qualität trifft.','pp-su':'延洋 · Vertrauen als Brücke, Qualität als Beweis.','pc1t':'Vertrauen zuerst','pc1d':'Jede Beziehung beginnt mit Vertrauen. Jede Lieferung bestätigt es.','pc2t':'Qualität immer','pc2d':'CE-zertifiziert. SGS-getestet. ISO 9001. Sieben Zertifizierungen.','pc3t':'Globaler Standard','pc3d':'In Singapur registriert. Internationale Verträge. Professioneller Service.','fd-ti':'Zwei Namen.<br><em>Ein Versprechen.</em>','fd-in':'YENYONG. wurde von zwei Partnern gegründet, die verstehen, dass die Baustoffbranche mehr braucht — nicht nur Produkte, sondern Vertrauen und Transparenz.','f1ti':'Mitgründer & Geschäftsführer · Foshan','f1de':'In Foshan, Guangdong ansässig. Verwaltet alle Fabrikbeziehungen, Qualitätskontrolle, Produktionsplanung und Logistik.','f2ti':'Mitgründer & CEO · Singapur','f2de':'In Singapur ansässig. Leitet KYT Trading & Construction Pte Ltd. Treibt globalen Vertrieb in Europa, Nahost, Südostasien und Afrika voran.','ct-ey':'Kontakt','ct-ti':'Beginnen Sie mit<br><em>Mustern.</em>','ct-su':'Kostenlose Muster weltweit in 5 Werktagen. Antwort innerhalb von 24 Stunden, Mo–Sa.','ct-em':'E-Mail','ct-wa':'WhatsApp / WeChat','ct-sg':'Singapur','ct-fs':'Foshan','fl1':'Name','fl2':'Unternehmen','fl3':'E-Mail','fl4':'Land','fl4o':'Land auswählen...','fl5':'Produktinteresse','fl5o':'Produkt auswählen...','fp1':'SPC Starrkern-Vinylboden','fp2':'WPC Wandpaneel','fp3':'PVC Dekorwandpaneel','fp4':'Bambus-Kristall Paneel','fp5':'Carbon-Kristall Paneel','fp6':'Keramikfliesen','fp7':'Mehrere Produkte','fl6':'Nachricht','fl-sub':'Kostenlose Muster anfragen →','ft-tg':'Foshan · Singapur · Global','fc1h':'Produkte','fc2h':'Unternehmen','fc3h':'Kontakt','fc21':'Unsere Geschichte','fc22':'Unsere Werte','fc23':'Zertifizierungen','fc24':'Märkte','fc32':'WhatsApp','fc33':'Muster anfragen','ft-cp':'© 2026 Foshan YenYong International Building Materials Trading Co., Ltd. · KYT Trading & Construction Pte Ltd · Singapur · Alle Rechte vorbehalten.'});
+
+T.fr=Object.assign({},T.en,{'hww-ey':'Notre méthode','hww-ti':'Voici comment<br>nous <em>livrons.</em>','hww-su':'De votre première demande à la livraison — chaque étape est documentée, certifiée et sécurisée par le cadre juridique de Singapour.','hww-s1':'Première réponse','hww-s2':'Jours — Échantillons gratuits','hww-s3':'Certifications','hww-s4':'Documenté','h-ey':'Foshan · Singapour · Mondial','h-ti':'Qualité de Chine.<br><em>Confiance de Singapour.</em>','h-su':"Trop longtemps, acheter des matériaux de construction en Chine rimait avec incertitude — mauvaises spécifications, livraisons tardives, personne à appeler. YENYONG. a été créé pour changer cela.",'h-b1':'Voir les produits','h-b2':'Demander des échantillons gratuits','hs1':'Pays','hs3':'Commande min.','hs4':'Jours — Échantillons gratuits','hs5':'Enregistré','tb1':'📧 Demander des échantillons','tb2':'🏅 Certifications','tb3':'🌐 Singapour · Foshan','n1':'Produits','n2':'Certifications','n3':'Marchés','n4':'Projets','n5':'Culture','n6':'À propos','n7':'Contact','nav-cta':'Échantillons gratuits','st-ti':"Le monde n'a pas besoin d'un autre fournisseur de matériaux.<br>Il a besoin de <em>YENYONG.</em>",'st-p1':"Deux fondateurs. L'un à Foshan gère les relations avec les usines, le contrôle qualité et la production. L'autre à Singapour pilote les contrats, les paiements internationaux et les ventes mondiales.",'st-p2':"YENYONG. n'est pas un intermédiaire commercial. Nous sommes le pont direct entre les meilleures usines de Chine et les constructeurs, architectes et distributeurs du monde entier.",'pr-ey':'La différence YENYONG.','pr-ti':'Pas seulement un fournisseur.<br><em>Votre partenaire.</em>','pr-st':"L'ancienne méthode : une usine en Chine inconnue, un intermédiaire qui disparaît après le paiement, des documents refusés à la douane. YENYONG. a construit un modèle différent.",'pr-bt':'Parlez-nous directement →','s1t':'Pays','s1d':'Des acheteurs en Europe, Asie, Moyen-Orient et Afrique font confiance à YENYONG.','s2t':'Jours','s2d':'Échantillons gratuits livrés partout. Sans frais, sans engagement.','s3t':'Certifications','s4t':'Réponse','s4d':'Chaque demande reçoit une réponse dans les 24 heures. Du lundi au samedi.','d1t':'Entité singapourienne','d1d':"Chaque contrat via KYT Trading & Construction Pte Ltd — enregistrée à Singapour. Votre argent est protégé.",'d2t':"Direct d'usine",'d2d':"Pas d'intermédiaires. Base à Foshan connectée directement aux usines certifiées. Prix FOB réels.",'d3t':'Documentation complète','d3d':"Déclaration CE, rapports SGS, facture commerciale, liste de colisage, connaissement, certificat d'origine.",'pd-ey':'Gamme de produits','pd-ti':"Direct d'usine.<br><em>Certifié CE.</em>",'pd-bt':'Demander des échantillons','p1n':'Revêtement de sol SPC','p2n':'Panneau mural WPC','p3n':'Panneau mural décoratif PVC','p4n':'Panneau mural Crystal Bambou','p5n':'Panneau composite Crystal Carbone','p6n':'Carrelage céramique et porcelaine','ce-ey':'Normes internationales','ce-ti':'Chaque produit.<br><em>Chaque certificat.</em>','c1':'Conformité UE','c3':'Gestion qualité','c4':'Air intérieur','c5':'Sécurité incendie','c7':'Formaldéhyde','mk-ey':'Marchés mondiaux','mk-ti':'40+ pays.<br><em>Un seul contact.</em>','m1':'Europe','m2':'Asie centrale','m3':'Russie & CEI','m4':'Asie du Sud-Est',"m5":"Asie de l'Est",'m6':'Afrique du Nord','m7':'Moyen-Orient','m8':'Afrique subsaharienne','m9':'Amérique du Nord','hw-ey':'Comment commander','hw-ti':'Quatre étapes.<br><em>De porte à porte.</em>','s1ti':'Contactez-nous','s1de':'Email ou WhatsApp avec vos exigences. Réponse sous 24 heures.','s2ti':'Échantillons gratuits','s2de':'Échantillons physiques en 5 jours ouvrables dans le monde entier. Sans frais.','s3ti':'Signer & Payer','s3de':"Contrat via l'entité singapourienne. Acompte 30%. T/T. La production commence immédiatement.",'s4ti':'Livraison FOB','s4de':"Documentation complète : déclaration CE, rapports SGS, connaissement, certificat d'origine, facture.",'pj-ey':'Projets & Références','pj-ti':'Où YENYONG.<br><em>a été.</em>','pj-in':"Des développements résidentiels européens aux hôtels de luxe au Maroc — nos matériaux sont installés partout dans le monde.",'pb1':'Hôtel · Maroc','pjd1':'Hôtel international à Casablanca. Revêtement de sol SPC et panneaux muraux WPC.','pb2':'Résidentiel · Allemagne','pjd2':'Revêtement de sol SPC certifié CE pour un promoteur immobilier allemand.','pb3':'Commercial · Kazakhstan','pjd3':'Panneaux muraux WPC et murs accent cristal bambou pour un centre commercial à Almaty.','pb4':'Villa de luxe · Émirats','pjd4':'Panneaux crystal carbone et bambou pour une villa de luxe à Dubaï.','pb5':'Chaîne de vente · Pologne','pjd5':'Déploiement multi-sites — 12 emplacements à Varsovie. Certifié CE.','pc-lb':'Votre projet ensuite ?','pc-ti':'Vous voulez voir YENYONG. dans votre projet ?','pc-de':'Demandez des échantillons gratuits.','pc-bt':'Demander des échantillons →','cu-ey':'Notre culture','cu-ti':'Qui nous sommes.<br><em>Ce pour quoi nous nous battons.</em>','tab-values':'Valeurs','tab-promise':'Promesse de marque','ml-lb':'MISSION','ml-bi':"Connecter la fabrication chinoise au monde.",'ml-it':'Fondée sur la confiance, livrée avec intégrité.','ml-bo':"Notre mission est de rendre les meilleurs matériaux de construction de Foshan accessibles aux constructeurs partout dans le monde.",'vl-lb':'VISION','vl-bi':"La marque d'exportation de matériaux de construction asiatique la plus fiable.",'vl-it':'Le partenaire de premier choix sur chaque marché.','vl-bo':"Nous voulons que YENYONG. soit le premier nom auquel les acheteurs pensent — pas parce que nous sommes les moins chers, mais parce que nous sommes les plus fiables.",'v1t':'Loyauté','v1d':"Bleu royal — engagement à long terme envers chaque partenaire. Ne jamais sacrifier les relations.",'v2t':'Transparence','v2d':"Blanc — devis clairs, conditions explicites. Aucun frais caché. Jamais.",'v3t':'Intégrité','v3d':"Les dates de livraison sont des dates de livraison. Tout problème — nous vous informons en premier.",'v4t':'Précision','v4d':"1mm de variance peut rendre une expédition inutilisable. Tolérance quasi nulle.",'v5t':'Portée mondiale','v5d':"YenYong — à travers les océans. Nous connaissons votre marché, parlons votre langue.",'pp-lb':'PROMESSE DE MARQUE','pp-bi':'YENYONG. — Là où la confiance rencontre la qualité.','pp-su':'延洋 · La confiance comme pont, la qualité comme preuve.','pc1t':"La confiance d'abord",'pc1d':'Chaque relation commence par la confiance. Chaque livraison la confirme.','pc2t':'Qualité toujours','pc2d':'Certifié CE. Testé SGS. ISO 9001. Sept certifications.','pc3t':'Standard mondial','pc3d':'Enregistré à Singapour. Contrats internationaux. Service professionnel.','fd-ti':'Deux noms.<br><em>Une promesse.</em>','fd-in':"YENYONG. a été fondé par deux partenaires qui comprennent que l'industrie a besoin de plus que des produits.",'f1ti':'Co-fondateur & Directeur général · Foshan','f2ti':'Co-fondateur & PDG · Singapour','ct-ey':'Nous contacter','ct-ti':'Commencez par<br><em>des échantillons.</em>','ct-su':"Échantillons gratuits dans le monde entier en 5 jours ouvrables. Réponse sous 24h, lun–sam.",'ct-em':'E-mail','ct-wa':'WhatsApp / WeChat','ct-sg':'Singapour','ct-fs':'Foshan','fl1':'Nom','fl2':'Société','fl3':'E-mail','fl4':'Pays','fl4o':'Sélectionner un pays...','fl5':'Produit souhaité','fl5o':'Sélectionner un produit...','fp1':'Revêtement de sol SPC','fp2':'Panneau mural WPC','fp3':'Panneau mural PVC','fp4':'Panneau Crystal Bambou','fp5':'Panneau Crystal Carbone','fp6':'Carrelage céramique','fp7':'Plusieurs produits','fl6':'Message','fl-sub':'Demander des échantillons gratuits →','ft-tg':'Foshan · Singapour · Mondial','fc1h':'Produits','fc2h':'Entreprise','fc3h':'Contact','fc21':'Notre histoire','fc22':'Nos valeurs','fc23':'Certifications','fc24':'Marchés','fc33':"Demander des échantillons",'ft-cp':'© 2026 Foshan YenYong International Building Materials Trading Co., Ltd. · KYT Trading & Construction Pte Ltd · Singapour · Tous droits réservés.'});
+
+T.ru=Object.assign({},T.en,{'hww-ey':'Как мы работаем','hww-ti':'Вот как мы<br><em>доставляем.</em>','hww-su':'От первого запроса до доставки — каждый шаг задокументирован, сертифицирован и защищён правовой системой Сингапура.','hww-s1':'Первый ответ','hww-s2':'Дней — Бесплатные образцы','hww-s3':'Сертификатов','hww-s4':'Задокументировано','h-ey':'Фошань · Сингапур · Весь мир','h-ti':'Качество из Китая.<br><em>Доверие из Сингапура.</em>','h-su':'Слишком долго закупка строительных материалов из Китая означала неопределённость — неверные характеристики, задержки поставок, некому позвонить. YENYONG. создан, чтобы изменить это.','h-b1':'Смотреть продукты','h-b2':'Запросить бесплатные образцы','hs1':'Стран','hs3':'Мин. заказ','hs4':'Дней — Бесплатные образцы','hs5':'Зарегистрировано','tb1':'📧 Запросить образцы','tb2':'🏅 Сертификаты','tb3':'🌐 Сингапур · Фошань','n1':'Продукты','n2':'Сертификаты','n3':'Рынки','n4':'Проекты','n5':'Культура','n6':'О нас','n7':'Контакты','nav-cta':'Бесплатные образцы','st-ti':'Миру не нужен ещё один поставщик строительных материалов.<br>Ему нужен <em>YENYONG.</em>','st-p1':'Два основателя. Один в Фошане управляет отношениями с фабриками, контролем качества и производством. Другой в Сингапуре занимается контрактами, международными платежами и глобальными продажами.','st-p2':'YENYONG. — не торговый посредник. Мы — прямой мост между лучшими китайскими заводами и мировыми строителями, архитекторами и дистрибьюторами.','pr-ey':'Отличие YENYONG.','pr-ti':'Не просто поставщик.<br><em>Ваш партнёр.</em>','pr-st':'Старый способ: завод в Китае, с которым вы никогда не встречались, посредник, исчезающий после оплаты, документы, не проходящие таможню. YENYONG. построил другую модель.','pr-bt':'Поговорите с нами напрямую →','s1t':'Стран','s1d':'Покупатели в Европе, Азии, на Ближнем Востоке и в Африке доверяют YENYONG.','s2t':'Дней','s2d':'Бесплатные образцы к вашей двери по всему миру. Без затрат, без обязательств.','s3t':'Сертификатов','s4t':'Ответ','s4d':'На каждый запрос отвечают в течение 24 часов. С понедельника по субботу.','d1t':'Сингапурская компания','d1d':'Каждый контракт через KYT Trading & Construction Pte Ltd — зарегистрированную в Сингапуре. Ваши деньги защищены.','d2t':'Прямо с завода','d2d':'Без посредников. База в Фошане напрямую связана с сертифицированными заводами. Реальная заводская цена FOB.','d3t':'Полная документация','d3d':'Декларация CE, отчёты SGS, коммерческий инвойс, упаковочный лист, коносамент, сертификат происхождения.','pd-ey':'Ассортимент продукции','pd-ti':'Прямо с завода.<br><em>Сертификат CE.</em>','pd-bt':'Запросить образцы','p1n':'SPC Жёсткое виниловое покрытие','p2n':'WPC Деревопластиковая панель','p3n':'PVC Декоративная стеновая панель','p4n':'Бамбуковая кристаллическая панель','p5n':'Углекристаллическая панель','p6n':'Керамическая и фарфоровая плитка','ce-ey':'Международные стандарты','ce-ti':'Каждый продукт.<br><em>Каждый сертификат.</em>','c1':'Соответствие ЕС','c3':'Управление качеством','c4':'Воздух в помещениях','c5':'Пожарная безопасность','c7':'Формальдегид','mk-ey':'Глобальные рынки','mk-ti':'40+ стран.<br><em>Один контакт.</em>','m1':'Европа','m2':'Центральная Азия','m3':'Россия и СНГ','m4':'Юго-Восточная Азия','m5':'Восточная Азия','m6':'Северная Африка','m7':'Ближний Восток','m8':'Африка южнее Сахары','m9':'Северная Америка','hw-ey':'Как заказать','hw-ti':'Четыре шага.<br><em>От двери до двери.</em>','s1ti':'Свяжитесь с нами','s1de':'Email или WhatsApp с вашими требованиями. Ответ в течение 24 часов.','s2ti':'Бесплатные образцы','s2de':'Образцы к вашей двери за 5 рабочих дней по всему миру. Бесплатно.','s3ti':'Подписать и оплатить','s3de':'Контракт через сингапурскую компанию. 30% депозит. T/T. Производство начинается немедленно.','s4ti':'Поставка FOB','s4de':'Полная документация: декларация CE, отчёты SGS, коносамент, сертификат происхождения, инвойс.','pj-ey':'Проекты и кейсы','pj-ti':'Где побывал<br><em>YENYONG.</em>','pj-in':'От европейских жилых объектов до роскошных отелей в Марокко — наши материалы монтируются по всему миру.','pb1':'Отель · Марокко','pjd1':'Международный отель в Касабланке. SPC-покрытие и WPC-панели для номеров и коридоров.','pb2':'Жилой · Германия','pjd2':'CE-сертифицированное SPC-покрытие для немецкого застройщика. FloorScore и E0.','pb3':'Коммерческий · Казахстан','pjd3':'WPC-панели и бамбуковые кристаллические стены для бизнес-центра в Алматы.','pb4':'Люкс-вилла · ОАЭ','pjd4':'Углекристаллические и бамбуковые панели для частной виллы в Дубае.','pb5':'Торговая сеть · Польша','pjd5':'Развёртывание в 12 магазинах Варшавы. CE-сертифицировано.','pc-lb':'Ваш проект следующий?','pc-ti':'Хотите видеть YENYONG. в вашем проекте?','pc-de':'Запросите бесплатные образцы.','pc-bt':'Запросить образцы →','cu-ey':'Наша культура','cu-ti':'Кто мы.<br><em>Что мы отстаиваем.</em>','tab-mission':'Миссия','tab-vision':'Видение','tab-values':'Ценности','tab-promise':'Обещание бренда','ml-lb':'МИССИЯ','ml-bi':'Соединяем производство Китая с миром.','ml-it':'Построено на доверии, доставлено с честностью.','ml-bo':'Наша миссия — сделать лучшие строительные материалы из Фошаня доступными для строителей и застройщиков по всему миру.','vl-lb':'ВИДЕНИЕ','vl-bi':'Самый надёжный азиатский бренд строительных материалов.','vl-it':'Партнёр первого выбора на каждом рынке.','vl-bo':'Мы хотим, чтобы YENYONG. был первым именем, о котором думают покупатели — не потому что мы самые дешёвые, а потому что мы самые надёжные.','v1t':'Лояльность','v1d':'Королевский синий — долгосрочная приверженность каждому партнёру. Никогда не жертвовать отношениями.','v2t':'Прозрачность','v2d':'Белый — чёткие предложения, ясные условия. Никаких скрытых платежей. Никогда.','v3t':'Честность','v3d':'Даты поставки — это даты поставки. Любая проблема — мы говорим вам первым, всегда.','v4t':'Точность','v4d':'1 мм отклонения может сделать партию непригодной. Почти нулевой допуск.','v5t':'Глобальный охват','v5d':'YenYong — простирается через океаны. Мы знаем ваш рынок, говорим на вашем языке.','pp-lb':'ОБЕЩАНИЕ БРЕНДА','pp-bi':'YENYONG. — Где доверие встречается с качеством.','pp-su':'延洋 · Доверие как мост, качество как доказательство.','pc1t':'Доверие прежде всего','pc1d':'Каждые отношения начинаются с доверия. Каждая поставка подтверждает его.','pc2t':'Качество всегда','pc2d':'CE сертифицировано. SGS протестировано. ISO 9001. Семь сертификатов.','pc3t':'Глобальный стандарт','pc3d':'Зарегистрировано в Сингапуре. Международные контракты. Профессиональный сервис.','fd-ti':'Два имени.<br><em>Одно обещание.</em>','fd-in':'YENYONG. был основан двумя партнёрами, которые понимают, что строительной отрасли нужно нечто большее — не просто продукты, а доверие и прозрачность.','f1ti':'Сооснователь и управляющий директор · Фошань','f2ti':'Сооснователь и генеральный директор · Сингапур','ct-ey':'Свяжитесь с нами','ct-ti':'Начните с<br><em>образцов.</em>','ct-su':'Бесплатные образцы по всему миру за 5 рабочих дней. Ответ в течение 24 часов, Пн–Сб.','ct-em':'Эл. почта','ct-wa':'WhatsApp / WeChat','ct-sg':'Сингапур','ct-fs':'Фошань','fl1':'Имя','fl2':'Компания','fl3':'Эл. почта','fl4':'Страна','fl4o':'Выберите страну...','fl5':'Интересующий продукт','fl5o':'Выберите продукт...','fp1':'SPC виниловое покрытие','fp2':'WPC настенная панель','fp3':'PVC декоративная панель','fp4':'Бамбуковая кристаллическая панель','fp5':'Углекристаллическая панель','fp6':'Керамическая плитка','fp7':'Несколько продуктов','fl6':'Сообщение','fl-sub':'Запросить бесплатные образцы →','ft-tg':'Фошань · Сингапур · Весь мир','fc1h':'Продукты','fc2h':'Компания','fc3h':'Контакты','fc21':'Наша история','fc22':'Наши ценности','fc23':'Сертификаты','fc24':'Рынки','fc33':'Запросить образцы','ft-cp':'© 2026 Foshan YenYong International Building Materials Trading Co., Ltd. · KYT Trading & Construction Pte Ltd · Сингапур · Все права защищены.'});
+
+T.cn=Object.assign({},T.en,{'hww-ey':'我们如何工作','hww-ti':'这就是我们<br><em>交付的方式。</em>','hww-su':'从第一次询盘到货物到达——每一个步骤都有文件记录、认证背书，并受新加坡法律框架保护。没有意外，没有借口。','hww-s1':'首次回复','hww-s2':'天 — 免费样品','hww-s3':'项认证','hww-s4':'全程记录','h-ey':'佛山 · 新加坡 · 全球','h-ti':'源自中国的品质。<br><em>源自新加坡的信誉。</em>','h-su':'太久以来，从中国采购建材意味着不确定——规格出错、货期延误、出了问题找不到人。YENYONG. 就是为了改变这一切而生的。','h-b1':'查看产品','h-b2':'申请免费样品','hs1':'国家','hs3':'最低起订','hs4':'天 — 免费样品','hs5':'注册地','tb1':'📧 申请样品','tb2':'🏅 认证证书','tb3':'🌐 新加坡 · 佛山','n1':'产品','n2':'认证','n3':'市场','n4':'工程案例','n5':'企业文化','n6':'关于我们','n7':'联系我们','nav-cta':'免费样品','st-ti':'世界不需要另一家建材供应商。<br>它需要 <em>YENYONG.</em>','st-p1':'两位创始人。林延在佛山管理工厂关系、质量控制和生产。陈洋博在新加坡推动合同签署、国际付款和全球销售。每一笔订单都通过新加坡注册实体进行，每一批货物附带CE认证、SGS报告和完整出口文件。','st-p2':'YENYONG. 不是中间商。我们是中国顶级建材工厂与全球建筑商、设计师和分销商之间的直接桥梁——以全球买家应得的透明度和专业水准服务每一位客户。','pr-ey':'YENYONG. 的不同之处','pr-ti':'不只是供应商。<br><em>您的长期合作伙伴。</em>','pr-st':'旧模式：一个从未谋面的工厂、一个收款后消失的中间商、无法通关的文件。YENYONG. 建立了全新的模式——新加坡合同、CE认证、两位创始人亲自回复您的每一条消息。','pr-bt':'直接与我们对话 →','s1t':'国家','s1d':'欧洲、亚洲、中东和非洲的买家信赖YENYONG.','s2t':'天','s2d':'全球免费样品送货上门，无需费用，无需承诺。','s3t':'项认证','s4t':'小时回复','s4d':'每一条询盘24小时内回复，周一至周六。','d1t':'新加坡实体','d1d':'每一份合同均通过KYT Trading & Construction Pte Ltd签署——新加坡注册公司。您的资金有保障，合同受法律保护。','d2t':'工厂直发','d2d':'无中间商。佛山基地直连珠三角认证工厂。FOB定价——真实工厂价，无贸易商加价。','d3t':'完整文件','d3d':'CE符合性声明、SGS检测报告、商业发票、装箱单、提单和原产地证书。每次都通关无忧。','pd-ey':'产品系列','pd-ti':'工厂直发。<br><em>CE认证。</em>','pd-bt':'申请样品','p1n':'SPC石晶地板','p2n':'WPC木塑墙板','p3n':'PVC装饰墙板','p4n':'竹晶板','p5n':'碳晶板','p6n':'瓷砖 / 陶瓷砖','p1s1':'厚度','p1s4':'起订量','p2s1':'厚度','p2s2':'款式','p2s4':'起订量','p3s1':'厚度','p3s2':'表面','p3s4':'起订量','p4s1':'芯材','p4s2':'颜色','p4s4':'起订量','p5s1':'表面','p5s2':'用途','p5s4':'起订量','p6s1':'规格','p6s2':'表面处理','p6s4':'起订量','ce-ey':'国际认证','ce-ti':'每一款产品。<br><em>每一项认证。</em>','c1':'欧盟符合性','c2':'第三方检测','c3':'质量管理','c4':'室内空气','c5':'防火安全','c6':'化学品安全','c7':'甲醛检测','mk-ey':'全球市场','mk-ti':'40+个国家。<br><em>一个联系人。</em>','m1':'欧洲','m2':'中亚','m3':'俄罗斯及独联体','m4':'东南亚','m5':'东亚','m6':'北非','m7':'中东','m8':'撒哈拉以南非洲','m9':'北美','hw-ey':'如何下单','hw-ti':'四个步骤。<br><em>门到门交付。</em>','s1ti':'联系我们','s1de':'通过邮件或WhatsApp告知产品需求和目的地，24小时内回复。','s2ti':'免费样品','s2de':'实物样品全球5个工作日送达，免费，无需承诺。','s3ti':'签约付款','s3de':'通过新加坡实体签合同，预付30%定金，T/T电汇，立即开始生产。','s4ti':'FOB交货','s4de':'完整文件：CE声明、SGS报告、提单、原产地证、商业发票。每次准时交货。','pj-ey':'工程案例','pj-ti':'YENYONG.<br><em>在哪里出现过。</em>','pj-in':'从欧洲住宅项目到摩洛哥豪华酒店——我们的材料正在全球各地铺设。','pb1':'酒店项目 · 摩洛哥','pjd1':'卡萨布兰卡国际酒店。SPC石晶地板和WPC装饰墙板用于客房和走廊。','pb2':'住宅项目 · 德国','pjd2':'为德国住宅开发商提供CE认证SPC地板。FloorScore和E0认证。','pb3':'商业项目 · 哈萨克斯坦','pjd3':'阿拉木图商业中心WPC墙板和竹晶特色墙。附新加坡完整文件。','pb4':'豪华别墅 · 阿联酋','pjd4':'迪拜私人别墅碳晶板和竹晶板，镜面效果。','pb5':'零售连锁 · 波兰','pjd5':'华沙12个门店展开。CE全程认证，按时交货。','pc-lb':'您的项目是下一个？','pc-ti':'想在您的项目中看到YENYONG.吗？','pc-de':'申请免费样品，让我们向您展示我们的材料在真实空间中的效果。','pc-bt':'申请样品 →','pj-nt':'* 工程案例仅供参考，展示YENYONG.服务的市场和项目类型。','cu-ey':'企业文化','cu-ti':'我们是谁。<br><em>我们的立场。</em>','tab-mission':'使命','tab-vision':'愿景','tab-values':'价值观','tab-promise':'品牌主张','ml-lb':'使命','ml-bi':'连接中国制造与全球市场。','ml-it':'以信任为基础，以品质为承诺。','ml-bo':'我们的使命，是让全球每一个角落的建设者都能获得来自中国佛山的最高品质建材——依托新加坡国际贸易平台，以不变的品质承诺服务每一位客户。','vl-lb':'愿景','vl-bi':'成为亚洲最受信赖的建材出口品牌。','vl-it':'在每一个服务市场成为合作伙伴的首选。','vl-bo':'在我们服务的每一个市场，我们希望YENYONG.都是买家第一个想到的供应商——不是因为我们最便宜，而是因为我们最可靠。','v1t':'忠诚','v1d':'皇家蓝代表忠诚。长期承诺每一位合作伙伴，绝不因短期利益损害长期关系。','v2t':'坦率','v2d':'白色代表透明。报价清晰，条款明确，无隐藏费用，无模糊承诺。','v3t':'守信','v3d':'承诺的交货期就是交货期。任何问题，我们主动第一时间告知。','v4t':'精准','v4d':'建材行业1mm误差可能让整批货无法使用。我们对每一个规格保持近零容差。','v5t':'远航','v5d':'延洋——延伸过大洋。我们懂您的市场，说您的语言，按您的节奏工作。','pp-lb':'品牌主张','pp-bi':'YENYONG. — 以信任为桥，以品质为证。','pp-su':'Where Trust Meets Quality. · 延洋，连接世界。','pc1t':'信任第一','pc1d':'每一段合作关系始于信任，每一批货物都是信任的证明。','pc2t':'品质始终','pc2d':'CE认证，SGS检测，ISO 9001，七项认证，文件即证明。','pc3t':'全球标准','pc3d':'新加坡注册，国际合同，每个环节的专业服务。','fd-ti':'两个名字。<br><em>一个承诺。</em>','fd-in':'YENYONG. 由两位合作伙伴共同创立，他们深刻理解建材行业所需要的不仅仅是产品——而是信任、透明度和真正的全球触达能力。','f1ti':'联合创始人 & 法定代表人 · 佛山','f1de':'驻扎佛山，广东。负责所有工厂关系、质量管控、生产排期和物流。确保每一批在YENYONG.名义下出货的产品都与承诺完全一致。','f2ti':'联合创始人 & CEO · 新加坡','f2de':'驻新加坡，领导KYT Trading & Construction Pte Ltd和OVERARCHING PTE. LTD.，推动欧洲、中东、东南亚和非洲的全球销售。','ct-ey':'联系我们','ct-ti':'从<br><em>样品开始。</em>','ct-su':'全球免费样品，5个工作日送达。周一至周六，24小时内回复。','ct-em':'邮箱','ct-wa':'WhatsApp / 微信','ct-sg':'新加坡','ct-fs':'佛山','fl1':'姓名','fl2':'公司','fl3':'邮箱','fl4':'国家','fl4o':'选择国家...','fl5':'感兴趣的产品','fl5o':'选择产品...','fp1':'SPC石晶地板','fp2':'WPC木塑墙板','fp3':'PVC装饰墙板','fp4':'竹晶板','fp5':'碳晶板','fp6':'瓷砖/陶瓷砖','fp7':'多种产品','fl6':'留言','fl-sub':'申请免费样品 →','ft-tg':'佛山 · 新加坡 · 全球','fc1h':'产品','fc2h':'公司','fc3h':'联系方式','fc21':'我们的故事','fc22':'我们的价值观','fc23':'认证证书','fc24':'市场','fc32':'WhatsApp','fc33':'申请样品','ft-cp':'© 2026 佛山延洋国际建材贸易有限公司 · KYT Trading & Construction Pte Ltd · 新加坡 · 版权所有。'});
+
+function setLang(l){
+  var t=T[l]||T.en;
+  for(var id in t){var el=document.getElementById(id);if(el)el.innerHTML=t[id];}
+  document.querySelectorAll('.lang button').forEach(function(b){
+    var tx=b.textContent.trim().toLowerCase();
+    b.classList.toggle('on',tx===l||(l==='cn'&&tx==='中文'));
+  });
+  try{localStorage.setItem('yy_lang',l);}catch(e){}
+}
+
+function showTab(tab){
+  document.querySelectorAll('.ct-panel').forEach(function(p){p.classList.remove('on');});
+  document.querySelectorAll('.ct-tab').forEach(function(b){b.classList.remove('on');});
+  var p=document.getElementById('panel-'+tab);
+  var b=document.getElementById('tab-'+tab);
+  if(p)p.classList.add('on');
+  if(b)b.classList.add('on');
+}
+
+(function(){
+  var nav=document.getElementById('mainNav');
+  var tb=document.getElementById('topBar');
+  function tick(){
+    var s=window.scrollY>80;
+    if(nav)nav.classList.toggle('scrolled',s);
+    if(tb)tb.style.transform=s?'translateY(-100%)':'translateY(0)';
+    if(nav)nav.style.top=s?'0':'36px';
+  }
+  window.addEventListener('scroll',tick,{passive:true});
+  tick();
+})();
+
+(function(){
+  try{var s=localStorage.getItem('yy_lang');if(s&&T[s]){setLang(s);return;}}catch(e){}
+  var b=(navigator.language||'').toLowerCase();
+  if(b.indexOf('zh')===0)setLang('cn');
+  else if(b.indexOf('de')===0)setLang('de');
+  else if(b.indexOf('fr')===0)setLang('fr');
+  else if(b.indexOf('ru')===0)setLang('ru');
+  else setLang('en');
+})();
+
+// ── CAROUSEL ──────────────────────────────────────────
+var carState = {};
+function initCarousel(pid){
+  var track = document.getElementById(pid+'-track');
+  if(!track) return;
+  var slides = track.querySelectorAll('.carousel-slide');
+  carState[pid] = {idx:0, total:slides.length};
+  
+  // Touch/swipe support
+  var startX = 0;
+  var carousel = document.getElementById(pid+'-carousel');
+  carousel.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+  carousel.addEventListener('touchend', function(e){
+    var diff = startX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 40) changeSlide(pid, diff > 0 ? 1 : -1);
+  }, {passive:true});
+  
+  // Auto-advance every 4s
+  setInterval(function(){ changeSlide(pid, 1); }, 4000 + Math.random()*2000);
+}
+
+function goSlide(pid, idx){
+  var state = carState[pid];
+  if(!state) return;
+  state.idx = idx;
+  updateCarousel(pid);
+}
+
+function changeSlide(pid, dir){
+  var state = carState[pid];
+  if(!state) return;
+  state.idx = (state.idx + dir + state.total) % state.total;
+  updateCarousel(pid);
+}
+
+function updateCarousel(pid){
+  var state = carState[pid];
+  var track = document.getElementById(pid+'-track');
+  var dots  = document.getElementById(pid+'-dots');
+  if(!track || !dots) return;
+  track.style.transform = 'translateX(-' + (state.idx * 100) + '%)';
+  dots.querySelectorAll('.car-dot').forEach(function(d,i){
+    d.classList.toggle('on', i === state.idx);
+  });
+}
+
+// Init all carousels on load
+document.addEventListener('DOMContentLoaded', function(){
+  ['p1','p2','p3','p4','p5','p6'].forEach(initCarousel);
+});
+
+</script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/8618929980066" class="wa-float" target="_blank" title="WhatsApp YENYONG.">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- Scroll Reveal -->
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body>
+</html>
