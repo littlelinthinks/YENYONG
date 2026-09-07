@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /__MACOSX/
+
+Sitemap: https://yenyong.com/sitemap.xml

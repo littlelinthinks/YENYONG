@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Page not found — YENYONG.</title>
+<meta name="description" content="The page you are looking for does not exist. Return to YENYONG."/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-family:Arial,Helvetica,sans-serif}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;color:#0A0E1A;text-align:center;padding:48px}
+.wrap{max-width:480px}
+.logo{font-family:var(--font-display);font-weight:900;font-size:28px;color:#1F3AA0;letter-spacing:1px;margin-bottom:40px}
+h1{font-family:var(--font-display);font-weight:900;font-size:48px;letter-spacing:-2px;color:#0A0E1A;margin-bottom:16px}
+p{font-size:15px;color:#6B6B6B;line-height:1.7;margin-bottom:32px}
+a{display:inline-block;background:#1F3AA0;color:#fff;padding:14px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:3px;transition:.15s}
+a:hover{background:#2347C5}
+
+/* ===== DESIGN ENHANCEMENTS — royal-blue + white theme preserved ===== */
+:root{
+  --font-display:"Manrope","Arial Black",Arial,sans-serif;
+  --font-body:"Inter",Arial,Helvetica,sans-serif;
+  --blue-50:#EEF2FF; --blue-100:#DCE4FF; --blue-700:#16256B;
+  --navy:#101B45; --navy-2:#0B1330; --slate:#46506B;
+}
+body{font-family:var(--font-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,.nav-logo-text{font-family:var(--font-display);letter-spacing:-.01em}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--blue2));z-index:999;box-shadow:0 0 8px rgba(31,58,160,.5);transition:width .12s ease-out}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.pc,.mk,.dc,.sb,.c1,.gal-c{transition:transform .35s ease,box-shadow .35s ease}
+.pc:hover,.mk:hover,.dc:hover,.sb:hover,.c1:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(31,58,160,.18)}
+.gal-c{overflow:hidden}
+.gal-c .photo-slot{transition:transform .55s ease}
+.gal-c:hover .photo-slot{transform:scale(1.06)}
+.btn-blue{transition:transform .25s ease,box-shadow .25s ease}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(31,58,160,.35)}
+.btn-out{transition:transform .25s ease}
+.btn-out:hover{transform:translateY(-2px)}
+.bg-dots{background-image:radial-gradient(var(--blue-100) 1.4px,transparent 1.4px);background-size:22px 22px}
+.sec.drama{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden}
+.sec.drama::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.2px);background-size:18px 18px;pointer-events:none}
+.sec.drama h2,.sec.drama .eyebrow,.sec.drama p{color:#fff}
+.sec.drama .eyebrow{color:var(--blue-100)}
+.sec.drama em{color:var(--blue-100);font-style:italic}
+.wave{display:block;width:100%;line-height:0;margin-top:-1px}
+.wave svg{display:block;width:100%;height:64px}
+.cert-strip{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;padding:30px 24px;max-width:1180px;margin:0 auto}
+.cert-badge{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border:1px solid var(--border);border-radius:999px;background:#fff;box-shadow:0 4px 16px rgba(31,58,160,.07);font-weight:600;font-size:13px;color:var(--slate);transition:.25s}
+.cert-badge:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,58,160,.16)}
+.cert-badge svg{width:20px;height:20px;color:var(--blue);flex:none}
+.worldmap{position:relative;width:100%;max-width:1000px;margin:34px auto 6px;border-radius:20px;background:linear-gradient(135deg,#0B1330,#16256b);overflow:hidden;aspect-ratio:21/9;box-shadow:0 24px 60px rgba(11,19,48,.4)}
+.worldmap .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1.3px,transparent 1.3px);background-size:14px 14px;-webkit-mask-image:radial-gradient(circle at 50% 48%,#000 62%,transparent 100%);mask-image:radial-gradient(circle at 50% 48%,#000 62%,transparent 100%)}
+.marker{position:absolute;width:13px;height:13px;transform:translate(-50%,-50%)}
+.marker::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--blue2);box-shadow:0 0 0 4px rgba(35,71,197,.4)}
+.marker::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--blue2);animation:ymPulse 2.6s ease-out infinite}
+@keyframes ymPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.4);opacity:0}}
+.marker .mlabel{position:absolute;left:16px;top:50%;transform:translateY(-50%);white-space:nowrap;color:#fff;font-size:12px;font-weight:600;letter-spacing:.2px;text-shadow:0 1px 5px rgba(0,0,0,.55)}
+.mkts .mg{margin-top:8px}
+@media(max-width:700px){.worldmap{aspect-ratio:1/1}.marker .mlabel{font-size:10px;left:13px}.wave svg{height:40px}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">YENYONG.</div>
+  <h1>404</h1>
+  <p>The page you are looking for does not exist or has been moved. Let us get you back to the site.</p>
+  <a href="/">Back to homepage</a>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  function onScroll(){if(!bar)return;var d=document.documentElement;var sc=d.scrollTop||document.body.scrollTop;var max=d.scrollHeight-d.clientHeight;bar.style.width=(max>0?sc/max*100:0)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var revs=document.querySelectorAll('.sec-in > *, .stmt-in > *, .hero-stats > div');
+  revs.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%8)*55)+'ms';});
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  revs.forEach(function(el){obs.observe(el);});
+  var counters=document.querySelectorAll('[data-count]');
+  var cob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=parseInt(el.getAttribute('data-count'),10)||0,suf=el.getAttribute('data-suffix')||'',dur=1300,t0=null;function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1),val=Math.floor((1-Math.pow(1-p,3))*to);el.textContent=val+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);cob.unobserve(el);}});},{threshold:0.5});
+  counters.forEach(function(el){cob.observe(el);});
+})();
+</script>
+
+</body>
+</html>
