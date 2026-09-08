@@ -715,15 +715,38 @@ h1,h2,h3,h4,.nav-logo-text{font-family:var(--font-display);letter-spacing:-.01em
 .cert-badge{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border:1px solid var(--border);border-radius:999px;background:#fff;box-shadow:0 4px 16px rgba(31,58,160,.07);font-weight:600;font-size:13px;color:var(--slate);transition:.25s}
 .cert-badge:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,58,160,.16)}
 .cert-badge svg{width:20px;height:20px;color:var(--blue);flex:none}
-.worldmap{position:relative;width:100%;max-width:1000px;margin:34px auto 6px;border-radius:20px;background:linear-gradient(135deg,#0B1330,#16256b);overflow:hidden;aspect-ratio:21/9;box-shadow:0 24px 60px rgba(11,19,48,.4)}
-.worldmap .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1.3px,transparent 1.3px);background-size:14px 14px;-webkit-mask-image:radial-gradient(circle at 50% 48%,#000 62%,transparent 100%);mask-image:radial-gradient(circle at 50% 48%,#000 62%,transparent 100%)}
-.marker{position:absolute;width:13px;height:13px;transform:translate(-50%,-50%)}
-.marker::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--blue2);box-shadow:0 0 0 4px rgba(35,71,197,.4)}
-.marker::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--blue2);animation:ymPulse 2.6s ease-out infinite}
-@keyframes ymPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.4);opacity:0}}
-.marker .mlabel{position:absolute;left:16px;top:50%;transform:translateY(-50%);white-space:nowrap;color:#fff;font-size:12px;font-weight:600;letter-spacing:.2px;text-shadow:0 1px 5px rgba(0,0,0,.55)}
+.map-wrap{position:relative;max-width:920px;margin:34px auto 6px;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 38%,#ffffff 0%,#fbfcff 70%,#eef3fc 100%);box-shadow:0 24px 60px rgba(31,58,160,.10)}
+svg.map{display:block;width:100%;height:auto}
+.land{fill:#e7eefb}
+.country{fill:none;stroke:#cfd9f1;stroke-width:.4;pointer-events:auto;transition:fill .15s}
+.country:hover{fill:rgba(31,58,160,.07)}
+.partner-dot{fill:var(--blue);filter:drop-shadow(0 0 3px rgba(31,58,160,.6))}
+.geo-ring{fill:none;stroke:var(--blue);stroke-width:.7;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite;opacity:.45}
+@keyframes pulse{0%{transform:scale(1);opacity:.45}100%{transform:scale(3.4);opacity:0}}
+.geo-label{pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:2.4px;stroke-linejoin:round;font-family:inherit}
+.geo-label.continent{fill:var(--slate);font-size:13px;font-weight:800;letter-spacing:1px}
+.geo-label.ocean{fill:#9aa6c4;font-size:11px;font-weight:600;font-style:italic;letter-spacing:.4px}
+.hub{filter:drop-shadow(0 2px 6px rgba(31,58,160,.45))}
+.hub .core{stroke:#fff;stroke-width:2.2}
+.hub .pl{fill:none;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:hubp 4s ease-out infinite;opacity:.35}
+.hub .pl.d2{animation-delay:2s}
+@keyframes hubp{0%{transform:scale(1);opacity:.35}100%{transform:scale(5);opacity:0}}
+.hub .ttl{font-size:9px;font-weight:800;fill:#fff;text-anchor:middle;letter-spacing:.5px}
+.hub .nm{font-size:11px;font-weight:800;fill:var(--blue);text-anchor:middle;letter-spacing:.2px}
+.kicker{position:absolute;left:14px;top:14px;z-index:4;background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:11px;padding:10px 15px;backdrop-filter:blur(4px)}
+.kicker b{color:var(--blue);font-size:13px;letter-spacing:.2px}
+.kicker small{display:block;color:var(--slate);font-size:11.5px;margin-top:2px}
+.tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--border);border-radius:9px;padding:7px 12px;font-size:12.5px;font-weight:700;color:var(--blue);box-shadow:0 10px 26px rgba(31,58,160,.18);opacity:0;transition:opacity .12s;white-space:nowrap;z-index:5}
+.tip span{display:block;font-weight:500;color:var(--slate);font-size:11px;margin-top:1px}
+.legend{max-width:920px;margin:14px auto 0;display:flex;gap:20px;font-size:12.5px;color:var(--slate);padding:0 6px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.legend .p{background:var(--blue)}
+.legend .o{background:#c3d0ec}
+.fallback{display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:var(--slate);font-size:13px;min-height:200px}
+.fallback[hidden]{display:none}
 .mkts .mg{margin-top:8px}
-@media(max-width:700px){.worldmap{aspect-ratio:1/1}.marker .mlabel{font-size:10px;left:13px}.wave svg{height:40px}}
+@media(max-width:700px){.wave svg{height:40px}}
+@media(max-width:700px){.wave svg{height:40px}}
 
 </style>
 </head>
@@ -1286,17 +1309,11 @@ h1,h2,h3,h4,.nav-logo-text{font-family:var(--font-display);letter-spacing:-.01em
 <div class="sec-in">
   <span class="eyebrow" id="mk-ey">Global Markets</span>
   <h2 id="mk-ti">40+ countries.<br><em>One contact.</em></h2>
-<div class="worldmap" aria-label="Global markets">
-  <div class="dots"></div>
-  <div class="marker" style="left:48%;top:33%"><span class="mlabel">Europe</span></div>
-  <div class="marker" style="left:62%;top:38%"><span class="mlabel">Central Asia</span></div>
-  <div class="marker" style="left:58%;top:22%"><span class="mlabel">Russia &amp; CIS</span></div>
-  <div class="marker" style="left:73%;top:56%"><span class="mlabel">SE Asia</span></div>
-  <div class="marker" style="left:79%;top:40%"><span class="mlabel">East Asia</span></div>
-  <div class="marker" style="left:46%;top:46%"><span class="mlabel">N. Africa</span></div>
-  <div class="marker" style="left:56%;top:47%"><span class="mlabel">Middle East</span></div>
-  <div class="marker" style="left:53%;top:63%"><span class="mlabel">Sub-Saharan Africa</span></div>
-  <div class="marker" style="left:20%;top:36%"><span class="mlabel">N. America</span></div>
+<div class="map-wrap" id="globeViz" aria-label="Global markets map with continent outlines">
+  <svg class="map" id="svgC" viewBox="0 0 900 450" role="img" aria-label="Global markets map"></svg>
+  <div class="kicker"><b id="mk-k1">Singapore HQ · Foshan Branch</b><small id="mk-k2">Radiating to 40+ global markets</small></div>
+  <div class="tip" id="tipC"></div>
+  <div class="fallback" id="fbC" hidden>Map base layer failed to load (needs internet for geography data).</div>
 </div>
 
   <div class="mg">
@@ -1744,7 +1761,11 @@ Object.assign(T.ru,{'pc-m1':'Смотреть продукт','pc-m2':'Смот�
 Object.assign(T.ru,{'tw-ey':'Нам доверяют','tw-ti':'С кем мы работаем<br><em>и что они говорят.</em>','tw-in':'Дистрибьюторы, подрядчики, гостиничные группы и розничные сети на четырёх континентах. Имена и рекомендации по запросу под NDA.','twl1':'Германия','twl2':'Марокко','twl3':'Казахстан','twl4':'Польша','twl5':'ОАЭ','twl6':'40+ стран','tq1':'"Одинаковый цвет в трёх отгрузках — с поставщиками из Фошаня почти не бывает. <em>Совпадение партий было точным.</em>"','tq2':'"Нужна была CE-документация для гостиничного тендера за шесть недель. <em>Все сертификаты пришли вовремя</em>, панели совпали с образцом."','tq3':'"Двенадцать магазинов, жёсткий график. <em>Ни одного задержанного контейнера</em> — команда отвечала в WhatsApp в полночь."','tqn1':'Дистрибьютор напольных покрытий','tqr1':'Европа · SPC пол','tqn2':'Закупщик гостиничного проекта','tqr2':'Северная Африка · WPC панели','tqn3':'Подрядчик по отделке','tqr3':'Центральная Европа · SPC + PVC','tws1':'Стран поставок','tws2':'Категорий продукции','tws3':'Ответ на запрос','tws4':'Заказы с подбором партии','tw-nt':'* Логотипы — заполнители, обозначающие типы клиентов YENYONG. Проверенный список клиентов по запросу.','d18':'Нам доверяют'});
 Object.assign(T.cn,{dh1:'产品线',d1:'SPC 石晶地板',d2:'WPC 木塑墙板',d3:'PVC 装饰墙板',d4:'竹晶板',d5:'碳晶板',d6:'瓷砖 / 陶瓷砖',d7:'目录下载 →',dh2:'销售资料',d8:'目录与下载',d9:'认证证书',d10:'贸易与运输条款',dh3:'售后服务',d11:'安装指南',d12:'DIY 中心',d13:'常见问题',d14:'全球市场',d15:'工程案例',d16:'企业文化与价值观',d17:'创始人',tb4:'<svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 新加坡 · 佛山','dl-ey':'目录与下载','dl-ti':'所有文档。<br><em>一个资料库。</em>','dl-bt':'申请样品','dl-in':'产品目录、技术规格书和认证文件——为经销商、建筑师和项目采购方准备。文件将逐步补充；如需优先获取，我们将第一时间发送。',dlb:'制作中',dt1:'2026 主产品目录',dd1:'完整产品系列——六大品类、规格、颜色和包装数据。每一份销售对话都需要的 PDF。','dlc-btn1':'2026 Q1 发布',dlr1:'优先索取 →',dt2:'SPC 规格表',dd2:'厚度、耐磨层、尺寸、荷载等级及每 SKU 包装。',dt3:'WPC 规格表',dd3:'尺寸、表面、防火等级和安装数据。',dt4:'PVC 规格表',dd4:'厚度范围、表面和技术参数。',dt5:'竹晶板规格表',dd5:'芯材组成、色号与表面选项。',dt6:'碳晶板规格表',dd6:'镜面/哑光 UV 表面、规格尺寸和应用案例。',dt7:'瓷砖规格表',dd7:'尺寸、吸水率、防滑等级（R 值）和表面处理。',dt8:'公司简介',dd8:'我们是谁：创始人、新加坡与佛山实体、市场与商业模式。',dt9:'认证文件包',dd9:'CE 符合性声明、SGS 报告、ISO 9001、FloorScore、B1 防火、REACH、E0。',dt10:'贸易与运输条款',dd10:'国际贸易术语、付款方式、起订量、交期和包装。',dt11:'质保与售后',dd11:'质保范围、理赔流程和支持渠道。','sp-ey':'安装与支持','sp-ti':'售后，<br><em>我们仍在。</em>','sp-su':'专业安装指南、DIY 资源和解答——让每一件 YENYONG. 产品都如约发挥最佳性能。指南将逐步发布。','sp-h1':'安装指南','sp-h2':'DIY 中心','sp-h3':'常见问题','sp-ct':'还需要帮助？',ig1:'SPC 石晶地板','is1-1':'准备','is1-2':'适应 48 小时','is1-3':'锁扣安装','is1-4':'收边',ig2:'WPC 木塑墙板','is2-1':'弹线找平','is2-2':'固定龙骨','is2-3':'卡扣上板','is2-4':'填缝密封',ig3:'PVC 装饰墙板','is3-1':'检查平整度','is3-2':'涂胶/固定','is3-3':'安装面板','is3-4':'角线收边',ig4:'竹晶板','is4-1':'墙面打底','is4-2':'挂板固定','is4-3':'拼接型材','is4-4':'边口处理',ig5:'碳晶板','is5-1':'排版设计','is5-2':'龙骨干挂','is5-3':'对齐表面','is5-4':'撕保护膜',ig6:'瓷砖 / 陶瓷砖','is6-1':'基层检查','is6-2':'刮胶粘剂','is6-3':'铺贴留缝','is6-4':'填缝清洁','igl-p1':'<svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF 指南 — 制作中','igl-v1':'<svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> 视频 — 制作中',dy1t:'工具清单',dy1d:'开始施工前所需的一切——地板和墙面。拍板、楔形块、拉钩、水平仪及安全装备。',dy1a:'索取 PDF →',dy2t:'基层处理',dy2d:'平整、干燥、洁净：持久安装的三大原则。详解湿度、平整度和除尘控制。',dy2a:'索取 PDF →',dy3t:'分步图解：SPC 锁扣地板',dy3d:'从第一排到最后一排。角度、间距、收边六个清晰步骤。',dy3a:'索取 PDF →',dy4t:'保养与维护',dy4d:'让每一块表面历久弥新。清洁剂、日常保养习惯及注意事项。',dy4a:'索取 PDF →',fq1q:'SPC 与强化地板有什么区别？',fq1a:'SPC 芯材为石塑复合，完全防水、尺寸稳定。强化地板以木纤维为芯，遇水膨胀，不适用于卫生间或潮湿区域。',fq2q:'SPC 地板需要地垫和伸缩缝吗？',fq2a:'多数 SPC 自带 IXPE 静音垫；地面特别不平时可再加薄层泡沫。墙体和垂直障碍物四周务必预留 8–10 毫米伸缩缝。',fq3q:'WPC 墙板可以用在卫生间吗？',fq3a:'可以。WPC 具有防水性，能应对正常湿度。淋浴区需保持良好通风，并用合适硅酮密封板缝。',fq4q:'如何清洁和保养碳晶/竹晶板？',fq4a:'用软布蘸中性清洁剂擦拭。避免使用百洁布、钢丝球和强溶剂。定期除尘，液体泼溅后及时擦干，以保护 UV 表面。',fq5q:'不同批次的颜色会有差异吗？',fq5a:'所有工业化板材都存在轻微批次色差。同一项目建议一次性下单，我们会在工厂端做批次匹配。',fq6q:'到货破损或短缺怎么办？',fq6a:'卸货时拍摄包装箱及货物，并在送货回单上注明破损或短缺。48 小时内把照片发给我们——售后团队会亲自处理每一项理赔。',fq7q:'你们提供安装培训或现场支持吗？',fq7a:'每批货都附赠图解安装指南；团队通过 WhatsApp 或视频协助安装师傅。大型酒店或商业项目可安排现场督导。',fq8q:'质保政策是怎样的？',fq8a:'质保范围视产品线和项目类型而定。请联系我们获取适用产品的质保政策——完整文件可按需提供。',fc4h:'资源'});
 Object.assign(T.cn,{'pc-m1':'查看产品','pc-m2':'查看产品','pc-m3':'查看产品','pc-m4':'查看产品','pc-m5':'查看产品','pc-m6':'查看产品'});
-Object.assign(T.cn,{'tw-ey':'客户的信任','tw-ti':'我们与谁同行，<br><em>他们如何评价。</em>','tw-in':'经销商、工程承包商、酒店集团与连锁零售——遍布四大洲。客户名称与联系方式可在签署保密协议后提供。','twl1':'德国','twl2':'摩洛哥','twl3':'哈萨克斯坦','twl4':'波兰','twl5':'阿联酋','twl6':'40+ 国家','tq1':'"三批货颜色完全一致——这在佛山供应商里几乎不可能。 <em>批次匹配分毫不差。</em>"','tq2':'"酒店投标六周内要齐 CE 文件。 <em>每份证书都按时到达</em>，板材与确认样品一致。"','tq3':'"十二家门店同步开业，工期极紧。 <em>没有一个柜延误</em>——团队在我们当地午夜还回 WhatsApp。"','tqn1':'地板经销商','tqr1':'欧洲 · SPC 地板','tqn2':'酒店项目采购','tqr2':'北非 · WPC 墙板','tqn3':'商业装修承包商','tqr3':'中欧 · SPC + PVC','tws1':'服务国家','tws2':'产品品类','tws3':'询盘响应','tws4':'批次匹配订单','tw-nt':'* 上述标识为占位示意，代表 YENYONG. 服务的客户类型。经核实的客户名单与可联系推荐方可按需提供。','d18':'客户的信任'});
+Object.assign(T.cn,{'tw-ey':'客户的信任','tw-ti':'我们与谁同行，<br><em>他们如何评价。</em>','tw-in':'经销商、工程承包商、酒店集团与连锁零售——遍布四大洲。客户名称与联系方式可在签署保密协议后提供。','twl1':'德国','twl2':'摩洛哥','twl3':'哈萨克斯坦','twl4':'波兰','twl5':'阿联酋','twl6':'40+ 国家','tq1':'"三批货颜色完全一致——这在佛山供应商里几乎不可能。 <em>批次匹配分毫不差。</em>"','tq2':'"酒店投标六周内要齐 CE 文件。 <em>每份证书都按时到达</em>，板材与确认样品一致。"','tq3':'"十二家门店同步开业，工期极紧。 <em>没有一个柜延误</em>——团队在我们当地午夜还回 WhatsApp。"','tqn1':'地板经销商','tqr1':'欧洲 · SPC 地板','tqn2':'酒店项目采购','tqr2':'北非 · WPC 墙板','tqn3':'商业装修承包商','tqr3':'中欧 · SPC + PVC','tws1':'服务国家','tws2':'产品品类','tws3':'询盘响应','tws4':'批次匹配订单','tw-nt':'* 上述标识为占位示意，代表 YENYONG. 服务的客户类型。经核实的客户名单与可联系推荐方可按需提供。','d18':'客户的信任','mk-k1':'新加坡总部 · 佛山分公司','mk-k2':'辐射至 40+ 全球市场'});
+Object.assign(T.de,{'mk-k1':'Hauptsitz Singapur · Niederlassung Foshan','mk-k2':'Ausstrahlung in 40+ globale Märkte'});
+Object.assign(T.fr,{'mk-k1':'Siège Singapour · Succursale Foshan','mk-k2':'Rayonnement vers 40+ marchés mondiaux'});
+Object.assign(T.ru,{'mk-k1':'Головной офис Сингапур · Филиал Фошань','mk-k2':'Охват 40+ глобальных рынков'});
+Object.assign(T.en,{'mk-k1':'Singapore HQ · Foshan Branch','mk-k2':'Radiating to 40+ global markets'});
 
 function setLang(l){
   var t=T[l]||T.en;
@@ -1754,6 +1775,9 @@ function setLang(l){
     b.classList.toggle('on',tx===l||(l==='cn'&&tx==='中文'));
   });
   try{localStorage.setItem('yy_lang',l);}catch(e){}
+  // notify geo map (if loaded) to refresh continent/ocean labels
+  window.YM_LANG=l;
+  if(window.ymUpdateGeoLang) window.ymUpdateGeoLang(l);
 }
 
 function showTab(tab){
@@ -1910,5 +1934,152 @@ function toggleMenu(){
   counters.forEach(function(el){cob.observe(el);});
 })();
 </script>
+
+<!-- Global Markets map: real continent outlines + partner markers -->
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="data/countries.js"></script>
+<script>
+(function(){
+  var PARTNERS=new Set(['DE','PL','NL','FR','GB','BE','ES','IT','KZ','UZ','TM','TJ','KG','MN','RU','BY','UA','AM','MY','TH','VN','ID','PH','SG','JP','KR','MA','TN','EG','DZ','AE','SA','QA','KW','ZA','NG','TZ','KE','US','CA']);
+  var W=900,H=450, ns='http://www.w3.org/2000/svg';
+  var wrap=document.getElementById('globeViz');
+  var svg=document.getElementById('svgC');
+  var tip=document.getElementById('tipC');
+  var fb=document.getElementById('fbC');
+  var LAND='#e7eefb', BORD='#cfd9f1';
+  function langMap(l){return ({'en':'en','cn':'zh','de':'de','fr':'fr','ru':'ru'}[l]||'en');}
+  var projection;
+  try{projection=d3.geoNaturalEarth1().fitSize([W,H],{type:'Sphere'});}catch(e){projection=null;}
+  function project(pt){return projection?projection(pt):[(pt[0]+180)/360*W,(90-pt[1])/180*H];}
+  function drawGeo(topo,obj,cls,fill,stroke,sw,name){
+    if(typeof topojson==='undefined'||!topo.objects[obj]||typeof d3==='undefined'||!d3.geoPath)return;
+    var path=d3.geoPath(projection);
+    var fc=topojson.feature(topo,topo.objects[obj]);
+    var feats=fc.type==='FeatureCollection'?fc.features:[fc];
+    feats.forEach(function(f){
+      var d=path(f);
+      if(!d)return;
+      var p=document.createElementNS(ns,'path');
+      p.setAttribute('d',d);p.setAttribute('class',cls);
+      if(fill)p.setAttribute('fill',fill);
+      if(stroke){p.setAttribute('stroke',stroke);p.setAttribute('stroke-width',sw);}
+      if(name&&f.properties&&f.properties.name)p.dataset.name=f.properties.name;
+      svg.appendChild(p);
+    });
+  }
+  var GEO_LABELS={
+    na:{en:'North America',cn:'北美洲',de:'Nordamerika',fr:'Amérique du Nord',ru:'Северная Америка'},
+    sa:{en:'South America',cn:'南美洲',de:'Südamerika',fr:'Amérique du Sud',ru:'Южная Америка'},
+    eu:{en:'Europe',cn:'欧洲',de:'Europa',fr:'Europe',ru:'Европа'},
+    af:{en:'Africa',cn:'非洲',de:'Afrika',fr:'Afrique',ru:'Африка'},
+    as:{en:'Asia',cn:'亚洲',de:'Asien',fr:'Asie',ru:'Азия'},
+    oc:{en:'Oceania',cn:'大洋洲',de:'Ozeanien',fr:'Océanie',ru:'Океания'},
+    an:{en:'Antarctica',cn:'南极洲',de:'Antarktis',fr:'Antarctique',ru:'Антарктида'},
+    pa:{en:'Pacific Ocean',cn:'太平洋',de:'Pazifischer Ozean',fr:'Océan Pacifique',ru:'Тихий океан'},
+    at:{en:'Atlantic Ocean',cn:'大西洋',de:'Atlantischer Ozean',fr:'Océan Atlantique',ru:'Атлантический океан'},
+    io:{en:'Indian Ocean',cn:'印度洋',de:'Indischer Ozean',fr:'Océan Indien',ru:'Индийский океан'},
+    ao:{en:'Arctic Ocean',cn:'北冰洋',de:'Arktischer Ozean',fr:'Océan Arctique',ru:'Северный Ледовитый океан'},
+    so:{en:'Southern Ocean',cn:'南大洋',de:'Südlicher Ozean',fr:'Océan Austral',ru:'Южный океан'}
+  };
+  var LABEL_POS=[
+    {k:'na',x:-100,y:45,cls:'continent'},
+    {k:'sa',x:-58,y:-12,cls:'continent'},
+    {k:'eu',x:16,y:52,cls:'continent'},
+    {k:'af',x:20,y:6,cls:'continent'},
+    {k:'as',x:92,y:44,cls:'continent'},
+    {k:'oc',x:134,y:-24,cls:'continent'},
+    {k:'an',x:0,y:-74,cls:'continent'},
+    {k:'pa',x:-150,y:2,cls:'ocean'},
+    {k:'pa',x:178,y:-8,cls:'ocean'},
+    {k:'at',x:-30,y:26,cls:'ocean'},
+    {k:'io',x:78,y:-20,cls:'ocean'},
+    {k:'ao',x:0,y:84,cls:'ocean'},
+    {k:'so',x:24,y:-62,cls:'ocean'}
+  ];
+  var geoTexts=[];
+  function addLabels(l){
+    if(!geoTexts.length){
+      LABEL_POS.forEach(function(p){
+        var t=document.createElementNS(ns,'text');
+        var pt=project([p.x,p.y]);
+        t.setAttribute('x',pt[0]);t.setAttribute('y',pt[1]);
+        t.setAttribute('class','geo-label '+p.cls);
+        t.setAttribute('text-anchor','middle');
+        svg.appendChild(t);
+        geoTexts.push({el:t,key:p.k});
+      });
+    }
+    var lm=langMap(l);
+    geoTexts.forEach(function(o){
+      var src=GEO_LABELS[o.key]||GEO_LABELS.pa;
+      o.el.textContent=(src&&(src[lm]||src.en))||'';
+    });
+  }
+  window.ymUpdateGeoLang=addLabels;
+  var HUBS={sg:{lng:103.8,lat:1.35,label:'HQ',name:'Singapore'},fs:{lng:113.1,lat:23.0,label:'BRANCH',name:'Foshan'}};
+  function drawHubs(){
+    Object.keys(HUBS).forEach(function(k){
+      var h=HUBS[k]; var pt=project([h.lng,h.lat]);
+      var g=document.createElementNS(ns,'g'); g.setAttribute('class','hub '+k); g.setAttribute('data-hub',k);
+      [0,1].forEach(function(j){
+        var pl=document.createElementNS(ns,'circle');
+        pl.setAttribute('cx',pt[0]);pl.setAttribute('cy',pt[1]);pl.setAttribute('r',6.5);pl.setAttribute('class','pl'+(j?' d2':''));
+        g.appendChild(pl);
+      });
+      var core=document.createElementNS(ns,'circle');
+      core.setAttribute('cx',pt[0]);core.setAttribute('cy',pt[1]);core.setAttribute('r',(k==='sg'?5.8:5.2));
+      core.setAttribute('fill','var(--blue)');core.setAttribute('class','core');g.appendChild(core);
+      var ttl=document.createElementNS(ns,'text');
+      ttl.setAttribute('x',pt[0]);ttl.setAttribute('y',pt[1]+3.6);ttl.setAttribute('class','ttl');ttl.textContent=h.label;g.appendChild(ttl);
+      var nm=document.createElementNS(ns,'text');
+      nm.setAttribute('x',pt[0]);nm.setAttribute('y',pt[1]-(k==='sg'?10:9));nm.setAttribute('class','nm');
+      nm.textContent=h.name;g.appendChild(nm);
+      svg.appendChild(g);
+    });
+  }
+  function drawPartners(){
+    if(typeof WC_DATA==='undefined')return;
+    WC_DATA.forEach(function(c){
+      if(!PARTNERS.has(c.c))return;
+      var pt=project([c.ln,c.la]);
+      var ring=document.createElementNS(ns,'circle');
+      ring.setAttribute('cx',pt[0]);ring.setAttribute('cy',pt[1]);ring.setAttribute('r',2.6);ring.setAttribute('class','geo-ring');
+      svg.appendChild(ring);
+      var dot=document.createElementNS(ns,'circle');
+      dot.setAttribute('cx',pt[0]);dot.setAttribute('cy',pt[1]);dot.setAttribute('r',2.7);dot.setAttribute('class','partner-dot');
+      dot.dataset.iso=c.c;
+      svg.appendChild(dot);
+    });
+  }
+  svg.addEventListener('mouseover',function(e){
+    var t=e.target;
+    if(t.dataset&&t.dataset.iso){
+      var c=WC_DATA.find(function(x){return x.c===t.dataset.iso;});
+      if(c){var lm=langMap(window.YM_LANG);tip.innerHTML=((c.n&&(c.n[lm]||c.n.en))||c.n.en)+(c.s?'<span>'+c.s+'</span>':'');tip.style.opacity=1;}
+    }else if(t.dataset&&t.dataset.name){tip.innerHTML=t.dataset.name;tip.style.opacity=1;}
+    else if(t.closest){var hub=t.closest('.hub');if(hub&&hub.getAttribute('data-hub')==='fs'){tip.innerHTML='YENYONG.<span>Foshan YenYong International Building Materials Trading Co., Ltd.</span>';tip.style.opacity=1;}}
+  });
+  svg.addEventListener('mousemove',function(e){
+    var r=svg.parentElement.getBoundingClientRect();
+    var x=e.clientX-r.left+14,y=e.clientY-r.top+14;
+    if(x>r.width-130)x=r.width-130;
+    tip.style.left=x+'px';tip.style.top=y+'px';
+  });
+  svg.addEventListener('mouseout',function(){tip.style.opacity=0;});
+  var initLang=window.YM_LANG||document.documentElement.lang||'en';
+  var landP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json').then(function(r){return r.json();});
+  var ctrP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(r){return r.json();});
+  Promise.all([landP,ctrP]).then(function(arr){
+    drawGeo(arr[0],'land','land',LAND,null,0,false);
+    drawGeo(arr[1],'countries','country','none',BORD,.4,true);
+    drawPartners();
+    drawHubs();
+    addLabels(initLang);
+  }).catch(function(e){console.warn('basemap load failed',e);if(fb)fb.hidden=false;});
+})();
+</script>
+
+
 </body>
 </html>

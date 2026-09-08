@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Global Markets · 方案 E vs F 对比</title>
+<style>
+  :root{--blue:#1F3AA0;--slate:#5c6480;--ink:#11162b;--line:#e3e8f4;--bg:#f5f7fc;
+        --land:#dbe5f8;--bord:#b8c8ea;--ocean:#fbfcff;--hub-sg:#1F3AA0;--hub-fs:#3b5bd6;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.5}
+  .top{max-width:980px;margin:0 auto;padding:46px 22px 8px}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:800}
+  h1{font-size:30px;margin:8px 0 6px;letter-spacing:-.5px}
+  .sub{color:var(--slate);max-width:700px;font-size:15px}
+  .sec{max-width:980px;margin:40px auto;padding:0 22px}
+  h2{font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .tag{font-size:11px;font-weight:700;color:var(--blue);background:rgba(31,58,160,.08);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .note{color:var(--slate);font-size:13.5px;margin:2px 0 18px}
+
+  /* ---------- light map (E) ---------- */
+  .map-wrap{position:relative;max-width:920px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+      background:radial-gradient(circle at 50% 42%, #ffffff 0%, var(--ocean) 65%, #eef3fc 100%);
+      box-shadow:0 24px 60px rgba(31,58,160,.10);}
+  svg.map{display:block;width:100%;height:auto}
+  .land{fill:var(--land)}
+  .country{fill:none;stroke:var(--bord);stroke-width:.55;pointer-events:auto;transition:fill .15s}
+  .country:hover{fill:rgba(31,58,160,.08)}
+  .dot{fill:#b9c9ec;transition:fill .15s}
+  .dot:hover{fill:var(--blue)}
+  .dot.partner{fill:var(--blue);filter:drop-shadow(0 0 4px rgba(31,58,160,.55))}
+  .dot.ripple{fill:none;stroke:var(--blue);stroke-width:.8;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite;opacity:.4}
+  @keyframes pulse{0%{transform:scale(1);opacity:.4}100%{transform:scale(3.4);opacity:0}}
+
+  /* ---------- dark map (F) ---------- */
+  .map-wrap.dark{border-color:#1c2c52;background:radial-gradient(circle at 50% 40%, #14224a 0%, #0b1430 70%, #070d22 100%);
+      box-shadow:0 24px 70px rgba(0,0,0,.45)}
+  .dark .land{fill:#16264f}
+  .dark .country{stroke:#2c4a82;stroke-width:.5;pointer-events:auto;transition:fill .15s}
+  .dark .country:hover{fill:rgba(77,163,255,.18)}
+  .dark .dot.strip{fill:#3a5694}
+  .dark .dot.partner{fill:#5db4ff;filter:drop-shadow(0 0 6px rgba(93,180,255,.9))}
+  .dark .dot.ripple{fill:none;stroke:#5db4ff;stroke-width:.9;transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite;opacity:.5}
+
+  /* hubs (shared) */
+  .hub{filter:drop-shadow(0 2px 7px rgba(31,58,160,.45))}
+  .hub .core{stroke:#fff;stroke-width:2.2}
+  .hub .pl{fill:none;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:hubp 4s ease-out infinite;opacity:.4}
+  .hub.sg .pl{stroke:var(--hub-sg)}
+  .hub.fs .pl{stroke:var(--hub-fs)}
+  .hub .pl.d2{animation-delay:2s}
+  @keyframes hubp{0%{transform:scale(1);opacity:.4}100%{transform:scale(5);opacity:0}}
+  .hub .ttl{font-size:9px;font-weight:800;fill:#fff;text-anchor:middle;letter-spacing:.5px}
+  .hub .nm{font-size:11px;font-weight:800;fill:var(--blue);text-anchor:middle;letter-spacing:.2px}
+  .dark .hub .nm{fill:#dfe9ff}
+  .dark .hub{filter:drop-shadow(0 2px 9px rgba(93,180,255,.6))}
+
+  /* arcs (F only) */
+  .arc{fill:none;stroke-linecap:round}
+  .arc.fs{stroke:#7da3ff}
+  .arc.main{stroke:#5db4ff;stroke-width:1.7;opacity:.85;stroke-dasharray:5 9;animation:flow 3s linear infinite}
+  .arc.main.fs{stroke:#8fb6ff}
+  .arc.light{stroke:#3f63b0;stroke-width:.5;opacity:.5;stroke-dasharray:1 5}
+  @keyframes flow{to{stroke-dashoffset:-56}}
+
+  .kicker{position:absolute;left:16px;top:14px;z-index:4;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:11px;padding:10px 15px;backdrop-filter:blur(4px)}
+  .dark .kicker{background:rgba(10,18,40,.7);border-color:#2c4a82;color:#dfe9ff}
+  .kicker b{color:var(--blue);font-size:13px;letter-spacing:.2px}
+  .dark .kicker b{color:#7fb6ff}
+  .kicker small{display:block;color:var(--slate);font-size:11.5px;margin-top:2px}
+  .dark .kicker small{color:#9fb3da}
+  .tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:12.5px;font-weight:700;color:var(--blue);box-shadow:0 10px 26px rgba(31,58,160,.18);opacity:0;transition:opacity .12s;white-space:nowrap;z-index:6}
+  .dark .tip{background:#0e1a3a;border-color:#2c4a82;color:#cfe2ff;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+  .tip span{display:block;font-weight:500;color:var(--slate);font-size:11px;margin-top:1px}
+  .dark .tip span{color:#8fa6cf}
+  .legend{max-width:920px;margin:14px auto 0;display:flex;gap:22px;font-size:12.5px;color:var(--slate);padding:0 6px;flex-wrap:wrap;align-items:center}
+  .legend i{display:inline-block;width:18px;height:3px;border-radius:1.5px;margin-right:7px;vertical-align:middle;opacity:.6}
+  .legend .sg{background:var(--hub-sg)}
+  .legend .fs{background:var(--hub-fs)}
+  .legend .p{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--blue);opacity:1}
+  .mg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px;margin:26px auto 0}
+  .mk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;transition:.18s;position:relative;overflow:hidden}
+  .mk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
+  .mk:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,58,160,.12);border-color:#c9d4ef}
+  .mk-f{display:flex;align-items:center;gap:8px;color:var(--blue);font-weight:800;font-size:12px;letter-spacing:1px}
+  .mk-f span{background:rgba(31,58,160,.1);border-radius:6px;padding:2px 7px;font-size:11px}
+  .mk-n{font-size:16px;font-weight:800;margin:9px 0 4px}
+  .mk-c{font-size:12px;color:var(--slate);letter-spacing:.4px;font-weight:600}
+  .fallback{display:none;padding:30px;text-align:center;color:var(--slate);font-size:13px}
+  .foot{max-width:980px;margin:54px auto 60px;padding:0 22px;color:var(--slate);font-size:12.5px;border-top:1px solid var(--line);padding-top:22px}
+  @media(max-width:680px){.mg{grid-template-columns:repeat(2,1fr)}.legend{gap:12px}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Global Markets · 二选一</div>
+    <h1>方案 E vs 方案 F</h1>
+    <p class="sub">同样的数据与双总部枢纽，两种呈现气质。E 极简克制、不破坏蓝白主题；F 深色高对比、更像你的参考图。看完告诉我选哪个。</p>
+  </div>
+
+  <!-- ===== 方案 E ===== -->
+  <section class="sec">
+    <h2>方案 E <span class="tag">极简 · 无连线 · 保持蓝白主题</span></h2>
+    <p class="note">真实大陆轮廓 + 双总部标记 + 合作国蓝点，完全不画线。靠下方 9 大市场卡片讲故事，最干净、最企业站。</p>
+    <div class="map-wrap" id="wrapE">
+      <svg class="map" id="svgE" viewBox="0 0 900 450" role="img" aria-label="Global markets minimal map"></svg>
+      <div class="kicker"><b>Singapore HQ · Foshan Branch</b><small>辐射至 40+ 全球合作市场</small></div>
+      <div class="tip" id="tipE"></div>
+      <div class="fallback" id="fbE">地图底图加载失败（需要联网获取地理数据）。</div>
+    </div>
+    <div class="legend">
+      <span><i class="sg"></i>新加坡总部</span>
+      <span><i class="fs"></i>佛山分公司</span>
+      <span><i class="p"></i>合作国（40+）</span>
+    </div>
+  </section>
+
+  <!-- ===== 方案 F ===== -->
+  <section class="sec">
+    <h2>方案 F <span class="tag">深色底 · 辐射连线 · 高对比</span></h2>
+    <p class="note">深蓝/藏青背景 + 亮蓝航线弧光，对比强烈、视觉张力强，最接近你发的参考图。会打破 Markets 区块的纯蓝白，作为整页的"深色视觉带"。</p>
+    <div class="map-wrap dark" id="wrapF">
+      <svg class="map" id="svgF" viewBox="0 0 900 450" role="img" aria-label="Global markets dark radial map"></svg>
+      <div class="kicker"><b>Singapore HQ · Foshan Branch</b><small>辐射至 40+ 全球合作市场</small></div>
+      <div class="tip" id="tipF"></div>
+      <div class="fallback" id="fbF">地图底图加载失败（需要联网获取地理数据）。</div>
+    </div>
+    <div class="legend">
+      <span><i class="sg"></i>新加坡总部辐射</span>
+      <span><i class="fs"></i>佛山分公司辐射</span>
+      <span><i class="p"></i>合作国（40+）</span>
+    </div>
+  </section>
+
+  <!-- ===== 共享 9 大市场卡片 ===== -->
+  <section class="sec">
+    <h2>九大核心市场 <span class="tag">两方案共用</span></h2>
+    <div class="mg">
+      <div class="mk"><div class="mk-f"><span>EU</span></div><div class="mk-n">Europe</div><div class="mk-c">DE · PL · NL · FR · GB · BE · ES · IT</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Central Asia</div><div class="mk-c">KZ · UZ · TM · TJ · KG · MN</div></div>
+      <div class="mk"><div class="mk-f"><span>RU</span></div><div class="mk-n">Russia &amp; CIS</div><div class="mk-c">RU · BY · UA · AM</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Southeast Asia</div><div class="mk-c">MY · TH · VN · ID · PH · SG</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">East Asia</div><div class="mk-c">JP · KR</div></div>
+      <div class="mk"><div class="mk-f"><span>MA</span></div><div class="mk-n">North Africa</div><div class="mk-c">MA · TN · EG · DZ</div></div>
+      <div class="mk"><div class="mk-f"><span>AE</span></div><div class="mk-n">Middle East</div><div class="mk-c">AE · SA · QA · KW</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Sub-Saharan Africa</div><div class="mk-c">ZA · NG · TZ · KE</div></div>
+      <div class="mk"><div class="mk-f"><span>US</span></div><div class="mk-n">North America</div><div class="mk-c">US · CA</div></div>
+    </div>
+  </section>
+
+  <div class="foot">注：本页为决策预览，主站 <code>index.html</code> 暂未改动。选定方案后我会合并进主站 Markets 区块。</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="data/countries.js"></script>
+  <script>
+  (function(){
+    var PARTNERS=new Set(['DE','PL','NL','FR','GB','BE','ES','IT','KZ','UZ','TM','TJ','KG','MN','RU','BY','UA','AM','MY','TH','VN','ID','PH','SG','JP','KR','MA','TN','EG','DZ','AE','SA','QA','KW','ZA','NG','TZ','KE','US','CA']);
+    var HUB_MAIN={sg:['DE','EG','AE','ZA','US'], fs:['JP','MY','KZ','RU']};
+    var W=900,H=450, ns='http://www.w3.org/2000/svg';
+    var HUBS={sg:{lng:103.8,lat:1.35,label:'HQ'},fs:{lng:113.1,lat:23.0,label:'BRANCH'}};
+    var projection;
+    try{ projection = d3.geoNaturalEarth1().fitSize([W,H], {type:'Sphere'}); }catch(e){ projection=null; }
+    function project(pt){ return projection? projection(pt) : [ (pt[0]+180)/360*W, (90-pt[1])/180*H ]; }
+    function ringToPath(ring){var d='';ring.forEach(function(pt,i){var p=project(pt);d+=(i===0?'M':'L')+p[0].toFixed(1)+' '+p[1].toFixed(1);});return d+'Z';}
+    function geomToPath(geom){if(!geom)return'';if(geom.type==='Polygon')return geom.coordinates.map(ringToPath).join('');if(geom.type==='MultiPolygon'){var d='';geom.coordinates.forEach(function(poly){d+=poly.map(ringToPath).join('');});return d;}return'';}
+    function drawGeo(svg,topo,objName,cls,fill,stroke,sw,withName){
+      if(typeof topojson==='undefined'||!topo.objects[objName]||typeof d3==='undefined'||!d3.geoPath)return;
+      var path=d3.geoPath(projection);
+      var fc=topojson.feature(topo,topo.objects[objName]);
+      var feats=fc.type==='FeatureCollection'?fc.features:[fc];
+      feats.forEach(function(f){
+        var d=path(f);
+        if(!d)return;
+        var p=document.createElementNS(ns,'path');
+        p.setAttribute('d',d);p.setAttribute('class',cls);
+        if(fill)p.setAttribute('fill',fill);
+        if(stroke){p.setAttribute('stroke',stroke);p.setAttribute('stroke-width',sw);}
+        if(withName&&f.properties&&f.properties.name)p.dataset.name=f.properties.name;
+        svg.appendChild(p);
+      });
+    }
+    function arcPathGeo(sGeo,eGeo,steps){steps=steps||36;var interp=d3.geoInterpolate(sGeo,eGeo);var d='';for(var i=0;i<=steps;i++){var t=i/steps;var p=project(interp(t));d+=(i===0?'M':'L')+p[0].toFixed(1)+' '+p[1].toFixed(1);}return d;}
+    function whichHub(c){if(c.c==='SG')return null;var asia=(c.r==='Asia')||(c.s==='Eastern Asia')||(c.s==='South-Eastern Asia')||(c.s==='Central Asia')||(c.s==='Western Asia');return asia?'fs':'sg';}
+    function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+
+    function build(which, withArcs){
+      var svg=document.getElementById('svg'+which);
+      var tip=document.getElementById('tip'+which);
+      var fb=document.getElementById('fb'+which);
+      function drawArcs(){
+        if(withArcs===false || typeof WC_DATA==='undefined' || typeof d3==='undefined' || !d3.geoInterpolate) return;
+        var gMain=document.createElementNS(ns,'g'), gLight=document.createElementNS(ns,'g');
+        svg.insertBefore(gLight, svg.firstChild.nextSibling);
+        svg.insertBefore(gMain, gLight);
+        var mainSet={}; ['sg','fs'].forEach(function(k){HUB_MAIN[k].forEach(function(iso){mainSet[iso]=k;});});
+        var idx=0;
+        WC_DATA.forEach(function(c){
+          if(!PARTNERS.has(c.c)) return;
+          var hk=whichHub(c); if(!hk) return;
+          var sGeo=[HUBS[hk].lng,HUBS[hk].lat], eGeo=[c.ln,c.la];
+          var isMain=mainSet[c.c]===hk;
+          var p=document.createElementNS(ns,'path');
+          p.setAttribute('d',arcPathGeo(sGeo,eGeo));
+          p.setAttribute('class','arc '+(hk==='fs'?'fs':'')+(isMain?' main':' light'));
+          if(isMain){p.setAttribute('stroke-dasharray','6 10');p.setAttribute('stroke-dashoffset',(Math.random()*-52).toFixed(1));p.style.animationDelay=(-(idx%6)*0.5).toFixed(2)+'s';p.style.animationDuration=(2.8+(idx%4)*0.35).toFixed(2)+'s';gMain.appendChild(p);}
+          else{gLight.appendChild(p);}
+          idx++;
+        });
+      }
+      function drawHubs(){
+        Object.keys(HUBS).forEach(function(k){
+          var h=HUBS[k]; var pt=project([h.lng,h.lat]);
+          var g=document.createElementNS(ns,'g'); g.setAttribute('class','hub '+k);
+          [0,1].forEach(function(j){var pl=document.createElementNS(ns,'circle');pl.setAttribute('cx',pt[0]);pl.setAttribute('cy',pt[1]);pl.setAttribute('r',6.5);pl.setAttribute('class','pl'+(j?' d2':''));g.appendChild(pl);});
+          var core=document.createElementNS(ns,'circle');core.setAttribute('cx',pt[0]);core.setAttribute('cy',pt[1]);core.setAttribute('r',(k==='sg'?6:5.2));core.setAttribute('fill',k==='sg'?css('--hub-sg'):css('--hub-fs'));core.setAttribute('class','core');g.appendChild(core);
+          var ttl=document.createElementNS(ns,'text');ttl.setAttribute('x',pt[0]);ttl.setAttribute('y',pt[1]+3.6);ttl.setAttribute('class','ttl');ttl.textContent=h.label;g.appendChild(ttl);
+          var nm=document.createElementNS(ns,'text');nm.setAttribute('x',pt[0]);nm.setAttribute('y',pt[1]-(k==='sg'?10:9));nm.setAttribute('class','nm');nm.textContent=k==='sg'?'Singapore':'Foshan';g.appendChild(nm);
+          svg.appendChild(g);
+        });
+      }
+      function drawPartners(withRipple){
+        if(typeof WC_DATA==='undefined')return;
+        var g=document.createElementNS(ns,'g'); svg.appendChild(g);
+        WC_DATA.forEach(function(c){
+          if(!PARTNERS.has(c.c)) return;
+          var pt=project([c.ln,c.la]);
+          if(withRipple){var ring=document.createElementNS(ns,'circle');ring.setAttribute('cx',pt[0]);ring.setAttribute('cy',pt[1]);ring.setAttribute('r',2.8);ring.setAttribute('class','dot ripple');g.appendChild(ring);}
+          var dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',pt[0]);dot.setAttribute('cy',pt[1]);dot.setAttribute('r',3.2);dot.setAttribute('class','dot partner');
+          dot.dataset.name=(c.n&&(c.n[window.YM_LANG||'en']))||c.n.en;dot.dataset.region=c.s||c.r||'';g.appendChild(dot);
+        });
+      }
+      svg.addEventListener('mouseover',function(e){var t=e.target;if(t.dataset&&t.dataset.name){tip.innerHTML=t.dataset.name+(t.dataset.region?'<span>'+t.dataset.region+'</span>':'');tip.style.opacity=1;}});
+      svg.addEventListener('mousemove',function(e){var r=svg.parentElement.getBoundingClientRect();var x=e.clientX-r.left+14,y=e.clientY-r.top+14;if(x>r.width-130)x=r.width-130;tip.style.left=x+'px';tip.style.top=y+'px';});
+      svg.addEventListener('mouseout',function(){tip.style.opacity=0;});
+      var landP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json').then(function(r){return r.json();});
+      var ctrP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(r){return r.json();});
+      Promise.all([landP,ctrP]).then(function(arr){
+        var isDark=withArcs && which==='F';
+        drawGeo(svg,arr[0],'land','land', isDark?'#16264f':css('--land'), null,0,false);
+        drawGeo(svg,arr[1],'countries','country','none', isDark?'#2c4a82':css('--bord'),.55,true);
+        drawArcs();
+        drawPartners(true);
+        drawHubs();
+      }).catch(function(e){console.warn('basemap load failed',e);if(fb)fb.style.display='block';});
+    }
+    build('E', false);  // 极简、无连线
+    build('F', true);   // 深色、辐射连线
+  })();
+  </script>
+</body>
+</html>

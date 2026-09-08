@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Global Markets · 真实大陆轮廓方案</title>
+<style>
+  :root{--blue:#1F3AA0;--slate:#5c6480;--ink:#11162b;--line:#e3e8f4;--bg:#f5f7fc;--land:#e7eefb;--bord:#cfd9f1;--ocean:#fbfcff;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  .top{max-width:980px;margin:0 auto;padding:46px 22px 8px}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:800}
+  h1{font-size:30px;margin:8px 0 6px;letter-spacing:-.5px}
+  .sub{color:var(--slate);max-width:660px;font-size:15px}
+  .sec{max-width:980px;margin:40px auto;padding:0 22px}
+  h2{font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .tag{font-size:11px;font-weight:700;color:var(--blue);background:rgba(31,58,160,.08);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .note{color:var(--slate);font-size:13.5px;margin:2px 0 18px}
+  .map-wrap{position:relative;max-width:920px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:
+      radial-gradient(circle at 50% 38%, #ffffff 0%, var(--ocean) 70%, #eef3fc 100%);
+      box-shadow:0 24px 60px rgba(31,58,160,.10);}
+  svg.map{display:block;width:100%;height:auto}
+  .land{fill:var(--land)}
+  .country{fill:none;stroke:var(--bord);stroke-width:.4;pointer-events:auto;transition:fill .15s}
+  .country:hover{fill:rgba(31,58,160,.07)}
+  .dot{fill:#c3d0ec;transition:fill .15s}
+  .dot:hover{fill:var(--blue)}
+  .dot.partner{fill:var(--blue);filter:drop-shadow(0 0 3px rgba(31,58,160,.6))}
+  .ring{fill:none;stroke:var(--blue);stroke-width:.7;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite;opacity:.45}
+  @keyframes pulse{0%{transform:scale(1);opacity:.45}100%{transform:scale(3.4);opacity:0}}
+  .tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:12.5px;font-weight:700;color:var(--blue);box-shadow:0 10px 26px rgba(31,58,160,.18);opacity:0;transition:opacity .12s;white-space:nowrap;z-index:5}
+  .tip span{display:block;font-weight:500;color:var(--slate);font-size:11px;margin-top:1px}
+  .legend{max-width:920px;margin:14px auto 0;display:flex;gap:20px;font-size:12.5px;color:var(--slate);padding:0 6px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .legend .p{background:var(--blue)}
+  .legend .o{background:#c3d0ec}
+  .mg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px;margin:26px auto 0}
+  .mk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;transition:.18s;position:relative;overflow:hidden}
+  .mk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
+  .mk:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,58,160,.12);border-color:#c9d4ef}
+  .mk-f{display:flex;align-items:center;gap:8px;color:var(--blue);font-weight:800;font-size:12px;letter-spacing:1px}
+  .mk-f span{background:rgba(31,58,160,.1);border-radius:6px;padding:2px 7px;font-size:11px}
+  .mk-n{font-size:16px;font-weight:800;margin:9px 0 4px}
+  .mk-c{font-size:12px;color:var(--slate);letter-spacing:.4px;font-weight:600}
+  .fallback{display:none;padding:30px;text-align:center;color:var(--slate);font-size:13px}
+  .foot{max-width:980px;margin:54px auto 60px;padding:0 22px;color:var(--slate);font-size:12.5px;border-top:1px solid var(--line);padding-top:22px}
+  @media(max-width:680px){.mg{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Global Markets · 方案 C</div>
+    <h1>真实大陆轮廓 + 合作国标记</h1>
+    <p class="sub">用真实世界地理数据画出大陆轮廓与国界（不再只是漂浮的点），你的 40+ 合作国以皇家蓝脉冲点落在真实位置上。悬停任意国家看国名，悬停蓝点看「国家 + 区域」。下方保留 9 大市场卡片。看完告诉我是否采用，或哪里要调。</p>
+  </div>
+
+  <section class="sec">
+    <h2>方案 C <span class="tag">真实大陆轮廓 · 交互</span></h2>
+    <p class="note">陆地浅蓝填充、国界细线、合作国皇家蓝脉冲点。轻量、无 WebGL、移动端友好，又有完整「地图感」。</p>
+    <div class="map-wrap">
+      <svg class="map" id="svgC" viewBox="0 0 900 450" role="img" aria-label="Global markets map with continent outlines"></svg>
+      <div class="tip" id="tipC"></div>
+      <div class="fallback" id="fbC">地图底图加载失败（需要联网获取地理数据）。</div>
+    </div>
+    <div class="legend">
+      <span><i class="p"></i>合作国（40+）</span>
+      <span><i class="o"></i>其他国家（可悬停查看）</span>
+    </div>
+    <div class="mg">
+      <div class="mk"><div class="mk-f"><span>EU</span></div><div class="mk-n">Europe</div><div class="mk-c">DE · PL · NL · FR · GB · BE · ES · IT</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Central Asia</div><div class="mk-c">KZ · UZ · TM · TJ · KG · MN</div></div>
+      <div class="mk"><div class="mk-f"><span>RU</span></div><div class="mk-n">Russia &amp; CIS</div><div class="mk-c">RU · BY · UA · AM</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Southeast Asia</div><div class="mk-c">MY · TH · VN · ID · PH · SG</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">East Asia</div><div class="mk-c">JP · KR</div></div>
+      <div class="mk"><div class="mk-f"><span>MA</span></div><div class="mk-n">North Africa</div><div class="mk-c">MA · TN · EG · DZ</div></div>
+      <div class="mk"><div class="mk-f"><span>AE</span></div><div class="mk-n">Middle East</div><div class="mk-c">AE · SA · QA · KW</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Sub-Saharan Africa</div><div class="mk-c">ZA · NG · TZ · KE</div></div>
+      <div class="mk"><div class="mk-f"><span>US</span></div><div class="mk-n">North America</div><div class="mk-c">US · CA</div></div>
+    </div>
+  </section>
+
+  <div class="foot">注：本页为决策预览，主站 <code>index.html</code> 暂未改动。选定方案后我会移除 Three.js 地球代码并合并进主站 Markets 区块。</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="data/countries.js"></script>
+  <script>
+  (function(){
+    var PARTNERS=new Set(['DE','PL','NL','FR','GB','BE','ES','IT','KZ','UZ','TM','TJ','KG','MN','RU','BY','UA','AM','MY','TH','VN','ID','PH','SG','JP','KR','MA','TN','EG','DZ','AE','SA','QA','KW','ZA','NG','TZ','KE','US','CA']);
+    var W=900,H=450, ns='http://www.w3.org/2000/svg';
+    var svg=document.getElementById('svgC'), tip=document.getElementById('tipC'), fb=document.getElementById('fbC');
+    function project(pt){return [ (pt[0]+180)/360*W, (90-pt[1])/180*H ];}
+    function ringToPath(ring){
+      var d='';
+      ring.forEach(function(pt,i){ var p=project(pt); d+=(i===0?'M':'L')+p[0].toFixed(1)+' '+p[1].toFixed(1); });
+      return d+'Z';
+    }
+    function geomToPath(geom){
+      if(!geom) return '';
+      if(geom.type==='Polygon') return geom.coordinates.map(ringToPath).join('');
+      if(geom.type==='MultiPolygon'){ var d=''; geom.coordinates.forEach(function(poly){ d+=poly.map(ringToPath).join(''); }); return d; }
+      return '';
+    }
+    function drawGeo(topo, objName, cls, fill, stroke, sw, withName){
+      if(typeof topojson==='undefined'||!topo.objects[objName]) return;
+      var fc=topojson.feature(topo, topo.objects[objName]);
+      var feats=fc.type==='FeatureCollection'? fc.features : [fc];
+      feats.forEach(function(f){
+        var d=geomToPath(f.geometry);
+        if(!d) return;
+        var p=document.createElementNS(ns,'path');
+        p.setAttribute('d',d); p.setAttribute('class',cls);
+        if(fill)p.setAttribute('fill',fill);
+        if(stroke){p.setAttribute('stroke',stroke);p.setAttribute('stroke-width',sw);}
+        if(withName && f.properties && f.properties.name) p.dataset.name=f.properties.name;
+        svg.appendChild(p);
+      });
+    }
+    function drawPartners(){
+      if(typeof WC_DATA==='undefined') return;
+      WC_DATA.forEach(function(c){
+        if(!PARTNERS.has(c.c)) return;
+        var pt=project([c.ln,c.la]);
+        var ring=document.createElementNS(ns,'circle');
+        ring.setAttribute('cx',pt[0]);ring.setAttribute('cy',pt[1]);ring.setAttribute('r',2.6);ring.setAttribute('class','ring');
+        svg.appendChild(ring);
+        var dot=document.createElementNS(ns,'circle');
+        dot.setAttribute('cx',pt[0]);dot.setAttribute('cy',pt[1]);dot.setAttribute('r',2.7);dot.setAttribute('class','dot partner');
+        dot.dataset.name=(c.n&&(c.n[window.YM_LANG||'en']))||c.n.en;
+        dot.dataset.region=c.s||c.r||'';
+        svg.appendChild(dot);
+      });
+    }
+    // hover
+    svg.addEventListener('mouseover',function(e){
+      var t=e.target;
+      if(t.dataset&&t.dataset.name){tip.innerHTML=t.dataset.name+(t.dataset.region?'<span>'+t.dataset.region+'</span>':'');tip.style.opacity=1;}
+    });
+    svg.addEventListener('mousemove',function(e){
+      var r=svg.parentElement.getBoundingClientRect();
+      var x=e.clientX-r.left+14, y=e.clientY-r.top+14;
+      if(x>r.width-130)x=r.width-130;
+      tip.style.left=x+'px';tip.style.top=y+'px';
+    });
+    svg.addEventListener('mouseout',function(){tip.style.opacity=0;});
+    // load basemap
+    var landP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json').then(function(r){return r.json();});
+    var ctrP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(r){return r.json();});
+    Promise.all([landP,ctrP]).then(function(arr){
+      drawGeo(arr[0],'land','land', getComputedStyle(document.documentElement).getPropertyValue('--land').trim(), null,0,false);
+      drawGeo(arr[1],'countries','country', 'none', getComputedStyle(document.documentElement).getPropertyValue('--bord').trim(), .4, true);
+      drawPartners();
+    }).catch(function(e){ console.warn('basemap load failed',e); if(fb) fb.style.display='block'; });
+  })();
+  </script>
+</body>
+</html>

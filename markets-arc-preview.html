@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Global Markets · 双总部辐射网络（最终版）</title>
+<style>
+  :root{--blue:#1F3AA0;--slate:#5c6480;--ink:#11162b;--line:#e3e8f4;--bg:#f5f7fc;--land:#dbe5f8;--bord:#b8c8ea;--ocean:#fbfcff;--hub-sg:#1F3AA0;--hub-fs:#3b5bd6;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  .top{max-width:980px;margin:0 auto;padding:46px 22px 8px}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:800}
+  h1{font-size:30px;margin:8px 0 6px;letter-spacing:-.5px}
+  .sub{color:var(--slate);max-width:660px;font-size:15px}
+  .sec{max-width:980px;margin:40px auto;padding:0 22px}
+  h2{font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .tag{font-size:11px;font-weight:700;color:var(--blue);background:rgba(31,58,160,.08);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .note{color:var(--slate);font-size:13.5px;margin:2px 0 18px}
+  .map-wrap{position:relative;max-width:920px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:
+      radial-gradient(circle at 50% 42%, #ffffff 0%, var(--ocean) 65%, #eef3fc 100%);
+      box-shadow:0 24px 60px rgba(31,58,160,.10);}
+  svg.map{display:block;width:100%;height:auto}
+  .land{fill:var(--land)}
+  .country{fill:none;stroke:var(--bord);stroke-width:.55;pointer-events:auto;transition:fill .15s}
+  .country:hover{fill:rgba(31,58,160,.08)}
+  .dot{fill:#b9c9ec;transition:fill .15s}
+  .dot:hover{fill:var(--blue)}
+  .dot.partner{fill:var(--blue);filter:drop-shadow(0 0 4px rgba(31,58,160,.55))}
+  .ring{fill:none;stroke:var(--blue);stroke-width:.8;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite;opacity:.45}
+  @keyframes pulse{0%{transform:scale(1);opacity:.45}100%{transform:scale(3.6);opacity:0}}
+  .arc{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:round;opacity:.38;animation:flow 3.2s linear infinite}
+  .arc.fs{stroke:var(--hub-fs);opacity:.34}
+  .arc.light{stroke-width:.55;opacity:.12;animation:none}
+  .arc.light.fs{opacity:.1}
+  .arc.main{stroke-width:1.8;opacity:.55}
+  .arc.main.fs{stroke-width:1.8;opacity:.5}
+  @keyframes flow{to{stroke-dashoffset:-52}}
+  .hub{filter:drop-shadow(0 2px 7px rgba(31,58,160,.45))}
+  .hub .core{stroke:#fff;stroke-width:2.2}
+  .hub .pl{fill:none;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:hubp 4s ease-out infinite;opacity:.4}
+  .hub.sg .pl{stroke:var(--hub-sg)}
+  .hub.fs .pl{stroke:var(--hub-fs)}
+  .hub .pl.d2{animation-delay:2s}
+  @keyframes hubp{0%{transform:scale(1);opacity:.4}100%{transform:scale(5);opacity:0}}
+  .hub .ttl{font-size:9px;font-weight:800;fill:#fff;text-anchor:middle;letter-spacing:.5px}
+  .hub .nm{font-size:11px;font-weight:800;fill:var(--blue);text-anchor:middle;letter-spacing:.2px}
+  .kicker{position:absolute;left:16px;top:14px;z-index:4;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:11px;padding:10px 15px;backdrop-filter:blur(4px)}
+  .kicker b{color:var(--blue);font-size:13px;letter-spacing:.2px}
+  .kicker small{display:block;color:var(--slate);font-size:11.5px;margin-top:2px}
+  .tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:12.5px;font-weight:700;color:var(--blue);box-shadow:0 10px 26px rgba(31,58,160,.18);opacity:0;transition:opacity .12s;white-space:nowrap;z-index:6}
+  .tip span{display:block;font-weight:500;color:var(--slate);font-size:11px;margin-top:1px}
+  .legend{max-width:920px;margin:14px auto 0;display:flex;gap:22px;font-size:12.5px;color:var(--slate);padding:0 6px;flex-wrap:wrap;align-items:center}
+  .legend i{display:inline-block;width:18px;height:3px;border-radius:1.5px;margin-right:7px;vertical-align:middle;opacity:.6}
+  .legend .sg{background:var(--hub-sg)}
+  .legend .fs{background:var(--hub-fs)}
+  .legend .p{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--blue);opacity:1}
+  .mg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px;margin:26px auto 0}
+  .mk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;transition:.18s;position:relative;overflow:hidden}
+  .mk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
+  .mk:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,58,160,.12);border-color:#c9d4ef}
+  .mk-f{display:flex;align-items:center;gap:8px;color:var(--blue);font-weight:800;font-size:12px;letter-spacing:1px}
+  .mk-f span{background:rgba(31,58,160,.1);border-radius:6px;padding:2px 7px;font-size:11px}
+  .mk-n{font-size:16px;font-weight:800;margin:9px 0 4px}
+  .mk-c{font-size:12px;color:var(--slate);letter-spacing:.4px;font-weight:600}
+  .fallback{display:none;padding:30px;text-align:center;color:var(--slate);font-size:13px}
+  .foot{max-width:980px;margin:54px auto 60px;padding:0 22px;color:var(--slate);font-size:12.5px;border-top:1px solid var(--line);padding-top:22px}
+  @media(max-width:680px){.mg{grid-template-columns:repeat(2,1fr)}.legend{gap:12px}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Global Markets · 方案 D+</div>
+    <h1>双总部 · 全球辐射网络</h1>
+    <p class="sub">以新加坡总部与中国佛山分公司为枢纽，向全球 40+ 合作国输送建材与服务。真实大圆路径 + Natural Earth 投影，北美、欧洲、非洲的航线都准确落在地球表面上。</p>
+  </div>
+
+  <section class="sec">
+    <h2>方案 D+ <span class="tag">真实大圆路径 · 主次辐射</span></h2>
+    <p class="note">深蓝实线为区域主连线（带流动动画），浅灰线为其余市场覆盖。悬停国家或节点查看详情。</p>
+    <div class="map-wrap">
+      <svg class="map" id="svgC" viewBox="0 0 900 450" role="img" aria-label="Global markets map with headquarters radiating arcs"></svg>
+      <div class="kicker"><b>Singapore HQ · Foshan Branch</b><small>辐射至 40+ 全球合作市场</small></div>
+      <div class="tip" id="tipC"></div>
+      <div class="fallback" id="fbC">地图底图加载失败（需要联网获取地理数据）。</div>
+    </div>
+    <div class="legend">
+      <span><i class="sg"></i>新加坡总部辐射</span>
+      <span><i class="fs"></i>佛山分公司辐射</span>
+      <span><i class="p"></i>合作国（40+）</span>
+    </div>
+    <div class="mg">
+      <div class="mk"><div class="mk-f"><span>EU</span></div><div class="mk-n">Europe</div><div class="mk-c">DE · PL · NL · FR · GB · BE · ES · IT</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Central Asia</div><div class="mk-c">KZ · UZ · TM · TJ · KG · MN</div></div>
+      <div class="mk"><div class="mk-f"><span>RU</span></div><div class="mk-n">Russia &amp; CIS</div><div class="mk-c">RU · BY · UA · AM</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Southeast Asia</div><div class="mk-c">MY · TH · VN · ID · PH · SG</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">East Asia</div><div class="mk-c">JP · KR</div></div>
+      <div class="mk"><div class="mk-f"><span>MA</span></div><div class="mk-n">North Africa</div><div class="mk-c">MA · TN · EG · DZ</div></div>
+      <div class="mk"><div class="mk-f"><span>AE</span></div><div class="mk-n">Middle East</div><div class="mk-c">AE · SA · QA · KW</div></div>
+      <div class="mk"><div class="mk-f"></div><div class="mk-n">Sub-Saharan Africa</div><div class="mk-c">ZA · NG · TZ · KE</div></div>
+      <div class="mk"><div class="mk-f"><span>US</span></div><div class="mk-n">North America</div><div class="mk-c">US · CA</div></div>
+    </div>
+  </section>
+
+  <div class="foot">注：本页为决策预览，主站 <code>index.html</code> 暂未改动。选定方案后我会合并进主站 Markets 区块。</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="data/countries.js"></script>
+  <script>
+  (function(){
+    var PARTNERS=new Set(['DE','PL','NL','FR','GB','BE','ES','IT','KZ','UZ','TM','TJ','KG','MN','RU','BY','UA','AM','MY','TH','VN','ID','PH','SG','JP','KR','MA','TN','EG','DZ','AE','SA','QA','KW','ZA','NG','TZ','KE','US','CA']);
+    // regional hub representatives
+    var HUB_MAIN={sg:['DE','EG','AE','ZA','US'], fs:['JP','MY','KZ','RU']};
+    var W=900,H=450, ns='http://www.w3.org/2000/svg';
+    var svg=document.getElementById('svgC'), tip=document.getElementById('tipC'), fb=document.getElementById('fbC');
+    var HUBS={sg:{lng:103.8,lat:1.35,label:'HQ'},fs:{lng:113.1,lat:23.0,label:'BRANCH'}};
+
+    // ---- Natural Earth projection via d3-geo ----
+    var projection;
+    try{ projection = d3.geoNaturalEarth1().fitSize([W,H], {type:'Sphere'}); }
+    catch(e){ projection = null; }
+    function project(pt){
+      if(projection) return projection(pt);
+      return [ (pt[0]+180)/360*W, (90-pt[1])/180*H ];
+    }
+
+    function ringToPath(ring){
+      var d='';
+      ring.forEach(function(pt,i){ var p=project(pt); d+=(i===0?'M':'L')+p[0].toFixed(1)+' '+p[1].toFixed(1); });
+      return d+'Z';
+    }
+    function geomToPath(geom){
+      if(!geom) return '';
+      if(geom.type==='Polygon') return geom.coordinates.map(ringToPath).join('');
+      if(geom.type==='MultiPolygon'){ var d=''; geom.coordinates.forEach(function(poly){ d+=poly.map(ringToPath).join(''); }); return d; }
+      return '';
+    }
+    function drawGeo(topo, objName, cls, fill, stroke, sw, withName){
+      if(typeof topojson==='undefined'||!topo.objects[objName]) return;
+      var fc=topojson.feature(topo, topo.objects[objName]);
+      var feats=fc.type==='FeatureCollection'? fc.features : [fc];
+      feats.forEach(function(f){
+        var d=geomToPath(f.geometry);
+        if(!d) return;
+        var p=document.createElementNS(ns,'path');
+        p.setAttribute('d',d); p.setAttribute('class',cls);
+        if(fill)p.setAttribute('fill',fill);
+        if(stroke){p.setAttribute('stroke',stroke);p.setAttribute('stroke-width',sw);}
+        if(withName && f.properties && f.properties.name) p.dataset.name=f.properties.name;
+        svg.appendChild(p);
+      });
+    }
+
+    // Great-circle arc path using d3.geoInterpolate (no screen-space hacks)
+    function arcPathGeo(sGeo, eGeo, steps){
+      steps = steps || 36;
+      var interp = d3.geoInterpolate(sGeo, eGeo);
+      var d='';
+      for(var i=0;i<=steps;i++){
+        var t=i/steps;
+        var p=project(interp(t));
+        d += (i===0?'M':'L')+p[0].toFixed(1)+' '+p[1].toFixed(1);
+      }
+      return d;
+    }
+
+    function whichHub(c){
+      if(c.c==='SG') return null;
+      var asia=(c.r==='Asia') || (c.s==='Eastern Asia') || (c.s==='South-Eastern Asia') || (c.s==='Central Asia') || (c.s==='Western Asia');
+      return asia ? 'fs' : 'sg';
+    }
+    function drawArcs(){
+      if(typeof WC_DATA==='undefined' || typeof d3==='undefined' || !d3.geoInterpolate) return;
+      var gMain=document.createElementNS(ns,'g'); gMain.setAttribute('class','arcs-main');
+      var gLight=document.createElementNS(ns,'g'); gLight.setAttribute('class','arcs-light');
+      // main arcs on top of light arcs
+      svg.insertBefore(gLight, svg.firstChild.nextSibling);
+      svg.insertBefore(gMain, gLight);
+      var mainSet={}; ['sg','fs'].forEach(function(k){HUB_MAIN[k].forEach(function(iso){mainSet[iso]=k;});});
+      var idx=0;
+      WC_DATA.forEach(function(c){
+        if(!PARTNERS.has(c.c)) return;
+        var hk=whichHub(c); if(!hk) return;
+        var sGeo=[HUBS[hk].lng,HUBS[hk].lat];
+        var eGeo=[c.ln,c.la];
+        var isMain=mainSet[c.c]===hk;
+        var p=document.createElementNS(ns,'path');
+        p.setAttribute('d',arcPathGeo(sGeo,eGeo));
+        p.setAttribute('class','arc '+(hk==='fs'?'fs':'')+(isMain?' main':' light'));
+        if(isMain){
+          p.setAttribute('stroke-dasharray','6 10');
+          p.setAttribute('stroke-dashoffset', (Math.random()*-52).toFixed(1));
+          p.style.animationDelay=(-(idx%6)*0.5).toFixed(2)+'s';
+          p.style.animationDuration=(2.8+ (idx%4)*0.35).toFixed(2)+'s';
+          gMain.appendChild(p);
+        }else{
+          p.setAttribute('stroke-dasharray','2 6');
+          p.setAttribute('stroke-dashoffset','0');
+          gLight.appendChild(p);
+        }
+        idx++;
+      });
+    }
+    function drawHubs(){
+      Object.keys(HUBS).forEach(function(k){
+        var h=HUBS[k];
+        var pt=project([h.lng,h.lat]);
+        var g=document.createElementNS(ns,'g'); g.setAttribute('class','hub '+k);
+        [0,1].forEach(function(j){
+          var pl=document.createElementNS(ns,'circle');
+          pl.setAttribute('cx',pt[0]);pl.setAttribute('cy',pt[1]);pl.setAttribute('r',6.5);pl.setAttribute('class','pl'+(j?' d2':''));
+          g.appendChild(pl);
+        });
+        var core=document.createElementNS(ns,'circle');
+        core.setAttribute('cx',pt[0]);core.setAttribute('cy',pt[1]);core.setAttribute('r',(k==='sg'?6:5.2));
+        core.setAttribute('fill',k==='sg'?getComputedStyle(document.documentElement).getPropertyValue('--hub-sg').trim():getComputedStyle(document.documentElement).getPropertyValue('--hub-fs').trim());
+        core.setAttribute('class','core'); g.appendChild(core);
+        var ttl=document.createElementNS(ns,'text');
+        ttl.setAttribute('x',pt[0]);ttl.setAttribute('y',pt[1]+3.6);ttl.setAttribute('class','ttl');ttl.textContent=h.label;
+        g.appendChild(ttl);
+        var nm=document.createElementNS(ns,'text');
+        nm.setAttribute('x',pt[0]);nm.setAttribute('y',pt[1]-(k==='sg'?10:9));nm.setAttribute('class','nm');
+        nm.textContent=k==='sg'?'Singapore':'Foshan';
+        g.appendChild(nm);
+        svg.appendChild(g);
+      });
+    }
+    function drawPartners(){
+      if(typeof WC_DATA==='undefined') return;
+      var g=document.createElementNS(ns,'g'); svg.appendChild(g);
+      WC_DATA.forEach(function(c){
+        if(!PARTNERS.has(c.c)) return;
+        var pt=project([c.ln,c.la]);
+        var ring=document.createElementNS(ns,'circle');
+        ring.setAttribute('cx',pt[0]);ring.setAttribute('cy',pt[1]);ring.setAttribute('r',2.8);ring.setAttribute('class','ring');
+        g.appendChild(ring);
+        var dot=document.createElementNS(ns,'circle');
+        dot.setAttribute('cx',pt[0]);dot.setAttribute('cy',pt[1]);dot.setAttribute('r',3.2);dot.setAttribute('class','dot partner');
+        dot.dataset.name=(c.n&&(c.n[window.YM_LANG||'en']))||c.n.en;
+        dot.dataset.region=c.s||c.r||'';
+        g.appendChild(dot);
+      });
+    }
+    svg.addEventListener('mouseover',function(e){
+      var t=e.target;
+      if(t.dataset&&t.dataset.name){tip.innerHTML=t.dataset.name+(t.dataset.region?'<span>'+t.dataset.region+'</span>':'');tip.style.opacity=1;}
+    });
+    svg.addEventListener('mousemove',function(e){
+      var r=svg.parentElement.getBoundingClientRect();
+      var x=e.clientX-r.left+14, y=e.clientY-r.top+14;
+      if(x>r.width-130)x=r.width-130;
+      tip.style.left=x+'px';tip.style.top=y+'px';
+    });
+    svg.addEventListener('mouseout',function(){tip.style.opacity=0;});
+    var landP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json').then(function(r){return r.json();});
+    var ctrP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(r){return r.json();});
+    Promise.all([landP,ctrP]).then(function(arr){
+      drawGeo(arr[0],'land','land', getComputedStyle(document.documentElement).getPropertyValue('--land').trim(), null,0,false);
+      drawGeo(arr[1],'countries','country', 'none', getComputedStyle(document.documentElement).getPropertyValue('--bord').trim(), .55, true);
+      drawArcs();
+      drawPartners();
+      drawHubs();
+    }).catch(function(e){ console.warn('basemap load failed',e); if(fb) fb.style.display='block'; });
+  })();
+  </script>
+</body>
+</html>
