@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -758,6 +756,47 @@ svg.map{display:block;width:100%;height:auto}
 @media(max-width:700px){.wave svg{height:40px}}
 @media(max-width:700px){.wave svg{height:40px}}
 
+
+
+.phero{background:#0A0E1A;color:#fff;padding:160px 48px 84px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
+.phero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(31,58,160,.55),transparent 70%);pointer-events:none}
+.phero-in{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.phero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(34px,5.5vw,68px);line-height:.98;letter-spacing:-1.5px;color:#fff;margin:14px 0 22px}
+.phero h1 em{color:#7B9FFF;font-style:normal}
+.phero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.78);max-width:640px;line-height:1.7}
+.phero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.pc-card{display:block;color:inherit;text-decoration:none}
+.pc-card .pi{transition:.2s}
+.pc-card:hover .pi{filter:brightness(1.08)}
+.docs3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:8px}
+.docs3 .dc{background:#fff;padding:34px 28px;border-top:3px solid var(--blue)}
+.docs3 .dc-ic{font-size:26px;margin-bottom:14px;color:var(--blue)}
+.docs3 .dc-t{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;color:var(--ink)}
+.docs3 .dc-d{font-size:13px;color:var(--gray);line-height:1.8}
+.cd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--border);margin-top:8px}
+.cd{background:#fff;padding:30px 26px;border-top:3px solid var(--blue)}
+.cd-badge{display:inline-block;font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--blue);letter-spacing:.5px;margin-bottom:6px}
+.cd-full{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#BBC5E0;margin-bottom:14px}
+.cd-d{font-size:13px;color:var(--gray);line-height:1.8}
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.fbtn{background:#fff;border:1px solid var(--border);color:var(--gray);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:9px 16px;border-radius:30px;cursor:pointer;transition:.15s}
+.fbtn:hover{border-color:var(--blue);color:var(--blue)}
+.fbtn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:24px}
+.news-card{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:.2s;border-top:3px solid var(--blue)}
+.news-card:hover{box-shadow:0 18px 44px rgba(10,14,26,.10);transform:translateY(-3px)}
+.nc-top{padding:18px 22px 0;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nc-cat{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#fff;background:var(--blue);padding:4px 10px;border-radius:30px}
+.nc-date{font-size:10px;color:var(--gray);letter-spacing:.5px}
+.nc-body{padding:16px 22px 22px;flex:1;display:flex;flex-direction:column}
+.nc-title{font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1.25;color:var(--ink);margin-bottom:10px}
+.nc-sum{font-size:13px;color:var(--gray);line-height:1.7;flex:1}
+.nc-link{margin-top:16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.nc-link:hover{gap:10px}
+.ns-note{margin-top:40px;font-size:12px;color:var(--gray);line-height:1.7;border-top:1px solid var(--border);padding-top:22px}
+.ns-note a{color:var(--blue);font-weight:700}
+@media(max-width:720px){.docs3{grid-template-columns:1fr}.phero{padding:130px 24px 64px}.news-grid{grid-template-columns:1fr}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -789,8 +828,6 @@ svg.map{display:block;width:100%;height:auto}
 </script>
 </head>
 <body>
-<div id="progress"></div>
-
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs>
 <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 13h8M8 17h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
 <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor"/></symbol>
@@ -817,14 +854,12 @@ svg.map{display:block;width:100%;height:auto}
 <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9h-11z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M13.5 10h4l3 3v2.5h-7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 <symbol id="i-region" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.8v18.4M2.8 12h18.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.8c3.4 3.2 3.4 15.2 0 18.4-3.4-3.2-3.4-15.2 0-18.4z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 </defs></svg>
-
-
 <div id="topBar">
-  <a href="#contact" id="tb1"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Request Samples</a>
+  <a href="index.html#contact" id="tb1"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Request Samples</a>
   <span class="sep">|</span>
-  <a href="#downloads" id="tb2"><svg class="ico" aria-hidden="true"><use href="#i-dl"/></svg> Catalog &amp; Downloads</a>
+  <a href="index.html#downloads" id="tb2"><svg class="ico" aria-hidden="true"><use href="#i-dl"/></svg> Catalog &amp; Downloads</a>
   <span class="sep">|</span>
-  <a href="#support" id="tb3"><svg class="ico" aria-hidden="true"><use href="#i-tools"/></svg> Installation &amp; Support</a>
+  <a href="index.html#support" id="tb3"><svg class="ico" aria-hidden="true"><use href="#i-tools"/></svg> Installation &amp; Support</a>
   <span class="sep">|</span>
   <a href="company.html#founders" id="tb4"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> Singapore · Foshan</a>
 </div>
@@ -854,26 +889,26 @@ svg.map{display:block;width:100%;height:auto}
         <a href="bamboo-crystal-panel.html" class="d-num"><span class="dn">04</span><span id="d4">Bamboo Crystal Panel</span></a>
         <a href="carbon-crystal-panel.html" class="d-num"><span class="dn">05</span><span id="d5">Carbon Crystal Panel</span></a>
         <a href="ceramic-porcelain-tiles.html" class="d-num"><span class="dn">06</span><span id="d6">Ceramic &amp; Porcelain Tiles</span></a>
-        <a href="#downloads" class="drop-cta" id="d7">Catalog Downloads →</a>
+        <a href="index.html#downloads" class="drop-cta" id="d7">Catalog Downloads →</a>
       </div>
     </li>
     <li class="nav-item has-drop">
-      <a href="#downloads" id="n2">Resources</a>
+      <a href="index.html#downloads" id="n2">Resources</a>
       <div class="drop">
         <div class="drop-head" id="dh2">Catalogs &amp; Docs</div>
-        <a href="#downloads" id="d8">Catalog &amp; Downloads</a>
+        <a href="index.html#downloads" id="d8">Catalog &amp; Downloads</a>
         <a href="certifications.html" id="d9">Certifications</a>
-        <a href="#downloads" id="d10">Trade &amp; Shipping Terms</a>
+        <a href="index.html#downloads" id="d10">Trade &amp; Shipping Terms</a>
         <div class="drop-head" id="dh3">After-Sales</div>
-        <a href="#support" id="d11">Installation Guides</a>
-        <a href="#support" id="d12">DIY Center</a>
-        <a href="#support" id="d13">FAQ</a>
+        <a href="index.html#support" id="d11">Installation Guides</a>
+        <a href="index.html#support" id="d12">DIY Center</a>
+        <a href="index.html#support" id="d13">FAQ</a>
       </div>
     </li>
     <li class="nav-item has-drop">
       <a href="company.html#founders" id="n3">Company</a>
       <div class="drop">
-        <a href="#markets" id="d14">Markets</a>
+        <a href="index.html#markets" id="d14">Markets</a>
         <a href="company.html#projects" id="d15">Projects</a>
         <a href="company.html#trust" id="d18">Trusted By</a>
         <a href="company.html#culture" id="d16">Culture &amp; Values</a>
@@ -881,7 +916,7 @@ svg.map{display:block;width:100%;height:auto}
       </div>
     </li>
         <li class="nav-item"><a href="news.html" id="n8">Insights</a></li>
-    <li class="nav-item"><a href="#contact" id="n4">Contact</a></li>
+    <li class="nav-item"><a href="index.html#contact" id="n4">Contact</a></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="nav-r">
@@ -893,329 +928,23 @@ svg.map{display:block;width:100%;height:auto}
       <button onclick="setLang('cn')" style="font-weight:700;letter-spacing:0">中文</button>
     </div>
     <div class="nav-div"></div>
-    <a href="#contact" class="nav-cta" id="nav-cta">Free Samples</a>
+    <a href="index.html#contact" class="nav-cta" id="nav-cta">Free Samples</a>
   </div>
 </div>
 </nav>
 
-<section class="hero" id="home">
-<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
-  <source src="hero.mp4" type="video/mp4">
-</video>
-<div class="hero-overlay"></div>
-<div class="hero-in">
-  <span class="eyebrow" id="h-ey" style="color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.8)">Foshan · Singapore · Global</span>
-  <h1 id="h-ti">Quality from China.<br><em>Trust from Singapore.</em></h1>
-  <p class="hero-sub" id="h-su">For too long, buying building materials from China meant uncertainty — wrong specs, late shipments, no one to call. YENYONG. was built to change that.</p>
-  <div class="hero-btns">
-    <a href="#products" class="btn-blue" id="h-b1">View Products</a>
-    <a href="#contact" class="btn-out" id="h-b2">Request Free Samples</a>
+<header class="phero">
+  <div class="phero-in">
+    <span class="eyebrow" id="ce-ey">International Standards</span>
+    <h1 id="ce-ti">Every product.<br><em>Every certificate.</em></h1>
+    <p class="phero-sub" id="cert-intro">Compliance is not a checkbox for us — it is the foundation of cross-border trade. Below are the certifications carried by our product lines and the documents we prepare for every shipment.</p>
+    <div class="phero-btns"><a href="mailto:mellamocolin1991@gmail.com?subject=Certification%20Pack" class="btn-blue" id="ce-bt">Download Certification Pack</a></div>
   </div>
-  <div class="hero-stats">
-    <div><div class="stn" data-count="40" data-suffix="+">40+</div><div class="stl" id="hs1">Countries</div></div>
-    <div><div class="stn">CE</div><div class="stl" id="hs2">Certified</div></div>
-    <div><div class="stn">500m²</div><div class="stl" id="hs3">Min. Order</div></div>
-    <div><div class="stn" data-count="5">5</div><div class="stl" id="hs4">Days — Free Samples</div></div>
-    <div><div class="stn">SGP</div><div class="stl" id="hs5">Registered</div></div>
-  </div>
-</div>
-</section>
+</header>
 
-<div class="strip">
-<div class="strip-in">
-  <span>LOYALTY</span><span class="d">·</span><span>SPC RIGID CORE FLOORING</span><span class="d">·</span>
-  <span>TRANSPARENCY</span><span class="d">·</span><span>WPC WALL PANEL</span><span class="d">·</span>
-  <span>INTEGRITY</span><span class="d">·</span><span>BAMBOO CRYSTAL PANEL</span><span class="d">·</span>
-  <span>PRECISION</span><span class="d">·</span><span>CARBON CRYSTAL PANEL</span><span class="d">·</span>
-  <span>GLOBAL REACH</span><span class="d">·</span><span>CERAMIC &amp; PORCELAIN TILES</span><span class="d">·</span>
-  <span>CE · SGS · ISO 9001</span><span class="d">·</span><span>FREE SAMPLES IN 5 DAYS</span><span class="d">·</span>
-  <span>LOYALTY</span><span class="d">·</span><span>SPC RIGID CORE FLOORING</span><span class="d">·</span>
-  <span>TRANSPARENCY</span><span class="d">·</span><span>WPC WALL PANEL</span><span class="d">·</span>
-  <span>INTEGRITY</span><span class="d">·</span><span>BAMBOO CRYSTAL PANEL</span><span class="d">·</span>
-  <span>PRECISION</span><span class="d">·</span><span>CARBON CRYSTAL PANEL</span><span class="d">·</span>
-  <span>GLOBAL REACH</span><span class="d">·</span><span>CERAMIC &amp; PORCELAIN TILES</span><span class="d">·</span>
-  <span>CE · SGS · ISO 9001</span><span class="d">·</span><span>FREE SAMPLES IN 5 DAYS</span><span class="d">·</span>
-</div>
-</div>
-
-<section class="sec certs" style="padding:6px 0 2px">
-  <div class="cert-strip">
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg> CE Certified</span>
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> SGS Tested</span>
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> ISO 9001</span>
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg> FloorScore</span>
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg> B1 Fire Rating</span>
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> REACH / E0</span>
-    <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg> Factory Direct</span>
-  </div>
-</section>
-<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="var(--navy)" d="M0,28 C240,60 480,0 720,28 C960,56 1200,4 1440,30 L1440,64 L0,64 Z"/></svg></div>
-<section class="stmt drama">
-<div class="stmt-in">
-  <h2 id="st-ti">The world doesn't need another building materials supplier.<br>It needs <em>YENYONG.</em></h2>
-  <div class="stmt-cols">
-    <p id="st-p1">Two founders. One in Foshan managing factory relationships, quality control, and production. One in Singapore driving contracts, international payments, and global sales. Every order flows through a Singapore-registered entity. Every product ships with CE certification, SGS reports, and full export documentation.</p>
-    <p id="st-p2">YENYONG. is not a trading middleman. We are the direct bridge between China's finest building materials factories and the world's builders, architects, and distributors — with the transparency and professionalism that global buyers deserve.</p>
-  </div>
-</div>
-</section>
-
-<section class="proof">
-<div class="proof-in">
-  <div>
-    <span class="eyebrow" id="pr-ey">The YENYONG. Difference</span>
-    <h2 id="pr-ti">Not just a supplier.<br><em>Your partner.</em></h2>
-    <p class="proof-story" id="pr-st">The old way: a factory in China you've never met, a middleman who disappears after payment, documents that don't pass customs. YENYONG. built a different model — Singapore contracts, CE certification, and two founders who answer your messages personally.</p>
-    <a href="#contact" class="btn-blue" id="pr-bt">Talk to us directly →</a>
-  </div>
-  <div>
-    <div class="sg">
-      <div class="sb"><div class="sb-n" data-count="40" data-suffix="+">40+</div><div class="sb-t" id="s1t">Countries</div><div class="sb-d" id="s1d">Buyers across Europe, Asia, Middle East and Africa trust YENYONG.</div></div>
-      <div class="sb"><div class="sb-n" data-count="5">5</div><div class="sb-t" id="s2t">Days</div><div class="sb-d" id="s2d">Free samples to your door worldwide. No cost, no obligation.</div></div>
-      <div class="sb"><div class="sb-n" data-count="7">7</div><div class="sb-t" id="s3t">Certifications</div><div class="sb-d">CE · SGS · ISO 9001 · FloorScore · B1 Fire · REACH · E0</div></div>
-      <div class="sb"><div class="sb-n">24h</div><div class="sb-t" id="s4t">Response</div><div class="sb-d" id="s4d">Every inquiry answered within 24 hours. Monday to Saturday.</div></div>
-    </div>
-    <div class="dg">
-      <div class="dc"><div class="dc-ic"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg>️</div><div class="dc-t" id="d1t">Singapore Entity</div><div class="dc-d" id="d1d">Every contract via KYT Trading & Construction Pte Ltd — Singapore-registered. Your money is protected. Your contract is enforceable.</div></div>
-      <div class="dc"><div class="dc-ic"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></div><div class="dc-t" id="d2t">Factory Direct</div><div class="dc-d" id="d2d">No middlemen. Foshan base connects directly to certified Pearl River Delta factories. Real factory FOB price.</div></div>
-      <div class="dc"><div class="dc-ic"><svg class="ico" aria-hidden="true"><use href="#i-clip"/></svg></div><div class="dc-t" id="d3t">Full Documentation</div><div class="dc-d" id="d3d">CE Declaration, SGS reports, commercial invoice, packing list, bill of lading, certificate of origin. Customs-ready.</div></div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- HOW WE WORK — SERHANT. STYLE -->
-<section class="hww" id="how-we-work">
-<div class="hww-in">
-  <div class="hww-left">
-    <span class="hww-eyebrow" id="hww-ey">How We Work</span>
-    <h2 class="hww-title" id="hww-ti">This is how<br>we <em>deliver.</em></h2>
-    <p class="hww-sub" id="hww-su">From your first inquiry to the moment our products arrive at your site — every step is documented, certified, and backed by Singapore's legal framework. No surprises. No excuses.</p>
-    <div class="hww-stats">
-      <div><div class="hww-stat-n">24h</div><div class="hww-stat-l" id="hww-s1">First Response</div></div>
-      <div><div class="hww-stat-n">5</div><div class="hww-stat-l" id="hww-s2">Days — Free Samples</div></div>
-      <div><div class="hww-stat-n">7</div><div class="hww-stat-l" id="hww-s3">Certifications</div></div>
-      <div><div class="hww-stat-n">100%</div><div class="hww-stat-l" id="hww-s4">Documented</div></div>
-    </div>
-  </div>
-  <div class="hww-right">
-    <!-- Card 1: Certifications -->
-    <div class="hww-card hww-c1">
-      <div class="c1-header">
-        <div class="c1-logo">YENYONG.</div>
-        <div class="c1-badge"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Verified</div>
-      </div>
-      <div class="c1-body">
-        <div class="c1-cert-row"><div class="c1-cert-icon"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div><div><div class="c1-cert-name">CE Conformity</div><div class="c1-cert-desc">EU Declaration of Conformity</div></div><div class="c1-status">ACTIVE</div></div>
-        <div class="c1-cert-row"><div class="c1-cert-icon"><svg class="ico" aria-hidden="true"><use href="#i-lab"/></svg></div><div><div class="c1-cert-name">SGS Tested</div><div class="c1-cert-desc">Third-party lab verified</div></div><div class="c1-status">ACTIVE</div></div>
-        <div class="c1-cert-row"><div class="c1-cert-icon"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg></div><div><div class="c1-cert-name">FloorScore</div><div class="c1-cert-desc">Indoor air quality certified</div></div><div class="c1-status">ACTIVE</div></div>
-        <div class="c1-cert-row"><div class="c1-cert-icon"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg></div><div><div class="c1-cert-name">B1 Fire Rating</div><div class="c1-cert-desc">Fire safety certified</div></div><div class="c1-status">ACTIVE</div></div>
-      </div>
-    </div>
-    <!-- Card 2: Sample Request -->
-    <div class="hww-card hww-c2">
-      <div class="c2-header">
-        <div class="c2-header-title">REQUEST SAMPLES</div>
-        <div style="display:flex;gap:5px">
-          <div class="c2-dot" style="background:#FF5F57"></div>
-          <div class="c2-dot" style="background:#FEBC2E"></div>
-          <div class="c2-dot" style="background:#28C840"></div>
-        </div>
-      </div>
-      <div class="c2-body">
-        <div class="c2-label">Company</div>
-        <div class="c2-field">ABC Building Materials GmbH</div>
-        <div class="c2-label">Product Interest</div>
-        <div class="c2-select"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> SPC Rigid Core Flooring</div>
-        <div class="c2-label">Destination</div>
-        <div class="c2-field">Hamburg, Germany</div>
-        <div class="c2-btn">Send Free Samples →</div>
-        <div class="c2-note">Delivered in 5 working days · No cost</div>
-      </div>
-    </div>
-    <!-- Card 3: Project Case -->
-    <div class="hww-card hww-c3">
-      <div class="c3-img">
-        <div>
-          <div class="c3-badge">Hotel Project · Morocco</div>
-          <div class="c3-proj-title">Four Points<br>Casablanca</div>
-        </div>
-      </div>
-      <div class="c3-body">
-        <div class="c3-tags"><div class="c3-tag">SPC Flooring</div><div class="c3-tag">WPC Panel</div></div>
-        <div class="c3-meta"><div class="c3-loc">MOROCCO · 2025</div><div class="c3-size">~5,000 m²</div></div>
-      </div>
-    </div>
-    <!-- Floating notification -->
-    <div class="hww-notif">
-      <div class="notif-dot"></div>
-      <div><div class="notif-text">New inquiry received</div><div class="notif-sub">Warsaw, Poland · WPC Wall Panel</div></div>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="sec prods" id="products">
-<div class="sec-in">
-  <div class="ph">
-    <div><span class="eyebrow" id="pd-ey">Product Range</span><h2 style="margin-bottom:0" id="pd-ti">Factory-direct.<br><em>CE certified.</em></h2></div>
-    <a href="products.html" class="btn-blue" id="pd-bt2">View All Products</a>
-  </div>
-  <div class="pg">
-    <div class="pc" id="spc"><div class="pb">
-      <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">01</span>
-      <h3><a href="SPC Rigid Core Flooring" class="pc-lnk">spc-rigid-core-flooring.html</a></h3>
-      <div class="pr">USD 3–9<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
-      <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>4–8mm</li><li>CE / FloorScore</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="spc-rigid-core-flooring.html">View product →</a></li></ul>
-    </div></div>
-    <div class="pc" id="wpc"><div class="pb">
-      <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">02</span>
-      <h3><a href="WPC Wood Plastic Wall Panel" class="pc-lnk">wpc-wall-panel.html</a></h3>
-      <div class="pr">USD 5–11<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
-      <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>8–12mm</li><li>CE / SGS / B1</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="wpc-wall-panel.html">View product →</a></li></ul>
-    </div></div>
-    <div class="pc" id="pvc"><div class="pb">
-      <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">03</span>
-      <h3><a href="PVC Decorative Wall Panel" class="pc-lnk">pvc-wall-panel.html</a></h3>
-      <div class="pr">USD 3–7<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
-      <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>5–9mm</li><li>SGS / CE</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="pvc-wall-panel.html">View product →</a></li></ul>
-    </div></div>
-    <div class="pc" id="bamboo"><div class="pb">
-      <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">04</span>
-      <h3><a href="Bamboo Crystal Panel" class="pc-lnk">bamboo-crystal-panel.html</a></h3>
-      <div class="pr">USD 6–12<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
-      <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>Bamboo + Mineral</li><li>E0 / Eco</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="bamboo-crystal-panel.html">View product →</a></li></ul>
-    </div></div>
-    <div class="pc" id="carbon"><div class="pb">
-      <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">05</span>
-      <h3><a href="Carbon Crystal Panel" class="pc-lnk">carbon-crystal-panel.html</a></h3>
-      <div class="pr">USD 7–14<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
-      <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>Mirror / Matte UV</li><li>SGS / CE</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="carbon-crystal-panel.html">View product →</a></li></ul>
-    </div></div>
-    <div class="pc" id="tiles"><div class="pb">
-      <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">06</span>
-      <h3><a href="Ceramic & Porcelain Tiles" class="pc-lnk">ceramic-porcelain-tiles.html</a></h3>
-      <div class="pr">USD 4–18<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
-      <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>300×600–1200×2400</li><li>CE / SGS / ISO</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="ceramic-porcelain-tiles.html">View product →</a></li></ul>
-    </div></div>
-  </div>
-  <div style="margin-top:36px;text-align:center"><a href="products.html" class="btn-out" style="border-color:var(--blue);color:var(--blue)">Explore the full catalog →</a></div>
-</div>
-</section>
-
-<!-- CATALOG & DOWNLOADS -->
-<section class="sec dls" id="downloads">
-<div class="sec-in">
-  <div class="ph">
-    <div><span class="eyebrow" id="dl-ey">Catalog &amp; Downloads</span><h2 style="margin-bottom:0" id="dl-ti">Every document.<br><em>One library.</em></h2></div>
-    <a href="#contact" class="btn-blue" id="dl-bt">Request Samples</a>
-  </div>
-  <p class="dl-intro" id="dl-in">Product catalogs, technical specifications and certification documents — prepared for distributors, architects and project buyers. Files are being added progressively; request a priority copy and we'll send it the moment it's ready.</p>
-  <div class="dlg">
-    <div class="dlc featured">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
-      <h3 id="dt1">Master Catalog 2026</h3>
-      <p id="dd1">Complete product range — six categories, specifications, colors and packaging data. One PDF for every sales conversation.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN · DE · FR · RU · 中文</span><span>~48 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn1">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20YENYONG%20Master%20Catalog%202026" class="dlc-req" id="dlr1">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
-      <h3 id="dt2">SPC Spec Sheet</h3>
-      <p id="dd2">Thickness, wear layer, sizes, load ratings and packaging per SKU.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>4 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn2">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20SPC%20Spec%20Sheet" class="dlc-req" id="dlr2">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
-      <h3 id="dt3">WPC Spec Sheet</h3>
-      <p id="dd3">Dimensions, finishes, fire rating and installation data.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>4 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn3">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20WPC%20Spec%20Sheet" class="dlc-req" id="dlr3">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
-      <h3 id="dt4">PVC Spec Sheet</h3>
-      <p id="dd4">Thickness range, finishes and technical values.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>3 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn4">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20PVC%20Spec%20Sheet" class="dlc-req" id="dlr4">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
-      <h3 id="dt5">Bamboo Crystal Spec Sheet</h3>
-      <p id="dd5">Core composition, color codes and surface options.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>3 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn5">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Bamboo%20Spec%20Sheet" class="dlc-req" id="dlr5">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
-      <h3 id="dt6">Carbon Crystal Spec Sheet</h3>
-      <p id="dd6">Mirror and matte UV surfaces, panel formats and application cases.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>3 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn6">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Carbon%20Spec%20Sheet" class="dlc-req" id="dlr6">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
-      <h3 id="dt7">Ceramic Tile Spec Sheet</h3>
-      <p id="dd7">Sizes, water absorption, slip ratings (R-value) and finishes.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>4 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn7">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Tile%20Spec%20Sheet" class="dlc-req" id="dlr7">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 4 0v9M12 7v14"/></svg>
-      <h3 id="dt8">Company Profile</h3>
-      <p id="dd8">Who we are: founders, Singapore and Foshan entities, markets and business model.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>6 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn8">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20YENYONG%20Company%20Profile" class="dlc-req" id="dlr8">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-      <h3 id="dt9">Certification Pack</h3>
-      <p id="dd9">CE DoC, SGS reports, ISO 9001, FloorScore, B1 fire, REACH and E0.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>12 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn9">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Certification%20Pack" class="dlc-req" id="dlr9">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20M5 17v-4a2 2 0 0 1 4 0v4M13 17V9a2 2 0 0 1 4 0v8M21 17v-6"/></svg>
-      <h3 id="dt10">Trade &amp; Shipping Terms</h3>
-      <p id="dd10">Incoterms, payment terms, MOQ, lead times and packaging.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>2 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn10">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Trade%20and%20Shipping%20Terms" class="dlc-req" id="dlr10">Priority request →</a></div>
-    </div>
-    <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.5 19 22l-7-2.5L5 22l3.5-9.5"/></svg>
-      <h3 id="dt11">Warranty &amp; After-Sales</h3>
-      <p id="dd11">Warranty coverage, claims process and support channels.</p>
-      <div class="dlc-meta"><span>PDF</span><span>EN</span><span>2 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn11">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Warranty%20and%20After-Sales" class="dlc-req" id="dlr11">Priority request →</a></div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<section class="sec certs-bg" id="certifications">
-<div class="sec-in">
-  <span class="eyebrow" id="ce-ey">International Standards</span>
-  <h2 id="ce-ti">Every product.<br><em>Every certificate.</em></h2>
-<div class="cg">
+<section class="sec">
+  <div class="sec-in">
+    <div class="cg">
       <div class="ce"><div class="ce-n">CE</div><div class="ce-d">EU Conformity</div></div>
       <div class="ce"><div class="ce-n">SGS</div><div class="ce-d">Third-Party</div></div>
       <div class="ce"><div class="ce-n">ISO 9001</div><div class="ce-d">Quality Mgmt</div></div>
@@ -1224,313 +953,36 @@ svg.map{display:block;width:100%;height:auto}
       <div class="ce"><div class="ce-n">REACH</div><div class="ce-d">Chemicals</div></div>
       <div class="ce"><div class="ce-n">E0</div><div class="ce-d">Formaldehyde</div></div>
     </div>
-  <div style="margin-top:36px"><a href="certifications.html" class="btn-blue" id="ce-bt">View Certifications &amp; Docs →</a></div>
-</div>
+  </div>
 </section>
 
-<style>
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.news-card{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;border-top:3px solid var(--blue);display:flex;flex-direction:column}
-.nc-top{padding:16px 20px 0;display:flex;align-items:center;justify-content:space-between}
-.nc-cat{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#fff;background:var(--blue);padding:4px 10px;border-radius:30px}
-.nc-date{font-size:10px;color:var(--gray)}
-.nc-body{padding:14px 20px 20px;display:flex;flex-direction:column;flex:1}
-.nc-title{font-family:var(--font-display);font-weight:800;font-size:16px;line-height:1.25;color:var(--ink);margin-bottom:8px}
-.nc-sum{font-size:12.5px;color:var(--gray);line-height:1.7;flex:1}
-.nc-link{margin-top:14px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--blue)}
-</style>
-<section class="sec news" id="insights">
-<div class="sec-in">
-  <div class="ph">
-    <div><span class="eyebrow" id="ns-ey">News &amp; Insights</span><h2 style="margin-bottom:0" id="ns-ti">Knowledge from<br><em>the trade.</em></h2></div>
-    <a href="news.html" class="btn-blue">View All Insights</a>
+<section class="sec" style="background:var(--lt)">
+  <div class="sec-in">
+    <span class="eyebrow">What each certificate means</span>
+    <h2>Standards, <em>explained.</em></h2>
+    <div class="cd-grid">
+      <div class="cd"><div class="cd-badge">CE</div><div class="cd-full">EU Conformity</div><p class="cd-d">Declaration of Conformity under the EU Construction Products Regulation (CPR). Required to legally place building products on the European market and to pass most public tenders.</p></div>
+      <div class="cd"><div class="cd-badge">SGS</div><div class="cd-full">Third-Party Testing</div><p class="cd-d">Independent verification by SGS — the world’s leading inspection company. Confirms wear layer, dimensions, slip resistance, fire reaction and emissions match the published specification.</p></div>
+      <div class="cd"><div class="cd-badge">ISO 9001</div><div class="cd-full">Quality Management</div><p class="cd-d">Certifies that our supplier factories run a documented Quality Management System — consistent processes, material traceability and continuous improvement, not one-off inspections.</p></div>
+      <div class="cd"><div class="cd-badge">FloorScore</div><div class="cd-full">Indoor Air Quality</div><p class="cd-d">Low-VOC emission certification for flooring. Preferred for schools, healthcare and offices where indoor air quality is specified or regulated.</p></div>
+      <div class="cd"><div class="cd-badge">B1 Fire</div><div class="cd-full">Fire Safety</div><p class="cd-d">Reaction-to-fire classification (EN 13501) for wall and ceiling panels in commercial interiors — the level many projects and insurers require.</p></div>
+      <div class="cd"><div class="cd-badge">REACH</div><div class="cd-full">Chemicals Compliance</div><p class="cd-d">EU regulation on Registration, Evaluation, Authorisation and restriction of Chemicals. Confirms the product is free of banned substances and safe to import into the EU.</p></div>
+      <div class="cd"><div class="cd-badge">E0</div><div class="cd-full">Formaldehyde Class</div><p class="cd-d">Low formaldehyde emission class (≤0.5 mg/L). Healthier indoor air for residential and hospitality projects where emission limits are tight.</p></div>
+    </div>
   </div>
-  <div class="news-grid">
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Distribution</span><span class="nc-date">7 Sep 2026</span></div><div class="nc-body"><h3 class="nc-title">Why Bathroom Distributors Should Add SPC Wall Panels</h3><p class="nc-sum">The 2026 bathroom-renovation market is shifting fast — this piece makes the case for adding SPC wall panels to a distributor’s portfolio.</p><a class="nc-link" href="https://www.stepguardfloors.com/spc-wall-panel-for-bathroom-distributor-and-retailer/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Case Study</span><span class="nc-date">8 Jun 2026</span></div><div class="nc-body"><h3 class="nc-title">Case Study: Hotel Bathroom Renovation</h3><p class="nc-sum">In hospitality, time is money. SPC wall panels cut renovation downtime versus noisy, curing-dependent traditional wet trades.</p><a class="nc-link" href="https://www.stepguardfloors.com/spc-wall-panels-hotel-bathroom-renovation-case-study/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Design Trends</span><span class="nc-date">27 Jul 2026</span></div><div class="nc-body"><h3 class="nc-title">Natural Stone Design as the Latest Surface Trend</h3><p class="nc-sum">Why raw, natural stone surfaces and textures are defining 2026–2027 interiors — and how panels deliver that grounded warmth.</p><a class="nc-link" href="https://www.stepguardfloors.com/spc-wall-panel-interior-trend-stone-texture/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Color Story</span><span class="nc-date">29 May 2026</span></div><div class="nc-body"><h3 class="nc-title">Color Inspiration: Calacatta Monet DIY Panel</h3><p class="nc-sum">An art-inspired panel story — bringing the soft, ethereal beauty of Impressionist painting to walls through DIY-friendly SPC panels.</p><a class="nc-link" href="https://www.stepguardfloors.com/calacatta-monet-diy-spc-wall-panel/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-  </div>
-</div>
 </section>
 
-<section class="sec mkts" id="markets">
-<div class="sec-in">
-  <span class="eyebrow" id="mk-ey">Global Markets</span>
-  <h2 id="mk-ti">40+ countries.<br><em>One contact.</em></h2>
-<div class="map-wrap" id="globeViz" aria-label="Global markets map with continent outlines">
-  <svg class="map" id="svgC" viewBox="0 0 900 450" role="img" aria-label="Global markets map"></svg>
-  <div class="kicker"><b id="mk-k1">Singapore HQ · Foshan Branch</b><small id="mk-k2">Radiating to 40+ global markets</small></div>
-  <div class="tip" id="tipC"></div>
-  <div class="fallback" id="fbC" hidden>Map base layer failed to load (needs internet for geography data).</div>
-</div>
-
-  <div class="mg">
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg><span>EU</span></div><div class="mk-n" id="m1">Europe</div><div class="mk-c">DE · PL · NL · FR · GB · BE · ES · IT</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg></div><div class="mk-n" id="m2">Central Asia</div><div class="mk-c">KZ · UZ · TM · TJ · KG · MN</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg><span>RU</span></div><div class="mk-n" id="m3">Russia &amp; CIS</div><div class="mk-c">RU · BY · UA · AM</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg></div><div class="mk-n" id="m4">Southeast Asia</div><div class="mk-c">MY · TH · VN · ID · PH · SG</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg></div><div class="mk-n" id="m5">East Asia</div><div class="mk-c">JP · KR</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg><span>MA</span></div><div class="mk-n" id="m6">North Africa</div><div class="mk-c">MA · TN · EG · DZ</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg><span>AE</span></div><div class="mk-n" id="m7">Middle East</div><div class="mk-c">AE · SA · QA · KW</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg></div><div class="mk-n" id="m8">Sub-Saharan Africa</div><div class="mk-c">ZA · NG · TZ · KE</div></div>
-    <div class="mk"><div class="mk-f"><svg class="ico" aria-hidden="true"><use href="#i-region"/></svg><span>US</span></div><div class="mk-n" id="m9">North America</div><div class="mk-c">US · CA</div></div>
+<section class="sec">
+  <div class="sec-in">
+    <span class="eyebrow">Per Shipment</span>
+    <h2>Documents we <em>prepare.</em></h2>
+    <div class="docs3">
+      <div class="dc"><div class="dc-ic"><svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg></div><div class="dc-t">CE DoC</div><p class="dc-d">Declaration of Conformity matched to the exact product and batch on the shipment.</p></div>
+      <div class="dc"><div class="dc-ic"><svg class="ico" aria-hidden="true"><use href="#i-lab"/></svg></div><div class="dc-t">SGS Reports</div><p class="dc-d">Test reports covering performance, fire and emissions for the product family ordered.</p></div>
+      <div class="dc"><div class="dc-ic"><svg class="ico" aria-hidden="true"><use href="#i-clip"/></svg></div><div class="dc-t">Shipping Set</div><p class="dc-d">Commercial Invoice, Packing List, Bill of Lading and Certificate of Origin — complete for smooth customs clearance.</p></div>
+    </div>
   </div>
-</div>
 </section>
-
-<section class="sec how-bg" id="how">
-<div class="sec-in">
-  <span class="eyebrow" id="hw-ey">How to Order</span>
-  <h2 id="hw-ti">Four steps.<br><em>Door to door.</em></h2>
-  <div class="steps">
-    <div class="step"><div class="step-bar"></div><div class="step-n">01</div><h3 id="s1ti">Contact Us</h3><p id="s1de">Email or WhatsApp with your requirements and destination. Response within 24 hours.</p></div>
-    <div class="step"><div class="step-bar"></div><div class="step-n">02</div><h3 id="s2ti">Free Samples</h3><p id="s2de">Physical samples to your door in 5 working days. Worldwide. No cost. No obligation.</p></div>
-    <div class="step"><div class="step-bar"></div><div class="step-n">03</div><h3 id="s3ti">Sign &amp; Pay</h3><p id="s3de">Contract via Singapore entity. 30% deposit. T/T. Production starts immediately.</p></div>
-    <div class="step"><div class="step-bar"></div><div class="step-n">04</div><h3 id="s4ti">FOB Delivery</h3><p id="s4de">Full documentation: CE Declaration, SGS reports, B/L, CO, Invoice. On time, every time.</p></div>
-  </div>
-</div>
-</section>
-
-
-<!-- INSTALLATION & SUPPORT -->
-<section class="sup" id="support">
-<div class="sup-in">
-  <div class="sup-head">
-    <span class="eyebrow" id="sp-ey">Installation &amp; Support</span>
-    <h2 id="sp-ti">After the sale,<br><em>we stay.</em></h2>
-    <p class="sup-sub" id="sp-su">Professional installation guides, DIY resources and answers — so every YENYONG. product performs exactly as promised. Guides are being published progressively.</p>
-  </div>
-
-  <h3 class="sup-h" id="sp-h1">Installation Guides</h3>
-  <div class="ig-g">
-    <div class="igc">
-      <div class="igc-hd"><span class="igc-num">01</span><h4 id="ig1">SPC Rigid Core Flooring</h4></div>
-      <ol class="igc-steps"><li id="is1-1">Prepare</li><li id="is1-2">Acclimate 48h</li><li id="is1-3">Click-lock install</li><li id="is1-4">Trim &amp; finish</li></ol>
-      <div class="igc-links"><span class="igc-l soon" id="igl-p1"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF Guide</span><span class="igc-l soon" id="igl-v1"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Video</span></div>
-    </div>
-    <div class="igc">
-      <div class="igc-hd"><span class="igc-num">02</span><h4 id="ig2">WPC Wall Panel</h4></div>
-      <ol class="igc-steps"><li id="is2-1">Mark &amp; level</li><li id="is2-2">Fix battens</li><li id="is2-3">Clip panels</li><li id="is2-4">Seal joints</li></ol>
-      <div class="igc-links"><span class="igc-l soon" id="igl-p2"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF Guide</span><span class="igc-l soon" id="igl-v2"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Video</span></div>
-    </div>
-    <div class="igc">
-      <div class="igc-hd"><span class="igc-num">03</span><h4 id="ig3">PVC Wall Panel</h4></div>
-      <ol class="igc-steps"><li id="is3-1">Check flatness</li><li id="is3-2">Apply adhesive</li><li id="is3-3">Fit panels</li><li id="is3-4">Corner trims</li></ol>
-      <div class="igc-links"><span class="igc-l soon" id="igl-p3"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF Guide</span><span class="igc-l soon" id="igl-v3"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Video</span></div>
-    </div>
-    <div class="igc">
-      <div class="igc-hd"><span class="igc-num">04</span><h4 id="ig4">Bamboo Crystal Panel</h4></div>
-      <ol class="igc-steps"><li id="is4-1">Frame the wall</li><li id="is4-2">Mount panels</li><li id="is4-3">Join profiles</li><li id="is4-4">Edge finish</li></ol>
-      <div class="igc-links"><span class="igc-l soon" id="igl-p4"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF Guide</span><span class="igc-l soon" id="igl-v4"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Video</span></div>
-    </div>
-    <div class="igc">
-      <div class="igc-hd"><span class="igc-num">05</span><h4 id="ig5">Carbon Crystal Panel</h4></div>
-      <ol class="igc-steps"><li id="is5-1">Design layout</li><li id="is5-2">Mount on frame</li><li id="is5-3">Align surfaces</li><li id="is5-4">Protective film off</li></ol>
-      <div class="igc-links"><span class="igc-l soon" id="igl-p5"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF Guide</span><span class="igc-l soon" id="igl-v5"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Video</span></div>
-    </div>
-    <div class="igc">
-      <div class="igc-hd"><span class="igc-num">06</span><h4 id="ig6">Ceramic &amp; Porcelain Tiles</h4></div>
-      <ol class="igc-steps"><li id="is6-1">Substrate check</li><li id="is6-2">Adhesive comb</li><li id="is6-3">Lay &amp; space</li><li id="is6-4">Grout &amp; clean</li></ol>
-      <div class="igc-links"><span class="igc-l soon" id="igl-p6"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> PDF Guide</span><span class="igc-l soon" id="igl-v6"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg> Video</span></div>
-    </div>
-  </div>
-
-  <h3 class="sup-h" id="sp-h2">DIY Center</h3>
-  <div class="dy-g">
-    <div class="dyc">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      <h4 id="dy1t">Tools Checklist</h4>
-      <p id="dy1d">Everything you need before you start — for floors and for walls. Tapping block, spacers, pull bar, laser level and safety gear.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20Tools%20Checklist" id="dy1a">Request PDF →</a>
-    </div>
-    <div class="dyc">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      <h4 id="dy2t">Subfloor &amp; Wall Prep</h4>
-      <p id="dy2d">Level, dry, clean: the three rules of a lasting installation. Moisture, flatness and dust control explained.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20Subfloor%20Prep%20Guide" id="dy2a">Request PDF →</a>
-    </div>
-    <div class="dyc">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      <h4 id="dy3t">Step-by-Step: Click-Lock SPC</h4>
-      <p id="dy3d">From first row to last plank — the DIY-friendly way. Angling, spacing and finishing in six clear steps.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20SPC%20DIY%20Guide" id="dy3a">Request PDF →</a>
-    </div>
-    <div class="dyc">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-      <h4 id="dy4t">Care &amp; Maintenance</h4>
-      <p id="dy4d">Keep every surface looking new for years. Cleaning products, daily routines and what to avoid.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20Care%20Guide" id="dy4a">Request PDF →</a>
-    </div>
-  </div>
-
-  <h3 class="sup-h" id="sp-h3">Frequently Asked Questions</h3>
-  <div class="faq-g">
-    <details class="faq"><summary id="fq1q">What is the difference between SPC and laminate flooring?</summary><div class="fqa" id="fq1a">SPC has a stone-plastic composite core, making it 100% waterproof and dimensionally stable. Laminate uses a wood-fiber core that swells when wet, so it is not suitable for bathrooms or wet areas.</div></details>
-    <details class="faq"><summary id="fq2q">Does SPC flooring need underlayment and expansion gaps?</summary><div class="fqa" id="fq2a">Most SPC products include an attached IXPE underlay. On very uneven subfloors you can add a thin foam layer. Always leave an 8–10 mm expansion gap around walls and vertical obstructions.</div></details>
-    <details class="faq"><summary id="fq3q">Can WPC wall panels be used in bathrooms?</summary><div class="fqa" id="fq3a">Yes. WPC is water-resistant and handles normal humidity well. For shower zones, ensure good ventilation and seal panel joints with a suitable silicone.</div></details>
-    <details class="faq"><summary id="fq4q">How do I clean and maintain crystal panels?</summary><div class="fqa" id="fq4a">Use a soft cloth with neutral detergent. Avoid abrasive pads, steel wool and strong solvents. Dust regularly and wipe spills promptly to protect the UV surface.</div></details>
-    <details class="faq"><summary id="fq5q">Will different production batches vary in color?</summary><div class="fqa" id="fq5a">Minor batch variation is normal in all manufactured panels. For one project, order all material in a single batch and we will batch-match every project order at the factory.</div></details>
-    <details class="faq"><summary id="fq6q">What if goods arrive damaged or short?</summary><div class="fqa" id="fq6a">Photograph the cartons and contents at unloading and note any damage or shortage on the delivery receipt. Contact us within 48 hours with the photos — our after-sales team handles every claim personally.</div></details>
-    <details class="faq"><summary id="fq7q">Do you provide installation training or on-site support?</summary><div class="fqa" id="fq7a">Every order ships with illustrated installation guides, and our team supports installers by WhatsApp or video call. On-site supervision is available for large hotel or commercial projects.</div></details>
-    <details class="faq"><summary id="fq8q">What warranty do you offer?</summary><div class="fqa" id="fq8a">Warranty coverage depends on the product line and project type. Contact us for the warranty policy that applies to your product — full documents are available on request.</div></details>
-  </div>
-
-  <p class="sup-cta" id="sp-ct">Still need help? <a href="https://wa.me/8618929980066" target="_blank">WhatsApp us directly →</a></p>
-</div>
-</section>
-
-
-
-
-<section id="contact" style="padding:0">
-<div class="contact-in">
-
-  <!-- LEFT: Founders + Addresses -->
-  <div class="ct-left">
-    <div class="ct-left-top">
-      <span class="ct-left-eyebrow" id="ct-ey">Get In Touch</span>
-      <h2 class="ct-left-title" id="ct-ti">Start with<br><em>samples.</em></h2>
-      <p class="ct-left-sub" id="ct-su">Free samples worldwide in 5 working days. We respond within 24 hours, Monday to Saturday — personally.</p>
-
-      <!-- Founder Cards -->
-      <div class="ct-founders">
-
-        <!-- Colin -->
-        <div class="ct-founder">
-          <div class="ct-founder-img">
-            <img src="founder_colin.jpg" alt="Colin Lin Yan — Co-Founder YENYONG." onerror="this.parentElement.innerHTML='<div style='font-size:28px;opacity:.3'><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></div>'"/>
-          </div>
-          <div class="ct-founder-info">
-            <div class="ct-founder-name">Colin Lin Yan · 林延</div>
-            <div class="ct-founder-title" id="f1-title">Co-Founder &amp; Managing Director · Foshan</div>
-            <div class="ct-founder-contacts">
-              <a href="https://wa.me/8618929980066" class="ct-founder-contact" target="_blank">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span> WhatsApp +86 189 2998 0066
-              </a>
-              <a href="mailto:mellamocolin1991@gmail.com" class="ct-founder-contact">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span> mellamocolin1991@gmail.com
-              </a>
-              <a href="https://www.yenyong.com" class="ct-founder-contact" target="_blank">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></span> www.yenyong.com
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Yangbo — placeholder -->
-        <div class="ct-founder">
-          <div class="ct-founder-placeholder">
-            <div style="font-size:22px;opacity:.25"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></div>
-          </div>
-          <div class="ct-founder-info">
-            <div class="ct-founder-name">Chen Yangbo · 陈洋博</div>
-            <div class="ct-founder-title" id="f2-title">Co-Founder &amp; CEO · Singapore</div>
-            <div class="ct-founder-contacts">
-              <div class="ct-founder-contact" style="color:rgba(255,255,255,.25)">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span> <span id="ct-wa2">WhatsApp</span>
-              </div>
-              <a href="mailto:mellamocolin1991@gmail.com" class="ct-founder-contact">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span> mellamocolin1991@gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /founders -->
-    </div>
-
-    <!-- Addresses -->
-    <div class="ct-addresses">
-      <div class="ct-addr">
-        <div class="ct-addr-flag"><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg></div>
-        <div class="ct-addr-country" id="ct-sg-label">Singapore HQ</div>
-        <div class="ct-addr-text">KYT Trading &amp; Construction Pte Ltd<br>7 Gambas Crescent, #08-31<br>ARK@GAMBAS<br>Singapore 757087</div>
-        <a href="https://maps.google.com/?q=7+Gambas+Crescent+Singapore+757087" target="_blank" class="ct-addr-map"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> View on Map →</a>
-      </div>
-      <div class="ct-addr">
-        <div class="ct-addr-flag"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></div>
-        <div class="ct-addr-country" id="ct-fs-label">Foshan Office</div>
-        <div class="ct-addr-text" style="color:rgba(255,255,255,.25);font-style:italic">Foshan YenYong International<br>Building Materials Trading Co., Ltd.<br><br>Address coming soon</div>
-      </div>
-    </div>
-
-  </div><!-- /ct-left -->
-
-  <!-- RIGHT: Form -->
-  <div class="ct-right">
-    <span class="ct-right-label" id="ct-form-label">Send Us A Message</span>
-    <form class="ct-form" id="inquiryForm" onsubmit="return submitInquiry(event)">
-      <div class="ct-form-row">
-        <div class="ct-fg"><label id="fl1">Name</label><input type="text" id="inp-name" placeholder="John Smith" required/></div>
-        <div class="ct-fg"><label id="fl2">Company</label><input type="text" id="inp-company" placeholder="ABC Trading Ltd"/></div>
-      </div>
-      <div class="ct-form-row">
-        <div class="ct-fg"><label id="fl3">Email</label><input type="email" id="inp-email" placeholder="john@company.com" required/></div>
-        <div class="ct-fg"><label id="fl4">Country</label>
-          <select id="inp-country">
-            <option id="fl4o" value="">Select country...</option>
-            <option>Germany</option><option>Poland</option><option>France</option>
-            <option>Netherlands</option><option>United Kingdom</option><option>Belgium</option>
-            <option>Spain</option><option>Italy</option><option>UAE</option>
-            <option>Saudi Arabia</option><option>Morocco</option><option>Egypt</option>
-            <option>South Africa</option><option>Nigeria</option><option>Tanzania</option>
-            <option>Japan</option><option>South Korea</option><option>Malaysia</option>
-            <option>Thailand</option><option>Vietnam</option><option>Indonesia</option>
-            <option>Kazakhstan</option><option>Uzbekistan</option><option>Azerbaijan</option>
-            <option>Georgia</option><option>Russia</option><option>China</option>
-            <option>USA</option><option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="ct-fg"><label id="fl5">Product Interest</label>
-        <select id="inp-product">
-          <option id="fl5o" value="">Select product...</option>
-          <option id="fp1">SPC Rigid Core Flooring</option>
-          <option id="fp2">WPC Wood Plastic Wall Panel</option>
-          <option id="fp3">PVC Decorative Wall Panel</option>
-          <option id="fp4">Bamboo Crystal Panel</option>
-          <option id="fp5">Carbon Crystal Panel</option>
-          <option id="fp6">Ceramic &amp; Porcelain Tiles</option>
-          <option id="fp7">Multiple Products</option>
-        </select>
-      </div>
-      <div class="ct-fg"><label id="fl6">Message</label>
-        <textarea id="inp-msg" placeholder="Tell us your requirements — thickness, colors, quantity, destination port..."></textarea>
-      </div>
-      <button type="submit" class="ct-submit" id="fl-sub">Request Free Samples →</button>
-    </form>
-    <div class="ct-msg" id="ct-msg">
-      <strong id="ct-msg-t"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Inquiry ready to send</strong><br>
-      <span id="ct-msg-d">Your email app should open. If not, reach us on WhatsApp +86 189 2998 0066.</span>
-    </div>
-    <p class="ct-promise" id="ct-promise"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg> Free samples · 5 working days worldwide · No cost · No obligation<br><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Every inquiry answered within 24 hours</p>
-  </div>
-
-</div>
-</section>
-
-<!-- MAP SECTION -->
-<div class="map-section">
-<div class="map-in">
-  <!-- Singapore Map -->
-  <div class="map-frame">
-    <div class="map-label"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Singapore HQ</div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.613!2d103.8198!3d1.4390!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da13b8b9a2e7a5%3A0x1234567890abcdef!2s7%20Gambas%20Crescent%2C%20Singapore%20757087!5e0!3m2!1sen!2ssg!4v1234567890"
-      width="100%" height="320" style="border:0" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-  <!-- Foshan Placeholder -->
-  <div class="map-placeholder">
-    <div class="map-placeholder-icon"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></div>
-    <div class="map-placeholder-text">Foshan Office</div>
-    <div style="font-size:10px;color:rgba(255,255,255,.15)">佛山办公室地址待定</div>
-  </div>
-</div>
-</div>
-
 
 <footer>
 <div class="ft">
@@ -1552,9 +1004,9 @@ svg.map{display:block;width:100%;height:auto}
     </div>
     <div class="ft-cols">
       <div class="fcc"><h4 id="fc1h">Products</h4><a href="products.html#spc">SPC Flooring</a><a href="products.html#wpc">WPC Wall Panel</a><a href="products.html#pvc">PVC Wall Panel</a><a href="products.html#bamboo">Bamboo Crystal</a><a href="products.html#carbon">Carbon Crystal</a><a href="products.html#tiles">Ceramic Tiles</a></div>
-      <div class="fcc"><h4 id="fc4h">Resources</h4><a href="#downloads" id="fc41">Catalog &amp; Downloads</a><a href="#support" id="fc42">Installation Guides</a><a href="#support" id="fc43">DIY Center</a><a href="#support" id="fc44">FAQ</a><a href="certifications.html" id="fc45">Certifications</a><a href="news.html" id="fc46">Insights</a></div>
-      <div class="fcc"><h4 id="fc2h">Company</h4><a href="company.html#founders" id="fc21">Our Story</a><a href="company.html#culture" id="fc22">Our Values</a><a href="#markets" id="fc24">Markets</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
-      <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:mellamocolin1991@gmail.com">mellamocolin1991@gmail.com</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Request Samples</a></div>
+      <div class="fcc"><h4 id="fc4h">Resources</h4><a href="index.html#downloads" id="fc41">Catalog &amp; Downloads</a><a href="index.html#support" id="fc42">Installation Guides</a><a href="index.html#support" id="fc43">DIY Center</a><a href="index.html#support" id="fc44">FAQ</a><a href="certifications.html" id="fc45">Certifications</a><a href="news.html" id="fc46">Insights</a></div>
+      <div class="fcc"><h4 id="fc2h">Company</h4><a href="company.html#founders" id="fc21">Our Story</a><a href="company.html#culture" id="fc22">Our Values</a><a href="index.html#markets" id="fc24">Markets</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
+      <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:mellamocolin1991@gmail.com">mellamocolin1991@gmail.com</a><a href="index.html#contact" id="fc32">WhatsApp</a><a href="index.html#contact" id="fc33">Request Samples</a></div>
     </div>
   </div>
   <div class="ft-btm">
@@ -1563,7 +1015,6 @@ svg.map{display:block;width:100%;height:auto}
   </div>
 </div>
 </footer>
-
 <script>
 var T={};
 T.en={'h-ey':'Foshan · Singapore · Global','hww-ey':'How We Work','hww-ti':'This is how<br>we <em>deliver.</em>','hww-su':"From your first inquiry to the moment our products arrive — every step is documented, certified, and backed by Singapore's legal framework. No surprises.", 'hww-s1':'First Response','hww-s2':'Days — Free Samples','hww-s3':'Certifications','hww-s4':'Documented','h-ti':'Quality from China.<br><em>Trust from Singapore.</em>','h-su':'For too long, buying building materials from China meant uncertainty — wrong specs, late shipments, no one to call. YENYONG. was built to change that.','h-b1':'View Products','h-b2':'Request Free Samples','hs1':'Countries','hs2':'Certified','hs3':'Min. Order','hs4':'Days — Free Samples','hs5':'Registered','tb1':'<svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Request Samples','tb2':'<svg class="ico" aria-hidden="true"><use href="#i-medal"/></svg> Certifications','tb3':'<svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> Singapore · Foshan','n1':'Products','n2':'Certifications','n3':'Markets','n4':'Projects','n5':'Culture','n6':'About','n7':'Contact','nav-cta':'Free Samples','st-ti':'The world doesn\'t need another building materials supplier.<br>It needs <em>YENYONG.</em>','st-p1':'Two founders. One in Foshan managing factory relationships, quality control, and production. One in Singapore driving contracts, international payments, and global sales. Every order flows through a Singapore-registered entity. Every product ships with CE certification, SGS reports, and full export documentation.','st-p2':'YENYONG. is not a trading middleman. We are the direct bridge between China\'s finest building materials factories and the world\'s builders, architects, and distributors — with the transparency and professionalism that global buyers deserve.','pr-ey':'The YENYONG. Difference','pr-ti':'Not just a supplier.<br><em>Your partner.</em>','pr-st':'The old way: a factory in China you\'ve never met, a middleman who disappears after payment, documents that don\'t pass customs. YENYONG. built a different model — Singapore contracts, CE certification, and two founders who answer your messages personally.','pr-bt':'Talk to us directly →','s1t':'Countries','s1d':'Buyers across Europe, Asia, Middle East and Africa trust YENYONG.','s2t':'Days','s2d':'Free samples to your door worldwide. No cost, no obligation.','s3t':'Certifications','s4t':'Response','s4d':'Every inquiry answered within 24 hours. Monday to Saturday.','d1t':'Singapore Entity','d1d':'Every contract via KYT Trading & Construction Pte Ltd — Singapore-registered. Your money is protected. Your contract is enforceable.','d2t':'Factory Direct','d2d':'No middlemen. Foshan base connects directly to certified Pearl River Delta factories. Real factory FOB price.','d3t':'Full Documentation','d3d':'CE Declaration, SGS reports, commercial invoice, packing list, bill of lading, certificate of origin. Customs-ready.','pd-ey':'Product Range','pd-ti':'Factory-direct.<br><em>CE certified.</em>','pd-bt':'Request Samples','p1n':'SPC Rigid Core Flooring','p2n':'WPC Wood Plastic Wall Panel','p3n':'PVC Decorative Wall Panel','p4n':'Bamboo Crystal Wall Panel','p5n':'Carbon Crystal Composite Panel','p6n':'Ceramic & Porcelain Tiles','p1s1':'Thickness','p1s4':'MOQ','p2s1':'Thickness','p2s2':'Styles','p2s4':'MOQ','p3s1':'Thickness','p3s2':'Finishes','p3s4':'MOQ','p4s1':'Core','p4s2':'Colors','p4s4':'MOQ','p5s1':'Surface','p5s2':'Use','p5s4':'MOQ','p6s1':'Sizes','p6s2':'Finish','p6s4':'MOQ','ce-ey':'International Standards','ce-ti':'Every product.<br><em>Every certificate.</em>','c1':'EU Conformity','c2':'Third-Party','c3':'Quality Mgmt','c4':'Indoor Air','c5':'Fire Safety','c6':'Chemicals','c7':'Formaldehyde','mk-ey':'Global Markets','mk-ti':'40+ countries.<br><em>One contact.</em>','m1':'Europe','m2':'Central Asia','m3':'Russia & CIS','m4':'Southeast Asia','m5':'East Asia','m6':'North Africa','m7':'Middle East','m8':'Sub-Saharan Africa','m9':'North America','hw-ey':'How to Order','hw-ti':'Four steps.<br><em>Door to door.</em>','s1ti':'Contact Us','s1de':'Email or WhatsApp with your requirements and destination. Response within 24 hours.','s2ti':'Free Samples','s2de':'Physical samples to your door in 5 working days. Worldwide. No cost. No obligation.','s3ti':'Sign & Pay','s3de':'Contract via Singapore entity. 30% deposit. T/T. Production starts immediately.','s4ti':'FOB Delivery','s4de':'Full documentation: CE Declaration, SGS reports, B/L, CO, Invoice. On time, every time.','pj-ey':'Projects & Cases','pj-ti':'Where YENYONG.<br><em>has been.</em>','pj-in':'From European residential developments to luxury hotels in Morocco — our materials are being installed across the globe.','pb1':'Hotel · Morocco','pjt1':'Four Points by Sheraton<br>Casablanca','pjd1':'International hotel in Casablanca. SPC rigid core flooring and WPC decorative wall panels for guest rooms and corridors.','pb2':'Residential · Germany','pjt2':'Munich Residential<br>Development','pjd2':'CE-certified SPC flooring for a German residential developer. FloorScore and E0 certified.','pb3':'Commercial · Kazakhstan','pjt3':'Almaty Business<br>Centre','pjd3':'WPC wall panels and bamboo crystal feature walls for a modern business centre in Almaty.','pb4':'Luxury Villa · UAE','pjt4':'Dubai Private<br>Villa Project','pjd4':'Carbon crystal and bamboo crystal panels for a luxury private villa in Dubai. Mirror-finish surfaces.','pb5':'Retail Chain · Poland','pjt5':'Warsaw Retail<br>Rollout','pjd5':'Multi-location retail rollout — 12 locations in Warsaw, tight schedule. CE certified throughout.','pc-lb':'Your project next?','pc-ti':'Want to see YENYONG. in your project?','pc-de':'Request free samples and let us show you what our materials look like in real spaces.','pc-bt':'Request Samples →','pj-nt':'* Project references are illustrative of the markets and project types YENYONG. serves.','cu-ey':'Our Culture','cu-ti':'Who we are.<br><em>What we stand for.</em>','tab-mission':'Mission','tab-vision':'Vision','tab-values':'Values','tab-promise':'Brand Promise','ml-lb':'MISSION','ml-bi':'Connecting China\'s Manufacturing With The World.','ml-it':'Built on trust, delivered with integrity.','ml-bo':'Our mission is to make the world\'s finest Foshan building materials accessible to builders and developers everywhere — backed by Singapore\'s international trading infrastructure and our unwavering commitment to quality.','vl-lb':'VISION','vl-bi':'Asia\'s Most Trusted Building Materials Export Brand.','vl-it':'The partner of first choice in every market we serve.','vl-bo':'In every market we serve, we want YENYONG. to be the first name buyers think of — not because we\'re the cheapest, but because we\'re the most reliable.','v1t':'Loyalty','v1d':'Royal blue — long-term commitment to every partner. Never sacrificing relationships for short-term gain.','v2t':'Transparency','v2d':'White — clear quotes, explicit terms. No hidden fees, no vague promises. Ever.','v3t':'Integrity','v3d':'Delivery dates are delivery dates. Specs are specs. Any issue — we tell you first, always.','v4t':'Precision','v4d':'1mm of variance can make a shipment unusable. Near-zero tolerance on every specification.','v5t':'Global Reach','v5d':'YenYong — extending across oceans. We know your market, speak your language, work at your pace.','pp-lb':'BRAND PROMISE','pp-bi':'YENYONG. — Where Trust Meets Quality.','pp-su':'延洋 · Trust as the bridge, quality as the proof. · 以信任为桥，以品质为证。','pc1t':'Trust First','pc1d':'Every relationship starts with trust. Every shipment backs it up. No exceptions.','pc2t':'Quality Always','pc2d':'CE certified. SGS tested. ISO 9001. Seven certifications. The proof is in the documentation.','pc3t':'Global Standard','pc3d':'Singapore registered. International contracts. Professional service at every stage.','fd-ti':'Two names.<br><em>One promise.</em>','fd-in':'YENYONG. is founded by two partners who understand that the building materials industry needs something more — not just products, but trust, transparency, and a genuine global reach.','f1ti':'Co-Founder & Managing Director · Foshan','f1de':'Based in Foshan, Guangdong. Manages all factory relationships, quality control, production scheduling, and logistics. The man who ensures every product that ships under YENYONG. is exactly what was promised.','f2ti':'Co-Founder & CEO · Singapore','f2de':'Based in Singapore. Heads KYT Trading & Construction Pte Ltd and OVERARCHING PTE. LTD. Drives global sales across Europe, Middle East, Southeast Asia, and Africa. The man who brings YENYONG. to the world.','ct-ey':'Get In Touch','ct-ti':'Start with<br><em>samples.</em>','ct-su':'Free samples worldwide in 5 working days. We respond within 24 hours, Monday to Saturday.','ct-em':'Email','ct-wa':'WhatsApp / WeChat','ct-sg':'Singapore','ct-fs':'Foshan','fl1':'Name','fl2':'Company','fl3':'Email','fl4':'Country','fl4o':'Select country...','fl5':'Product Interest','fl5o':'Select product...','fp1':'SPC Rigid Core Flooring','fp2':'WPC Wood Plastic Wall Panel','fp3':'PVC Decorative Wall Panel','fp4':'Bamboo Crystal Panel','fp5':'Carbon Crystal Panel','fp6':'Ceramic & Porcelain Tiles','fp7':'Multiple Products','fl6':'Message','fl-sub':'Request Free Samples →','ft-tg':'Foshan · Singapore · Global','fc1h':'Products','fc2h':'Company','fc3h':'Contact','fc21':'Our Story','fc22':'Our Values','fc23':'Certifications','fc24':'Markets','fc32':'WhatsApp','fc33':'Request Samples','ft-cp':'© 2026 Foshan YenYong International Building Materials Trading Co., Ltd. · KYT Trading & Construction Pte Ltd · Singapore · All rights reserved.'};
@@ -1604,6 +1055,13 @@ Object.assign(T.de,{n8:'Insights','pd-bt2':'Alle Produkte ansehen','ce-bt':'Zert
 Object.assign(T.fr,{n8:'Insights','pd-bt2':'Voir tous les produits','ce-bt':'Voir certificats & docs →','ns-ey':'Actualités & Insights','ns-ti':'Le savoir du<br>métier.','ns-in':'Guides, tendances de design, études de cas et notes d’achat — sélectionnés par YENYONG.'});
 Object.assign(T.ru,{n8:'Инсайты','pd-bt2':'Все продукты','ce-bt':'Сертификаты и документы →','ns-ey':'Новости и аналитика','ns-ti':'Знания<br>отрасли.','ns-in':'Руководства, тренды дизайна, кейсы и заметки для закупок — от YENYONG.'});
 Object.assign(T.cn,{n8:'洞察','pd-bt2':'查看全部产品','ce-bt':'查看认证与文件 →','ns-ey':'新闻与洞察','ns-ti':'来自行业的<br>真知。','ns-in':'来自建材行业的指南、设计趋势、案例研究与采购笔记——由 YENYONG. 精选整理。'});
+
+Object.assign(T.en,{'n8':'Insights','pd-bt2':'View All Products','ce-bt':'Download Certification Pack','ns-ey':'News & Insights','ns-ti':'Knowledge from<br>the trade.','ns-in':'Guides, design trends, case studies and buyer’s notes from across the building-materials industry — curated by YENYONG.'});
+Object.assign(T.de,{'n8':'Insights','pd-bt2':'Alle Produkte ansehen','ce-bt':'Zertifikatspaket herunterladen','ns-ey':'News & Insights','ns-ti':'Wissen aus<br>der Branche.','ns-in':'Leitfäden, Design-Trends, Fallstudien und Einkaufshinweise aus der Baustoffbranche — kuratiert von YENYONG.'});
+Object.assign(T.fr,{'n8':'Insights','pd-bt2':'Voir tous les produits','ce-bt':'Télécharger le pack certifications','ns-ey':'Actualités & Insights','ns-ti':'Le savoir du<br>métier.','ns-in':'Guides, tendances de design, études de cas et notes d’achat — sélectionnés par YENYONG.'});
+Object.assign(T.ru,{'n8':'Insights','pd-bt2':'Все продукты','ce-bt':'Скачать пакет сертификатов','ns-ey':'Новости и аналитика','ns-ti':'Знания<br>отрасли.','ns-in':'Руководства, тренды дизайна, кейсы и заметки для закупок — от YENYONG.'});
+Object.assign(T.cn,{'n8':'洞察','pd-bt2':'查看全部产品','ce-bt':'下载认证文件包','ns-ey':'新闻与洞察','ns-ti':'来自行业的<br>真知。','ns-in':'来自建材行业的指南、设计趋势、案例研究与采购笔记——由 YENYONG. 精选整理。'});
+
 function setLang(l){
   var t=T[l]||T.en;
   for(var id in t){var el=document.getElementById(id);if(el)el.innerHTML=t[id];}
@@ -1748,188 +1206,5 @@ function toggleMenu(){
 
 // ── FAQ SMOOTH OPEN (no JS required; details/summary works natively) ──
 </script>
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/8618929980066" class="wa-float" target="_blank" title="WhatsApp YENYONG.">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<!-- Scroll Reveal -->
-<script>
-(function(){
-  var bar=document.getElementById('progress');
-  function onScroll(){if(!bar)return;var d=document.documentElement;var sc=d.scrollTop||document.body.scrollTop;var max=d.scrollHeight-d.clientHeight;bar.style.width=(max>0?sc/max*100:0)+'%';}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var revs=document.querySelectorAll('.sec-in > *, .stmt-in > *, .hero-stats > div');
-  revs.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%8)*55)+'ms';});
-  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-  revs.forEach(function(el){obs.observe(el);});
-  var counters=document.querySelectorAll('[data-count]');
-  var cob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=parseInt(el.getAttribute('data-count'),10)||0,suf=el.getAttribute('data-suffix')||'',dur=1300,t0=null;function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1),val=Math.floor((1-Math.pow(1-p,3))*to);el.textContent=val+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);cob.unobserve(el);}});},{threshold:0.5});
-  counters.forEach(function(el){cob.observe(el);});
-})();
-</script>
-
-<!-- Global Markets map: real continent outlines + partner markers -->
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="data/countries.js"></script>
-<script>
-(function(){
-  var PARTNERS=new Set(['DE','PL','NL','FR','GB','BE','ES','IT','KZ','UZ','TM','TJ','KG','MN','RU','BY','UA','AM','MY','TH','VN','ID','PH','SG','JP','KR','MA','TN','EG','DZ','AE','SA','QA','KW','ZA','NG','TZ','KE','US','CA']);
-  var W=900,H=450, ns='http://www.w3.org/2000/svg';
-  var wrap=document.getElementById('globeViz');
-  var svg=document.getElementById('svgC');
-  var tip=document.getElementById('tipC');
-  var fb=document.getElementById('fbC');
-  var LAND='#e7eefb', BORD='#cfd9f1';
-  function langMap(l){return ({'en':'en','cn':'zh','de':'de','fr':'fr','ru':'ru'}[l]||'en');}
-  var projection;
-  try{projection=d3.geoNaturalEarth1().fitSize([W,H],{type:'Sphere'});}catch(e){projection=null;}
-  function project(pt){return projection?projection(pt):[(pt[0]+180)/360*W,(90-pt[1])/180*H];}
-  function drawGeo(topo,obj,cls,fill,stroke,sw,name){
-    if(typeof topojson==='undefined'||!topo.objects[obj]||typeof d3==='undefined'||!d3.geoPath)return;
-    var path=d3.geoPath(projection);
-    var fc=topojson.feature(topo,topo.objects[obj]);
-    var feats=fc.type==='FeatureCollection'?fc.features:[fc];
-    feats.forEach(function(f){
-      var d=path(f);
-      if(!d)return;
-      var p=document.createElementNS(ns,'path');
-      p.setAttribute('d',d);p.setAttribute('class',cls);
-      if(fill)p.setAttribute('fill',fill);
-      if(stroke){p.setAttribute('stroke',stroke);p.setAttribute('stroke-width',sw);}
-      if(name&&f.properties&&f.properties.name)p.dataset.name=f.properties.name;
-      svg.appendChild(p);
-    });
-  }
-  var GEO_LABELS={
-    na:{en:'North America',cn:'北美洲',de:'Nordamerika',fr:'Amérique du Nord',ru:'Северная Америка'},
-    sa:{en:'South America',cn:'南美洲',de:'Südamerika',fr:'Amérique du Sud',ru:'Южная Америка'},
-    eu:{en:'Europe',cn:'欧洲',de:'Europa',fr:'Europe',ru:'Европа'},
-    af:{en:'Africa',cn:'非洲',de:'Afrika',fr:'Afrique',ru:'Африка'},
-    as:{en:'Asia',cn:'亚洲',de:'Asien',fr:'Asie',ru:'Азия'},
-    oc:{en:'Oceania',cn:'大洋洲',de:'Ozeanien',fr:'Océanie',ru:'Океания'},
-    an:{en:'Antarctica',cn:'南极洲',de:'Antarktis',fr:'Antarctique',ru:'Антарктида'},
-    pa:{en:'Pacific Ocean',cn:'太平洋',de:'Pazifischer Ozean',fr:'Océan Pacifique',ru:'Тихий океан'},
-    at:{en:'Atlantic Ocean',cn:'大西洋',de:'Atlantischer Ozean',fr:'Océan Atlantique',ru:'Атлантический океан'},
-    io:{en:'Indian Ocean',cn:'印度洋',de:'Indischer Ozean',fr:'Océan Indien',ru:'Индийский океан'},
-    ao:{en:'Arctic Ocean',cn:'北冰洋',de:'Arktischer Ozean',fr:'Océan Arctique',ru:'Северный Ледовитый океан'},
-    so:{en:'Southern Ocean',cn:'南大洋',de:'Südlicher Ozean',fr:'Océan Austral',ru:'Южный океан'}
-  };
-  var LABEL_POS=[
-    {k:'na',x:-100,y:45,cls:'continent'},
-    {k:'sa',x:-58,y:-12,cls:'continent'},
-    {k:'eu',x:16,y:52,cls:'continent'},
-    {k:'af',x:20,y:6,cls:'continent'},
-    {k:'as',x:92,y:44,cls:'continent'},
-    {k:'oc',x:134,y:-24,cls:'continent'},
-    {k:'an',x:0,y:-74,cls:'continent'},
-    {k:'pa',x:-150,y:2,cls:'ocean'},
-    {k:'pa',x:178,y:-8,cls:'ocean'},
-    {k:'at',x:-30,y:26,cls:'ocean'},
-    {k:'io',x:78,y:-20,cls:'ocean'},
-    {k:'ao',x:0,y:84,cls:'ocean'},
-    {k:'so',x:24,y:-62,cls:'ocean'}
-  ];
-  var geoTexts=[];
-  function addLabels(l){
-    if(!geoTexts.length){
-      LABEL_POS.forEach(function(p){
-        var t=document.createElementNS(ns,'text');
-        var pt=project([p.x,p.y]);
-        t.setAttribute('x',pt[0]);t.setAttribute('y',pt[1]);
-        t.setAttribute('class','geo-label '+p.cls);
-        t.setAttribute('text-anchor','middle');
-        svg.appendChild(t);
-        geoTexts.push({el:t,key:p.k});
-      });
-    }
-    var lm=langMap(l);
-    geoTexts.forEach(function(o){
-      var src=GEO_LABELS[o.key]||GEO_LABELS.pa;
-      o.el.textContent=(src&&(src[lm]||src.en))||'';
-    });
-  }
-  window.ymUpdateGeoLang=addLabels;
-  var HUBS={sg:{lng:103.8,lat:1.35,label:'HQ',name:'Singapore'},fs:{lng:113.1,lat:23.0,label:'BRANCH',name:'Foshan'}};
-  function drawHubs(){
-    Object.keys(HUBS).forEach(function(k){
-      var h=HUBS[k]; var pt=project([h.lng,h.lat]);
-      var g=document.createElementNS(ns,'g'); g.setAttribute('class','hub '+k); g.setAttribute('data-hub',k);
-      var ringCount=(k==='sg'?3:2);
-      for(var j=0;j<ringCount;j++){
-        var pl=document.createElementNS(ns,'circle');
-        pl.setAttribute('cx',pt[0]);pl.setAttribute('cy',pt[1]);pl.setAttribute('r',5.6);
-        pl.setAttribute('class','pl pl'+(j+1));
-        g.appendChild(pl);
-      }
-      var core=document.createElementNS(ns,'circle');
-      core.setAttribute('cx',pt[0]);core.setAttribute('cy',pt[1]);core.setAttribute('r',(k==='sg'?6.0:5.4));
-      core.setAttribute('class','core');g.appendChild(core);
-      var ttl=document.createElementNS(ns,'text');
-      ttl.setAttribute('x',pt[0]);ttl.setAttribute('y',pt[1]+3.6);ttl.setAttribute('class','ttl');ttl.textContent=h.label;g.appendChild(ttl);
-      var nm=document.createElementNS(ns,'text');
-      nm.setAttribute('x',pt[0]);nm.setAttribute('y',pt[1]-(k==='sg'?11:10));nm.setAttribute('class','nm');
-      nm.textContent=h.name;g.appendChild(nm);
-      svg.appendChild(g);
-    });
-  }
-  function drawPartners(){
-    if(typeof WC_DATA==='undefined')return;
-    WC_DATA.forEach(function(c){
-      if(!PARTNERS.has(c.c))return;
-      var pt=project([c.ln,c.la]);
-      var ring=document.createElementNS(ns,'circle');
-      ring.setAttribute('cx',pt[0]);ring.setAttribute('cy',pt[1]);ring.setAttribute('r',2.6);ring.setAttribute('class','geo-ring');
-      svg.appendChild(ring);
-      var dot=document.createElementNS(ns,'circle');
-      dot.setAttribute('cx',pt[0]);dot.setAttribute('cy',pt[1]);dot.setAttribute('r',2.7);dot.setAttribute('class','partner-dot');
-      dot.dataset.iso=c.c;
-      svg.appendChild(dot);
-    });
-  }
-  svg.addEventListener('mouseover',function(e){
-    var t=e.target;
-    if(t.dataset&&t.dataset.iso){
-      var c=WC_DATA.find(function(x){return x.c===t.dataset.iso;});
-      if(c){var lm=langMap(window.YM_LANG);tip.innerHTML=((c.n&&(c.n[lm]||c.n.en))||c.n.en)+(c.s?'<span>'+c.s+'</span>':'');tip.style.opacity=1;}
-    }else if(t.dataset&&t.dataset.name){tip.innerHTML=t.dataset.name;tip.style.opacity=1;}
-    else if(t.closest){var hub=t.closest('.hub');if(hub&&hub.getAttribute('data-hub')==='fs'){tip.innerHTML='YENYONG.<span>Foshan YenYong International Building Materials Trading Co., Ltd.</span>';tip.style.opacity=1;}}
-  });
-  svg.addEventListener('mousemove',function(e){
-    var r=svg.parentElement.getBoundingClientRect();
-    var x=e.clientX-r.left+14,y=e.clientY-r.top+14;
-    if(x>r.width-130)x=r.width-130;
-    tip.style.left=x+'px';tip.style.top=y+'px';
-  });
-  svg.addEventListener('mouseout',function(){tip.style.opacity=0;});
-  var initLang=window.YM_LANG||document.documentElement.lang||'en';
-  var landP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json').then(function(r){return r.json();});
-  var ctrP=fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(r){return r.json();});
-  Promise.all([landP,ctrP]).then(function(arr){
-    drawGeo(arr[0],'land','land',LAND,null,0,false);
-    drawGeo(arr[1],'countries','country','none',BORD,.4,true);
-    drawPartners();
-    drawHubs();
-    addLabels(initLang);
-  }).catch(function(e){console.warn('basemap load failed',e);if(fb)fb.hidden=false;});
-})();
-</script>
-
-<div id="cookieBar" style="position:fixed;left:0;right:0;bottom:0;z-index:300;background:#0A0E1A;color:#fff;padding:15px 24px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px;line-height:1.5;box-shadow:0 -8px 30px rgba(0,0,0,.28)">
-  <div style="max-width:700px">We use essential cookies to run this site and, with your consent, anonymous analytics to improve it. See our <a href="privacy.html" style="color:#7fa0ff;text-decoration:underline">Privacy Policy</a>.</div>
-  <div style="display:flex;gap:10px">
-    <button onclick="cookieResp(false)" style="background:transparent;border:1px solid #4a5680;color:#c9d2e6;padding:8px 16px;border-radius:8px;cursor:pointer;font:inherit">Reject</button>
-    <button onclick="cookieResp(true)" style="background:#1F3AA0;border:1px solid #1F3AA0;color:#fff;padding:8px 18px;border-radius:8px;cursor:pointer;font:inherit;font-weight:600">Accept</button>
-  </div>
-</div>
-<script>
-(function(){try{if(localStorage.getItem('yy_cookie')){var b=document.getElementById('cookieBar');if(b)b.style.display='none';}}catch(e){}})();
-function cookieResp(a){try{localStorage.setItem('yy_cookie',a?'1':'0');}catch(e){}var b=document.getElementById('cookieBar');if(b)b.style.display='none';}
-</script>
-
 </body>
 </html>
