@@ -7,12 +7,20 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link id="yy-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" media="print">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"></noscript>
 
 <meta name="description" content="Factory-direct CE-certified SPC flooring, WPC wall panels and decorative panels from Foshan, China. Singapore registered. 40+ countries."/>
 <meta property="og:title" content="YENYONG. — International Building Materials"/>
 <meta property="og:description" content="Factory-direct CE-certified SPC flooring, WPC wall panels and decorative panels from Foshan, China. Singapore registered."/>
 <meta property="og:type" content="website"/>
+<link rel="canonical" href="https://yenyong.com/"/>
+<link rel="alternate" hreflang="en" href="https://yenyong.com/"/>
+<link rel="alternate" hreflang="de" href="https://yenyong.com/de/"/>
+<link rel="alternate" hreflang="fr" href="https://yenyong.com/fr/"/>
+<link rel="alternate" hreflang="ru" href="https://yenyong.com/ru/"/>
+<link rel="alternate" hreflang="zh" href="https://yenyong.com/zh/"/>
+<link rel="alternate" hreflang="x-default" href="https://yenyong.com/"/>
 <meta property="og:url" content="https://yenyong.com/"/>
 <meta property="og:image" content="https://yenyong.com/hero-poster.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -44,6 +52,10 @@ nav.scrolled .nav-links a:hover{color:#fff}nav.scrolled .drop a{color:var(--ink)
 nav.scrolled .lang{border-color:rgba(255,255,255,.25)}
 .lang button{background:none;border:none;border-right:1px solid var(--border);cursor:pointer;font-size:9px;letter-spacing:1px;color:var(--gray);padding:5px 9px;transition:.15s;font-family:Arial,sans-serif}
 .lang button:last-child{border-right:none}
+.lang a{background:none;border:none;border-right:1px solid var(--border);cursor:pointer;font-size:9px;letter-spacing:1px;color:var(--gray);padding:5px 9px;transition:.15s;font-family:Arial,sans-serif;text-decoration:none}
+.lang a:last-child{border-right:none}
+.lang a.on{color:var(--blue);font-weight:700}
+nav.scrolled .lang a{color:rgba(255,255,255,.55);border-right-color:rgba(255,255,255,.2)}
 nav.scrolled .lang button{color:rgba(255,255,255,.55);border-right-color:rgba(255,255,255,.15)}
 .lang button.on{background:var(--blue);color:#fff;font-weight:700}
 nav.scrolled .lang button.on{background:rgba(255,255,255,.2)}
@@ -61,7 +73,7 @@ nav.scrolled .nav-cta:hover{background:rgba(255,255,255,.9);color:var(--blue)}
 #topBar .sep{color:var(--border);margin-left:20px}
 .hero{min-height:100vh;background:#0A0E1A;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 80px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85;z-index:0;pointer-events:none}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,14,26,0.15) 0%,rgba(10,14,26,0.30) 50%,rgba(10,14,26,0.65) 100%);z-index:1;pointer-events:none}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,14,26,0.45) 0%,rgba(10,14,26,0.40) 35%,rgba(10,14,26,0.80) 100%),linear-gradient(90deg,rgba(10,14,26,0.70) 0%,rgba(10,14,26,0.15) 55%,rgba(10,14,26,0.30) 100%);z-index:1;pointer-events:none}
 .hero-in{position:relative;z-index:2}
 .hero::before{display:none}
 .hero-in{max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:1}
@@ -771,7 +783,7 @@ svg.map{display:block;width:100%;height:auto}
   "address":[{"@type":"PostalAddress","addressLocality":"Foshan","addressRegion":"Guangdong","addressCountry":"CN"},{"@type":"PostalAddress","addressLocality":"Singapore","addressCountry":"SG"}],
   "parentOrganization":{"@type":"Organization","name":"KYT Trading & Construction Pte Ltd","addressCountry":"SG"},
   "areaServed":"Worldwide",
-  "email":"mailto:mellamocolin1991@gmail.com"
+  "email":"mailto:sales@yenyong.com"
 }
 </script>
 <script type="application/ld+json">
@@ -786,6 +798,49 @@ svg.map{display:block;width:100%;height:auto}
     {"@type":"Question","name":"Do you provide installation training or on-site support?","acceptedAnswer":{"@type":"Answer","text":"Every order ships with illustrated installation guides, and our team supports installers by WhatsApp or video call. On-site supervision is available for large hotel or commercial projects."}}
   ]
 }
+</script>
+
+<script id="yy-fonts-js">(function(){var l=document.getElementById('yy-fonts');function on(){if(l)l.media='all';}if(l&&l.sheet){on();}else if(l){l.onload=on;setTimeout(on,1500);}window.addEventListener('load',on);})();</script>
+
+<!-- YENYONG patch: 移动端与 Hero 修复 -->
+<style id="yy-patch">
+@media (max-width:520px){
+  .hero{padding:120px 20px 56px}
+  .hero h1{font-size:clamp(30px,9.5vw,46px);letter-spacing:-1px}
+  .hero-sub{font-size:15px}
+  .hero-stats{gap:22px}
+  .nav-in{padding:0 16px}
+}
+@media (max-width:640px){
+  .nav-r .lang{display:none}
+  .nav-r .nav-div{display:none}
+  .nav-cta{padding:10px 16px;font-size:9px;letter-spacing:1.5px}
+}
+.m-lang{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 6px;border-bottom:1px solid var(--border);margin-bottom:6px}
+.m-lang button{background:none;border:1px solid var(--border);border-radius:18px;cursor:pointer;font-size:11px;letter-spacing:1px;color:var(--gray);padding:6px 12px;font-family:Arial,sans-serif}
+.m-lang button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+<script id="yy-patch-js">
+(function(){
+  function buildMobileLang(){
+    var links = document.getElementById('navLinks');
+    if(!links || document.getElementById('yy-mobile-lang')) return;
+    var li = document.createElement('li');
+    li.className = 'nav-item yy-mobile-lang';
+    var map = {'en':'/','de':'/de/','fr':'/fr/','ru':'/ru/','cn':'/zh/'};
+    var labels = {'en':'EN','de':'DE','fr':'FR','ru':'RU','cn':'中文'};
+    var html = '<div class="m-lang">';
+    for(var k in map){ html += '<a class="mbtn" href="'+map[k]+'">'+labels[k]+'</a>'; }
+    html += '</div>';
+    li.innerHTML = html;
+    links.insertBefore(li, links.firstChild);
+  }  window.yyLang = function(l){
+    if(typeof setLang === 'function') setLang(l);
+    var bs = document.querySelectorAll('.m-lang button');
+    bs.forEach(function(b){ b.classList.toggle('on', b.textContent.trim().toLowerCase()===l || (l==='cn'&&b.textContent.trim()==='中文')); });
+  };
+  if(window.matchMedia && window.matchMedia('(max-width:640px)').matches) buildMobileLang();
+})();
 </script>
 </head>
 <body>
@@ -886,11 +941,11 @@ svg.map{display:block;width:100%;height:auto}
   <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="nav-r">
     <div class="lang">
-      <button class="on" onclick="setLang('en')">EN</button>
-      <button onclick="setLang('de')">DE</button>
-      <button onclick="setLang('fr')">FR</button>
-      <button onclick="setLang('ru')">RU</button>
-      <button onclick="setLang('cn')" style="font-weight:700;letter-spacing:0">中文</button>
+      <a class="on" href="/">EN</a>
+      <a href="/de/">DE</a>
+      <a href="/fr/">FR</a>
+      <a href="/ru/">RU</a>
+      <a href="/zh/" style="font-weight:700;letter-spacing:0">中文</a>
     </div>
     <div class="nav-div"></div>
     <a href="#contact" class="nav-cta" id="nav-cta">Free Samples</a>
@@ -1116,95 +1171,95 @@ svg.map{display:block;width:100%;height:auto}
     <div><span class="eyebrow" id="dl-ey">Catalog &amp; Downloads</span><h2 style="margin-bottom:0" id="dl-ti">Every document.<br><em>One library.</em></h2></div>
     <a href="#contact" class="btn-blue" id="dl-bt">Request Samples</a>
   </div>
-  <p class="dl-intro" id="dl-in">Product catalogs, technical specifications and certification documents — prepared for distributors, architects and project buyers. Files are being added progressively; request a priority copy and we'll send it the moment it's ready.</p>
+  <p class="dl-intro" id="dl-in">Product catalogs, technical specifications and certification documents — prepared for distributors, architects and project buyers. Browse the full document library — catalog, per-range spec sheets, certification pack and guides.</p>
   <div class="dlg">
     <div class="dlc featured">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
       <h3 id="dt1">Master Catalog 2026</h3>
       <p id="dd1">Complete product range — six categories, specifications, colors and packaging data. One PDF for every sales conversation.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN · DE · FR · RU · 中文</span><span>~48 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn1">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20YENYONG%20Master%20Catalog%202026" class="dlc-req" id="dlr1">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn1">Download</a><a href="/downloads.html" class="dlc-req" id="dlr1">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
       <h3 id="dt2">SPC Spec Sheet</h3>
       <p id="dd2">Thickness, wear layer, sizes, load ratings and packaging per SKU.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>4 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn2">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20SPC%20Spec%20Sheet" class="dlc-req" id="dlr2">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn2">Download</a><a href="/downloads.html" class="dlc-req" id="dlr2">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
       <h3 id="dt3">WPC Spec Sheet</h3>
       <p id="dd3">Dimensions, finishes, fire rating and installation data.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>4 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn3">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20WPC%20Spec%20Sheet" class="dlc-req" id="dlr3">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn3">Download</a><a href="/downloads.html" class="dlc-req" id="dlr3">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
       <h3 id="dt4">PVC Spec Sheet</h3>
       <p id="dd4">Thickness range, finishes and technical values.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>3 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn4">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20PVC%20Spec%20Sheet" class="dlc-req" id="dlr4">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn4">Download</a><a href="/downloads.html" class="dlc-req" id="dlr4">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
       <h3 id="dt5">Bamboo Crystal Spec Sheet</h3>
       <p id="dd5">Core composition, color codes and surface options.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>3 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn5">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Bamboo%20Spec%20Sheet" class="dlc-req" id="dlr5">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn5">Download</a><a href="/downloads.html" class="dlc-req" id="dlr5">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
       <h3 id="dt6">Carbon Crystal Spec Sheet</h3>
       <p id="dd6">Mirror and matte UV surfaces, panel formats and application cases.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>3 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn6">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Carbon%20Spec%20Sheet" class="dlc-req" id="dlr6">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn6">Download</a><a href="/downloads.html" class="dlc-req" id="dlr6">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M6 8h3M6 12h3M6 16h3M12 8h6M12 12h6M12 16h5"/></svg>
       <h3 id="dt7">Ceramic Tile Spec Sheet</h3>
       <p id="dd7">Sizes, water absorption, slip ratings (R-value) and finishes.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>4 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn7">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Tile%20Spec%20Sheet" class="dlc-req" id="dlr7">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn7">Download</a><a href="/downloads.html" class="dlc-req" id="dlr7">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 4 0v9M12 7v14"/></svg>
       <h3 id="dt8">Company Profile</h3>
       <p id="dd8">Who we are: founders, Singapore and Foshan entities, markets and business model.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>6 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn8">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20YENYONG%20Company%20Profile" class="dlc-req" id="dlr8">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn8">Download</a><a href="/downloads.html" class="dlc-req" id="dlr8">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
       <h3 id="dt9">Certification Pack</h3>
       <p id="dd9">CE DoC, SGS reports, ISO 9001, FloorScore, B1 fire, REACH and E0.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>12 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn9">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Certification%20Pack" class="dlc-req" id="dlr9">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn9">Download</a><a href="/downloads.html" class="dlc-req" id="dlr9">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20M5 17v-4a2 2 0 0 1 4 0v4M13 17V9a2 2 0 0 1 4 0v8M21 17v-6"/></svg>
       <h3 id="dt10">Trade &amp; Shipping Terms</h3>
       <p id="dd10">Incoterms, payment terms, MOQ, lead times and packaging.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>2 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn10">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Trade%20and%20Shipping%20Terms" class="dlc-req" id="dlr10">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn10">Download</a><a href="/downloads.html" class="dlc-req" id="dlr10">Priority request →</a></div>
     </div>
     <div class="dlc">
-      <span class="dlc-badge" id="dlb">COMING SOON</span>
+      <span class="dlc-badge" id="dlb">AVAILABLE</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.5 19 22l-7-2.5L5 22l3.5-9.5"/></svg>
       <h3 id="dt11">Warranty &amp; After-Sales</h3>
       <p id="dd11">Warranty coverage, claims process and support channels.</p>
       <div class="dlc-meta"><span>PDF</span><span>EN</span><span>2 pages</span></div>
-      <div class="dlc-actions"><button class="dlc-btn" disabled id="dlc-btn11">Q1 2026 Release</button><a href="mailto:mellamocolin1991@gmail.com?subject=Priority%3A%20Warranty%20and%20After-Sales" class="dlc-req" id="dlr11">Priority request →</a></div>
+      <div class="dlc-actions"><a class="dlc-btn" href="/downloads.html" id="dlc-btn11">Download</a><a href="/downloads.html" class="dlc-req" id="dlr11">Priority request →</a></div>
     </div>
   </div>
 </div>
@@ -1246,10 +1301,10 @@ svg.map{display:block;width:100%;height:auto}
     <a href="news.html" class="btn-blue">View All Insights</a>
   </div>
   <div class="news-grid">
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Distribution</span><span class="nc-date">7 Sep 2026</span></div><div class="nc-body"><h3 class="nc-title">Why Bathroom Distributors Should Add SPC Wall Panels</h3><p class="nc-sum">The 2026 bathroom-renovation market is shifting fast — this piece makes the case for adding SPC wall panels to a distributor’s portfolio.</p><a class="nc-link" href="https://www.stepguardfloors.com/spc-wall-panel-for-bathroom-distributor-and-retailer/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Case Study</span><span class="nc-date">8 Jun 2026</span></div><div class="nc-body"><h3 class="nc-title">Case Study: Hotel Bathroom Renovation</h3><p class="nc-sum">In hospitality, time is money. SPC wall panels cut renovation downtime versus noisy, curing-dependent traditional wet trades.</p><a class="nc-link" href="https://www.stepguardfloors.com/spc-wall-panels-hotel-bathroom-renovation-case-study/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Design Trends</span><span class="nc-date">27 Jul 2026</span></div><div class="nc-body"><h3 class="nc-title">Natural Stone Design as the Latest Surface Trend</h3><p class="nc-sum">Why raw, natural stone surfaces and textures are defining 2026–2027 interiors — and how panels deliver that grounded warmth.</p><a class="nc-link" href="https://www.stepguardfloors.com/spc-wall-panel-interior-trend-stone-texture/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
-    <article class="news-card"><div class="nc-top"><span class="nc-cat">Color Story</span><span class="nc-date">29 May 2026</span></div><div class="nc-body"><h3 class="nc-title">Color Inspiration: Calacatta Monet DIY Panel</h3><p class="nc-sum">An art-inspired panel story — bringing the soft, ethereal beauty of Impressionist painting to walls through DIY-friendly SPC panels.</p><a class="nc-link" href="https://www.stepguardfloors.com/calacatta-monet-diy-spc-wall-panel/" target="_blank" rel="noopener">Read on StepGuard →</a></div></article>
+    <article class="news-card"><div class="nc-top"><span class="nc-cat">Distribution</span><span class="nc-date">7 Sep 2026</span></div><div class="nc-body"><h3 class="nc-title">Why Bathroom Distributors Should Add SPC Wall Panels</h3><p class="nc-sum">The 2026 bathroom-renovation market is shifting fast — this piece makes the case for adding SPC wall panels to a distributor’s portfolio.</p><a class="nc-link" href="/insights/procurement-checklist.html">Read more →</a></div></article>
+    <article class="news-card"><div class="nc-top"><span class="nc-cat">Case Study</span><span class="nc-date">8 Jun 2026</span></div><div class="nc-body"><h3 class="nc-title">Case Study: Hotel Bathroom Renovation</h3><p class="nc-sum">In hospitality, time is money. SPC wall panels cut renovation downtime versus noisy, curing-dependent traditional wet trades.</p><a class="nc-link" href="/projects.html">Read more →</a></div></article>
+    <article class="news-card"><div class="nc-top"><span class="nc-cat">Design Trends</span><span class="nc-date">27 Jul 2026</span></div><div class="nc-body"><h3 class="nc-title">Natural Stone Design as the Latest Surface Trend</h3><p class="nc-sum">Why raw, natural stone surfaces and textures are defining 2026–2027 interiors — and how panels deliver that grounded warmth.</p><a class="nc-link" href="/insights/color-trends-2026.html">Read more →</a></div></article>
+    <article class="news-card"><div class="nc-top"><span class="nc-cat">Color Story</span><span class="nc-date">29 May 2026</span></div><div class="nc-body"><h3 class="nc-title">Color Inspiration: Calacatta Monet DIY Panel</h3><p class="nc-sum">An art-inspired panel story — bringing the soft, ethereal beauty of Impressionist painting to walls through DIY-friendly SPC panels.</p><a class="nc-link" href="/colors.html">Read more →</a></div></article>
   </div>
 </div>
 </section>
@@ -1342,25 +1397,25 @@ svg.map{display:block;width:100%;height:auto}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
       <h4 id="dy1t">Tools Checklist</h4>
       <p id="dy1d">Everything you need before you start — for floors and for walls. Tapping block, spacers, pull bar, laser level and safety gear.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20Tools%20Checklist" id="dy1a">Request PDF →</a>
+      <a class="dy-req" href="mailto:sales@yenyong.com?subject=Request%3A%20YENYONG%20Tools%20Checklist" id="dy1a">Request PDF →</a>
     </div>
     <div class="dyc">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
       <h4 id="dy2t">Subfloor &amp; Wall Prep</h4>
       <p id="dy2d">Level, dry, clean: the three rules of a lasting installation. Moisture, flatness and dust control explained.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20Subfloor%20Prep%20Guide" id="dy2a">Request PDF →</a>
+      <a class="dy-req" href="mailto:sales@yenyong.com?subject=Request%3A%20YENYONG%20Subfloor%20Prep%20Guide" id="dy2a">Request PDF →</a>
     </div>
     <div class="dyc">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
       <h4 id="dy3t">Step-by-Step: Click-Lock SPC</h4>
       <p id="dy3d">From first row to last plank — the DIY-friendly way. Angling, spacing and finishing in six clear steps.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20SPC%20DIY%20Guide" id="dy3a">Request PDF →</a>
+      <a class="dy-req" href="mailto:sales@yenyong.com?subject=Request%3A%20YENYONG%20SPC%20DIY%20Guide" id="dy3a">Request PDF →</a>
     </div>
     <div class="dyc">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
       <h4 id="dy4t">Care &amp; Maintenance</h4>
       <p id="dy4d">Keep every surface looking new for years. Cleaning products, daily routines and what to avoid.</p>
-      <a class="dy-req" href="mailto:mellamocolin1991@gmail.com?subject=Request%3A%20YENYONG%20Care%20Guide" id="dy4a">Request PDF →</a>
+      <a class="dy-req" href="mailto:sales@yenyong.com?subject=Request%3A%20YENYONG%20Care%20Guide" id="dy4a">Request PDF →</a>
     </div>
   </div>
 
@@ -1399,7 +1454,7 @@ svg.map{display:block;width:100%;height:auto}
         <!-- Colin -->
         <div class="ct-founder">
           <div class="ct-founder-img">
-            <img src="founder_colin.jpg" alt="Colin Lin Yan — Co-Founder YENYONG." onerror="this.parentElement.innerHTML='<div style='font-size:28px;opacity:.3'><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></div>'"/>
+            <img src="founder_colin.jpg" alt="Colin Lin Yan — Co-Founder YENYONG." onerror="this.parentElement.innerHTML='<div style=&quot;font-size:28px;opacity:.3&quot;><svg class=&quot;ico&quot; aria-hidden=&quot;true&quot;><use href=&quot;#i-user&quot;/></svg></div>'"/>
           </div>
           <div class="ct-founder-info">
             <div class="ct-founder-name">Colin Lin Yan · 林延</div>
@@ -1408,8 +1463,8 @@ svg.map{display:block;width:100%;height:auto}
               <a href="https://wa.me/8618929980066" class="ct-founder-contact" target="_blank">
                 <span><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span> WhatsApp +86 189 2998 0066
               </a>
-              <a href="mailto:mellamocolin1991@gmail.com" class="ct-founder-contact">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span> mellamocolin1991@gmail.com
+              <a href="mailto:sales@yenyong.com" class="ct-founder-contact">
+                <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span> sales@yenyong.com
               </a>
               <a href="https://www.yenyong.com" class="ct-founder-contact" target="_blank">
                 <span><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></span> www.yenyong.com
@@ -1430,8 +1485,8 @@ svg.map{display:block;width:100%;height:auto}
               <div class="ct-founder-contact" style="color:rgba(255,255,255,.25)">
                 <span><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span> <span id="ct-wa2">WhatsApp</span>
               </div>
-              <a href="mailto:mellamocolin1991@gmail.com" class="ct-founder-contact">
-                <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span> mellamocolin1991@gmail.com
+              <a href="mailto:sales@yenyong.com" class="ct-founder-contact">
+                <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span> sales@yenyong.com
               </a>
             </div>
           </div>
@@ -1461,6 +1516,7 @@ svg.map{display:block;width:100%;height:auto}
   <div class="ct-right">
     <span class="ct-right-label" id="ct-form-label">Send Us A Message</span>
     <form class="ct-form" id="inquiryForm" onsubmit="return submitInquiry(event)">
+      <input type="text" name="_yy_trap" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div class="ct-form-row">
         <div class="ct-fg"><label id="fl1">Name</label><input type="text" id="inp-name" placeholder="John Smith" required/></div>
         <div class="ct-fg"><label id="fl2">Company</label><input type="text" id="inp-company" placeholder="ABC Trading Ltd"/></div>
@@ -1554,7 +1610,7 @@ svg.map{display:block;width:100%;height:auto}
       <div class="fcc"><h4 id="fc1h">Products</h4><a href="products.html#spc">SPC Flooring</a><a href="products.html#wpc">WPC Wall Panel</a><a href="products.html#pvc">PVC Wall Panel</a><a href="products.html#bamboo">Bamboo Crystal</a><a href="products.html#carbon">Carbon Crystal</a><a href="products.html#tiles">Ceramic Tiles</a></div>
       <div class="fcc"><h4 id="fc4h">Resources</h4><a href="#downloads" id="fc41">Catalog &amp; Downloads</a><a href="#support" id="fc42">Installation Guides</a><a href="#support" id="fc43">DIY Center</a><a href="#support" id="fc44">FAQ</a><a href="certifications.html" id="fc45">Certifications</a><a href="news.html" id="fc46">Insights</a></div>
       <div class="fcc"><h4 id="fc2h">Company</h4><a href="company.html#founders" id="fc21">Our Story</a><a href="company.html#culture" id="fc22">Our Values</a><a href="#markets" id="fc24">Markets</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
-      <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:mellamocolin1991@gmail.com">mellamocolin1991@gmail.com</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Request Samples</a></div>
+      <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:sales@yenyong.com">sales@yenyong.com</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Request Samples</a></div>
     </div>
   </div>
   <div class="ft-btm">
@@ -1606,7 +1662,7 @@ Object.assign(T.ru,{n8:'Инсайты','pd-bt2':'Все продукты','ce-b
 Object.assign(T.cn,{n8:'洞察','pd-bt2':'查看全部产品','ce-bt':'查看认证与文件 →','ns-ey':'新闻与洞察','ns-ti':'来自行业的<br>真知。','ns-in':'来自建材行业的指南、设计趋势、案例研究与采购笔记——由 YENYONG. 精选整理。'});
 function setLang(l){
   var t=T[l]||T.en;
-  for(var id in t){var el=document.getElementById(id);if(el)el.innerHTML=t[id];}
+  for(var id in t){if(id==='tb3'||id==='tb4')continue;var el=document.getElementById(id);if(el)el.innerHTML=t[id];}
   document.querySelectorAll('.lang button').forEach(function(b){
     var tx=b.textContent.trim().toLowerCase();
     b.classList.toggle('on',tx===l||(l==='cn'&&tx==='中文'));
@@ -1702,27 +1758,49 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 // ── INQUIRY FORM ──
+// ── INQUIRY FORM (patched: 后端提交, 不再使用 mailto) ──
+// 配置: 在 https://web3forms.com 免费获取 accessKey; 或设 endpoint 为自有后端
+var YY_FORM = {
+  accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',  // TODO: 替换为你的 Web3Forms Access Key
+  fallbackEmail: 'sales@yenyong.com',       // 提交失败时回退到企业邮箱
+  endpoint: ''                              // 若有自有后端(如 Cloudflare Worker), 填此URL
+};
 function submitInquiry(e){
   e.preventDefault();
   var f = e.target;
-  var name = f.querySelector('#inp-name').value.trim();
-  var company = f.querySelector('#inp-company').value.trim();
-  var email = f.querySelector('#inp-email').value.trim();
+  var name = (f.querySelector('#inp-name').value||'').trim();
+  var company = (f.querySelector('#inp-company').value||'').trim();
+  var email = (f.querySelector('#inp-email').value||'').trim();
   var country = f.querySelector('#inp-country').value;
   var product = f.querySelector('#inp-product').value;
-  var msg = f.querySelector('#inp-msg').value.trim();
+  var msg = (f.querySelector('#inp-msg').value||'').trim();
+  var trap = f.querySelector('[name=_yy_trap]');
+  if(trap && trap.value){ f.reset(); return false; }
   if(!name || !email){ alert('Please enter your name and email.'); return false; }
-  var subject = encodeURIComponent('New inquiry from ' + name + ' | YENYONG.');
-  var body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Company: ' + (company || '—') + '\n' +
-    'Email: ' + email + '\n' +
-    'Country: ' + (country || '—') + '\n' +
-    'Product Interest: ' + (product || '—') + '\n\n' +
-    'Message:\n' + (msg || '—')
-  );
-  document.getElementById('ct-msg').classList.add('show');
-  window.location.href = 'mailto:mellamocolin1991@gmail.com?subject=' + subject + '&body=' + body;
+  var btn = f.querySelector('button[type=submit]');
+  var label = btn ? btn.textContent : '';
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+  var box = document.getElementById('ct-msg');
+  var tEl = document.getElementById('ct-msg-t'), dEl = document.getElementById('ct-msg-d');
+  var payload = {
+    access_key: YY_FORM.accessKey, from_name: 'YENYONG Website',
+    subject: 'New inquiry from ' + name + ' | YENYONG.',
+    name: name, company: company, email: email,
+    country: country, product_interest: product, message: msg
+  };
+  function done(){ if(btn){ btn.disabled = false; btn.textContent = label; } if(f.reset) f.reset(); }
+  function ok(){ if(box) box.classList.add('show'); if(tEl) tEl.textContent = '✓ Inquiry received'; if(dEl) dEl.textContent = 'We will reply within 24 hours, Monday–Saturday.'; if(box) setTimeout(function(){ box.classList.remove('show'); }, 8000); done(); }
+  function fail(){
+    var subject = encodeURIComponent('New inquiry from ' + name + ' | YENYONG.');
+    var body = encodeURIComponent('Name: '+name+'\nCompany: '+(company||'—')+'\nEmail: '+email+'\nCountry: '+(country||'—')+'\nProduct: '+(product||'—')+'\n\n'+(msg||'—'));
+    if(box) box.classList.add('show'); if(tEl) tEl.textContent='Opening your email…'; if(dEl) dEl.textContent='Could not send automatically — please send via email or WhatsApp.';
+    window.location.href = 'mailto:'+YY_FORM.fallbackEmail+'?subject='+subject+'&body='+body; done();
+  }
+  var url = YY_FORM.endpoint || 'https://api.web3forms.com/submit';
+  fetch(url, { method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body: JSON.stringify(payload) })
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if(d && d.success){ ok(); } else { fail(); } })
+    .catch(function(){ fail(); });
   return false;
 }
 
