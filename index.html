@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#1F3AA0">
+<meta name="format-detection" content="telephone=no">
 <title>YENYONG. — International Building Materials</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +26,11 @@
 <link rel="alternate" hreflang="x-default" href="https://yenyong.com/"/>
 <meta property="og:url" content="https://yenyong.com/"/>
 <meta property="og:image" content="https://yenyong.com/assets/og-image.png"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:locale:alternate" content="de_DE"/>
+<meta property="og:locale:alternate" content="fr_FR"/>
+<meta property="og:locale:alternate" content="ru_RU"/>
+<meta property="og:locale:alternate" content="zh_CN"/>
 <meta property="og:site_name" content="YENYONG"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -836,11 +844,7 @@ svg.map{display:block;width:100%;height:auto}
     html += '</div>';
     li.innerHTML = html;
     links.insertBefore(li, links.firstChild);
-  }  window.yyLang = function(l){
-    if(typeof setLang === 'function') setLang(l);
-    var bs = document.querySelectorAll('.m-lang button');
-    bs.forEach(function(b){ b.classList.toggle('on', b.textContent.trim().toLowerCase()===l || (l==='cn'&&b.textContent.trim()==='中文')); });
-  };
+  }
   if(window.matchMedia && window.matchMedia('(max-width:640px)').matches) buildMobileLang();
 })();
 </script>
@@ -1697,15 +1701,9 @@ function showTab(tab){
   tick();
 })();
 
-(function(){
-  try{var s=localStorage.getItem('yy_lang');if(s&&T[s]){setLang(s);return;}}catch(e){}
-  var b=(navigator.language||'').toLowerCase();
-  if(b.indexOf('zh')===0)setLang('cn');
-  else if(b.indexOf('de')===0)setLang('de');
-  else if(b.indexOf('fr')===0)setLang('fr');
-  else if(b.indexOf('ru')===0)setLang('ru');
-  else setLang('en');
-})();
+// Language switching is handled by real subdirectory pages (/de/ /fr/ /ru/ /zh/)
+// reached via the anchor switcher above. The homepage itself is served in
+// English by default; no front-end (JS) language swap runs on load.
 
 // ── CAROUSEL ──────────────────────────────────────────
 var carState = {};
