@@ -62,7 +62,7 @@ nav.scrolled .nav-links a:hover{color:#fff}nav.scrolled .drop a{color:var(--ink)
 nav.scrolled .lang{border-color:rgba(255,255,255,.25)}
 .lang button{background:none;border:none;border-right:1px solid var(--border);cursor:pointer;font-size:9px;letter-spacing:1px;color:var(--gray);padding:5px 9px;transition:.15s;font-family:Arial,sans-serif}
 .lang button:last-child{border-right:none}
-.lang a{background:none;border:none;border-right:1px solid var(--border);cursor:pointer;font-size:9px;letter-spacing:1px;color:var(--gray);padding:5px 9px;transition:.15s;font-family:Arial,sans-serif;text-decoration:none}
+.lang a{background:none;border:none;border-right:1px solid var(--border);cursor:pointer;font-size:9px;letter-spacing:1px;color:var(--gray);padding:5px 9px;transition:.15s;font-family:Arial,sans-serif;text-decoration:none;white-space:nowrap}
 .lang a:last-child{border-right:none}
 .lang a.on{color:var(--blue);font-weight:700}
 nav.scrolled .lang a{color:rgba(255,255,255,.55);border-right-color:rgba(255,255,255,.2)}
@@ -73,7 +73,7 @@ nav.scrolled .lang button.on{background:rgba(255,255,255,.2)}
 nav.scrolled .lang button:hover:not(.on){color:#fff;background:rgba(255,255,255,.1)}
 .nav-div{width:1px;height:20px;background:var(--border);transition:.3s}
 nav.scrolled .nav-div{background:rgba(255,255,255,.2)}
-.nav-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;background:var(--blue);color:#fff;padding:9px 18px;border:2px solid var(--blue);border-radius:3px;transition:.15s;display:inline-block}
+.nav-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;background:var(--blue);color:#fff;padding:9px 18px;border:2px solid var(--blue);border-radius:3px;transition:.15s;display:inline-block;white-space:nowrap}
 nav.scrolled .nav-cta{background:#fff;color:var(--blue);border-color:#fff}
 .nav-cta:hover{background:var(--blue2);border-color:var(--blue2)}
 nav.scrolled .nav-cta:hover{background:rgba(255,255,255,.9);color:var(--blue)}
@@ -81,7 +81,7 @@ nav.scrolled .nav-cta:hover{background:rgba(255,255,255,.9);color:var(--blue)}
 #topBar a{color:var(--gray);margin-left:20px;letter-spacing:.5px;transition:.15s}
 #topBar a:hover{color:var(--blue)}
 #topBar .sep{color:var(--border);margin-left:20px}
-.hero{min-height:100vh;background:#0A0E1A;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 80px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
+.hero{min-height:100vh;background:linear-gradient(135deg,#2347C5 0%,#1F3AA0 55%,#17308F 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 80px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85;z-index:0;pointer-events:none}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,14,26,0.45) 0%,rgba(10,14,26,0.40) 35%,rgba(10,14,26,0.80) 100%),linear-gradient(90deg,rgba(10,14,26,0.70) 0%,rgba(10,14,26,0.15) 55%,rgba(10,14,26,0.30) 100%);z-index:1;pointer-events:none}
 .hero-in{position:relative;z-index:2}
@@ -890,7 +890,7 @@ html,body{overflow-x:clip}
   <span class="sep">|</span>
   <a href="#support" id="tb3"><svg class="ico" aria-hidden="true"><use href="#i-tools"/></svg> Installation &amp; Support</a>
   <span class="sep">|</span>
-  <a href="company.html#founders" id="tb4"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> Singapore · Foshan</a>
+  <a href="#contact" id="tb4"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> Singapore · Foshan</a>
 </div>
 
 <nav id="mainNav">
@@ -908,44 +908,12 @@ html,body{overflow-x:clip}
   <rect x="22"  y="237" width="140" height="5" class="lm-fill" rx="1" opacity="0.38"/>
 </svg><span class="nav-logo-text">YENYONG.</span></a>
   <ul class="nav-links" id="navLinks">
-    <li class="nav-item has-drop">
-      <a href="products.html" id="n1">Products</a>
-      <div class="drop">
-        <div class="drop-head" id="dh1">Product Lines</div>
-        <a href="spc-rigid-core-flooring.html" class="d-num"><span class="dn">01</span><span id="d1">SPC Rigid Core Flooring</span></a>
-        <a href="wpc-wall-panel.html" class="d-num"><span class="dn">02</span><span id="d2">WPC Wall Panel</span></a>
-        <a href="pvc-wall-panel.html" class="d-num"><span class="dn">03</span><span id="d3">PVC Wall Panel</span></a>
-        <a href="bamboo-crystal-panel.html" class="d-num"><span class="dn">04</span><span id="d4">Bamboo Crystal Panel</span></a>
-        <a href="carbon-crystal-panel.html" class="d-num"><span class="dn">05</span><span id="d5">Carbon Crystal Panel</span></a>
-        <a href="ceramic-porcelain-tiles.html" class="d-num"><span class="dn">06</span><span id="d6">Ceramic &amp; Porcelain Tiles</span></a>
-        <a href="#downloads" class="drop-cta" id="d7">Catalog Downloads →</a>
-      </div>
-    </li>
-    <li class="nav-item has-drop">
-      <a href="#downloads" id="n2">Resources</a>
-      <div class="drop">
-        <div class="drop-head" id="dh2">Catalogs &amp; Docs</div>
-        <a href="#downloads" id="d8">Catalog &amp; Downloads</a>
-        <a href="certifications.html" id="d9">Certifications</a>
-        <a href="#downloads" id="d10">Trade &amp; Shipping Terms</a>
-        <div class="drop-head" id="dh3">After-Sales</div>
-        <a href="#support" id="d11">Installation Guides</a>
-        <a href="#support" id="d12">DIY Center</a>
-        <a href="#support" id="d13">FAQ</a>
-      </div>
-    </li>
-    <li class="nav-item has-drop">
-      <a href="company.html#founders" id="n3">Company</a>
-      <div class="drop">
-        <a href="#markets" id="d14">Markets</a>
-        <a href="company.html#projects" id="d15">Projects</a>
-        <a href="company.html#trust" id="d18">Trusted By</a>
-        <a href="company.html#culture" id="d16">Culture &amp; Values</a>
-        <a href="company.html#founders" id="d17">Founders</a>
-      </div>
-    </li>
-        <li class="nav-item"><a href="news.html" id="n8">Insights</a></li>
-    <li class="nav-item"><a href="#contact" id="n4">Contact</a></li>
+    <li class="nav-item"><a href="#products" id="n1">Products</a></li>
+    <li class="nav-item"><a href="/projects.html" id="n2">Projects</a></li>
+    <li class="nav-item"><a href="#downloads" id="n3">Downloads</a></li>
+    <li class="nav-item"><a href="#certifications" id="n4">Certifications</a></li>
+    <li class="nav-item"><a href="/news.html" id="n5">Insights</a></li>
+    <li class="nav-item"><a href="#contact" id="n6">Company</a></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="nav-r">
@@ -963,9 +931,6 @@ html,body{overflow-x:clip}
 </nav>
 
 <section class="hero" id="home">
-<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
-  <source src="hero.mp4" type="video/mp4">
-</video>
 <div class="hero-overlay"></div>
 <div class="hero-in">
   <span class="eyebrow" id="h-ey" style="color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.8)">Foshan · Singapore · Global</span>
@@ -1123,53 +1088,53 @@ html,body{overflow-x:clip}
 <div class="sec-in">
   <div class="ph">
     <div><span class="eyebrow" id="pd-ey">Product Range</span><h2 style="margin-bottom:0" id="pd-ti">Factory-direct.<br><em>CE certified.</em></h2></div>
-    <a href="products.html" class="btn-blue" id="pd-bt2">View All Products</a>
+    <a href="#products" class="btn-blue" id="pd-bt2">View All Products</a>
   </div>
   <div class="pg">
     <div class="pc" id="spc"><div class="pb">
       <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">01</span>
-      <h3><a href="SPC Rigid Core Flooring" class="pc-lnk">spc-rigid-core-flooring.html</a></h3>
+      <h3><a href="/colors.html" class="pc-lnk">SPC Rigid Core Flooring</a></h3>
       <div class="pr">USD 3–9<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
       <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>4–8mm</li><li>CE / FloorScore</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="spc-rigid-core-flooring.html">View product →</a></li></ul>
+      <ul class="ps"><li>4–8mm</li><li>CE / FloorScore</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="/colors.html">View product →</a></li></ul>
     </div></div>
     <div class="pc" id="wpc"><div class="pb">
       <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">02</span>
-      <h3><a href="WPC Wood Plastic Wall Panel" class="pc-lnk">wpc-wall-panel.html</a></h3>
+      <h3><a href="/colors.html" class="pc-lnk">WPC Wood Plastic Wall Panel</a></h3>
       <div class="pr">USD 5–11<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
       <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>8–12mm</li><li>CE / SGS / B1</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="wpc-wall-panel.html">View product →</a></li></ul>
+      <ul class="ps"><li>8–12mm</li><li>CE / SGS / B1</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="/colors.html">View product →</a></li></ul>
     </div></div>
     <div class="pc" id="pvc"><div class="pb">
       <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">03</span>
-      <h3><a href="PVC Decorative Wall Panel" class="pc-lnk">pvc-wall-panel.html</a></h3>
+      <h3><a href="/colors.html" class="pc-lnk">PVC Decorative Wall Panel</a></h3>
       <div class="pr">USD 3–7<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
       <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>5–9mm</li><li>SGS / CE</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="pvc-wall-panel.html">View product →</a></li></ul>
+      <ul class="ps"><li>5–9mm</li><li>SGS / CE</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="/colors.html">View product →</a></li></ul>
     </div></div>
     <div class="pc" id="bamboo"><div class="pb">
       <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">04</span>
-      <h3><a href="Bamboo Crystal Panel" class="pc-lnk">bamboo-crystal-panel.html</a></h3>
+      <h3><a href="/colors.html" class="pc-lnk">Bamboo Crystal Panel</a></h3>
       <div class="pr">USD 6–12<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
       <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>Bamboo + Mineral</li><li>E0 / Eco</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="bamboo-crystal-panel.html">View product →</a></li></ul>
+      <ul class="ps"><li>Bamboo + Mineral</li><li>E0 / Eco</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="/colors.html">View product →</a></li></ul>
     </div></div>
     <div class="pc" id="carbon"><div class="pb">
       <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">05</span>
-      <h3><a href="Carbon Crystal Panel" class="pc-lnk">carbon-crystal-panel.html</a></h3>
+      <h3><a href="/colors.html" class="pc-lnk">Carbon Crystal Panel</a></h3>
       <div class="pr">USD 7–14<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
       <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>Mirror / Matte UV</li><li>SGS / CE</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="carbon-crystal-panel.html">View product →</a></li></ul>
+      <ul class="ps"><li>Mirror / Matte UV</li><li>SGS / CE</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="/colors.html">View product →</a></li></ul>
     </div></div>
     <div class="pc" id="tiles"><div class="pb">
       <span class="prod-tag" style="position:static;display:inline-block;margin-bottom:10px">06</span>
-      <h3><a href="Ceramic & Porcelain Tiles" class="pc-lnk">ceramic-porcelain-tiles.html</a></h3>
+      <h3><a href="/colors.html" class="pc-lnk">Ceramic &amp; Porcelain Tiles</a></h3>
       <div class="pr">USD 4–18<span style="font-size:11px;font-weight:400;color:var(--gray)">/m²</span></div>
       <p class="pf">FOB FOSHAN</p>
-      <ul class="ps"><li>300×600–1200×2400</li><li>CE / SGS / ISO</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="ceramic-porcelain-tiles.html">View product →</a></li></ul>
+      <ul class="ps"><li>300×600–1200×2400</li><li>CE / SGS / ISO</li><li style="list-style:none;margin-top:4px"><a class="pc-more" href="/colors.html">View product →</a></li></ul>
     </div></div>
   </div>
-  <div style="margin-top:36px;text-align:center"><a href="products.html" class="btn-out" style="border-color:var(--blue);color:var(--blue)">Explore the full catalog →</a></div>
+  <div style="margin-top:36px;text-align:center"><a href="#products" class="btn-out" style="border-color:var(--blue);color:var(--blue)">Explore the full catalog →</a></div>
 </div>
 </section>
 
@@ -1288,7 +1253,7 @@ html,body{overflow-x:clip}
       <div class="ce"><div class="ce-n">REACH</div><div class="ce-d">Chemicals</div></div>
       <div class="ce"><div class="ce-n">E0</div><div class="ce-d">Formaldehyde</div></div>
     </div>
-  <div style="margin-top:36px"><a href="certifications.html" class="btn-blue" id="ce-bt">View Certifications &amp; Docs →</a></div>
+  <div style="margin-top:36px"><a href="#certifications" class="btn-blue" id="ce-bt">View Certifications &amp; Docs →</a></div>
 </div>
 </section>
 
@@ -1463,7 +1428,7 @@ html,body{overflow-x:clip}
         <!-- Colin -->
         <div class="ct-founder">
           <div class="ct-founder-img">
-            <img src="founder_colin.jpg" alt="Colin Lin Yan — Co-Founder YENYONG." onerror="this.parentElement.innerHTML='<div style=&quot;font-size:28px;opacity:.3&quot;><svg class=&quot;ico&quot; aria-hidden=&quot;true&quot;><use href=&quot;#i-user&quot;/></svg></div>'"/>
+            <div style="font-size:28px;opacity:.3"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></div>
           </div>
           <div class="ct-founder-info">
             <div class="ct-founder-name">Colin Lin Yan · 林延</div>
@@ -1616,9 +1581,9 @@ html,body{overflow-x:clip}
       <div class="ft-co">Foshan YenYong International Building Materials Trading Co., Ltd.<br>Affiliate of KYT Trading &amp; Construction Pte Ltd · Singapore</div>
     </div>
     <div class="ft-cols">
-      <div class="fcc"><h4 id="fc1h">Products</h4><a href="products.html#spc">SPC Flooring</a><a href="products.html#wpc">WPC Wall Panel</a><a href="products.html#pvc">PVC Wall Panel</a><a href="products.html#bamboo">Bamboo Crystal</a><a href="products.html#carbon">Carbon Crystal</a><a href="products.html#tiles">Ceramic Tiles</a></div>
-      <div class="fcc"><h4 id="fc4h">Resources</h4><a href="#downloads" id="fc41">Catalog &amp; Downloads</a><a href="#support" id="fc42">Installation Guides</a><a href="#support" id="fc43">DIY Center</a><a href="#support" id="fc44">FAQ</a><a href="certifications.html" id="fc45">Certifications</a><a href="news.html" id="fc46">Insights</a></div>
-      <div class="fcc"><h4 id="fc2h">Company</h4><a href="company.html#founders" id="fc21">Our Story</a><a href="company.html#culture" id="fc22">Our Values</a><a href="#markets" id="fc24">Markets</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
+      <div class="fcc"><h4 id="fc1h">Products</h4><a href="/colors.html">SPC Flooring</a><a href="/colors.html">WPC Wall Panel</a><a href="/colors.html">PVC Wall Panel</a><a href="/colors.html">Bamboo Crystal</a><a href="/colors.html">Carbon Crystal</a><a href="/colors.html">Ceramic Tiles</a></div>
+      <div class="fcc"><h4 id="fc4h">Resources</h4><a href="#downloads" id="fc41">Catalog &amp; Downloads</a><a href="#support" id="fc42">Installation Guides</a><a href="#support" id="fc43">DIY Center</a><a href="#support" id="fc44">FAQ</a><a href="#certifications" id="fc45">Certifications</a><a href="news.html" id="fc46">Insights</a></div>
+      <div class="fcc"><h4 id="fc2h">Company</h4><a href="#contact" id="fc21">Our Story</a><a href="#contact" id="fc22">Our Values</a><a href="#markets" id="fc24">Markets</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
       <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:sales@yenyong.com">sales@yenyong.com</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Request Samples</a></div>
     </div>
   </div>
@@ -1968,7 +1933,7 @@ function toggleMenu(){
 })();
 </script>
 
-<div id="cookieBar" style="position:fixed;left:0;right:0;bottom:0;z-index:300;background:#0A0E1A;color:#fff;padding:15px 24px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px;line-height:1.5;box-shadow:0 -8px 30px rgba(0,0,0,.28)">
+<div id="cookieBar" style="position:fixed;left:0;right:0;bottom:0;z-index:300;background:#1F3AA0;color:#fff;padding:15px 24px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px;line-height:1.5;box-shadow:0 -8px 30px rgba(0,0,0,.28)">
   <div style="max-width:700px">We use essential cookies to run this site and, with your consent, anonymous analytics to improve it. See our <a href="privacy.html" style="color:#7fa0ff;text-decoration:underline">Privacy Policy</a>.</div>
   <div style="display:flex;gap:10px">
     <button onclick="cookieResp(false)" style="background:transparent;border:1px solid #4a5680;color:#c9d2e6;padding:8px 16px;border-radius:8px;cursor:pointer;font:inherit">Reject</button>

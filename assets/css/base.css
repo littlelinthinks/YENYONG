@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 /* ============================================================
    YENYONG — shared base stylesheet for content pages
    Design tokens mirror the homepage (index.html) inline CSS.
@@ -27,6 +28,7 @@ p{color:var(--gray);margin-bottom:14px}
 .site-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:1px;color:var(--ink)}
 .brand .lm-fill{fill:var(--blue)}
+.brand .lm-void{fill:#fff}
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-size:13px;font-weight:600;color:#2b3142;transition:.15s}
 .nav-links a:hover{color:var(--blue)}
@@ -44,7 +46,7 @@ p{color:var(--gray);margin-bottom:14px}
 body.lock{overflow:hidden}
 
 /* ---------- hero ---------- */
-.page-hero{background:var(--ink);color:#fff;padding:110px 0 84px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
+.page-hero{background:linear-gradient(135deg,#2347C5 0%,#1F3AA0 55%,#17308F 100%);color:#fff;padding:110px 0 84px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
 .page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,14,26,.92),rgba(31,58,160,.55))}
 .page-hero .wrap{position:relative;z-index:2}
 .page-hero h1{font-size:clamp(32px,5vw,56px);margin-bottom:18px}
@@ -88,7 +90,7 @@ body.lock{overflow:hidden}
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
 .proj-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:.18s}
 .proj-card:hover{box-shadow:0 14px 40px rgba(10,14,26,.12);transform:translateY(-4px)}
-.proj-media{height:240px;background:linear-gradient(135deg,var(--blue),var(--ink));position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+.proj-media{height:240px;background:linear-gradient(135deg,var(--blue2),#16295F);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:13px;letter-spacing:2px;text-transform:uppercase}
 .proj-media .ph{position:absolute;bottom:12px;left:16px;font-size:11px;letter-spacing:1px;text-transform:none;color:rgba(255,255,255,.7)}
 .proj-body{padding:24px 26px}
 .proj-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
@@ -108,7 +110,7 @@ body.lock{overflow:hidden}
 .doc-card .meta{font-size:12px;color:var(--gray)}
 .doc-card .btn-primary,.doc-card .btn-outline{text-align:center;font-size:10px;padding:11px}
 .doc-card .btn-outline{color:var(--gray);border-color:var(--border)}
-.lead-form{background:var(--ink);color:#fff;border-radius:12px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;margin-top:40px}
+.lead-form{background:linear-gradient(135deg,#2347C5 0%,#1F3AA0 55%,#17308F 100%);color:#fff;border-radius:12px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;margin-top:40px}
 .lead-form h3{color:#fff}
 .lead-form p{color:rgba(255,255,255,.75);margin-bottom:0}
 
@@ -116,7 +118,7 @@ body.lock{overflow:hidden}
 .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .post-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:.18s;display:flex;flex-direction:column}
 .post-card:hover{box-shadow:0 14px 40px rgba(10,14,26,.12);transform:translateY(-4px)}
-.post-media{height:170px;background:linear-gradient(135deg,var(--blue2),var(--ink));position:relative;display:flex;align-items:flex-end;padding:16px;color:#fff;font-size:11px;letter-spacing:1px}
+.post-media{height:170px;background:linear-gradient(135deg,var(--blue2),#16295F);position:relative;display:flex;align-items:flex-end;padding:16px;color:#fff;font-size:11px;letter-spacing:1px}
 .post-body{padding:22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
 .post-cat{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);font-weight:700}
 .post-body h3{font-size:18px}
@@ -137,7 +139,7 @@ body.lock{overflow:hidden}
 .article th{background:var(--lt);color:var(--ink);font-weight:700}
 
 /* ---------- footer ---------- */
-.site-footer{background:var(--ink);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.site-footer{background:#16295F;color:rgba(255,255,255,.7);padding:60px 0 30px}
 .site-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
 .site-footer h4{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;font-family:var(--font-body)}
 .site-footer a{display:block;font-size:13px;margin-bottom:9px;color:rgba(255,255,255,.7)}
