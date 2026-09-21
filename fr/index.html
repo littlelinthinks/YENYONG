@@ -35,7 +35,8 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://yenyong.com/#organization", "name": "YENYONG", "url": "https://yenyong.com/", "logo": {"@type": "ImageObject", "url": "https://yenyong.com/assets/og-image.png"}}, {"@type": "WebSite", "@id": "https://yenyong.com/#website", "url": "https://yenyong.com/", "name": "YENYONG", "publisher": {"@id": "https://yenyong.com/#organization"}, "inLanguage": "fr"}, {"@type": "BreadcrumbList", "@id": "https://yenyong.com/fr/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yenyong.com/fr/"}]}, {"@type": "WebPage", "@id": "https://yenyong.com/fr/#webpage", "url": "https://yenyong.com/fr/", "name": "Qualité de Chine. Confiance de Singapour. | YENYONG", "isPartOf": {"@id": "https://yenyong.com/#website"}, "inLanguage": "fr"}]}</script>
 </head><header class="site-nav"><div class="wrap">
   <a class="brand" href="/fr/"><svg class="logo-mark" width="22" height="28" viewBox="0 0 184 252"><rect class="lm-fill" width="184" height="252" rx="14"/><path class="lm-void" d="M58 60h68v28H86v44h34v28H86v44h40v28H58z" fill="#fff"/></svg> YENYONG</a>
-  <nav class="nav-links"><a href="/products.html">Produits</a><a href="/fr/projects.html">Projets</a><a href="/fr/downloads.html">Téléchargements</a><a href="/certifications.html">Certifications</a><a href="/fr/news.html">Actualités</a><a href="/company.html">Entreprise</a></nav>
+  <nav class="nav-links" id="navLinks"><a href="/products.html">Produits</a><a href="/fr/projects.html">Projets</a><a href="/fr/downloads.html">Téléchargements</a><a href="/certifications.html">Certifications</a><a href="/fr/news.html">Actualités</a><a href="/company.html">Entreprise</a></nav>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div style="display:flex;align-items:center;gap:14px">
     <div class="nav-lang"><a href="https://yenyong.com/">EN</a><a href="https://yenyong.com/de/">DE</a><a href="https://yenyong.com/fr/" class="on">FR</a><a href="https://yenyong.com/ru/">RU</a><a href="https://yenyong.com/zh/">中文</a></div>
     <a class="nav-cta" href="/#contact">Échantillons gratuits</a>
@@ -77,4 +78,8 @@
   </div>
   <div class="fnote"><span>© 2026 YENYONG. All rights reserved.</span>
     <span><a href="/privacy.html">Confidentialité</a> · <a href="/terms.html">Conditions</a> · <a href="/fr/news.html">Actualités</a></span></div>
-</div></footer></body></html>
+</div></footer><script>
+function toggleMenu(){var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');if(!b||!l)return;b.classList.toggle('open');l.classList.toggle('open');document.body.classList.toggle('lock');}
+(function(){var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');if(!b||!l)return;l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('open');l.classList.remove('open');document.body.classList.remove('lock');});});})();
+</script>
+</body></html>
