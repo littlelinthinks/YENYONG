@@ -485,7 +485,10 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 48px 24px
 /* ── NAV DROPDOWN & MOBILE BURGER ── */
 .nav-links li{position:relative}
 .drop{display:none;position:absolute;top:100%;left:-12px;background:#fff;border:1px solid var(--border);border-top:3px solid var(--blue);min-width:240px;box-shadow:0 18px 44px rgba(10,14,26,.12);padding:8px 0;z-index:300}
-.nav-links li:hover .drop{display:block}
+.nav-links li.has-drop:hover .drop,.nav-links li.has-drop.open .drop{display:block}
+.nav-links li.has-drop > a::after{content:'';display:inline-block;width:4px;height:4px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-left:7px;vertical-align:middle;opacity:.5;transition:.15s}
+.nav-links li.has-drop:hover > a::after{opacity:1;transform:rotate(45deg) translateY(2px)}
+.nav-links li.has-drop.open > a::after{opacity:1;transform:rotate(-135deg)}
 .drop-head{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#BBBBBB;padding:10px 18px 4px;font-weight:700}
 .drop a{display:block;font-size:11px;color:var(--ink);padding:8px 18px;letter-spacing:0;text-transform:none;transition:.12s}
 .drop a.d-num{display:flex;gap:12px;align-items:baseline}
@@ -791,7 +794,7 @@ svg.map{display:block;width:100%;height:auto}
   "name":"YENYONG.",
   "alternateName":"Foshan YenYong International Building Materials Trading Co., Ltd.",
   "url":"https://yenyong.com",
-  "logo":"https://yenyong.com/favicon.svg",
+  "logo":"https://yenyong.com/favicon.png",
   "description":"Factory-direct CE-certified SPC flooring, WPC wall panels and decorative panels from Foshan, China. Singapore registered. Serving 40+ countries.",
   "address":[{"@type":"PostalAddress","addressLocality":"Foshan","addressRegion":"Guangdong","addressCountry":"CN"},{"@type":"PostalAddress","addressLocality":"Singapore","addressCountry":"SG"}],
   "parentOrganization":{"@type":"Organization","name":"KYT Trading & Construction Pte Ltd","addressCountry":"SG"},
@@ -900,12 +903,37 @@ html,body{overflow-x:clip}
 <div class="nav-in">
   <a href="#home" class="nav-logo"><img class="logo-img" src="/assets/img/logo-mark.png" alt="YENYONG"><span class="nav-logo-text">YENYONG.</span></a>
   <ul class="nav-links" id="navLinks">
-    <li class="nav-item"><a href="#products" id="n1">Products</a></li>
-    <li class="nav-item"><a href="/projects.html" id="n2">Projects</a></li>
-    <li class="nav-item"><a href="#downloads" id="n3">Downloads</a></li>
-    <li class="nav-item"><a href="#certifications" id="n4">Certifications</a></li>
-    <li class="nav-item"><a href="/news.html" id="n5">Insights</a></li>
-    <li class="nav-item"><a href="#contact" id="n6">Company</a></li>
+    <li class="nav-item has-drop">
+      <a href="#products" id="n1">Products</a>
+      <div class="drop">
+        <div class="drop-head" id="dh1">Product Lines</div>
+        <a href="/colors.html" class="d-num"><span class="dn">01</span><span id="d1">SPC Rigid Core Flooring</span></a>
+        <a href="/colors.html" class="d-num"><span class="dn">02</span><span id="d2">WPC Wall Panel</span></a>
+        <a href="/colors.html" class="d-num"><span class="dn">03</span><span id="d3">PVC Wall Panel</span></a>
+        <a href="/colors.html" class="d-num"><span class="dn">04</span><span id="d4">Bamboo Crystal Panel</span></a>
+        <a href="/colors.html" class="d-num"><span class="dn">05</span><span id="d5">Carbon Crystal Panel</span></a>
+        <a href="/colors.html" class="d-num"><span class="dn">06</span><span id="d6">Ceramic &amp; Porcelain Tiles</span></a>
+        <a href="#downloads" class="drop-cta" id="d7">Catalog Downloads →</a>
+      </div>
+    </li>
+    <li class="nav-item has-drop">
+      <a href="#downloads">Resources</a>
+      <div class="drop">
+        <div class="drop-head">Resources</div>
+        <a href="#downloads">Downloads</a>
+        <a href="#certifications">Certifications</a>
+        <a href="/news.html">Insights</a>
+      </div>
+    </li>
+    <li class="nav-item has-drop">
+      <a href="#contact">Company</a>
+      <div class="drop">
+        <div class="drop-head">Company</div>
+        <a href="/projects.html">Projects</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="nav-r">
@@ -1739,9 +1767,33 @@ function toggleMenu(){
   if(!burger || !links) return;
   links.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
+      if(a.parentElement && a.parentElement.classList.contains('has-drop')) return; // 含下拉的父项不收起菜单
       burger.classList.remove('open');
       links.classList.remove('open');
     });
+  });
+})();
+
+// ── 下拉菜单：触摸设备（无 hover）点按展开 ──
+(function(){
+  var items = document.querySelectorAll('.nav-links li.has-drop > a');
+  if(!items.length) return;
+  var touch = window.matchMedia('(hover: none)').matches;
+  if(!touch) return; // 桌面端用 :hover 即可
+  items.forEach(function(a){
+    a.addEventListener('click', function(e){
+      var li = a.parentElement;
+      if(!li.classList.contains('open')){
+        e.preventDefault();
+        document.querySelectorAll('.nav-links li.has-drop.open').forEach(function(o){ if(o!==li) o.classList.remove('open'); });
+        li.classList.add('open');
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-links li.has-drop')){
+      document.querySelectorAll('.nav-links li.has-drop.open').forEach(function(o){ o.classList.remove('open'); });
+    }
   });
 })();
 
