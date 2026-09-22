@@ -29,6 +29,8 @@ p{color:var(--gray);margin-bottom:14px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:1px;color:var(--ink)}
 .brand .lm-fill{fill:var(--blue)}
 .brand .lm-void{fill:#fff}
+.brand .logo-img{height:30px;width:auto;display:block}
+.site-footer .brand .logo-img{background:#fff;border-radius:6px;padding:5px;box-sizing:border-box}
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-size:13px;font-weight:600;color:#2b3142;transition:.15s}
 .nav-links a:hover{color:var(--blue)}
@@ -190,6 +192,8 @@ body.lock{overflow:hidden}
 /* ---------- 手机 / 小平板（≤640） ---------- */
 @media (max-width:640px){
   .wrap{padding:0 20px}
+  /* 手机端隐藏语言切换条（其内 nav-cta 已隐藏），避免与 brand/汉堡挤压重叠 */
+  .site-nav .wrap > div:last-child{display:none!important}
   /* 首页（index.html）多处写死的 48px 区块内边距，手机端压到 20px，杜绝横向溢出 */
   .proof,.stmt,.sec,.sup,.hww,.contact-bg,footer,.hero,#topBar,.nav-in,.ct-left,.ct-right{padding-left:20px!important;padding-right:20px!important}
   .nav-cta{display:none}
