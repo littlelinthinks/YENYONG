@@ -1947,6 +1947,29 @@ function toggleMenu(){
 (function(){try{if(localStorage.getItem('yy_cookie')){var b=document.getElementById('cookieBar');if(b)b.style.display='none';}}catch(e){}})();
 function cookieResp(a){try{localStorage.setItem('yy_cookie',a?'1':'0');}catch(e){}var b=document.getElementById('cookieBar');if(b)b.style.display='none';}
 </script>
+<script id="yy-video-autoplay">
+(function(){
+  var v = document.querySelector('video.hero-video');
+  if(!v) return;
+  v.muted = true; v.defaultMuted = true; v.playsInline = true;
+  var tries = 0;
+  function tryPlay(){
+    if(!v.paused) return;            // 已在播放则不再触发
+    var p = v.play();
+    if(p && p.catch) p.catch(function(){});
+  }
+  tryPlay();
+  v.addEventListener('canplay', tryPlay);
+  v.addEventListener('loadeddata', tryPlay);
+  v.addEventListener('playing', function(){ tries = 0; });
+  // 浏览器若拦截自动播放，则在任意用户交互（含鼠标移动/触摸/滚动/点击）时再尝试，反复重试直到成功
+  ['click','touchstart','scroll','keydown','mousemove','pointerdown'].forEach(function(ev){
+    window.addEventListener(ev, tryPlay, { passive:true });
+  });
+  // 标签页重新可见时恢复播放
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
+})();
+</script>
 
 </body>
 </html>
