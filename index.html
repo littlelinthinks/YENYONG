@@ -484,7 +484,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 48px 24px
 
 /* ── NAV DROPDOWN & MOBILE BURGER ── */
 .nav-links li{position:relative}
-.drop{display:none;position:absolute;top:100%;left:-12px;background:#fff;border:1px solid var(--border);border-top:3px solid var(--blue);min-width:240px;box-shadow:0 18px 44px rgba(10,14,26,.12);padding:8px 0;z-index:300}
+.drop{display:none;position:absolute;top:100%;left:-12px;background:#fff;border:1px solid var(--border);border-top:3px solid var(--blue);min-width:252px;box-shadow:0 18px 44px rgba(10,14,26,.12);padding:8px 0;z-index:300;max-height:calc(100vh - 80px);overflow:auto}
 .nav-links li.has-drop:hover .drop,.nav-links li.has-drop.open .drop{display:block}
 .nav-links li.has-drop > a::after{content:'';display:inline-block;width:4px;height:4px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-left:7px;vertical-align:middle;opacity:.5;transition:.15s}
 .nav-links li.has-drop:hover > a::after{opacity:1;transform:rotate(45deg) translateY(2px)}
@@ -495,6 +495,8 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 48px 24px
 .drop .dn{min-width:18px;display:inline-block;text-align:right}
 .drop a:hover{background:var(--lt);color:var(--blue)}
 .drop-cta{margin-top:6px;border-top:1px solid var(--border);padding-top:10px!important;color:var(--blue)!important;font-weight:700}
+.drop a.cat{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:10.5px}
+.drop a.cat em{font-style:normal;font-size:8px;letter-spacing:.5px;background:var(--lt);color:var(--blue);border:1px solid var(--border);border-radius:3px;padding:2px 5px;font-weight:700;white-space:nowrap}
 .drop-note{font-size:8px;color:#BBBBBB;padding:6px 18px 4px;line-height:1.5}
 
 .nav-burger{display:none;background:none;border:none;cursor:pointer;width:36px;height:36px;flex-direction:column;justify-content:center;gap:5px;align-items:center;padding:0}
@@ -913,7 +915,15 @@ html,body{overflow-x:clip}
         <a href="/colors.html" class="d-num"><span class="dn">04</span><span id="d4">Bamboo Crystal Panel</span></a>
         <a href="/colors.html" class="d-num"><span class="dn">05</span><span id="d5">Carbon Crystal Panel</span></a>
         <a href="/colors.html" class="d-num"><span class="dn">06</span><span id="d6">Ceramic &amp; Porcelain Tiles</span></a>
-        <a href="#downloads" class="drop-cta" id="d7">Catalog Downloads →</a>
+        <a href="/colors.html" class="d-num"><span class="dn">07</span><span id="d8">SPC Wall Panel</span></a>
+        <a href="/colors.html" class="d-num"><span class="dn">08</span><span id="d9">Acoustic Panel</span></a>
+        <div class="drop-head">2026 Catalogues</div>
+        <a href="/assets/docs/cat-film-color-card-2026.pdf" class="cat" target="_blank" rel="noopener">2026 Film Color Card <em>PDF</em></a>
+        <a href="/assets/docs/cat-acoustic-2026.pdf" class="cat" target="_blank" rel="noopener">Acoustic Panel Catalogue <em>PDF</em></a>
+        <a href="/assets/docs/cat-wpc-outdoor-2026.pdf" class="cat" target="_blank" rel="noopener">WPC Outdoor Catalogue <em>PDF</em></a>
+        <a href="/assets/docs/cat-wooden-2026.pdf" class="cat" target="_blank" rel="noopener">Wooden (Wood-Grain) Catalogue <em>PDF</em></a>
+        <a href="/assets/docs/cat-aluminum-profile-2026.pdf" class="cat" target="_blank" rel="noopener">Aluminum Profile Chart <em>PDF</em></a>
+        <a href="/downloads.html" class="drop-cta" id="d7">All Catalogues →</a>
       </div>
     </li>
     <li class="nav-item has-drop">
