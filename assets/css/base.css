@@ -62,6 +62,15 @@ p{color:var(--gray);margin-bottom:14px}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 body.lock{overflow:hidden}
 
+/* 移动端：汉堡菜单内的语言条（克隆顶部 .nav-lang，复用各页正确链接） */
+.m-lang-li{display:none}
+@media (max-width:960px){
+  .nav-links.open .m-lang-li{display:block;margin-top:6px;padding:14px 6px 8px;border-top:1px solid var(--border)}
+  .m-lang-li .nav-lang{display:flex;flex-wrap:wrap;gap:8px;border:none;border-radius:0;overflow:visible}
+  .m-lang-li .nav-lang a{font-size:13px;font-weight:700;padding:9px 13px;border:1px solid var(--border);border-radius:18px}
+  .m-lang-li .nav-lang a.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+}
+
 /* ---------- hero ---------- */
 .page-hero{background:linear-gradient(135deg,#2347C5 0%,#1F3AA0 55%,#17308F 100%);color:#fff;padding:110px 0 84px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
 .page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,14,26,.92),rgba(31,58,160,.55))}
