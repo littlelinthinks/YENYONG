@@ -6,14 +6,14 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#1F3AA0">
 <meta name="format-detection" content="telephone=no">
-<title>YENYONG — Building Materials, Wall Panels &amp; Flooring Supplier | Foshan · Singapore</title>
+<title>YENYONG — SPC &amp; WPC Panels &amp; Flooring | Foshan · Singapore</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link id="yy-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" media="print">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"></noscript>
 
-<meta name="description" content="Factory-direct CE-certified SPC flooring, WPC &amp; PVC wall panels, wall cladding, acoustic and decorative panels from Foshan, China. Singapore-registered building-materials exporter to 40+ countries. Free samples worldwide."/>
+<meta name="description" content="CE-certified SPC flooring, WPC &amp; PVC wall panels and cladding, factory-direct from Foshan. Singapore-registered exporter to 40+ countries. Free samples."/>
 <meta property="og:title" content="YENYONG. — International Building Materials"/>
 <meta property="og:description" content="Factory-direct CE-certified SPC flooring, WPC wall panels and decorative panels from Foshan, China. Singapore registered."/>
 <meta property="og:type" content="website"/>
@@ -878,6 +878,8 @@ html,body{overflow-x:clip}
 .dl-sub a.cat{white-space:normal}
 @media(max-width:960px){.dl-sub{display:none!important}.dl-ar{display:none}}
 </style>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 </head>
 <body>
 <div id="progress"></div>
@@ -973,7 +975,7 @@ html,body{overflow-x:clip}
 </nav>
 
 <section class="hero" id="home">
-<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
+<video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg">
   <source src="hero.mp4" type="video/mp4">
 </video>
 <div class="hero-overlay"></div>
@@ -1755,7 +1757,7 @@ document.addEventListener('DOMContentLoaded', function(){
 // ── INQUIRY FORM (patched: 后端提交, 不再使用 mailto) ──
 // 配置: 在 https://web3forms.com 免费获取 accessKey; 或设 endpoint 为自有后端
 var YY_FORM = {
-  accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',  // TODO: 替换为你的 Web3Forms Access Key
+  accessKey: 'e3349d9c-ccf5-40f7-afb0-6278c481b3b6',  // Web3Forms Access Key (已配置, 询盘自动发到注册邮箱)
   fallbackEmail: 'mellamocolin888@outlook.com',       // 提交失败时回退到企业邮箱
   endpoint: ''                              // 若有自有后端(如 Cloudflare Worker), 填此URL
 };
@@ -1772,7 +1774,7 @@ function submitInquiry(e){
   if(trap && trap.value){ f.reset(); return false; }
   if(!name || !email){ alert('Please enter your name and email.'); return false; }
   // 未配置有效 Web3Forms 密钥时, 直接走邮件回退, 避免产生无效的 API 请求
-  if(!/^[A-Za-z0-9]{16,}$/.test(YY_FORM.accessKey || '')){
+  if(!/^[A-Za-z0-9-]{16,}$/.test(YY_FORM.accessKey || '')){
     fail(); return false;
   }
   var btn = f.querySelector('button[type=submit]');
@@ -1791,8 +1793,12 @@ function submitInquiry(e){
   function fail(){
     var subject = encodeURIComponent('New inquiry from ' + name + ' | YENYONG.');
     var body = encodeURIComponent('Name: '+name+'\nCompany: '+(company||'—')+'\nEmail: '+email+'\nCountry: '+(country||'—')+'\nProduct: '+(product||'—')+'\n\n'+(msg||'—'));
-    if(box) box.classList.add('show'); if(tEl) tEl.textContent='Opening your email…'; if(dEl) dEl.textContent='Could not send automatically — please send via email or WhatsApp.';
-    window.location.href = 'mailto:'+YY_FORM.fallbackEmail+'?subject='+subject+'&body='+body; done();
+    var mailto = 'mailto:'+YY_FORM.fallbackEmail+'?subject='+subject+'&body='+body;
+    var wa = 'https://wa.me/8618929980066?text='+encodeURIComponent('Hi YENYONG, I am '+name+' from '+(country||'')+'. '+(product||'product')+' inquiry.');
+    if(box) box.classList.add('show');
+    if(tEl) tEl.textContent='✓ Inquiry captured — reach us below';
+    if(dEl) dEl.innerHTML='Your mail app should open. If not: <a href="'+mailto+'" style="color:#1F3AA0;text-decoration:underline">email '+YY_FORM.fallbackEmail+'</a> · <a href="'+wa+'" target="_blank" style="color:#1F3AA0;text-decoration:underline">WhatsApp +86 189 2998 0066</a>';
+    window.location.href = mailto; done();
   }
   var url = YY_FORM.endpoint || 'https://api.web3forms.com/submit';
   fetch(url, { method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body: JSON.stringify(payload) })
