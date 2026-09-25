@@ -1000,7 +1000,7 @@ html,body{overflow-x:clip}
 </div>
 <div class="hero-overlay"></div>
 <div class="hero-cap" id="heroCap">Production Workshop</div>
-<div class="hero-dots" id="heroDots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="hero-dots" id="heroDots"></div>
 <div class="hero-in">
   <span class="eyebrow" id="h-ey" style="color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.8)">Foshan · Singapour · Mondial</span>
   <h1 id="h-ti">La qualité de Chine.<br><em>La confiance de Singapour.</em></h1>
@@ -1995,9 +1995,13 @@ function cookieResp(a){try{localStorage.setItem('yy_cookie',a?'1':'0');}catch(e)
   var L = (document.documentElement.lang||'en').toLowerCase().slice(0,2);
   if(!captions[L]) L='en';
   var capArr = captions[L];
-  // 构建轮播圆点
+  // 构建轮播圆点（幂等：若容器已被预置/重复执行，只复用不再追加，避免翻倍）
   var dots=[];
-  for(var i=0;i<slides.length;i++){var d=document.createElement('span');if(i===0)d.className='on';dots.push(d);dotsEl.appendChild(d);}
+  if(dotsEl.children.length){
+    dots = Array.prototype.slice.call(dotsEl.children);
+  } else {
+    for(var i=0;i<slides.length;i++){var d=document.createElement('span');if(i===0)d.className='on';dots.push(d);dotsEl.appendChild(d);}
+  }
   var idx=0;
   function show(n){
     slides.forEach(function(s,i){ s.classList.toggle('is-active', i===n); if(i===n){ s.play && s.play().catch(function(){}); } else { try{ s.pause(); }catch(e){} } });
