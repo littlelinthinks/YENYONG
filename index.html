@@ -85,8 +85,15 @@ nav.scrolled .nav-cta:hover{background:rgba(255,255,255,.9);color:var(--blue)}
 #topBar a:hover{color:var(--blue)}
 #topBar .sep{color:var(--border);margin-left:20px}
 .hero{min-height:100vh;background:linear-gradient(135deg,#2347C5 0%,#1F3AA0 55%,#17308F 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 80px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.92;z-index:0;pointer-events:none}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,58,160,0.30) 0%,rgba(31,58,160,0.24) 35%,rgba(10,14,26,0.78) 100%),linear-gradient(90deg,rgba(31,58,160,0.55) 0%,rgba(31,58,160,0.12) 55%,rgba(10,14,26,0.28) 100%);z-index:1;pointer-events:none}
+/* Hero 清晰竖版视频轮播：桌面端偏右居中(完整不裁切)，移动端铺满 */
+.hero-carousel{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:transparent}
+.hero-carousel video{position:absolute;top:0;right:5%;height:100%;width:auto;max-width:44%;object-fit:contain;opacity:0;transition:opacity 1s ease;z-index:0;pointer-events:none}
+.hero-carousel video.is-active{opacity:1}
+.hero-cap{position:absolute;right:6%;top:108px;z-index:3;color:#fff;font-size:13px;font-weight:600;letter-spacing:.6px;background:rgba(13,18,38,.42);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-shadow:0 1px 6px rgba(0,0,0,.85);pointer-events:none}
+.hero-dots{position:absolute;right:6%;top:150px;z-index:3;display:flex;gap:8px;pointer-events:auto}
+.hero-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:.2s;border:1px solid rgba(255,255,255,.5)}
+.hero-dots span.on{background:#fff;transform:scale(1.25);box-shadow:0 0 0 3px rgba(31,58,160,.55)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,58,160,0.20) 0%,rgba(31,58,160,0.14) 35%,rgba(10,14,26,0.52) 100%),linear-gradient(90deg,rgba(31,58,160,0.38) 0%,rgba(31,58,160,0.10) 55%,rgba(10,14,26,0.15) 100%);z-index:1;pointer-events:none}
 .hero-in{position:relative;z-index:2}
 .hero::before{display:none}
 .hero-in{max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:1}
@@ -841,6 +848,13 @@ html,body{overflow-x:clip}
 .m-lang{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 6px;border-bottom:1px solid var(--border);margin-bottom:6px}
 .m-lang button{background:none;border:1px solid var(--border);border-radius:18px;cursor:pointer;font-size:11px;letter-spacing:1px;color:var(--gray);padding:6px 12px;font-family:Arial,sans-serif}
 .m-lang button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+/* 手机端 hero 视频铺满作背景(竖屏天然贴合)，底部加深保证文案可读 */
+@media (max-width:760px){
+  .hero-carousel video{right:0;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:cover}
+  .hero-overlay{background:linear-gradient(to bottom,rgba(10,14,26,0.34) 0%,rgba(10,14,26,0.12) 42%,rgba(10,14,26,0.84) 100%)}
+  .hero-cap{right:14px;top:78px}
+  .hero-dots{right:14px;top:116px}
+}
 </style>
 <script id="yy-patch-js">
 (function(){
@@ -866,7 +880,7 @@ html,body{overflow-x:clip}
 .dl-tg{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .dl-ar{font-size:9px;opacity:.55;transition:transform .15s}
 .dl-wrap:hover .dl-ar{transform:rotate(90deg)}
-.dl-sub{display:block;padding:2px 0 8px;border-top:1px solid #EEF1FB}
+.dl-sub{display:none;padding:2px 0 8px;border-top:1px solid #EEF1FB}.dl-wrap:hover .dl-sub{display:block}
 
 
 .dl-sub .drop-head{padding:10px 18px 4px}
@@ -957,7 +971,7 @@ html,body{overflow-x:clip}
         <div class="drop-head">Company</div>
         <a href="/projects.html">Projects</a>
         <a href="#support">Support</a>
-        <a href="#contact">Contact</a><a href="#culture">Culture &amp; Values</a><a href="/about.html">About</a>
+        <a href="#contact">Contact</a><a href="#values">Culture &amp; Values</a><a href="/about.html">About</a>
       </div>
     </li>
   <li class="nav-item"><a href="/sustainability.html">Sustainability</a></li><li class="m-lang-li"><div class="nav-lang"><a href="/" class="on">🇬🇧 EN</a><a href="/de/">🇩🇪 DE</a><a href="/fr/">🇫🇷 FR</a><a href="/ru/">🇷🇺 RU</a><a href="/zh/">🇨🇳 中文</a></div></li>
@@ -970,10 +984,17 @@ html,body{overflow-x:clip}
 </nav>
 
 <section class="hero" id="home">
-<video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg">
-  <source src="hero.mp4" type="video/mp4">
-</video>
+<div class="hero-carousel" id="heroCarousel" aria-hidden="true">
+  <video class="hero-slide is-active" autoplay muted loop playsinline preload="auto" poster="/assets/video/hero-prod-1-poster.jpg"><source src="/assets/video/hero-prod-1.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted loop playsinline preload="auto" poster="/assets/video/hero-room-hotel-poster.jpg"><source src="/assets/video/hero-room-hotel.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted loop playsinline preload="auto" poster="/assets/video/hero-prod-3-poster.jpg"><source src="/assets/video/hero-prod-3.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted loop playsinline preload="auto" poster="/assets/video/hero-room-living-poster.jpg"><source src="/assets/video/hero-room-living.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted loop playsinline preload="auto" poster="/assets/video/hero-prod-2-poster.jpg"><source src="/assets/video/hero-prod-2.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted loop playsinline preload="auto" poster="/assets/video/hero-room-meeting-poster.jpg"><source src="/assets/video/hero-room-meeting.mp4" type="video/mp4"></video>
+</div>
 <div class="hero-overlay"></div>
+<div class="hero-cap" id="heroCap">Production Workshop</div>
+<div class="hero-dots" id="heroDots"></div>
 <div class="hero-in">
   <span class="eyebrow" id="h-ey" style="color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.8)">Foshan · Singapore · Global</span>
   <h1 id="h-ti">Quality from China.<br><em>Trust from Singapore.</em></h1>
@@ -1725,7 +1746,7 @@ nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:
     <div class="ft-cols">
       <div class="fcc"><h4 id="fc1h">Explore</h4><a href="/colors.html">All 10 Product Lines</a><a href="/projects.html">Projects &amp; Case Studies</a><a href="/colors.html">Colour &amp; Decor Library</a><a href="/downloads.html">Catalogues &amp; Downloads</a><a href="/news.html">News &amp; Insights</a><a href="/colors.html" style="color:#fff;background:var(--blue);padding:8px 14px;border-radius:3px;display:inline-block;margin-top:6px;font-weight:700">View All Products →</a></div>
       <div class="fcc"><h4 id="fc4h">Resources</h4><a href="#downloads" id="fc41">Catalog &amp; Downloads</a><a href="#support" id="fc42">Installation Guides</a><a href="#support" id="fc43">DIY Center</a><a href="#support" id="fc44">FAQ</a><a href="#certifications" id="fc45">Certifications</a><a href="news.html" id="fc46">Insights</a></div>
-      <div class="fcc"><h4 id="fc2h">Company</h4><a href="#contact" id="fc21">Our Story</a><a href="#culture" id="fc22">Our Values</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
+      <div class="fcc"><h4 id="fc2h">Company</h4><a href="#contact" id="fc21">Our Story</a><a href="#values" id="fc22">Our Values</a><a href="privacy.html" id="fc26">Privacy</a><a href="terms.html" id="fc27">Terms</a></div>
       <div class="fcc"><h4 id="fc3h">Contact</h4><a href="mailto:mellamocolin888@outlook.com">Email</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Request Samples</a></div>
     </div>
   </div>
@@ -1971,27 +1992,45 @@ function toggleMenu(){
 (function(){try{if(localStorage.getItem('yy_cookie')){var b=document.getElementById('cookieBar');if(b)b.style.display='none';}}catch(e){}})();
 function cookieResp(a){try{localStorage.setItem('yy_cookie',a?'1':'0');}catch(e){}var b=document.getElementById('cookieBar');if(b)b.style.display='none';}
 </script>
-<script id="yy-video-autoplay">
+<script id="yy-hero-carousel">
 (function(){
-  var v = document.querySelector('video.hero-video');
-  if(!v) return;
-  v.muted = true; v.defaultMuted = true; v.playsInline = true;
-  var tries = 0;
-  function tryPlay(){
-    if(!v.paused) return;            // 已在播放则不再触发
-    var p = v.play();
-    if(p && p.catch) p.catch(function(){});
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-carousel video'));
+  if(!slides.length) return;
+  var capEl = document.getElementById('heroCap');
+  var dotsEl = document.getElementById('heroDots');
+  // 场景名称（按 html lang 本地化）
+  var captions = {
+    en:["Production Workshop","Showroom · Hotel Suite","Production Workshop","Showroom · Living Room","Production Workshop","Showroom · Meeting Room"],
+    de:["Produktionswerkstatt","Showroom · Hotelsuite","Produktionswerkstatt","Showroom · Wohnraum","Produktionswerkstatt","Showroom · Besprechungsraum"],
+    fr:["Atelier de production","Showroom · Suite hôtelière","Atelier de production","Showroom · Salon","Atelier de production","Showroom · Salle de réunion"],
+    ru:["Производственный цех","Шоурум · Гостиничный номер","Производственный цех","Шоурум · Гостиная","Производственный цех","Шоурум · Переговорная"],
+    zh:["生产车间","展厅 · 酒店套房","生产车间","展厅 · 客厅","生产车间","展厅 · 会议室"]
+  };
+  var L = (document.documentElement.lang||'en').toLowerCase().slice(0,2);
+  if(!captions[L]) L='en';
+  var capArr = captions[L];
+  // 构建轮播圆点
+  var dots=[];
+  for(var i=0;i<slides.length;i++){var d=document.createElement('span');if(i===0)d.className='on';dots.push(d);dotsEl.appendChild(d);}
+  var idx=0;
+  function show(n){
+    slides.forEach(function(s,i){ s.classList.toggle('is-active', i===n); if(i===n){ s.play && s.play().catch(function(){}); } else { try{ s.pause(); }catch(e){} } });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i===n); });
+    if(capEl && capArr[n]) capEl.textContent = capArr[n];
   }
-  tryPlay();
-  v.addEventListener('canplay', tryPlay);
-  v.addEventListener('loadeddata', tryPlay);
-  v.addEventListener('playing', function(){ tries = 0; });
-  // 浏览器若拦截自动播放，则在任意用户交互（含鼠标移动/触摸/滚动/点击）时再尝试，反复重试直到成功
-  ['click','touchstart','scroll','keydown','mousemove','pointerdown'].forEach(function(ev){
-    window.addEventListener(ev, tryPlay, { passive:true });
-  });
-  // 标签页重新可见时恢复播放
-  document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
+  // 强制静音 + 尝试自动播放（浏览器可能拦截，需用户交互后再试）
+  slides.forEach(function(s){ s.muted=true; s.defaultMuted=true; s.playsInline=true; s.setAttribute('muted',''); var p=s.play(); if(p&&p.catch)p.catch(function(){}); });
+  function tryPlayAll(){ slides.forEach(function(s){ if(s.paused){ var p=s.play(); if(p&&p.catch)p.catch(function(){}); } }); }
+  ['click','touchstart','scroll','keydown','mousemove','pointerdown'].forEach(function(ev){ window.addEventListener(ev, tryPlayAll, {passive:true}); });
+  show(0);
+  var timer=null, DUR=8000;
+  function start(){ stop(); timer=setInterval(function(){ idx=(idx+1)%slides.length; show(idx); }, DUR); }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  start();
+  // 标签页隐藏时暂停轮播，回来再续
+  document.addEventListener('visibilitychange', function(){ if(document.hidden) stop(); else start(); });
+  // 点击圆点跳转
+  dotsEl.addEventListener('click', function(e){ var i=dots.indexOf(e.target); if(i>=0){ idx=i; show(i); start(); } });
 })();
 </script>
 

@@ -84,8 +84,15 @@ nav.scrolled .nav-cta:hover{background:rgba(255,255,255,.9);color:var(--blue)}
 #topBar a:hover{color:var(--blue)}
 #topBar .sep{color:var(--border);margin-left:20px}
 .hero{min-height:100vh;background:linear-gradient(135deg,#2347C5 0%,#1F3AA0 55%,#17308F 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 80px;position:relative;overflow:hidden;border-bottom:2px solid var(--blue)}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.92;z-index:0;pointer-events:none}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,58,160,0.30) 0%,rgba(31,58,160,0.24) 35%,rgba(10,14,26,0.78) 100%),linear-gradient(90deg,rgba(31,58,160,0.55) 0%,rgba(31,58,160,0.12) 55%,rgba(10,14,26,0.28) 100%);z-index:1;pointer-events:none}
+/* Hero 清晰竖版视频轮播：桌面端偏右居中(完整不裁切)，移动端铺满 */
+.hero-carousel{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:transparent}
+.hero-carousel video{position:absolute;top:0;right:5%;height:100%;width:auto;max-width:44%;object-fit:contain;opacity:0;transition:opacity 1s ease;z-index:0;pointer-events:none}
+.hero-carousel video.is-active{opacity:1}
+.hero-cap{position:absolute;right:6%;top:108px;z-index:3;color:#fff;font-size:13px;font-weight:600;letter-spacing:.6px;background:rgba(13,18,38,.42);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-shadow:0 1px 6px rgba(0,0,0,.85);pointer-events:none}
+.hero-dots{position:absolute;right:6%;top:150px;z-index:3;display:flex;gap:8px;pointer-events:auto}
+.hero-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:.2s;border:1px solid rgba(255,255,255,.5)}
+.hero-dots span.on{background:#fff;transform:scale(1.25);box-shadow:0 0 0 3px rgba(31,58,160,.55)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(31,58,160,0.20) 0%,rgba(31,58,160,0.14) 35%,rgba(10,14,26,0.52) 100%),linear-gradient(90deg,rgba(31,58,160,0.38) 0%,rgba(31,58,160,0.10) 55%,rgba(10,14,26,0.15) 100%);z-index:1;pointer-events:none}
 .hero-in{position:relative;z-index:2}
 .hero::before{display:none}
 .hero-in{max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:1}
@@ -800,97 +807,20 @@ svg.map{display:block;width:100%;height:auto}
 </script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "В чём разница между SPC и ламинатом?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "У SPC каменно-полимерный композитный сердечник, что делает его на 100 % водонепроницаемым и стабильным по размерам. Ламинат использует древесноволокнистый сердечник, который разбухает от влаги, поэтому он не подходит для ванных и влажных зон."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Нужна ли SPC-полам подложка и компенсационные зазоры?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "В большинстве SPC-продуктов уже встроена подложка IXPE. На очень неровных основаниях можно добавить тонкий слой пены. Всегда оставляйте зазор 8–10 мм у стен и вертикальных препятствий."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Можно ли использовать стеновые панели WPC в ванных?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Да. WPC влагостоек и хорошо переносит обычную влажность. В душевых зонах обеспечьте хорошую вентиляцию и герметизируйте стыки панелей подходящим силиконом."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Что делать, если товар прибыл повреждённым или некомплектным?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Сфотографируйте коробки и содержимое при разгрузке и отметьте повреждения или недостачу в транспортной накладной. Свяжитесь с нами в течение 48 часов с фотографиями — наша служба послепродажного обслуживания лично рассматривает каждую претензию."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Проводите ли вы обучение монтажу или поддержку на объекте?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "К каждому заказу прилагаются иллюстрированные руководства по установке, а наша команда поддерживает монтажников по WhatsApp или видеосвязи. Надзор на объекте доступен для крупных гостиничных или коммерческих проектов."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Какие продукты поставляет YENYONG?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "YENYONG поставляет стройматериалы напрямую с заводов Фошаня — SPC-полы с жёстким сердечником, стеновые панели WPC и ПВХ, бамбуково-кристальные и карбоново-кристальные панели, керамическую и фарфоровую плитку, акустические панели, сотовые панели и алюминиево-композитные панели для полов, облицовки стен и внутренней отделки."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "В чём разница между стеновыми панелями SPC и WPC?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Панели SPC (камень-полимерный композит) жёсткие, водонепроницаемые и ударопрочные — идеальны для проходных и влажных зон. Панели WPC (дерево-полимерный композит) легче и теплее на ощупь, лучше для жилых интерьеров. Оба типа сертифицированы CE и отгружаются с нашего завода в Фошане."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Вы предоставляете бесплатные образцы?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Да. Мы отправляем бесплатные физические образцы по всему миру в течение 5 рабочих дней — бесплатно, без обязательств. Запрос через форму контакта или на mellamocolin888@outlook.com."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Каковы ваши минимальные объёмы заказа (MOQ)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "MOQ зависит от продуктовой линейки. Мы работаем с дистрибьюторами, подрядчиками и архитекторами. Свяжитесь с нами, указав проект и направление, для точного MOQ и цен FOB."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ваши продукты сертифицированы?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Каждый продукт поставляется с декларацией CE, отчётами испытаний SGS и полным экспортным пакетом (коммерческий счёт, упаковочный лист, коносамент, сертификат происхождения), подкреплённым системой менеджмента качества ISO 9001."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Где находится YENYONG?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "YENYONG работает с производственной базой в Фошане (Китай) и зарегистрированной в Сингапуре торговой компанией OVERARCHING PTE. LTD., обслуживая более 40 стран в Европе, на Ближнем Востоке, в Юго-Восточной Азии и Африке."
-      }
-    }
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is the difference between SPC and laminate flooring?","acceptedAnswer":{"@type":"Answer","text":"SPC has a stone-plastic composite core, making it 100% waterproof and dimensionally stable. Laminate uses a wood-fiber core that swells when wet, so it is not suitable for bathrooms or wet areas."}},
+    {"@type":"Question","name":"Does SPC flooring need underlayment and expansion gaps?","acceptedAnswer":{"@type":"Answer","text":"Most SPC products include an attached IXPE underlay. On very uneven subfloors you can add a thin foam layer. Always leave an 8–10 mm expansion gap around walls and vertical obstructions."}},
+    {"@type":"Question","name":"Can WPC wall panels be used in bathrooms?","acceptedAnswer":{"@type":"Answer","text":"Yes. WPC is water-resistant and handles normal humidity well. For shower zones, ensure good ventilation and seal panel joints with a suitable silicone."}},
+    {"@type":"Question","name":"What if goods arrive damaged or short?","acceptedAnswer":{"@type":"Answer","text":"Photograph the cartons and contents at unloading and note any damage or shortage on the delivery receipt. Контакты us within 48 hours with the photos — our after-sales team handles every claim personally."}},
+    {"@type":"Question","name":"Do you provide installation training or on-site support?","acceptedAnswer":{"@type":"Answer","text":"Every order ships with illustrated installation guides, and our team supports installers by WhatsApp or video call. On-site supervision is available for large hotel or commercial projects."}},
+    {"@type":"Question","name":"Какие продукты поставляет YENYONG?","acceptedAnswer":{"@type":"Answer","text":"YENYONG supplies factory-direct building materials from Foshan - SPC rigid-core flooring, WPC and PVC wall panels, bamboo-crystal and carbon-crystal panels, ceramic and porcelain tiles, acoustic panels, honeycomb panels and aluminium-plastic panels for flooring, wall cladding and interior decoration."}},
+    {"@type":"Question","name":"В чём разница между стеновыми панелями SPC и WPC?","acceptedAnswer":{"@type":"Answer","text":"SPC (stone-plastic composite) wall panels are rigid, waterproof and impact-resistant, ideal for high-traffic and wet areas. WPC (wood-plastic composite) panels are lighter and warmer to the touch, better for residential interiors. Both are CE-certified and ship from our Foshan factory."}},
+    {"@type":"Question","name":"Вы предоставляете бесплатные образцы?","acceptedAnswer":{"@type":"Answer","text":"Yes. We send free physical samples worldwide within 5 working days, no cost and no obligation. Request through the contact form or email mellamocolin888@outlook.com."}},
+    {"@type":"Question","name":"Каковы ваши минимальные объёмы заказа (MOQ)?","acceptedAnswer":{"@type":"Answer","text":"MOQ зависит от продуктовой линейки. Мы работаем с дистрибьюторами, подрядчиками и архитекторами. Свяжитесь с нами, указав проект и направление, для точного MOQ и цен FOB."}},
+    {"@type":"Question","name":"Ваши продукты сертифицированы?","acceptedAnswer":{"@type":"Answer","text":"Every product ships with a CE Declaration, SGS test reports and full export documentation including commercial invoice, packing list, bill of lading and certificate of origin, backed by ISO 9001 quality management."}},
+    {"@type":"Question","name":"Где находится YENYONG?","acceptedAnswer":{"@type":"Answer","text":"YENYONG operates from Foshan, China as its manufacturing base, with a Singapore-registered trading entity, OVERARCHING PTE. LTD., serving 40 plus countries across Europe, the Middle East, Southeast Asia and Africa."}}
   ]
 }
 </script>
@@ -917,6 +847,13 @@ html,body{overflow-x:clip}
 .m-lang{display:flex;gap:8px;flex-wrap:wrap;padding:14px 0 6px;border-bottom:1px solid var(--border);margin-bottom:6px}
 .m-lang button{background:none;border:1px solid var(--border);border-radius:18px;cursor:pointer;font-size:11px;letter-spacing:1px;color:var(--gray);padding:6px 12px;font-family:Arial,sans-serif}
 .m-lang button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+/* 手机端 hero 视频铺满作背景(竖屏天然贴合)，底部加深保证文案可读 */
+@media (max-width:760px){
+  .hero-carousel video{right:0;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:cover}
+  .hero-overlay{background:linear-gradient(to bottom,rgba(10,14,26,0.34) 0%,rgba(10,14,26,0.12) 42%,rgba(10,14,26,0.84) 100%)}
+  .hero-cap{right:14px;top:78px}
+  .hero-dots{right:14px;top:116px}
+}
 </style>
 <script id="yy-patch-js">
 (function(){
@@ -942,7 +879,7 @@ html,body{overflow-x:clip}
 .dl-tg{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .dl-ar{font-size:9px;opacity:.55;transition:transform .15s}
 .dl-wrap:hover .dl-ar{transform:rotate(90deg)}
-.dl-sub{display:block;padding:2px 0 8px;border-top:1px solid #EEF1FB}
+.dl-sub{display:none;padding:2px 0 8px;border-top:1px solid #EEF1FB}.dl-wrap:hover .dl-sub{display:block}
 
 
 .dl-sub .drop-head{padding:10px 18px 4px}
@@ -1040,7 +977,7 @@ html,body{overflow-x:clip}
         <div class="drop-head">Компания</div>
         <a href="/projects.html">Проекты</a>
         <a href="#support">Поддержка</a>
-        <a href="#contact">Контакты</a><a href="#culture">Культура &amp; ценности</a><a href="/about.html">О нас</a>
+        <a href="#contact">Контакты</a><a href="#values">Культура &amp; ценности</a><a href="/about.html">О нас</a>
       </div>
     </li>
   <li class="nav-item"><a href="/sustainability.html">Устойчивое развитие</a></li><li class="m-lang-li"><div class="nav-lang"><a href="/">🇬🇧 EN</a><a href="/de/">🇩🇪 DE</a><a href="/fr/">🇫🇷 FR</a><a href="/ru/" class="on">🇷🇺 RU</a><a href="/zh/">🇨🇳 中文</a></div></li>
@@ -1053,10 +990,17 @@ html,body{overflow-x:clip}
 </nav>
 
 <section class="hero" id="home">
-<video class="hero-video" autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="/hero-poster.jpg">
-  <source src="/hero.mp4" type="video/mp4">
-</video>
+<div class="hero-carousel" id="heroCarousel" aria-hidden="true">
+  <video class="hero-slide is-active" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="/assets/video/hero-prod-1-poster.jpg"><source src="/assets/video/hero-prod-1.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted="" loop="" playsinline="" preload="auto" poster="/assets/video/hero-room-hotel-poster.jpg"><source src="/assets/video/hero-room-hotel.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted="" loop="" playsinline="" preload="auto" poster="/assets/video/hero-prod-3-poster.jpg"><source src="/assets/video/hero-prod-3.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted="" loop="" playsinline="" preload="auto" poster="/assets/video/hero-room-living-poster.jpg"><source src="/assets/video/hero-room-living.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted="" loop="" playsinline="" preload="auto" poster="/assets/video/hero-prod-2-poster.jpg"><source src="/assets/video/hero-prod-2.mp4" type="video/mp4"></video>
+  <video class="hero-slide" muted="" loop="" playsinline="" preload="auto" poster="/assets/video/hero-room-meeting-poster.jpg"><source src="/assets/video/hero-room-meeting.mp4" type="video/mp4"></video>
+</div>
 <div class="hero-overlay"></div>
+<div class="hero-cap" id="heroCap">Production Workshop</div>
+<div class="hero-dots" id="heroDots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="hero-in">
   <span class="eyebrow" id="h-ey" style="color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.8)">Фошань · Сингапур · Мир</span>
   <h1 id="h-ti">Качество из Китая.<br><em>Доверие из Сингапура.</em></h1>
@@ -1805,7 +1749,7 @@ nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:
     <div class="ft-cols">
       <div class="fcc"><h4 id="fc1h">Продукция</h4><a href="/colors.html">All 10 Продуктовые линейки</a><a href="/projects.html">Проекты и примеры</a><a href="/colors.html">Библиотека цветов и декора</a><a href="/downloads.html">Каталоги и загрузки</a><a href="/news.html">Новости и аналитика</a><a href="/colors.html" style="color:#fff;background:var(--blue);padding:8px 14px;border-radius:3px;display:inline-block;margin-top:6px;font-weight:700">Смотреть все продукты →</a></div>
       <div class="fcc"><h4 id="fc4h">Ресурсы</h4><a href="#downloads" id="fc41">Каталог и загрузки</a><a href="#support" id="fc42">Руководства по установке</a><a href="#support" id="fc43">Центр DIY</a><a href="#support" id="fc44">ЧЗВ</a><a href="#certifications" id="fc45">Сертификаты</a><a href="news.html" id="fc46">Аналитика</a></div>
-      <div class="fcc"><h4 id="fc2h">Компания</h4><a href="#contact" id="fc21">Наша история</a><a href="#culture" id="fc22">Наши ценности</a><a href="privacy.html" id="fc26">Конфиденциальность</a><a href="terms.html" id="fc27">Условия</a></div>
+      <div class="fcc"><h4 id="fc2h">Компания</h4><a href="#contact" id="fc21">Наша история</a><a href="#values" id="fc22">Наши ценности</a><a href="privacy.html" id="fc26">Конфиденциальность</a><a href="terms.html" id="fc27">Условия</a></div>
       <div class="fcc"><h4 id="fc3h">Контакты</h4><a href="mailto:mellamocolin888@outlook.com">Email</a><a href="#contact" id="fc32">WhatsApp</a><a href="#contact" id="fc33">Запросить образцы</a></div>
     </div>
   </div>
@@ -1817,71 +1761,7 @@ nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:
 </footer>
 
 
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/8618929980066" class="wa-float" target="_blank" title="WhatsApp YENYONG.">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
-  </svg>
-</a>
-
-<!-- Scroll Reveal -->
 <script>
-(function(){
-  var bar=document.getElementById('progress');
-  function onScroll(){if(!bar)return;var d=document.documentElement;var sc=d.scrollTop||document.body.scrollTop;var max=d.scrollHeight-d.clientHeight;bar.style.width=(max>0?sc/max*100:0)+'%';}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var revs=document.querySelectorAll('.sec-in > *, .stmt-in > *, .hero-stats > div');
-  revs.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%8)*55)+'ms';});
-  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-  revs.forEach(function(el){obs.observe(el);});
-  var counters=document.querySelectorAll('[data-count]');
-  var cob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=parseInt(el.getAttribute('data-count'),10)||0,suf=el.getAttribute('data-suffix')||'',dur=1300,t0=null;function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1),val=Math.floor((1-Math.pow(1-p,3))*to);el.textContent=val+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);cob.unobserve(el);}});},{threshold:0.5});
-  counters.forEach(function(el){cob.observe(el);});
-})();
-</script>
-
-
-
-<div id="cookieBar" style="position:fixed;left:0;right:0;bottom:0;z-index:300;background:#1F3AA0;color:#fff;padding:15px 24px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px;line-height:1.5;box-shadow:0 -8px 30px rgba(0,0,0,.28)">
-  <div style="max-width:700px">Мы используем необходимые файлы cookie для работы этого сайта и, с вашего согласия, анонимную аналитику для его улучшения. См. нашу <a href="privacy.html" style="color:#7fa0ff;text-decoration:underline">Политику конфиденциальности</a>.</div>
-  <div style="display:flex;gap:10px">
-    <button onclick="cookieResp(false)" style="background:transparent;border:1px solid #4a5680;color:#c9d2e6;padding:8px 16px;border-radius:8px;cursor:pointer;font:inherit">Отклонить</button>
-    <button onclick="cookieResp(true)" style="background:#1F3AA0;border:1px solid #1F3AA0;color:#fff;padding:8px 18px;border-radius:8px;cursor:pointer;font:inherit;font-weight:600">Принять</button>
-  </div>
-</div>
-<script>
-(function(){try{if(localStorage.getItem('yy_cookie')){var b=document.getElementById('cookieBar');if(b)b.style.display='none';}}catch(e){}})();
-function cookieResp(a){try{localStorage.setItem('yy_cookie',a?'1':'0');}catch(e){}var b=document.getElementById('cookieBar');if(b)b.style.display='none';}
-</script>
-<script id="yy-video-autoplay">
-(function(){
-  var v = document.querySelector('video.hero-video');
-  if(!v) return;
-  v.muted = true; v.defaultMuted = true; v.playsInline = true;
-  var tries = 0;
-  function tryPlay(){
-    if(!v.paused) return;            // 已在播放则不再触发
-    var p = v.play();
-    if(p && p.catch) p.catch(function(){});
-  }
-  tryPlay();
-  v.addEventListener('canplay', tryPlay);
-  v.addEventListener('loadeddata', tryPlay);
-  v.addEventListener('playing', function(){ tries = 0; });
-  // 浏览器若拦截自动播放，则在任意用户交互（含鼠标移动/触摸/滚动/点击）时再尝试，反复重试直到成功
-  ['click','touchstart','scroll','keydown','mousemove','pointerdown'].forEach(function(ev){
-    window.addEventListener(ev, tryPlay, { passive:true });
-  });
-  // 标签页重新可见时恢复播放
-  document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
-})();
-</script>
-
-<button id="toTop" aria-label="Back to top">↑</button><script>(function(){var t=document.getElementById("toTop");if(!t)return;window.addEventListener("scroll",function(){t.classList.toggle("show",window.scrollY>600)},{passive:true});t.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script><script>document.querySelectorAll(".lang-btn").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();var d=b.parentElement,w=d.classList.contains("open");document.querySelectorAll(".lang-dd.open").forEach(function(x){x.classList.remove("open")});if(!w)d.classList.add("open");});});document.addEventListener("click",function(e){if(!e.target.closest(".lang-dd"))document.querySelectorAll(".lang-dd.open").forEach(function(d){d.classList.remove("open")});});</script>
-
-<script>
-
 function showTab(tab){
   document.querySelectorAll('.ct-panel').forEach(function(p){p.classList.remove('on');});
   document.querySelectorAll('.ct-tab').forEach(function(b){b.classList.remove('on');});
@@ -1979,14 +1859,14 @@ function submitInquiry(e){
   var msg = (f.querySelector('#inp-msg').value||'').trim();
   var trap = f.querySelector('[name=_yy_trap]');
   if(trap && trap.value){ f.reset(); return false; }
-  if(!name || !email){ alert('Пожалуйста, введите имя и e-mail.'); return false; }
+  if(!name || !email){ alert('Please enter your name and email.'); return false; }
   // 未配置有效 Web3Forms 密钥时, 直接走邮件回退, 避免产生无效的 API 请求
   if(!/^[A-Za-z0-9-]{16,}$/.test(YY_FORM.accessKey || '')){
     fail(); return false;
   }
   var btn = f.querySelector('button[type=submit]');
   var label = btn ? btn.textContent : '';
-  if(btn){ btn.disabled = true; btn.textContent = 'Отправка…'; }
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
   var box = document.getElementById('ct-msg');
   var tEl = document.getElementById('ct-msg-t'), dEl = document.getElementById('ct-msg-d');
   var payload = {
@@ -1996,15 +1876,15 @@ function submitInquiry(e){
     country: country, product_interest: product, message: msg
   };
   function done(){ if(btn){ btn.disabled = false; btn.textContent = label; } if(f.reset) f.reset(); }
-  function ok(){ if(box) box.classList.add('show'); if(tEl) tEl.textContent = '✓ Запрос получен'; if(dEl) dEl.textContent = 'Мы ответим в течение 24 часов, с понедельника по субботу.'; if(box) setTimeout(function(){ box.classList.remove('show'); }, 8000); done(); }
+  function ok(){ if(box) box.classList.add('show'); if(tEl) tEl.textContent = '✓ Inquiry received'; if(dEl) dEl.textContent = 'We will reply within 24 hours, Monday–Saturday.'; if(box) setTimeout(function(){ box.classList.remove('show'); }, 8000); done(); }
   function fail(){
     var subject = encodeURIComponent('New inquiry from ' + name + ' | YENYONG.');
     var body = encodeURIComponent('Name: '+name+'\nCompany: '+(company||'—')+'\nEmail: '+email+'\nCountry: '+(country||'—')+'\nProduct: '+(product||'—')+'\n\n'+(msg||'—'));
     var mailto = 'mailto:'+YY_FORM.fallbackEmail+'?subject='+subject+'&body='+body;
     var wa = 'https://wa.me/8618929980066?text='+encodeURIComponent('Hi YENYONG, I am '+name+' from '+(country||'')+'. '+(product||'product')+' inquiry.');
     if(box) box.classList.add('show');
-    if(tEl) tEl.textContent='✓ Запрос принят — свяжитесь с нами ниже';
-    if(dEl) dEl.innerHTML='Ваше почтовое приложение должно открыться. Если нет: <a href="'+mailto+'" style="color:#1F3AA0;text-decoration:underline">email '+YY_FORM.fallbackEmail+'</a> · <a href="'+wa+'" target="_blank" style="color:#1F3AA0;text-decoration:underline">WhatsApp +86 189 2998 0066</a>';
+    if(tEl) tEl.textContent='✓ Inquiry captured — reach us below';
+    if(dEl) dEl.innerHTML='Your mail app should open. If not: <a href="'+mailto+'" style="color:#1F3AA0;text-decoration:underline">email '+YY_FORM.fallbackEmail+'</a> · <a href="'+wa+'" target="_blank" style="color:#1F3AA0;text-decoration:underline">WhatsApp +86 189 2998 0066</a>';
     window.location.href = mailto; done();
   }
   var url = YY_FORM.endpoint || 'https://api.web3forms.com/submit';
@@ -2060,6 +1940,86 @@ function toggleMenu(){
 })();
 
 // ── FAQ SMOOTH OPEN (no JS required; details/summary works natively) ──
-
 </script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/8618929980066" class="wa-float" target="_blank" title="WhatsApp YENYONG.">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+  </svg>
+</a>
+
+<!-- Scroll Reveal -->
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  function onScroll(){if(!bar)return;var d=document.documentElement;var sc=d.scrollTop||document.body.scrollTop;var max=d.scrollHeight-d.clientHeight;bar.style.width=(max>0?sc/max*100:0)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var revs=document.querySelectorAll('.sec-in > *, .stmt-in > *, .hero-stats > div');
+  revs.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=((i%8)*55)+'ms';});
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  revs.forEach(function(el){obs.observe(el);});
+  var counters=document.querySelectorAll('[data-count]');
+  var cob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,to=parseInt(el.getAttribute('data-count'),10)||0,suf=el.getAttribute('data-suffix')||'',dur=1300,t0=null;function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1),val=Math.floor((1-Math.pow(1-p,3))*to);el.textContent=val+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);cob.unobserve(el);}});},{threshold:0.5});
+  counters.forEach(function(el){cob.observe(el);});
+})();
+</script>
+
+
+
+<div id="cookieBar" style="position:fixed;left:0;right:0;bottom:0;z-index:300;background:#1F3AA0;color:#fff;padding:15px 24px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:14px;line-height:1.5;box-shadow:0 -8px 30px rgba(0,0,0,.28)">
+  <div style="max-width:700px">Мы используем необходимые файлы cookie для работы этого сайта и, с вашего согласия, анонимную аналитику для его улучшения. См. нашу <a href="privacy.html" style="color:#7fa0ff;text-decoration:underline">Политику конфиденциальности</a>.</div>
+  <div style="display:flex;gap:10px">
+    <button onclick="cookieResp(false)" style="background:transparent;border:1px solid #4a5680;color:#c9d2e6;padding:8px 16px;border-radius:8px;cursor:pointer;font:inherit">Отклонить</button>
+    <button onclick="cookieResp(true)" style="background:#1F3AA0;border:1px solid #1F3AA0;color:#fff;padding:8px 18px;border-radius:8px;cursor:pointer;font:inherit;font-weight:600">Принять</button>
+  </div>
+</div>
+<script>
+(function(){try{if(localStorage.getItem('yy_cookie')){var b=document.getElementById('cookieBar');if(b)b.style.display='none';}}catch(e){}})();
+function cookieResp(a){try{localStorage.setItem('yy_cookie',a?'1':'0');}catch(e){}var b=document.getElementById('cookieBar');if(b)b.style.display='none';}
+</script>
+<script id="yy-hero-carousel">
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-carousel video'));
+  if(!slides.length) return;
+  var capEl = document.getElementById('heroCap');
+  var dotsEl = document.getElementById('heroDots');
+  // 场景名称（按 html lang 本地化）
+  var captions = {
+    en:["Production Workshop","Showroom · Hotel Suite","Production Workshop","Showroom · Living Room","Production Workshop","Showroom · Meeting Room"],
+    de:["Produktionswerkstatt","Showroom · Hotelsuite","Produktionswerkstatt","Showroom · Wohnraum","Produktionswerkstatt","Showroom · Besprechungsraum"],
+    fr:["Atelier de production","Showroom · Suite hôtelière","Atelier de production","Showroom · Salon","Atelier de production","Showroom · Salle de réunion"],
+    ru:["Производственный цех","Шоурум · Гостиничный номер","Производственный цех","Шоурум · Гостиная","Производственный цех","Шоурум · Переговорная"],
+    zh:["生产车间","展厅 · 酒店套房","生产车间","展厅 · 客厅","生产车间","展厅 · 会议室"]
+  };
+  var L = (document.documentElement.lang||'en').toLowerCase().slice(0,2);
+  if(!captions[L]) L='en';
+  var capArr = captions[L];
+  // 构建轮播圆点
+  var dots=[];
+  for(var i=0;i<slides.length;i++){var d=document.createElement('span');if(i===0)d.className='on';dots.push(d);dotsEl.appendChild(d);}
+  var idx=0;
+  function show(n){
+    slides.forEach(function(s,i){ s.classList.toggle('is-active', i===n); if(i===n){ s.play && s.play().catch(function(){}); } else { try{ s.pause(); }catch(e){} } });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i===n); });
+    if(capEl && capArr[n]) capEl.textContent = capArr[n];
+  }
+  // 强制静音 + 尝试自动播放（浏览器可能拦截，需用户交互后再试）
+  slides.forEach(function(s){ s.muted=true; s.defaultMuted=true; s.playsInline=true; s.setAttribute('muted',''); var p=s.play(); if(p&&p.catch)p.catch(function(){}); });
+  function tryPlayAll(){ slides.forEach(function(s){ if(s.paused){ var p=s.play(); if(p&&p.catch)p.catch(function(){}); } }); }
+  ['click','touchstart','scroll','keydown','mousemove','pointerdown'].forEach(function(ev){ window.addEventListener(ev, tryPlayAll, {passive:true}); });
+  show(0);
+  var timer=null, DUR=8000;
+  function start(){ stop(); timer=setInterval(function(){ idx=(idx+1)%slides.length; show(idx); }, DUR); }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  start();
+  // 标签页隐藏时暂停轮播，回来再续
+  document.addEventListener('visibilitychange', function(){ if(document.hidden) stop(); else start(); });
+  // 点击圆点跳转
+  dotsEl.addEventListener('click', function(e){ var i=dots.indexOf(e.target); if(i>=0){ idx=i; show(i); start(); } });
+})();
+</script>
+
+<button id="toTop" aria-label="Back to top">↑</button><script>(function(){var t=document.getElementById("toTop");if(!t)return;window.addEventListener("scroll",function(){t.classList.toggle("show",window.scrollY>600)},{passive:true});t.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script><script>document.querySelectorAll(".lang-btn").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();var d=b.parentElement,w=d.classList.contains("open");document.querySelectorAll(".lang-dd.open").forEach(function(x){x.classList.remove("open")});if(!w)d.classList.add("open");});});document.addEventListener("click",function(e){if(!e.target.closest(".lang-dd"))document.querySelectorAll(".lang-dd.open").forEach(function(d){d.classList.remove("open")});});</script>
+
 </body></html>

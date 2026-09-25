@@ -270,7 +270,8 @@ body.lock{overflow:hidden}
 .dl-tg{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .dl-ar{font-size:9px;opacity:.55;transition:transform .15s}
 .dl-wrap:hover .dl-ar{transform:rotate(90deg)}
-.dl-sub{display:block;padding:2px 0 8px;border-top:1px solid #EEF1FB}
+.dl-sub{display:none;padding:2px 0 8px;border-top:1px solid #EEF1FB}
+.dl-wrap:hover .dl-sub{display:block}
 
 
 .dl-sub .drop-head{padding:10px 18px 4px}
