@@ -289,10 +289,6 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 48px 24px
 
 /* ── HOW WE WORK — SERHANT. STYLE ── */
 .hww{background:#fff;padding:100px 48px;overflow:hidden;position:relative}
-.hww::before{content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(31,58,160,.06) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(31,58,160,.06) 1px,transparent 1px);
-  background-size:48px 48px;pointer-events:none}
 .hww-in{max-width:1280px;margin:0 auto;display:grid;
   grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
 .hww-left{}
@@ -401,36 +397,36 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 48px 24px
 .contact-in{max-width:none;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
 
 /* Left panel — dark blue, founders */
-.ct-left{background:var(--blue);padding:80px 60px;display:flex;flex-direction:column;justify-content:space-between}
+.ct-left{background:#fff;border-right:1px solid #E3E8F8;padding:80px 60px;display:flex;flex-direction:column;justify-content:space-between}
 .ct-left-top{}
-.ct-left-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:700;display:block;margin-bottom:16px}
-.ct-left-title{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4vw,56px);color:#fff;letter-spacing:-2px;line-height:.95;margin-bottom:12px}
-.ct-left-title em{color:#fff;font-style:normal}
-.ct-left-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.75;max-width:380px;margin-bottom:44px}
+.ct-left-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gray);font-weight:700;display:block;margin-bottom:16px}
+.ct-left-title{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4vw,56px);color:var(--blue);letter-spacing:-2px;line-height:.95;margin-bottom:12px}
+.ct-left-title em{color:var(--blue2);font-style:normal}
+.ct-left-sub{font-size:14px;color:var(--gray);line-height:1.75;max-width:380px;margin-bottom:44px}
 
 /* Founder cards */
 .ct-founders{display:flex;flex-direction:column;gap:16px;margin-bottom:44px}
-.ct-founder{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:20px;display:flex;gap:18px;align-items:center;transition:.2s}
-.ct-founder:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.15)}
-.ct-founder-img{width:72px;height:88px;border-radius:4px;object-fit:cover;object-position:top;flex-shrink:0;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ct-founder{background:rgba(31,58,160,.05);border:1px solid rgba(31,58,160,.08);border-radius:6px;padding:20px;display:flex;gap:18px;align-items:center;transition:.2s}
+.ct-founder:hover{background:rgba(31,58,160,.09);border-color:rgba(31,58,160,.15)}
+.ct-founder-img{width:72px;height:88px;border-radius:4px;object-fit:cover;object-position:top;flex-shrink:0;background:rgba(31,58,160,.08);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .ct-founder-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.ct-founder-placeholder{width:72px;height:88px;border-radius:4px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ct-founder-placeholder{width:72px;height:88px;border-radius:4px;background:rgba(31,58,160,.06);border:1px dashed rgba(31,58,160,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ct-founder-info{}
-.ct-founder-name{font-family:var(--font-display);font-size:15px;font-weight:900;color:#fff;margin-bottom:2px}
-.ct-founder-title{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.ct-founder-name{font-family:var(--font-display);font-size:15px;font-weight:900;color:var(--blue);margin-bottom:2px}
+.ct-founder-title{font-size:10px;color:rgba(31,58,160,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
 .ct-founder-contacts{display:flex;flex-direction:column;gap:5px}
-.ct-founder-contact{display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.6);text-decoration:none;transition:.15s}
-.ct-founder-contact:hover{color:#fff}
+.ct-founder-contact{display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(31,58,160,.6);text-decoration:none;transition:.15s}
+.ct-founder-contact:hover{color:var(--blue)}
 .ct-founder-contact span{font-size:13px}
 
 /* Address section */
-.ct-addresses{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
-.ct-addr{background:rgba(255,255,255,.04);border-radius:4px;padding:14px}
+.ct-addresses{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid rgba(31,58,160,.08);padding-top:24px}
+.ct-addr{background:rgba(31,58,160,.04);border-radius:4px;padding:14px}
 .ct-addr-flag{font-size:16px;margin-bottom:6px}
-.ct-addr-country{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px;font-weight:700}
-.ct-addr-text{font-size:11px;color:rgba(255,255,255,.6);line-height:1.6}
-.ct-addr-map{font-size:10px;color:#fff;margin-top:6px;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
-.ct-addr-map:hover{color:rgba(255,255,255,.8)}
+.ct-addr-country{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(31,58,160,.35);margin-bottom:4px;font-weight:700}
+.ct-addr-text{font-size:11px;color:rgba(31,58,160,.6);line-height:1.6}
+.ct-addr-map{font-size:10px;color:var(--blue);margin-top:6px;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.ct-addr-map:hover{color:rgba(31,58,160,.8)}
 
 /* Right panel — white, form */
 .ct-right{background:#fff;padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
@@ -529,7 +525,6 @@ section[id],.pc[id]{scroll-margin-top:110px}
 
 /* ── INSTALLATION & SUPPORT ── */
 .sup{background:#fff;padding:96px 48px;position:relative;overflow:hidden;border-top:1px solid #E3E8F8;border-bottom:1px solid #E3E8F8}
-.sup::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(31,58,160,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(31,58,160,.05) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
 .sup-in{max-width:1280px;margin:0 auto;position:relative;z-index:1}
 .sup-head{max-width:720px;margin-bottom:56px}
 .sup .eyebrow{color:rgba(31,58,160,.55)}
@@ -871,9 +866,9 @@ html,body{overflow-x:clip}
 .dl-tg{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .dl-ar{font-size:9px;opacity:.55;transition:transform .15s}
 .dl-wrap:hover .dl-ar{transform:rotate(90deg)}
-.dl-sub{display:none;padding:2px 0 8px;border-top:1px solid #EEF1FB}
+.dl-sub{display:block;padding:2px 0 8px;border-top:1px solid #EEF1FB}
 
-.dl-wrap:hover .dl-sub{display:block}
+
 .dl-sub .drop-head{padding:10px 18px 4px}
 .dl-sub a.cat{white-space:normal}
 @media(max-width:960px){.dl-sub{display:none!important}.dl-ar{display:none}}
@@ -962,10 +957,10 @@ html,body{overflow-x:clip}
         <div class="drop-head">Company</div>
         <a href="/projects.html">Projects</a>
         <a href="#support">Support</a>
-        <a href="#contact">Contact</a><a href="#culture">Culture &amp; Values</a>
+        <a href="#contact">Contact</a><a href="#culture">Culture &amp; Values</a><a href="/about.html">About</a>
       </div>
     </li>
-  <li class="nav-item"><a href="/about.html">About</a></li><li class="nav-item"><a href="/certifications.html">Certifications</a></li><li class="nav-item"><a href="/sustainability.html">Sustainability</a></li><li class="m-lang-li"><div class="nav-lang"><a href="/" class="on">🇬🇧 EN</a><a href="/de/">🇩🇪 DE</a><a href="/fr/">🇫🇷 FR</a><a href="/ru/">🇷🇺 RU</a><a href="/zh/">🇨🇳 中文</a></div></li>
+  <li class="nav-item"><a href="/sustainability.html">Sustainability</a></li><li class="m-lang-li"><div class="nav-lang"><a href="/" class="on">🇬🇧 EN</a><a href="/de/">🇩🇪 DE</a><a href="/fr/">🇫🇷 FR</a><a href="/ru/">🇷🇺 RU</a><a href="/zh/">🇨🇳 中文</a></div></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="nav-r">
@@ -1061,6 +1056,65 @@ html,body{overflow-x:clip}
 </section>
 
 <!-- HOW WE WORK — SERHANT. STYLE -->
+<style>
+.vals{background:var(--lt);padding:96px 48px}
+.vals-in{max-width:1280px;margin:0 auto}
+.vals-title{font-family:var(--font-display);font-weight:900;font-size:clamp(30px,4vw,52px);color:var(--blue);letter-spacing:-1.5px;line-height:1;margin-bottom:40px}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.mv-card{background:#fff;border:1px solid #E3E8F8;border-top:3px solid var(--blue);border-radius:6px;padding:34px 30px}
+.mv-lb{font-size:10px;letter-spacing:4px;color:var(--blue);font-weight:800;display:block;margin-bottom:14px}
+.mv-card h3{font-family:var(--font-display);font-size:clamp(20px,2.2vw,26px);color:var(--blue);line-height:1.2;margin-bottom:10px;letter-spacing:-.5px}
+.mv-it{font-weight:700;color:var(--ink);font-size:14px;margin-bottom:12px}
+.mv-card p:last-child{font-size:13.5px;color:var(--gray);line-height:1.8}
+.vals-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:24px}
+.val-card{background:#fff;border:1px solid #E3E8F8;border-radius:6px;padding:26px 20px}
+.val-chip{display:block;width:34px;height:34px;border-radius:50%;margin-bottom:14px}
+.chip-blue{background:var(--blue)}
+.chip-white{background:#fff;border:2px solid var(--blue)}
+.chip-bw{background:linear-gradient(90deg,var(--blue) 50%,#fff 50%);border:2px solid var(--blue)}
+.chip-ocean{background:linear-gradient(135deg,var(--blue),#4A7BD0)}
+.val-card h4{color:var(--blue);font-size:15px;font-weight:800;margin-bottom:8px;letter-spacing:.3px}
+.val-card p{font-size:12.5px;color:var(--gray);line-height:1.7}
+.pp-band{background:var(--blue);border-radius:6px;padding:38px 34px;color:#fff}
+.pp-band h3{font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);color:#fff;letter-spacing:-.5px;margin-bottom:10px}
+.pp-band .mv-lb{color:rgba(255,255,255,.6)}
+.pp-band p{font-size:13.5px;color:rgba(255,255,255,.85)}
+@media(max-width:960px){.mv-grid{grid-template-columns:1fr}.vals-grid{grid-template-columns:repeat(2,1fr)}.vals{padding:64px 20px}}
+</style>
+
+<section class="vals" id="values">
+<div class="vals-in">
+  <span class="eyebrow" id="cu-ey">Our Culture</span>
+  <h2 class="vals-title" id="cu-ti">Who we are.<br><em>What we stand for.</em></h2>
+  <div class="mv-grid">
+    <div class="mv-card">
+      <span class="mv-lb" id="ml-lb">MISSION</span>
+      <h3 id="ml-bi">Connecting China&#39;s Manufacturing With The World.</h3>
+      <p class="mv-it" id="ml-it">Built on trust, delivered with integrity.</p>
+      <p id="ml-bo">Our mission is to make the world&#39;s finest Foshan building materials accessible to builders and developers everywhere — backed by Singapore&#39;s international trading infrastructure and our unwavering commitment to quality.</p>
+    </div>
+    <div class="mv-card">
+      <span class="mv-lb" id="vl-lb">VISION</span>
+      <h3 id="vl-bi">Asia&#39;s Most Trusted Building Materials Export Brand.</h3>
+      <p class="mv-it" id="vl-it">The partner of first choice in every market we serve.</p>
+      <p id="vl-bo">In every market we serve, we want YENYONG. to be the first name buyers think of — not because we&#39;re the cheapest, but because we&#39;re the most reliable.</p>
+    </div>
+  </div>
+  <div class="vals-grid">
+    <div class="val-card"><span class="val-chip chip-blue"></span><h4 id="v1t">Loyalty</h4><p id="v1d">Royal blue — long-term commitment to every partner. Never sacrificing relationships for short-term gain.</p></div>
+    <div class="val-card"><span class="val-chip chip-white"></span><h4 id="v2t">Transparency</h4><p id="v2d">White — clear quotes, explicit terms. No hidden fees, no vague promises. Ever.</p></div>
+    <div class="val-card"><span class="val-chip chip-bw"></span><h4 id="v3t">Integrity</h4><p id="v3d">Delivery dates are delivery dates. Specs are specs. Any issue — we tell you first, always.</p></div>
+    <div class="val-card"><span class="val-chip chip-blue"></span><h4 id="v4t">Precision</h4><p id="v4d">1mm of variance can make a shipment unusable. Near-zero tolerance on every specification.</p></div>
+    <div class="val-card"><span class="val-chip chip-ocean"></span><h4 id="v5t">Global Reach</h4><p id="v5d">YenYong — extending across oceans. We know your market, speak your language, work at your pace.</p></div>
+  </div>
+  <div class="pp-band">
+    <span class="mv-lb" id="pp-lb">BRAND PROMISE</span>
+    <h3 id="pp-bi">YENYONG. — Where Trust Meets Quality.</h3>
+    <p id="pp-su">延洋 · Trust as the bridge, quality as the proof. · 以信任为桥，以品质为证。</p>
+  </div>
+</div>
+</section>
+
 <section class="hww" id="how-we-work">
 <div class="hww-in">
   <div class="hww-left">
@@ -1507,7 +1561,7 @@ nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:
             <div class="ct-founder-name">Chen Yangbo · 陈洋博</div>
             <div class="ct-founder-title" id="f2-title">Co-Founder &amp; CEO · Singapore</div>
             <div class="ct-founder-contacts">
-              <div class="ct-founder-contact" style="color:rgba(255,255,255,.25)">
+              <div class="ct-founder-contact" style="color:rgba(31,58,160,.25)">
                 <span><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span> <span id="ct-wa2">WhatsApp</span>
               </div>
               <a href="mailto:mellamocolin888@outlook.com" class="ct-founder-contact">
@@ -1531,7 +1585,7 @@ nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:
       <div class="ct-addr">
         <div class="ct-addr-flag"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></div>
         <div class="ct-addr-country" id="ct-fs-label">Foshan Office</div>
-        <div class="ct-addr-text" style="color:rgba(255,255,255,.25);font-style:italic">Foshan YenYong International<br>Building Materials Trading Co., Ltd.<br><br>Address coming soon</div>
+        <div class="ct-addr-text" style="color:rgba(31,58,160,.25);font-style:italic">Foshan YenYong International<br>Building Materials Trading Co., Ltd.<br><br>Address coming soon</div>
       </div>
     </div>
 
@@ -1607,7 +1661,7 @@ nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:
   <div class="map-placeholder">
     <div class="map-placeholder-icon"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></div>
     <div class="map-placeholder-text">Foshan Office</div>
-    <div style="font-size:10px;color:rgba(255,255,255,.15)">佛山办公室地址待定</div>
+    <div style="font-size:10px;color:rgba(31,58,160,.15)">佛山办公室地址待定</div>
   </div>
 </div>
 </div>
@@ -1699,6 +1753,8 @@ Object.assign(T.en,{'mk-k1':'Singapore HQ · Foshan Branch','mk-k2':'Radiating t
 
 
 Object.assign(T.en,{n8:'Insights','pd-bt2':'View All Products','ce-bt':'View Certifications & Docs →','ns-ey':'News & Insights','ns-ti':'Knowledge from<br>the trade.','ns-in':'Guides, design trends, case studies and buyer’s notes from across the building-materials industry — curated by YENYONG.'});
+</script>
+<script>
 function showTab(tab){
   document.querySelectorAll('.ct-panel').forEach(function(p){p.classList.remove('on');});
   document.querySelectorAll('.ct-tab').forEach(function(b){b.classList.remove('on');});
