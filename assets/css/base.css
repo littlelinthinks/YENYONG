@@ -168,6 +168,7 @@ body.lock{overflow:hidden}
 .site-footer{background:#1F3AA0;color:#fff;padding:60px 0 30px}
 .site-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
 .site-footer h4{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;font-family:var(--font-body)}
+.site-footer p{color:#fff}
 .site-footer a{display:block;font-size:13px;margin-bottom:9px;color:rgba(255,255,255,.7)}
 .site-footer a:hover{color:#fff}
 .site-footer .brand{color:#fff;margin-bottom:14px}
