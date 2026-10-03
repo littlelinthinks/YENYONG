@@ -32,7 +32,7 @@ p{color:var(--gray);margin-bottom:14px}
 .brand .logo-img{height:30px;width:auto;display:block}
 .site-footer .brand .logo-img{background:#fff;border-radius:6px;padding:5px;box-sizing:border-box}
 .nav-links{display:flex;gap:26px;align-items:center}
-.nav-links a{font-size:13px;font-weight:600;color:#2b3142;transition:.15s}
+.nav-links a{font-size:13px;font-weight:600;color:var(--blue);transition:.15s}
 .nav-links a:hover{color:var(--blue)}
 /* ── NAV DROPDOWN（与首页一致） ── */
 .nav-links li{position:relative;list-style:none}
