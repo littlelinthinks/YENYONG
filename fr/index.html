@@ -1778,7 +1778,7 @@ function showTab(tab){
   var tb=document.getElementById('topBar');
   function tick(){
     var s=window.scrollY>80;
-    if(nav)nav.classList.remove('scrolled');
+    if(nav)nav.classList.toggle('scrolled',s);
     if(tb)tb.style.transform=s?'translateY(-100%)':'translateY(0)';
     if(nav)nav.style.top=s?'0':'36px';
   }
