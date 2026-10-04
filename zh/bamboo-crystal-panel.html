@@ -364,6 +364,17 @@ tr:nth-child(even) td{background:var(--light)}
 .stat .big{font-size:32px;font-weight:900;color:var(--blue)}
 .stat .lab{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);margin-top:4px}
 @media(max-width:600px){.stats{grid-template-columns:1fr 1fr}}
+
+/*fixpack8 nav-scrolled 统一反色（与 base.css 同步，未滚动白底蓝字/下滚蓝底白字）*/
+.nav.scrolled{background:var(--blue,#4169E1);border-bottom-color:var(--blue2,#2F54C8)}
+.nav.scrolled .brand{color:#fff}
+.nav.scrolled .brand img{background:#fff;border-radius:6px;padding:4px;box-sizing:border-box}
+.nav.scrolled .links a{color:rgba(255,255,255,.78)}
+.nav.scrolled .links a:hover{color:#fff}
+.nav.scrolled .links a.act{color:#fff;box-shadow:inset 0 -3px 0 #fff}
+.nav.scrolled .links a.cta{background:#fff;color:var(--blue,#4169E1)}
+.nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.45)}
+.nav.scrolled .nav-burger span{background:#fff}
 </style>
 <div id="yen-wa-fab" onclick="window.open('https://wa.me/8618929980066?text=Hello%20YENYONG%2C%20I%20am%20interested%20in%20your%20products','_blank')"
  style="position:fixed;bottom:24px;right:24px;z-index:99999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);cursor:pointer;transition:transform .2s;"
