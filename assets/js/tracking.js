@@ -88,3 +88,63 @@
     }
   });
 })();
+
+/* ===== yy-nav-behavior 统一导航行为：滚动反色 + 当前页高亮 + Sustainability 项 ===== */
+(function () {
+  "use strict";
+  var nav = document.querySelector("nav.nav");
+  if (!nav) return;
+  function tick() { nav.classList.toggle("scrolled", window.scrollY > 80); }
+  window.addEventListener("scroll", tick, { passive: true });
+  tick();
+
+  var links = nav.querySelectorAll(".links a");
+  if (!links.length) return;
+  var path = location.pathname.replace(/\/index\.html$/, "/");
+  var langM = path.match(/^\/(de|fr|ru|zh)\//);
+  var lang = langM ? langM[1] : "";
+  var pre = lang ? "/" + lang + "/" : "/";
+  var susLabel = { de: "Nachhaltigkeit", fr: "Durabilite", ru: "Устойчивое развитие", zh: "可持续发展" }[lang] || "Sustainability";
+
+  // 1) 导航缺少 Sustainability 项时，插入到 Contact 按钮之前
+  var hasSus = Array.prototype.some.call(links, function (a) {
+    return (a.getAttribute("href") || "") === pre + "sustainability.html";
+  });
+  var cta = nav.querySelector(".links a.cta");
+  if (!hasSus && cta) {
+    var el = document.createElement("a");
+    el.href = pre + "sustainability.html";
+    el.textContent = susLabel;
+    cta.parentNode.insertBefore(el, cta);
+    links = nav.querySelectorAll(".links a");
+  }
+
+  // 2) 当前页高亮：精确匹配 > 博客文章→Insights > 产品页→Products
+  function norm(u) {
+    try { return new URL(u, location.origin).pathname.replace(/\/index\.html$/, "/"); }
+    catch (e) { return u || ""; }
+  }
+  var best = null;
+  Array.prototype.forEach.call(links, function (a) {
+    a.classList.remove("act");
+    if (norm(a.getAttribute("href")) === path) best = a;
+  });
+  if (!best && path.indexOf("/blog/") > -1) {
+    best = Array.prototype.find.call(links, function (a) {
+      return /insights\.html$/.test(norm(a.getAttribute("href")) || "");
+    });
+  }
+  if (!best) {
+    var prods = ["spc-rigid-core-flooring","spc-wall-panel","wpc-wall-panel","pvc-wall-panel","acoustic-panel",
+      "aluminium-composite-panel","aluminium-honeycomb-panel","bamboo-crystal-panel","carbon-crystal-panel",
+      "ceramic-porcelain-tile","colour-library","flexible-stone-panel","hpl-compact-laminate","ar-preview",
+      "material-calculator","pricing-calculator","product-comparison","sample-order"];
+    var isProd = prods.some(function (s) { return path.indexOf("/" + s + ".html") > -1; });
+    if (isProd) {
+      best = Array.prototype.find.call(links, function (a) {
+        return (a.getAttribute("href") || "").indexOf("#products") > -1;
+      });
+    }
+  }
+  if (best && !best.classList.contains("cta")) best.classList.add("act");
+})();
