@@ -93,11 +93,17 @@
 (function () {
   "use strict";
   var nav = document.querySelector("nav.nav");
-  if (!nav) return;
-  function tick() { nav.classList.toggle("scrolled", window.scrollY > 80); }
+  var sn = document.querySelector(".site-nav");
+  if (!nav && !sn) return;
+  function tick() {
+    var s = window.scrollY > 80;
+    if (nav) nav.classList.toggle("scrolled", s);
+    if (sn) sn.classList.toggle("scrolled", s);
+  }
   window.addEventListener("scroll", tick, { passive: true });
   tick();
 
+  if (!nav) return; /* site-nav 变体模板无 .links 结构，跳过插入/高亮 */
   var links = nav.querySelectorAll(".links a");
   if (!links.length) return;
   var path = location.pathname.replace(/\/index\.html$/, "/");
