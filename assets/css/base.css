@@ -290,3 +290,15 @@ body.lock{overflow:hidden}
 .nav.scrolled .links a.cta{background:#fff;color:var(--blue)}
 .nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.45)}
 .nav.scrolled .nav-burger span{background:#fff}
+
+/*fixpack9 site-nav scrolled 统一反色（皇家蓝底白字；≤960px 移动菜单面板保持白底深字）*/
+.site-nav.scrolled{background:var(--blue);border-bottom-color:var(--blue2)}
+.site-nav.scrolled .brand{color:#fff}
+.site-nav.scrolled .brand .logo-img{background:#fff;border-radius:6px;padding:4px;box-sizing:border-box}
+.site-nav.scrolled .nav-burger span{background:#fff}
+.site-nav.scrolled .lang-btn{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.45)}
+@media (min-width:961px){
+.site-nav.scrolled .nav-links>li>a{color:#fff}
+.site-nav.scrolled .nav-links>li>a:hover{color:#fff}
+.site-nav.scrolled .nav-links>li>a.on{box-shadow:inset 0 -3px 0 #fff}
+}
